@@ -1,11 +1,11 @@
 /*
-DaQianShiJie unlock
+大千世界解锁VIP
 
 Surge4：
-http-response ^https:\/\/api\.mvmtv\.com\/index\.php.*(c=user.*a=info|c=login.*a=getConfigure|a=addr.*vid=.*) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/dqsj.js
+http-response ^https:\/\/api\.mvmtv\.com\/index\.php.*(c=user.*a=info|c=login.*a=getConfigure|a=addr.*vid=.*) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dqsj.js
 
 QX：
-^https:\/\/api\.mvmtv\.com\/index\.php.*(c=user.*a=info|c=login.*a=getConfigure|a=addr.*vid=.*) url script-response-body dqsj.js
+^https:\/\/api\.mvmtv\.com\/index\.php.*(c=user.*a=info|c=login.*a=getConfigure|a=addr.*vid=.*) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/dqsj.js
 
 Surge & QX MITM = api.mvmtv.com
 */
