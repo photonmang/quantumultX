@@ -5,14 +5,15 @@ const py = init()
 const signurlVal = py.getdata(signurlKey)
 const signheaderVal = py.getdata(signheaderKey)
 
+
 var date = new Date();
   var hour = date.getHours();
    var min = date.getMinutes();
-    var s = date.getSeconds()
-if (hour == 22 && min==0 && s==0) {
+    var s = date.getSeconds();
+if (hour == 22 && min == 0 && s == 10) {
 boxall()//开启宝箱
 }
-else if (hour == 8 && min==0 && s==0){
+else if (hour == 9 && min == 0 && s == 10){
 sign()  //签到
 pl()    //评论
 ad()    //广告
@@ -20,9 +21,11 @@ fx()    //分享
 sc()    //收藏
 ten()   //10次观影
 }
-else if (hour == 8 && min<=15){
+else if (hour == 9 && min<=30){
 play()  //30分钟观影
 }
+
+
 function sign() {
   const url = { url: `https://uv4tq1fvpg5gy5r5lkq9.hnhx360.com/ucp/task/sign`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
@@ -131,9 +134,10 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     const result = JSON.parse(data)
     if (result.retcode == 0) {
       subTitle = `收藏结果: 成功`
-      detail = ``
+      detail = `执行第:`+(6-i--)+`次`
     } else if (result.retcode == -1) {
       subTitle = `收藏结果: 重复收藏`
+      detail=`开始重新执行一次,执行第:`+(6-i--)+'次'
       sc1()
     } 
     py.msg(title, subTitle, detail)
@@ -166,7 +170,7 @@ function box6() {
     let detail = ''
     const result = JSON.parse(data)
     if (result.retcode == 0) {
-      subTitle = `开箱结果: 宝箱成功开启🎉`
+      subTitle = `开箱结果: 周六宝箱成功开启🎉`
       detail = ``
     } else if (result.retcode == -1) {
       subTitle = `开箱结果: 每周神秘宝箱已领过了⚠️`
@@ -195,6 +199,8 @@ function box() {
   })
 }
 
+
+
 function bf() {
 var num = Math.floor(Math.random() * 60000 + 10);
   const url = { url: "https://uv4tq1fvpg5gy5r5lkq9.hnhx360.com/vod/reqplay/"+num+"?_t=1590938797000&pid=&playindex=1", headers: JSON.parse(signheaderVal) }
@@ -205,7 +211,7 @@ var num = Math.floor(Math.random() * 60000 + 10);
 }
 
 function ten() {
-for (i=0;i<10;i++){ 
+for (t=0;t<10;t++){ 
 setTimeout(function() {
 var num = Math.floor(Math.random() * 60000 + 10);
   const url = { url: "https://uv4tq1fvpg5gy5r5lkq9.hnhx360.com/vod/reqplay/"+num+"?_t=1590938797000&pid=&playindex=1", headers: JSON.parse(signheaderVal) }
@@ -218,17 +224,17 @@ var num = Math.floor(Math.random() * 60000 + 10);
     const result = JSON.parse(data)
     if (result.retcode == 0) {
       subTitle = `播放结果: 成功🎉`
-      detail = `执行第:`+(11-i--)+'次'
+      detail = `执行第:`+(11-t--)+'次'
     } else if (result.retcode == 2) {
       subTitle = `播放结果: 播放地址不存在⚠️`
-      detail = `开始重新执行一次`
+      detail = `开始重新执行一次,执行第:`+(11-t--)+'次'
        bf()
     } else if (result.retcode == 3) {
       subTitle = `播放结果: 今日观看次数已看完🌪`
-       detail = `执行第:`+(11-i--)+'次'
+       
     } else {
       subTitle = `播放结果: 记录不存在或被删除❌`
-      detail = `开始重新执行一次`
+      detail = `开始重新执行一次,执行第:`+(11-t--)+'次'
        bf()
            }
     py.msg(title, subTitle, detail)
