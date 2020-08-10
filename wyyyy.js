@@ -8,8 +8,8 @@
  0 9 * * * wyyyy.js,tag=网易云音乐刷歌
  */
 
-  const user=''  //填写网易云音乐用户名
-  const pwd='' //填写网易云音乐密码
+const user=''  //填写网易云音乐用户名
+const pwd='' //填写网易云音乐密码
 const url = "http://111.231.32.34/api2/?uin="+user+"&pwd="+pwd;
 const method = "GET";
 const headers = {
