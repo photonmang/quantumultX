@@ -12,22 +12,22 @@
 
 [rewrite_local]
 
-> 189及以前版本
+# 189及以前版本
 ^https:\/\/.*\..*\.com\/ucp\/index url script-response-body xxys.cookie.js
-> 190及以后版本
+# 190及以后版本
 ^https:\/\/.*\..*\.com\/ucp\/index url script-request-header xxys.cookie.js
 
 [task_local]
 
-> 完整版执行请严格按下面格式
+## 完整版执行请严格按下面格式
 
 */10 0-30 9,22 * * * xxysrw.js
 
-> 多任务版本不限时间格式(9点执行6任务，22点执行开箱)
+## 多任务版本不限时间格式(9点执行6任务，22点执行开箱)
 
 0 9,22 * * * xxys_6rw.js
 
-> 连续观影30分钟的任务，分钟时间必须0-30分钟
+## 连续观影30分钟的任务，分钟时间必须0-30分钟
 
 */10 0-30 9 * * * xxys_play.js
 ```
