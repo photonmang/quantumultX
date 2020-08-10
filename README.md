@@ -13,8 +13,11 @@
 [rewrite_local]
 
   189及以前版本
+  
 ^https:\/\/.*\..*\.com\/ucp\/index url script-response-body xxys.cookie.js
+
   190及以后版本
+  
 ^https:\/\/.*\..*\.com\/ucp\/index url script-request-header xxys.cookie.js
 
 [task_local]
