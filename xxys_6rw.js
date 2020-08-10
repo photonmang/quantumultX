@@ -5,11 +5,9 @@ const py = init()
 const signurlVal = py.getdata(signurlKey)
 const signheaderVal = py.getdata(signheaderKey)
 
-
 var date = new Date();
   var hour = date.getHours();
-   var min = date.getMinutes();
-    var s = date.getSeconds();
+
 if (hour == 22) {
 boxall()//开启宝箱
 }
@@ -21,11 +19,6 @@ fx()    //分享
 sc()    //收藏
 ten()   //10次观影
 }
-/*
-else if (hour == 22 && min<=30){
-play()  //30分钟观影
-}
-*/
 
 function sign() {
   const url = { url: `https://uv4tq1fvpg5gy5r5lkq9.hnhx360.com/ucp/task/sign`, headers: JSON.parse(signheaderVal) }
