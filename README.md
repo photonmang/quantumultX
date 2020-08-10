@@ -7,6 +7,7 @@
 ## 配置 (QuanX)
 
 [MITM]
+
 小小影视版的域名太多了，自行抓包看域名添加吧。
 
 [rewrite_local]
