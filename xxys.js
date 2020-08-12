@@ -1,9 +1,9 @@
 /*
 XiaoXiaoYingShi unlock Vip
 QX:
-https:\/\/.*\..*\.com\/(vod\/reqplay\/|ucp/index|getGlobalData) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/xxys.js
+https:\/\/.*\..*\.com\/(vod\/reqplay\/|ucp/index|getGlobalData) url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/xxys.js
 Surge:
-http-response https:\/\/.*\..*\.com\/(vod\/reqplay\/|ucp/index|getGlobalData) requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/xxys.js
+http-response https:\/\/.*\..*\.com\/(vod\/reqplay\/|ucp/index|getGlobalData) requires-body=1,max-size=0,script-path= https://raw.githubusercontent.com/photonmang/quantumultX/master/xxys.js
 
 MITM = *.xxjjappss.com
 */
