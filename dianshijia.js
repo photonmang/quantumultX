@@ -1,5 +1,7 @@
 
 /*
+更新时间:2020-10-13
+
 由于作者停更，因本人一直有在用所以进行日常维护，只要我一直在用，也会一直维护下去。
 本次更新增加了明日奖励随机三选一（0.2元，1888金币，1天VIP）的获取。
 
@@ -436,11 +438,11 @@ resolve()
 function getReward() {
   return new Promise((resolve, reject) => {
     let url = { 
-     url: `${dianshijia_API}/api/sign/chooseAdditionalReward?rewardId=55`, 
+     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=55`, 
      headers: JSON.parse(signheaderVal),
    }
     $.get(url, (error, response, data) => {
-    if(logs)$.log(`data: ${data}\n`)
+    if(logs)$.log(`奖励: ${data}\n`)
    })
 resolve()
  })
