@@ -3,7 +3,7 @@
 更新时间:2020-10-13
 
 由于作者停更，因本人一直有在用所以进行日常维护，只要我一直在用，也会一直维护下去。
-本次更新增加了明日奖励随机三选一（0.2元，1888金币，1天VIP）的获取。
+去掉奖励信息随机的BUG奖励，改为固定显示每日0.2元额度。
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -147,7 +147,9 @@ function signinfo() {
           {detail += ` 连续签到${d}天\n`
        var j = result.data.recentDays[i].rewards.length
        if (j > 1){
-                detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}  `
+                //detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}  `
+                  detail += `【奖励信息】今日:0.2元额度`
+
                  } 
           else   if (j == 1) 
                  { 
@@ -155,8 +157,8 @@ function signinfo() {
                  }
         var k = result.data.recentDays[i+1].rewards.length
         if ( k > 1 ) {
-          detail += ` 明日: `+ result.data.recentDays[i+1].rewards[1].name+`\n`
-           
+          //detail += ` 明日: `+ result.data.recentDays[i+1].rewards[1].name+`\n`
+            detail += ` 明日:0.2元额度`+`\n`
                  }  
            else  { 
               detail += `明日: 无\n`
