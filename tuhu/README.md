@@ -32,8 +32,8 @@ https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo url script-request-heade
 
 ## 说明
 
-1. 先在浏览器登录 `(先登录! 先登录! 先登录!)`
-2. 先把`api.tuhu.cn`加到`[MITM]`
+1. 先在APP登录 `(先登录! 先登录! 先登录!)`
+2. 再把`api.tuhu.cn`加到`[MITM]`
 3. 再配置重写规则:
    - Surge: 把两条远程脚本放到`[Script]`
    - QuanX: 把`tuhu.Cookie.js`和`tuhu.js`传到`On My iPhone - Quantumult X - Scripts` (传到 iCloud 相同目录也可, 注意要打开 quanx 的 iCloud 开关)
