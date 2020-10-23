@@ -26,10 +26,8 @@ function sign() {
     let detail = ''
     const result = JSON.parse(data)
     if (result.Code == 1) {
-      subTitle += `签到结果: 签到成功`+`\n`
-      subTitle += `积分增加:${result.AddIntegral} `+`\n`
-      subTitle += `已签到${result.NeedDays}`+`天`
-      detail = ``
+      subTitle = `签到结果: 签到成功`
+      detail = `积分增加:${result.AddIntegral} `
     } else if (result.Code == 0) {
       subTitle = `签到结果: ${result.Message}`
     } 
