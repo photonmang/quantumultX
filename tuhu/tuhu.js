@@ -8,31 +8,33 @@ https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo url script-request-heade
 */
 
 const cookieName = '途虎养车'
-const signurlKey = 'photonmang_signurl_tuhu'
-const signheaderKey = 'photonmang_signheader_tuhu'
-const photonmang = init()
-const signurlVal = photonmang.getdata(signurlKey)
-const signheaderVal = photonmang.getdata(signheaderKey)
+const signurlKey = 'py_signurl_tuhu'
+const signheaderKey = 'py_signheader_tuhu'
+const py = init()
+const signurlVal = py.getdata(signurlKey)
+const signheaderVal = py.getdata(signheaderKey)
 
-sign()
+
+sign()  //签到
+
 
 function sign() {
   const url = { url: `https://api.tuhu.cn/User/UserCheckInVersion1`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
-  photonmang.post(url, (error, response, data) => {
-    photonmang.log(`${cookieName}, data: ${data}`)
+  py.post(url, (error, response, data) => {
+    py.log(`${cookieName}, data: ${data}`)
     const title = `${cookieName}`
     let subTitle = ''
     let detail = ''
     const result = JSON.parse(data)
     if (result.Code == 1) {
-      subTitle = `签到结果: 签到成功`
-      detail = `积分增加:${result.AddIntegral} `
+      subTitle = `签到结果: 签到成功`+`\n`
+      detail = `积分增加:${result.AddIntegral}`
     } else if (result.Code == 0) {
       subTitle = `签到结果: ${result.Message}`
     } 
-    photonmang.msg(title, subTitle, detail)
-    photonmang.done()
+    py.msg(title, subTitle, detail)
+    py.done()
   })
 }
 
