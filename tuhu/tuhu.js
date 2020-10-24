@@ -1,4 +1,6 @@
 /*
+
+cookie获取:打开app，我的，点击积分获取成功即可注释点cookie获取脚本
 [rewrite_local]
 #途虎养车获取Cookie
 https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.Cookie.js
