@@ -10,11 +10,11 @@ https://api.tuhu.cn/User/GetUserCurrentAndNextGradeInfo url script-request-heade
 */
 
 const cookieName = '途虎养车'
-const signurlKey = 'py_signurl_tuhu'
-const signheaderKey = 'py_signheader_tuhu'
-const py = init()
-const signurlVal = py.getdata(signurlKey)
-const signheaderVal = py.getdata(signheaderKey)
+const signurlKey = 'photonmang_signurl_tuhu'
+const signheaderKey = 'photonmang_signheader_tuhu'
+const photonmang = init()
+const signurlVal = photonmang.getdata(signurlKey)
+const signheaderVal = photonmang.getdata(signheaderKey)
 
 
 sign()  //签到
@@ -23,8 +23,8 @@ sign()  //签到
 function sign() {
   const url = { url: `https://api.tuhu.cn/User/UserCheckInVersion1`, headers: JSON.parse(signheaderVal) }
   url.body = '{}'
-  py.post(url, (error, response, data) => {
-    py.log(`${cookieName}, data: ${data}`)
+  photonmang.post(url, (error, response, data) => {
+    photonmang.log(`${cookieName}, data: ${data}`)
     const title = `${cookieName}`
     let subTitle = ''
     let detail = ''
@@ -35,8 +35,8 @@ function sign() {
     } else if (result.Code == 0) {
       subTitle = `签到结果: ${result.Message}`
     } 
-    py.msg(title, subTitle, detail)
-    py.done()
+    photonmang.msg(title, subTitle, detail)
+    photonmang.done()
   })
 }
 
