@@ -32,7 +32,7 @@ function sign() {
     if (result.Code == 1) {
       subTitle = `签到结果: 签到成功`
       detail += `积分增加:${result.AddIntegral}`+`\n`
-      detail += `已连续签到:${result.NeedDays}`+`天`
+      detail += `已连续签到:${result.NeedDays}`+`/7天`
     } else if (result.Code == 0) {
       subTitle = `签到结果: ${result.Message}`
     } 
