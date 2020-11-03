@@ -5,9 +5,13 @@
 
 # 小小影视
 
-> 代码已同时兼容 Surge & QuanX, 使用同一份签到脚本即可
+> 代码已同时兼容 QuantumultX,Surge,Loon,JSBox,Node.js 使用同一份签到脚本即可
 
-> 目前分开两个版本，一个是完整版8任务同时执行，但是可能会存在偶尔到点抽风不执行（签到，广告，分享，评论，10次观影，5次收藏，30分钟连续观影，每日22点开宝箱）
+> 九合一任务（签到，广告，分享，评论，10次观影，5次收藏，30分钟连续观影，每日22点开宝箱，每周六22点开宝箱）
+
+> 已重构代码，解决多任何一堆提醒，改为签到完成后会仅一次提醒。
+
+> 脚本执行时间大概为30多分钟，因包含连续观影的自动执行，所以没有特殊情况请不要手动执行。
 
 ## 配置 (QuanX)
 ```properties
@@ -24,17 +28,8 @@
 
 [task_local]
 
-## 完整版执行请严格按下面格式
+0 10,22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js, tag=小小影视, img-url=https://raw.githubusercontent.com/Orz-3/task/master/xxys.png, enabled=true
 
-*/10 0-30 9,22 * * * xxysrw.js
-
-## 多任务版本不限时间格式(9点执行6任务，22点执行开箱)
-
-0 9,22 * * * xxys_6rw.js
-
-## 连续观影30分钟的任务，分钟时间必须0-30分钟
-
-*/10 0-30 9 * * * xxys_play.js
 ```
 ## 说明
 
