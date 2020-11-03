@@ -27,9 +27,14 @@
 ^https:\/\/.*\..*\.com\/ucp\/index url script-request-header xxys.cookie.js
 
 [task_local]
-
+#小小影视完整签到配置
 0 10,22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js, tag=小小影视, img-url=https://raw.githubusercontent.com/Orz-3/task/master/xxys.png, enabled=true
 
+#小小影视不含连续观影任务
+0 10,22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/xxys_6rw.js, tag=小小影视, img-url=https://raw.githubusercontent.com/Orz-3/task/master/xxys.png, enabled=true
+
+#小小影视连续观影
+*/10 0 10 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/xxys_play.js, tag=小小影视, img-url=https://raw.githubusercontent.com/Orz-3/task/master/xxys.png, enabled=true
 ```
 ## 说明
 
