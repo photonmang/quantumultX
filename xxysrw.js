@@ -17,16 +17,15 @@ Surge
 小小影视 = type=cron,cronexp=0 10,22 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js
 
 */
-
 const $ = new Env('小小影视')
 $.VAL_loginurl = $.getdata('py_signurl_xxys')
 $.VAL_loginheader = $.getdata('py_signheader_xxys')
 const logs = 0   //响应日志开关,默认关闭
+const myDate = new Date();
+const days = myDate.getDay();
+const hour = myDate.getHours();
 
 !(async () => {
-var myDate = new Date();
-var days = myDate.getDay();
-var hour = myDate.getHours();
 if (hour == 22) {
 if  (days == 6) {
   await box()  
@@ -61,6 +60,7 @@ await tenplay();
 console.log(`\n播放失败:开始重新执行播放任务`)
 await $.wait(1000);
 }
+
       }
 for (let p = 0; p < 180; p ++) {
         await play();
@@ -171,10 +171,10 @@ function box() {
       try {
         $.box = JSON.parse(data)
     if ($.box.retcode == 0) {
-      $.desc = `开箱结果:`+unescape($.box.errmsg)+`✅`+`\n`
+      $.desc = `每日开箱:`+unescape($.box.errmsg)+`✅`+`\n`
     }
 	 else if ($.box.retcode == -1) {
-      $.desc = `开箱结果:`+unescape($.box.errmsg)+`⚠️`+`\n`
+      $.desc = `每日开箱:`+unescape($.box.errmsg)+`⚠️`+`\n`
     }
       } catch (e) {
         $.logErr(e, resp)
@@ -193,10 +193,10 @@ function box6() {
       try {
         $.box6 = JSON.parse(data)
     if ($.box6.retcode == 0) {
-      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`✅`+`\n`
+      $.desc += `周六开箱:`+unescape($.box6.errmsg)+`✅`+`\n`
     }
 	 else if ($.box6.retcode == -1) {
-      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`⚠️`+`\n`
+      $.desc += `周六开箱:`+unescape($.box6.errmsg)+`⚠️`+`\n`
     }
       } catch (e) {
         $.logErr(e, resp)
@@ -216,12 +216,6 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     if(logs)$.log(`收藏结果 : ${data}\n`)
       try {
         $.sc = JSON.parse(data)
-    if ($.sc.retcode == 0) {
-      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`✅`+`\n`
-    }
-	 else if ($.sc.retcode == -1) {
-      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`⚠️`+`\n`
-    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -240,12 +234,6 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     if(logs)$.log(`播放结果 : ${data}\n`)
       try {
         $.tenplay = JSON.parse(data)
-    if ($.tenplay.retcode == 0) {
-      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`✅`+`\n`
-    }
-	 else if ($.tenplay.retcode == -1) {
-      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`⚠️`+`\n`
-    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -258,18 +246,12 @@ var ID = Math.floor(Math.random() * 60000 + 10);
 function play() {
   return new Promise((resolve) => {
 var num = Math.floor(Math.random() * 60000 + 10);
-    const url = { url: "https://uv4tq1fvpg5gy5r5lkq9.hnhx360.com/vod/reqplay/"+num+"?_t=1590938797000&pid=&playindex=1", headers: JSON.parse($.VAL_loginheader) }
+    const url = { url: "https://uv4tq1fvpg5gy5r5lkq9.hnhx360.com/vod/playhb/53366?", headers: JSON.parse($.VAL_loginheader) }
 var ID = Math.floor(Math.random() * 60000 + 10);
     $.post(url, (err, resp, data) => {
     if(logs)$.log(`30分钟播放记录 : ${data}\n`)
       try {
         $.play = JSON.parse(data)
-    if ($.play.retcode == 0) {
-      $.desc += `30分钟连续观影结果:完成`+`✅`+`\n`
-    }
-      else if ($.play.retcode == 0) {
-      $.desc += `30分钟连续观影结果:`+unescape($.play.errmsg)+`⚠️`+`\n`
-    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -282,6 +264,26 @@ var ID = Math.floor(Math.random() * 60000 + 10);
 
 function showmsg() {
   return new Promise((resolve) => {
+if (hour != 22) {
+    if ($.sc.retcode == 0) {
+      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`✅`+`\n`
+    }
+	 else if ($.sc.retcode == -1) {
+      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`⚠️`+`\n`
+    }
+    if ($.tenplay.retcode == 0) {
+      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`✅`+`\n`
+    }
+	 else if ($.tenplay.retcode != 0) {
+      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`⚠️`+`\n`
+    }
+    if ($.play.retcode == 0) {
+      $.desc += `30分钟连续观影结果:完成`+`✅`+`\n`
+    }
+      else if ($.play.retcode == 4) {
+      $.desc += `30分钟连续观影结果:`+unescape($.play.errmsg)+`⚠️`+`\n`
+    }
+}
     $.msg($.name, $.subt, $.desc)
     resolve()
   })
