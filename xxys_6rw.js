@@ -2,11 +2,11 @@ const $ = new Env('小小影视')
 $.VAL_loginurl = $.getdata('py_signurl_xxys')
 $.VAL_loginheader = $.getdata('py_signheader_xxys')
 const logs = 0   //响应日志开关,默认关闭
+const myDate = new Date();
+const days = myDate.getDay();
+const hour = myDate.getHours();
 
 !(async () => {
-var myDate = new Date();
-var days = myDate.getDay();
-var hour = myDate.getHours();
 if (hour == 22) {
 if  (days == 6) {
   await box()  
@@ -41,6 +41,7 @@ await tenplay();
 console.log(`\n播放失败:开始重新执行播放任务`)
 await $.wait(1000);
 }
+
       }
   await showmsg()
 }
@@ -145,10 +146,10 @@ function box() {
       try {
         $.box = JSON.parse(data)
     if ($.box.retcode == 0) {
-      $.desc = `开箱结果:`+unescape($.box.errmsg)+`✅`+`\n`
+      $.desc = `每日开箱:`+unescape($.box.errmsg)+`✅`+`\n`
     }
 	 else if ($.box.retcode == -1) {
-      $.desc = `开箱结果:`+unescape($.box.errmsg)+`⚠️`+`\n`
+      $.desc = `每日开箱:`+unescape($.box.errmsg)+`⚠️`+`\n`
     }
       } catch (e) {
         $.logErr(e, resp)
@@ -167,10 +168,10 @@ function box6() {
       try {
         $.box6 = JSON.parse(data)
     if ($.box6.retcode == 0) {
-      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`✅`+`\n`
+      $.desc += `周六开箱:`+unescape($.box6.errmsg)+`✅`+`\n`
     }
 	 else if ($.box6.retcode == -1) {
-      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`⚠️`+`\n`
+      $.desc += `周六开箱:`+unescape($.box6.errmsg)+`⚠️`+`\n`
     }
       } catch (e) {
         $.logErr(e, resp)
@@ -190,12 +191,6 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     if(logs)$.log(`收藏结果 : ${data}\n`)
       try {
         $.sc = JSON.parse(data)
-    if ($.sc.retcode == 0) {
-      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`✅`+`\n`
-    }
-	 else if ($.sc.retcode == -1) {
-      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`⚠️`+`\n`
-    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -214,12 +209,6 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     if(logs)$.log(`播放结果 : ${data}\n`)
       try {
         $.tenplay = JSON.parse(data)
-    if ($.tenplay.retcode == 0) {
-      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`✅`+`\n`
-    }
-	 else if ($.tenplay.retcode == -1) {
-      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`⚠️`+`\n`
-    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -231,6 +220,20 @@ var ID = Math.floor(Math.random() * 60000 + 10);
 
 function showmsg() {
   return new Promise((resolve) => {
+if (hour != 22) {
+    if ($.sc.retcode == 0) {
+      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`✅`+`\n`
+    }
+	 else if ($.sc.retcode == -1) {
+      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`⚠️`+`\n`
+    }
+    if ($.tenplay.retcode == 0) {
+      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`✅`+`\n`
+    }
+	 else if ($.tenplay.retcode != 0) {
+      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`⚠️`+`\n`
+    }
+}
     $.msg($.name, $.subt, $.desc)
     resolve()
   })
