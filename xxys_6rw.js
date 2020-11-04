@@ -11,16 +11,16 @@ if (hour == 22) {
 if  (days == 6) {
   await box()  
   await box6()   
-  await showboxmsg()
+  await showmsg()
 } else {
   await box()
-  await showboxmsg()
+  await showmsg()
 }} else {
   await sign()   
   await pl()    
   await ad()    
   await fx()    
-for (let s = 0; s < 5; s ++) {
+for (let s = 0; s < 1; s ++) {
         await sc();
         i = s + 1;
 console.log(`\n开始收藏:第`+i+`次`)
@@ -31,7 +31,7 @@ console.log(`\n收藏失败:开始重新执行收藏任务`)
 await $.wait(1000);
 }
       }
-for (let ten = 0; ten < 10; ten ++) {
+for (let ten = 0; ten < 1; ten ++) {
         await tenplay();
         i = ten + 1;
 console.log(`\n开始播放:第`+i+`次`)
@@ -56,6 +56,11 @@ function sign() {
 		if(logs)$.log(`签到结果 : ${data}\n`)
       try {
         $.sign = JSON.parse(data)
+    if ($.sign.retcode == 0) {
+      $.desc += `签到:`+unescape($.sign.errmsg)+`✅`+`\n`
+     } else if ($.sign.retcode == -1) {
+      $.desc = `签到:`+unescape($.sign.errmsg)+`⚠️`+`\n`
+     } 
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -74,6 +79,11 @@ function pl() {
 		if(logs)$.log(`评论结果 : ${data}\n`)
       try {
         $.pl = JSON.parse(data)
+	if ($.pl.retcode == 0) {
+	  $.desc += `评论:`+unescape($.pl.errmsg)+`✅`+`\n`
+     } else if ($.pl.retcode != 0) {
+	  $.desc += `评论:`+unescape($.pl.errmsg)+`⚠️`+`\n`
+     }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -91,6 +101,11 @@ function ad() {
 		if(logs)$.log(`广告结果 : ${data}\n`)
       try {
         $.ad = JSON.parse(data)
+	if ($.ad.retcode == 0) {
+      $.desc += `广告:`+unescape($.ad.errmsg)+`✅`+`\n`
+     } else if ($.ad.retcode == -1) {
+      $.desc += `广告:`+unescape($.ad.errmsg)+`⚠️`+`\n`
+     } 
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -108,6 +123,11 @@ function fx() {
        if(logs)$.log(`分享结果 : ${data}\n`)
       try {
         $.fx = JSON.parse(data)
+	if ($.fx.retcode == 0) {
+      $.desc += `分享: 成功✅`+`\n`
+     } else if ($.fx.retcode == -1) {
+      $.desc += `分享:`+unescape($.fx.errmsg)`⚠️`+`\n`
+     }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -124,6 +144,12 @@ function box() {
 		if(logs)$.log(`每日开箱结果 : ${data}\n`)
       try {
         $.box = JSON.parse(data)
+    if ($.box.retcode == 0) {
+      $.desc = `开箱结果:`+unescape($.box.errmsg)+`✅`+`\n`
+    }
+	 else if ($.box.retcode == -1) {
+      $.desc = `开箱结果:`+unescape($.box.errmsg)+`⚠️`+`\n`
+    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -140,6 +166,12 @@ function box6() {
 		if(logs)$.log(`每周开箱结果 : ${data}\n`)
       try {
         $.box6 = JSON.parse(data)
+    if ($.box6.retcode == 0) {
+      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`✅`+`\n`
+    }
+	 else if ($.box6.retcode == -1) {
+      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`⚠️`+`\n`
+    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -158,6 +190,12 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     if(logs)$.log(`收藏结果 : ${data}\n`)
       try {
         $.sc = JSON.parse(data)
+    if ($.sc.retcode == 0) {
+      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`✅`+`\n`
+    }
+	 else if ($.sc.retcode == -1) {
+      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`⚠️`+`\n`
+    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -176,6 +214,12 @@ var ID = Math.floor(Math.random() * 60000 + 10);
     if(logs)$.log(`播放结果 : ${data}\n`)
       try {
         $.tenplay = JSON.parse(data)
+    if ($.tenplay.retcode == 0) {
+      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`✅`+`\n`
+    }
+	 else if ($.tenplay.retcode == -1) {
+      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`⚠️`+`\n`
+    }
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -187,62 +231,10 @@ var ID = Math.floor(Math.random() * 60000 + 10);
 
 function showmsg() {
   return new Promise((resolve) => {
-    if ($.sign.retcode == 0) {
-      $.desc += `签到:`+unescape($.sign.errmsg)+`✅`+`\n`
-     } else if ($.sign.retcode == -1) {
-      $.desc = `签到:`+unescape($.sign.errmsg)+`⚠️`+`\n`
-     } 
-	if ($.pl.retcode == 0) {
-	  $.desc += `评论:`+unescape($.pl.errmsg)+`✅`+`\n`
-     } else if ($.pl.retcode != 0) {
-	  $.desc += `评论:`+unescape($.pl.errmsg)+`⚠️`+`\n`
-     }
-	if ($.ad.retcode == 0) {
-      $.desc += `广告:`+unescape($.ad.errmsg)+`✅`+`\n`
-     } else if ($.ad.retcode == -1) {
-      $.desc += `广告:`+unescape($.ad.errmsg)+`⚠️`+`\n`
-     } 
-	if ($.fx.retcode == 0) {
-      $.desc += `分享: 成功✅`+`\n`
-     } else if ($.fx.retcode == -1) {
-      $.desc += `分享:`+unescape($.fx.errmsg)`⚠️`+`\n`
-     }
-    if ($.sc.retcode == 0) {
-      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`✅`+`\n`
-    }
-	 else if ($.sc.retcode == -1) {
-      $.desc += `收藏结果:`+unescape($.sc.errmsg)+`⚠️`+`\n`
-    }
-    if ($.tenplay.retcode == 0) {
-      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`✅`+`\n`
-    }
-	 else if ($.tenplay.retcode == -1) {
-      $.desc += `播放结果:`+unescape($.tenplay.errmsg)+`⚠️`+`\n`
-    }
     $.msg($.name, $.subt, $.desc)
     resolve()
   })
 }
-
-function showboxmsg() {
-  return new Promise((resolve) => {
-    if ($.box.retcode == 0) {
-      $.desc += `开箱结果:`+unescape($.box.errmsg)+`✅`+`\n`
-    }
-	 else if ($.box.retcode == -1) {
-      $.desc += `开箱结果:`+unescape($.box.errmsg)+`⚠️`+`\n`
-    }
-    if ($.box6.retcode == 0) {
-      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`✅`+`\n`
-    }
-	 else if ($.box6.retcode == -1) {
-      $.desc += `开箱结果:`+unescape($.box6.errmsg)+`⚠️`+`\n`
-    }
-    $.msg($.name, $.subt, $.desc)
-    resolve()
-  })
-}
-
 
 
 // prettier-ignore
