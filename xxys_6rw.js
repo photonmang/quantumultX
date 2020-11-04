@@ -20,7 +20,7 @@ if  (days == 6) {
   await pl()    
   await ad()    
   await fx()    
-for (let s = 0; s < 1; s ++) {
+for (let s = 0; s < 5; s ++) {
         await sc();
         i = s + 1;
 console.log(`\n开始收藏:第`+i+`次`)
@@ -31,7 +31,7 @@ console.log(`\n收藏失败:开始重新执行收藏任务`)
 await $.wait(1000);
 }
       }
-for (let ten = 0; ten < 1; ten ++) {
+for (let ten = 0; ten < 10; ten ++) {
         await tenplay();
         i = ten + 1;
 console.log(`\n开始播放:第`+i+`次`)
@@ -57,7 +57,7 @@ function sign() {
       try {
         $.sign = JSON.parse(data)
     if ($.sign.retcode == 0) {
-      $.desc += `签到:`+unescape($.sign.errmsg)+`✅`+`\n`
+      $.desc = `签到:`+unescape($.sign.errmsg)+`✅`+`\n`
      } else if ($.sign.retcode == -1) {
       $.desc = `签到:`+unescape($.sign.errmsg)+`⚠️`+`\n`
      } 
