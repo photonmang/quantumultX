@@ -2,7 +2,7 @@
  * @Author: lxk0301 
  * @Date: 2020-10-21 17:04:04 
  * @Last Modified by: lxk0301
- * @Last Modified time: 2020-11-02 00:35:04
+ * @Last Modified time: 2020-11-05 00:35:04
  */
 /**
  星推官脚本 https://raw.githubusercontent.com/lxk0301/scripts/master/jd_xtg.js
@@ -11,7 +11,7 @@
  京豆先到先得！！！！！！！！！！！
  出现任务做完没领取的情况，就再运行一次脚本
  能做完所有的任务，包括自动抽奖,脚本会给内置的shareId助力
- 一共17个活动，耗时比较久，surge请加大延迟时间
+ 一共23个活动，耗时比较久，surge请加大timeout时间
  支持京东双账号
  脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
  // quantumultx
@@ -66,6 +66,8 @@ const starID = [
   "kongtiaozhangjike",
   "sanxingningjing",
   "xiaojiadianxiongziqi",
+  "heidianliyitong",
+  "oulebzhangyixing",
 ];
 const shareID = [];
 const JD_API_HOST = 'https://urvsaggpt.m.jd.com/guardianstar';
@@ -98,9 +100,9 @@ const JD_API_HOST = 'https://urvsaggpt.m.jd.com/guardianstar';
         $.j = index;
         await JD_XTG();
       }
-      console.log(`\n等待3秒后，再去领取奖励\n`)
+      console.log(`\n等待8秒后，再去领取奖励\n`)
       console.log(`做任务之前京豆总计:${$.beanCount}`)
-      await $.wait(3000);
+      await $.wait(8000);
       for (let index = 0; index < starID.length; index ++) {
         $.activeId = starID[index];
         $.j = index;
