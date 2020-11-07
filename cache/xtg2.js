@@ -80,7 +80,7 @@ const JD_API_HOST = 'https://urvsaggpt.m.jd.com/guardianstar';
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1])
-      $.index = i + 1;
+      $.index = 2;
       $.beanCount = 0;
       $.jdNum = 0;
       $.isLogin = true;
