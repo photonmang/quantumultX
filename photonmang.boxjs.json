@@ -1,0 +1,18 @@
+{
+  "id": "photonmang.app.sub",
+  "name": "photonmang应用订阅",
+  "author": "@photonmang",
+  "icon": "https://avatars3.githubusercontent.com/u/42340256?s=460&v=4",
+  "repo": "https://github.com/photonmang/quantumultX",
+  "apps": [
+    {
+      "id": "xxysrw",
+      "name": "小小影视",
+      "keys": ["py_signheader_xxys"],
+      "author": "@photonmang",
+      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js",
+      "script": "https://github.com/photonmang/quantumultX",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/xxys.png", "https://raw.githubusercontent.com/Orz-3/task/master/xxys.png"]
+    }
+  ]
+}
