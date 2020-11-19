@@ -13,6 +13,15 @@
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js",
       "script": "https://github.com/photonmang/quantumultX",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/xxys.png", "https://raw.githubusercontent.com/Orz-3/task/master/xxys.png"]
+    },
+    {
+      "id": "Tuhu",
+      "name": "途虎养车",
+      "keys": ["photonmang_signheader_tuhu"],
+      "author": "@photonmang",
+      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.js",
+      "script": "https://github.com/photonmang/quantumultX",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/tuhu.png", "https://raw.githubusercontent.com/Orz-3/task/master/tuhu.png"]
     }
   ]
 }
