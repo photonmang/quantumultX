@@ -9,7 +9,7 @@
     "name": "京东",
     "keys": ["CookieJD", "CookieJD2", "CookieJD3"],
     "descs_html": [
-      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js\">脚本注释</a></h4>",
+      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/JD/JD_DailyBonus.js\">脚本注释</a></h4>",
       "<br />",
       "<h3 align=\"center\">签到相关教程</h3>",
       "<p align=\"center\"><iframe src=\"https://www.youtube.com/embed/6vMz1LKF1-8\" width=\"100%\" height=\"100%\"></iframe></p>"
