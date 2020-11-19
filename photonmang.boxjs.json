@@ -17,9 +17,7 @@
     {
       "id": "Keep",
       "name": "Keep",
-      "settings": [{ "id": "startDate", "name": "训练开始时间", "val": "", "type": "textarea", "placeholder": "20200923", "desc": "训练时间格式" },
-                   { "id": "endDate", "name": "训练结束时间", "val": "", "type": "textarea", "placeholder": "20201115", "desc": "训练结束时间需大于等于84天" }],
-      "keys": [],
+      "keys": ["startDate","endDate"],
       "author": "@photonmang",
       "repo": "https://github.com/photonmang/quantumultX/raw/master/keep.js",
       "script": "https://github.com/photonmang/quantumultX",
