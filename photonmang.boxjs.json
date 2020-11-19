@@ -17,15 +17,11 @@
     {
       "id": "Keep",
       "name": "Keep",
-      "keys": [],
-       "settings": [
-        { "id": "startDate", "name": "训练开始时间", "val": "", "type": "textarea", "desc": "时间格式示例20200923" },
-        { "id": "endDate", "name": "训练结束时间", "val": "", "type": "textarea", "desc": "可以随意设置大于等于84天，时间格式示例20201115" },
-      ],
+      "keys": ["startDate","endDate"],
       "author": "@photonmang",
       "repo": "https://github.com/photonmang/quantumultX/raw/master/keep.js",
       "script": "https://github.com/photonmang/quantumultX",
-      "icons": []
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/xxys.png"]
     }
   ]
 }
