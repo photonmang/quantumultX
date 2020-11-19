@@ -1,0 +1,248 @@
+{
+  "id": "photonmang.app.sub",
+  "name": "photonmang 脚本订阅",
+  "author": "@photonmang",
+  "icon": "https://avatars2.githubusercontent.com/u/53217160",
+  "repo": "https://github.com/NobyDa/Script/tree/master",
+  "apps": [{
+    "id": "多合一签到",
+    "name": "京东",
+    "keys": ["CookieJD", "CookieJD2", "CookieJD3"],
+    "descs_html": [
+      "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js\">脚本注释</a></h4>",
+      "<br />",
+      "<h3 align=\"center\">签到相关教程</h3>",
+      "<p align=\"center\"><iframe src=\"https://www.youtube.com/embed/6vMz1LKF1-8\" width=\"100%\" height=\"100%\"></iframe></p>"
+    ],
+    "settings": [{
+      "id": "JD_DailyBonusLog",
+      "name": "详细响应日志",
+      "val": false,
+      "type": "boolean",
+      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+    }, {
+      "id": "JD_Crash_disable",
+      "name": "崩溃自动禁用",
+      "val": true,
+      "type": "boolean",
+      "desc": "脚本运行崩溃时(如VPN断连), 下次运行时将自动禁用相关崩溃接口(仅部分接口启用), 注: 崩溃时可能会误禁用正常接口."
+    }, {
+      "id": "JD_Retry_disable",
+      "name": "签到接口增强",
+      "val": true,
+      "type": "boolean",
+      "desc": "用于部分接口提示\"不含活动数据\"问题, 开启后会进行二次查询, 注: 可能会导致崩溃(小概率)."
+    }, {
+      "id": "JD_Follow_disable",
+      "name": "自动关注店铺",
+      "val": true,
+      "type": "boolean",
+      "desc": "部分接口签到过程可能需要关注店铺, 如介意可选择关闭."
+    }, {
+      "id": "JD_DailyBonusDisables",
+      "name": "签到接口禁用",
+      "val": "",
+      "type": "checkboxes",
+      "desc": "",
+      "items": [{
+        "key": "SpeedUp",
+        "label": "天天加速"
+      }, {
+        "key": "JDBean",
+        "label": "京东京豆"
+      }, {
+        "key": "JDWebcasts",
+        "label": "京东直播"
+      }, {
+        "key": "JRBean",
+        "label": "金融金贴"
+      }, {
+        "key": "JRDoll",
+        "label": "金融签壹"
+      }, {
+        "key": "JRTwoDoll",
+        "label": "金融签贰"
+      }, {
+        "key": "JRThreeDoll",
+        "label": "金融签叁"
+      }, {
+        "key": "JRFourDoll",
+        "label": "金融签肆"
+      }, {
+        "key": "JRFiveDoll",
+        "label": "金融签伍"
+      }, {
+        "key": "JRSixDoll",
+        "label": "金融签陆"
+      }, {
+        "key": "JRLottery",
+        "label": "金融抽奖"
+      }, {
+        "key": "JRSteel",
+        "label": "金融钢镚"
+      }, {
+        "key": "JDTurn",
+        "label": "京东转盘"
+      }, {
+        "key": "JDGStore",
+        "label": "京东超市"
+      }, {
+        "key": "TakeaLook",
+        "label": "京东看看"
+      }, {
+        "key": "JDComputer",
+        "label": "京东电脑"
+      }, {
+        "key": "JDConstell",
+        "label": "京东京鱼"
+      }, {
+        "key": "JDSuitcase",
+        "label": "京东箱包"
+      }, {
+        "key": "JDToyMusic",
+        "label": "京东乐器"
+      }, {
+        "key": "JD3C",
+        "label": "京东数码"
+      }, {
+        "key": "JDUnderwear",
+        "label": "京东内衣"
+      }, {
+        "key": "JDDrug",
+        "label": "京东医药"
+      }, {
+        "key": "JDChild",
+        "label": "京东童装"
+      }, {
+        "key": "JDBaby",
+        "label": "京东母婴"
+      }, {
+        "key": "JDSubsidy",
+        "label": "京东晚市"
+      }, {
+        "key": "JDFineWine",
+        "label": "京东酒饮"
+      }, {
+        "key": "JDCash",
+        "label": "京东红包"
+      }, {
+        "key": "JDFSale",
+        "label": "京东闪购"
+      }, {
+        "key": "Overseas",
+        "label": "京东国际"
+      }, {
+        "key": "JDBook",
+        "label": "京东图书"
+      }, {
+        "key": "JDSchool",
+        "label": "京东校园"
+      }, {
+        "key": "JDShoes",
+        "label": "京东鞋靴"
+      }, {
+        "key": "JDEsports",
+        "label": "京东电竞"
+      }, {
+        "key": "JDHealth",
+        "label": "京东健康"
+      }, {
+        "key": "JDCalendar",
+        "label": "京东日历"
+      }, {
+        "key": "JDWomen",
+        "label": "京东女装"
+      }, {
+        "key": "JDSecKill",
+        "label": "京东秒杀"
+      }, {
+        "key": "JTDouble",
+        "label": "金贴双签"
+      }, {
+        "key": "JDShand",
+        "label": "京东二手 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDMakeup",
+        "label": "京东美妆 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDClocks",
+        "label": "京东钟表 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDVege",
+        "label": "京东菜场 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDPet",
+        "label": "京东宠物 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDFood",
+        "label": "京东美食 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDClean",
+        "label": "京东清洁 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDCare",
+        "label": "京东个护 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDJewels",
+        "label": "京东珠宝 (如VPN重启,建议禁用)"
+      }, {
+        "key": "JDCube",
+        "label": "京东魔方"
+      }, {
+        "key": "JDBuyCar",
+        "label": "京东汽车"
+      }, {
+        "key": "JRDSign",
+        "label": "金融双签"
+      }, {
+        "key": "subsidy",
+        "label": "京东金贴"
+      }, {
+        "key": "JDGetCash",
+        "label": "京东现金"
+      }, {
+        "key": "JDShake",
+        "label": "京东摇一摇"
+      }, {
+        "key": "Qbear",
+        "label": "总京豆查询"
+      }, {
+        "key": "TCash",
+        "label": "总红包查询"
+      }, {
+        "key": "TSteel",
+        "label": "总钢镚查询"
+      }, {
+        "key": "TotalSubsidy",
+        "label": "总金贴查询"
+      }, {
+        "key": "TotalMoney",
+        "label": "总现金查询"
+      }]
+    }, {
+      "id": "JD_DailyBonusTimeOut",
+      "name": "超时退出 (毫秒)",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认无超时 (点击以展开说明)",
+      "desc": "按需填写, 用于由网络不稳定引起的脚本中断, 正常或越狱用户建议留空. 如QX日志出现大量\"JS Context timeout\"后脚本中断时, 建议填写6000"
+    }, {
+      "id": "JD_DailyBonusDelay",
+      "name": "接口延迟 (毫秒)",
+      "val": "",
+      "type": "number",
+      "placeholder": "默认并发无延迟 (点击以展开说明)",
+      "desc": "延迟作用于每个签到接口, 如填入延迟则切换顺序签到(耗时较长), VPN重启或越狱用户建议填写1, Surge用户请注意在SurgeUI界面调整脚本超时"
+    }],
+    "scripts": [{
+      "name": "京东签到",
+      "script": "https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js"
+    }, {
+      "name": "初始化设置",
+      "script": "https://gist.githubusercontent.com/NobyDa/91cbe57dd50b3588a975af8922507a72/raw/JD_initial.js"
+    }],
+    "author": "@Nphotonmang",
+    "repo": "https://github.com/photonmang/quantumultX/",
+    "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/jd.png", "https://raw.githubusercontent.com/Orz-3/task/master/jd.png"]
+  }]
+}
