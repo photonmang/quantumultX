@@ -236,7 +236,7 @@
     }],
     "scripts": [{
       "name": "京东签到",
-      "script": "https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js"
+      "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/JD/JD_DailyBonus.js"
     }, {
       "name": "初始化设置",
       "script": "https://gist.githubusercontent.com/NobyDa/91cbe57dd50b3588a975af8922507a72/raw/JD_initial.js"
