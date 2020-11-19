@@ -13,15 +13,6 @@
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js",
       "script": "https://github.com/photonmang/quantumultX",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/xxys.png", "https://raw.githubusercontent.com/Orz-3/task/master/xxys.png"]
-    },
-    {
-      "id": "Keep",
-      "name": "Keep",
-      "keys": ["startDate","endDate"],
-      "author": "@photonmang",
-      "repo": "https://github.com/photonmang/quantumultX/raw/master/keep.js",
-      "script": "https://github.com/photonmang/quantumultX",
-      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/feng.png", "https://raw.githubusercontent.com/Orz-3/task/master/feng.png"]
     }
   ]
 }
