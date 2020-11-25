@@ -440,7 +440,7 @@ resolve()
 function getReward() {
   return new Promise((resolve, reject) => {
     let url = { 
-     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=55`, 
+     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=49`, 
      headers: JSON.parse(signheaderVal),
    }
     $.get(url, (error, response, data) => {
