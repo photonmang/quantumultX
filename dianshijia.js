@@ -148,7 +148,7 @@ function signinfo() {
        var j = result.data.recentDays[i].rewards.length
        if (j > 1){
                 //detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}  `
-                  detail += `【奖励信息】今日:0.2元额度`
+                  detail += `【奖励信息】今日:0.3元额度`
 
                  } 
           else   if (j == 1) 
@@ -158,7 +158,7 @@ function signinfo() {
         var k = result.data.recentDays[i+1].rewards.length
         if ( k > 1 ) {
           //detail += ` 明日: `+ result.data.recentDays[i+1].rewards[1].name+`\n`
-            detail += ` 明日:0.2元额度`+`\n`
+            detail += ` 明日:0.3元额度`+`\n`
                  }  
            else  { 
               detail += `明日: 无\n`
