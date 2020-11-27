@@ -155,8 +155,8 @@
 "0 9 * * * https://ooxx.be/js/jegotrip.js, tag=无忧行, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jegotrip.png, enabled=false",
 "0 18 * * * https://ooxx.be/js/maoyan.js, tag=猫眼电影, img-url=https://raw.githubusercontent.com/Orz-3/task/master/maoyan.png, enabled=false",
 "0 9 * * * https://ooxx.be/js/umer.js, tag=优麦医生, img-url=https://raw.githubusercontent.com/Orz-3/task/master//umer.png, enabled=false",
-"30 8,13,19 * * * https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/angelalign/angelalign.task.js, tag=时代天使, enabled=false", img-url=https://raw.githubusercontent.com/Orz-3/task/master/angelalign.png
-"10 0 * * * https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/nga/nga.js, tag=NGA刮墙, enabled=false", img-url=https://raw.githubusercontent.com/Orz-3/task/master//nga.png
+"30 8,13,19 * * * https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/angelalign/angelalign.task.js, tag=时代天使, img-url=https://raw.githubusercontent.com/Orz-3/task/master/angelalign.png, enabled=false",
+"10 0 * * * https://raw.githubusercontent.com/chouchoui/QuanX/master/Scripts/nga/nga.js, tag=NGA刮墙,img-url=https://raw.githubusercontent.com/Orz-3/task/master//nga.png, enabled=false", 
 "0 0 6 * * * https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/nasa/nasapic.js, tag=NASA每日一图, img-url=https://raw.githubusercontent.com/Orz-3/task/master/nasa.png, enabled=false",
 "45 3 8 * * * https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/weibo/weibotalk.js, tag=微博超话, img-url=https://raw.githubusercontent.com/Orz-3/task/master/weibo.png, enabled=false",
 "0 4 8 * * *  https://raw.githubusercontent.com/evilbutcher/Quantumult_X/master/check_in/funboat/funboat.js, tag=Funboat, img-url=https://raw.githubusercontent.com/Orz-3/task/master/funboat.png, enabled=false",
