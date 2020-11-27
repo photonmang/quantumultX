@@ -199,6 +199,6 @@
             "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/mygmcSign.js, tag=民盈国贸城, img-url=https://raw.githubusercontent.com/Orz-3/task/master/mygmc.png, enabled=false",
             "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/qkylck.js, tag=趣客有礼, img-url=https://raw.githubusercontent.com/Orz-3/task/master/qkyl.png, enabled=false",
             "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/wsxqSign.js, tag= 微商星球, img-url=https://raw.githubusercontent.com/Orz-3/task/master/wsxq.png, enabled=false",
-            "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/zscdbSign.js, tag=追书畅读版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/zscdb.png, enabled=false",
+            "0 10 0 * * * https://raw.githubusercontent.com/XidNDD/2020scripts/master/zscdbSign.js, tag=追书畅读版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/zscdb.png, enabled=false"
     ]
 }
