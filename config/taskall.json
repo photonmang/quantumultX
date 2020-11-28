@@ -2,6 +2,7 @@
     "name": "quantumultX all Task",
     "description": "这是收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
     "task": [
+"0 */20 0-23 * * * https://gitee.com/hanfuxing/personal-collection/raw/master/QQReadSign.js, tag=QQ阅读APP, enabled=false",
 "0 10 0 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_woHome.js, tag=东东小窝, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "0 10 0 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js, tag=抽奖机, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "0 13 9 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_rankingList.js, tag=排行榜, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
