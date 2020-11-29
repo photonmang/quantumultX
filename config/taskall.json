@@ -2,7 +2,8 @@
     "name": "quantumultX all Task",
     "description": "这是收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
     "task": [
-"*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js, tag=中青阅读(改), img-url=book.circle.fill.system, enabled=false",
+"*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js, tag=中青阅读, img-url=book.circle.fill.system, enabled=false",
+"0 9 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, tag=中青看点极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/youth.png, enabled=false",
 "10 * * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_dreamFactory.js, tag=京喜工厂, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jingxi.png,enabled=false",
 "0 */20 0-23 * * * https://gitee.com/hanfuxing/personal-collection/raw/master/QQReadSign.js, tag=QQ阅读APP, enabled=false",
 "0 10 0 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_woHome.js, tag=东东小窝, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
@@ -51,7 +52,6 @@
 "10 0 8 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.js, tag=途虎养车, img-url=https://raw.githubusercontent.com/Orz-3/task/master/tuhu.png, enabled=false",
 "0 10,22 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js, tag=小小影视, img-url=https://raw.githubusercontent.com/Orz-3/task/master/xxys.png, enabled=false",
 "0 10 */3 * * https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/dianx/dianx.js, tag=电信金豆兑换话费, img-url=https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/dianx/dianx.png, enabled=false",
-"0 9 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, tag=中青看点极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/youth.png, enabled=false",
 "1 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/midu/miduSign.js, tag=米读签到, img-url=https://raw.githubusercontent.com/Orz-3/task/master/midu.png, enabled=false",
 "1 0 * * * https://raw.githubusercontent.com/chavyleung/scripts/master/midu/miduRead.js, tag=米读阅读时长, img-url=https://raw.githubusercontent.com/Orz-3/task/master/midu.png, enabled=false",
 "0 9 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/txnews.js, tag=腾讯新闻, img-url=https://raw.githubusercontent.com/Orz-3/task/master/txnews.png, enabled=false",
