@@ -71,8 +71,7 @@
 					"autoGrow": false,
 					"rows": 1,
 					"desc": "请求头CK"
-				}
-				,
+				}],
       "author": "@ziye12",
       "repo": "https://raw.githubusercontent.com/ziye12/JavaScript/master/qqread.js",
       "script": "https://github.com/ziye12/JavaScript/",
