@@ -61,14 +61,7 @@
         {
       "id": "qqreads",
       "name": "QQ阅读",
-      "keys": ["qqreadurlVal"],
-      "settings": [{
-      "id": "logs",
-      "name": "响应日志",
-      "val": 0,
-      "type": "boolean",
-      "desc": ""
-    }],
+      "keys": ["qqreadurlVal","qqreadurlVal","qqreadheaderVal","qqreadbodyVal","qqreadtimeurlVal","qqreadtimeheaderVal"],
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/ziye12/JavaScript/master/qqread.js",
       "script": "https://github.com/ziye12/JavaScript/",
