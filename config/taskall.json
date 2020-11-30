@@ -4,6 +4,7 @@
     "task": [
 "0 9 * * * https://raw.githubusercontent.com/whyour/hundun/master/quanx/jdzz.js, tag=京东赚赚, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdzz.png, enabled=false",
 "*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js, tag=中青阅读, img-url=book.circle.fill.system, enabled=false",
+"*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ2.js, tag=中青阅读2, img-url=book.circle.fill.system, enabled=false",
 "0 9 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/youth.js, tag=中青看点极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/youth.png, enabled=false",
 "10 * * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_dreamFactory.js, tag=京喜工厂, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jingxi.png,enabled=false",
 "0 */20 0-23 * * * https://gitee.com/hanfuxing/personal-collection/raw/master/QQReadSign.js, tag=QQ阅读APP, enabled=false",
