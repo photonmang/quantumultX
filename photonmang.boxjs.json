@@ -61,10 +61,10 @@
         {
       "id": "qqreads",
       "name": "QQ阅读",
-      "keys": ["qqreadheaderKey"],
+      "keys": ["qqreadurlVal"],
       "settings": [
 				{
-					"id": "qqreadheaderKey",
+					"id": "qqreadurlVal",
 					"name": "请求头",
 					"val": "",
 					"type": "textarea",
