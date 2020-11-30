@@ -61,7 +61,7 @@
         {
       "id": "qqreads",
       "name": "QQ阅读",
-      "keys": ["qqreadurlKey"],
+      "keys": ["qqreadurlVal"],
       "settings": [{
       "id": "logs",
       "name": "响应日志",
