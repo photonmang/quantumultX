@@ -170,7 +170,6 @@
 "0 1 * * * https://raw.githubusercontent.com/id77/QuantumultX/master/task/thg.js, tag=太好购, img-url=https://raw.githubusercontent.com/Orz-3/task/master/thg.png, enabled=false",
 "2 10 * * * https://raw.githubusercontent.com/id77/QuantumultX/master/task/163GameVip.js, tag=网易游戏会员签到, img-url=https://raw.githubusercontent.com/Orz-3/task/master/163GameVip.png, enabled=false",
 "1 0 * * * https://raw.githubusercontent.com/id77/QuantumultX/master/task/geekhub.js, tag=geekhub, img-url=https://raw.githubusercontent.com/Orz-3/task/master/geekhub.png, enabled=false",
-"10 12 25,1 * * https://raw.githubusercontent.com/id77/QuantumultX/master/task/10000.js, tag=电信余额提醒, img-url=https://raw.githubusercontent.com/Orz-3/task/master/10000.png, enabled=false",
 "1 0 * * * https://raw.githubusercontent.com/dompling/Script/master/birthdayCountDown/index.js, tag=生日倒计时, img-url=https://raw.githubusercontent.com/Orz-3/task/master/birthday.png, enabled=false",
 "1 9 * * * https://raw.githubusercontent.com/dompling/Script/master/xiaomiyp/xiaomiyp.js, tag=小米有品, img-url=https://raw.githubusercontent.com/Orz-3/task/master/xiaomiyp.png, enabled=false",
 "1 9 * * * https://raw.githubusercontent.com/dompling/Script/master/oneSay/oneSay.js, tag=每日一言, img-url=https://raw.githubusercontent.com/Orz-3/task/master/calendar.png, enabled=false",
