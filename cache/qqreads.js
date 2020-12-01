@@ -6,7 +6,7 @@
 
 
 
-多账号版，请先用单脚本 通过修改jbid的方法，获取 每个账号的cookie   然后在下面👇填写进去
+多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
 
 
@@ -41,7 +41,7 @@ var index=zhs+2;
 
  {
    
-   for(var i=0;i<index;i++)//修改为i<账号数➕2
+   for(var i=0;i<index;i++)
  { (function(i) {
             setTimeout(function() {
 
@@ -67,11 +67,11 @@ all();
 
 
 
-if (i!=zhs)fgx()//自己修改为账号数
+if (i!=zhs)fgx()
 
-if (i==zhs) showmsg()//自己修改为账号数
+if (i==zhs) showmsg()
 
-if (i==index) $.done()//自己修改为账号数➕1
+if (i==index) $.done()
 
  }
 
