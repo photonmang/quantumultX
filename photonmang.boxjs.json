@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["jbidhj"],
+			"keys": ["jbidhj","jbid"],
 			"settings": [
 				{
 					"id": "jbidhj",
@@ -72,6 +72,16 @@
 					"autoGrow": true,
 					"rows": 1,
 					"desc": "以英文逗号分隔多个账号数，如2个就是1,2"
+				},
+                                 {
+					"id": "jbid",
+					"name": "ID号",
+					"val": "",
+					"type": "textarea",
+					"placeholder": "",
+					"autoGrow": true,
+					"rows": 1,
+					"desc": "第几个账号就填对应数字，如第一个账号填写1"
 				}
 			],
 			"author": "@photonmang",
