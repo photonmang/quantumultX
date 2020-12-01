@@ -78,7 +78,7 @@
 					"name": "获取账号Cookie",
 					"val": "",
 					"type": "textarea",
-					"placeholder": "",
+					"placeholder": "1",
 					"autoGrow": true,
 					"rows": 1,
 					"desc": "第几个账号就填对应数字，如第一个账号填写1"
