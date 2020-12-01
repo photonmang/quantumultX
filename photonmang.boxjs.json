@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": [],
+			"keys": ["jbidhj"],
 			"settings": [
 				{
 					"id": "jbidhj",
@@ -77,8 +77,8 @@
 			"author": "@photonmang",
 			"repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js",
 			"icons": [
-				"https://raw.githubusercontent.com/Orz-3/mini/master/qq.png",
-				"https://raw.githubusercontent.com/Orz-3/task/master/qq.png"
+				"https://raw.githubusercontent.com/Orz-3/mini/master/QQ.png",
+				"https://raw.githubusercontent.com/Orz-3/task/master/QQ.png"
 			]
 		}
   ]
