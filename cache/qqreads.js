@@ -36,7 +36,7 @@ const zhs=$.getdata('zhs');
 
 var tz=''
 var index=zhs+3;
-
+var index1=zhs-1;
  function xxx()
 
  {
@@ -71,7 +71,7 @@ if (i!=zhs)fgx()
 
 if (i==zhs) showmsg()
 
-if (i==index) $.done()
+if (i==index1) $.done()
 
  }
 
