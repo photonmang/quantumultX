@@ -57,6 +57,29 @@
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.js",
       "script": "https://github.com/photonmang/quantumultX",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/tuhu.png", "https://raw.githubusercontent.com/Orz-3/task/master/tuhu.png"]
-    }
+    },
+		{
+			"id": "qqreads",
+			"name": "QQ阅读多账号管理",
+			"keys": [],
+			"settings": [
+				{
+					"id": "jbidhj",
+					"name": "多账号管理",
+					"val": "",
+					"type": "textarea",
+					"placeholder": "1,2",
+					"autoGrow": true,
+					"rows": 1,
+					"desc": "以英文逗号分隔多个账号数，如2个就是1,2"
+				}
+			],
+			"author": "@photonmang",
+			"repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js",
+			"icons": [
+				"https://raw.githubusercontent.com/Orz-3/mini/master/qq.png",
+				"https://raw.githubusercontent.com/Orz-3/task/master/qq.png"
+			]
+		}
   ]
 }
