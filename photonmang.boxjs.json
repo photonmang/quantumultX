@@ -82,6 +82,16 @@
 					"autoGrow": true,
 					"rows": 1,
 					"desc": "第几个账号就填对应数字，如第一个账号填写1"
+				},
+				{
+					"id": "zhs",
+					"name": "总输出账号数",
+					"val": "",
+					"type": "textarea",
+					"placeholder": "2",
+					"autoGrow": true,
+					"rows": 1,
+					"desc": "默认只显示2个账号，如有N个账号请填写对应数字"
 				}
 			],
 			"author": "@photonmang",
