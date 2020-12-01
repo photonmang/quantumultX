@@ -85,7 +85,7 @@
 				},
 				{
 					"id": "zhs",
-					"name": "总输出账号数",
+					"name": "总输出账号数(请在原数上加1)",
 					"val": "",
 					"type": "textarea",
 					"placeholder": "2",
