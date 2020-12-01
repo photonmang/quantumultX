@@ -39,8 +39,8 @@ var tz=''
  function xxx()
 
  {
-
-   for(var i=0;i<'zhs'+2;i++)//修改为i<账号数➕2
+    var index='zhs'+2;
+   for(var i=0;i<index;i++)//修改为i<账号数➕2
  { (function(i) {
             setTimeout(function() {
 
@@ -66,11 +66,11 @@ all();
 
 
 
-if (i!='zhs')fgx()//自己修改为账号数
+if (i!=zhs)fgx()//自己修改为账号数
 
-if (i=='zhs') showmsg()//自己修改为账号数
-
-if (i=='zhs'+1) $.done()//自己修改为账号数➕1
+if (i==zhs) showmsg()//自己修改为账号数
+var zs=index-1;
+if (i==zs) $.done()//自己修改为账号数➕1
 
  }
 
