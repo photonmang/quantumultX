@@ -36,7 +36,6 @@ const zhs=$.getdata('zhs');
 
 var tz=''
 var index=zhs+2;
-var index1=zhs+1;
 
  function xxx()
 
@@ -72,7 +71,7 @@ if (i!=zhs)fgx()//自己修改为账号数
 
 if (i==zhs) showmsg()//自己修改为账号数
 
-if (i==index1) $.done()//自己修改为账号数➕1
+if (i==index) $.done()//自己修改为账号数➕1
 
  }
 
