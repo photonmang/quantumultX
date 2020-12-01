@@ -61,7 +61,7 @@
         {
       "id": "qqreads",
       "name": "QQ阅读",
-      "keys": ["qqreadurl"],
+      "keys": ["qqreadurlVal,qqreadurlKey"],
       "settings": [
 				{
 					"id": "qqreadurl",
