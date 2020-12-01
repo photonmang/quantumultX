@@ -35,11 +35,13 @@ const jbidhj=$.getdata('jbidhj');
 const zhs=$.getdata('zhs'); 
 
 var tz=''
+var index=zhs+2;
+var index1=zhs+1;
 
  function xxx()
 
  {
-    var index='zhs'+2;
+   
    for(var i=0;i<index;i++)//修改为i<账号数➕2
  { (function(i) {
             setTimeout(function() {
@@ -69,8 +71,8 @@ all();
 if (i!=zhs)fgx()//自己修改为账号数
 
 if (i==zhs) showmsg()//自己修改为账号数
-var zs=index-1;
-if (i==zs) $.done()//自己修改为账号数➕1
+
+if (i==index1) $.done()//自己修改为账号数➕1
 
  }
 
@@ -102,13 +104,6 @@ tz+='👤'+'\n'
 
     
   }  
-
-
-
-
-
-///////////////////////////改上面的👆
-
 
 
 function all()
