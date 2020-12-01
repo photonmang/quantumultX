@@ -35,7 +35,7 @@ const jbidhj=$.getdata('jbidhj');
 const zhs=$.getdata('zhs'); 
 
 var tz=''
-var index=zhs+2;
+var index=zhs+3;
 
  function xxx()
 
