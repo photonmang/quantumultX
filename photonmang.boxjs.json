@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["jbidhj","jbid","qqreadhd3"],
+			"keys": ["jbidhj","jbid"],
 			"settings": [
 				{
 					"id": "jbidhj",
