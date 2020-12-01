@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["jbidhj","jbid"],
+			"keys": ["jbidhj","jbid","qqreadhd"],
 			"settings": [
 				{
 					"id": "jbidhj",
@@ -75,7 +75,7 @@
 				},
                                  {
 					"id": "jbid",
-					"name": "ID号",
+					"name": "账号ID获取",
 					"val": "",
 					"type": "textarea",
 					"placeholder": "",
