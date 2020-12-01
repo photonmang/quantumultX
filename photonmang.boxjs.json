@@ -57,26 +57,6 @@
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.js",
       "script": "https://github.com/photonmang/quantumultX",
       "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/tuhu.png", "https://raw.githubusercontent.com/Orz-3/task/master/tuhu.png"]
-    },
-        {
-      "id": "qqreads",
-      "name": "QQ阅读",
-      "keys": ["qqreadtimeheaderKey"],
-      "settings": [
-		{
-		"id": "qqreadtimeheaderKey",
-		"name": "cookieID",
-		"val": "",
-		"type": "textarea",
-		"placeholder": "",
-		"autoGrow": false,
-		"rows": 1,
-		"desc": ""
-				}],
-      "author": "@ziye12",
-      "repo": "https://raw.githubusercontent.com/ziye12/JavaScript/master/qqread.js",
-      "script": "https://github.com/ziye12/JavaScript/",
-      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/QQ.png", "https://raw.githubusercontent.com/Orz-3/task/master/QQ.png"]
     }
   ]
 }
