@@ -61,10 +61,10 @@
         {
       "id": "qqreads",
       "name": "QQ阅读",
-      "keys": ["zqgetbody_body1"],
+      "keys": ["qqreadtimeheaderKey"],
       "settings": [
 		{
-		"id": "zqgetbody_body1",
+		"id": "qqreadtimeheaderKey",
 		"name": "cookieID",
 		"val": "",
 		"type": "textarea",
