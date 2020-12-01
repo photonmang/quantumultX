@@ -36,7 +36,7 @@ const zhs=$.getdata('zhs');
 
 var tz=''
 var index=zhs+3;
-var index1=zhs-1;
+var index1=zhs+1;
  function xxx()
 
  {
