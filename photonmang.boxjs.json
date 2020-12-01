@@ -61,15 +61,15 @@
         {
       "id": "qqreads",
       "name": "QQ阅读",
-      "keys": [],
+      "keys": ["zqgetbody_body1"],
       "settings": [
 		{
-		"id": "qqreadurlKey",
+		"id": "zqgetbody_body1",
 		"name": "cookieID",
 		"val": "",
 		"type": "textarea",
-		"placeholder": "'qqreadurl'+jbid",
-		"autoGrow": true,
+		"placeholder": "",
+		"autoGrow": false,
 		"rows": 1,
 		"desc": ""
 				}],
