@@ -67,7 +67,7 @@ all();
 
 
 
-if (i!= zhs) fgx()
+if (i%2== 0) fgx()
 
 if (i== zhs) showmsg()
 
