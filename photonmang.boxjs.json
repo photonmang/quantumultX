@@ -61,37 +61,37 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4"],
+			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhd10","qqreadtimehd10"],
 			"settings": [
 				{
 					"id": "jbidhj",
 					"name": "多账号管理",
 					"val": "",
 					"type": "textarea",
-					"placeholder": "1,2",
+					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "以英文逗号分隔多个账号数，如2个就是1,2"
+					"desc": "填写格式示例：1,2 以英文逗号分隔多个账号数，如2个账号就是1,2"
 				},
                                  {
 					"id": "jbid",
 					"name": "获取账号Cookie",
 					"val": "",
 					"type": "textarea",
-					"placeholder": "1",
+					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "第几个账号就填对应数字，如第一个账号填写1"
+					"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推"
 				},
 				{
 					"id": "zhs",
 					"name": "总输出账号数(请在原数上+2)",
 					"val": "",
 					"type": "textarea",
-					"placeholder": "3",
+					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "如两个账号输入3,三个账号输入5,四个账号输入7，依次类推"
+					"desc": "这里是设置账号输出总数，1个账号1,2个账号输入3,3个账号输入5,4个账号输入7，依次类推！"
 				}
 			],
 			"author": "@photonmang",
