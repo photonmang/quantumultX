@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3"],
+			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4"],
 			"settings": [
 				{
 					"id": "jbidhj",
@@ -85,13 +85,13 @@
 				},
 				{
 					"id": "zhs",
-					"name": "总输出账号数(请在原数上加1)",
+					"name": "总输出账号数(请在原数上+2)",
 					"val": "",
 					"type": "textarea",
-					"placeholder": "2",
+					"placeholder": "3",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "默认只显示2个账号，如有N个账号请填写对应数字"
+					"desc": "如两个账号输入3,三个账号输入5,四个账号输入7，依次类推"
 				}
 			],
 			"author": "@photonmang",
