@@ -64,6 +64,13 @@
 			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda","qqreadhdb","qqreadtimehdb"],
 			"settings": [
 				{
+      "id": "logs",
+      "name": "详细响应日志",
+      "val": 1,
+      "type": "boolean",
+      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+    },
+				{
 					"id": "notifyInterval",
 					"name": "默认开启所有通知",
 					"val": "1",
