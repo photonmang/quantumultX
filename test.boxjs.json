@@ -64,6 +64,27 @@
 			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda","qqreadhdb","qqreadtimehdb"],
 			"settings": [
 				{
+					"id": "notifyInterval",
+                                        "name": "提示通知",
+                                        "val": 1,
+                                        "type": "boolean",
+                                        "desc": "默认开启通知"
+				},				
+				{
+					"id": "notifyInterval",
+                                        "name": "宝箱领取通知",
+                                        "val": 2,
+                                        "type": "boolean",
+                                        "desc": "宝箱领取成功通知"
+				},
+				{
+					"id": "notifyInterval",
+                                        "name": "宝箱通知次数",
+                                        "val": 3,
+                                        "type": "boolean",
+                                        "desc": "宝箱每18次通知一次"
+				},
+				{
 					"id": "jbidhj",
 					"name": "多账号管理",
 					"val": "",
