@@ -8,7 +8,10 @@
 
 多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
-
+⚠️cookie获取方法：
+进 http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14  点我的   获取cookie
+进一本书 看 10秒以下 然后退出，获取阅读时长cookie，看书一定不能超过10秒
+可能某些页面会卡住，但是能获取到cookie，再注释cookie重写就行了！
 
 */
 
