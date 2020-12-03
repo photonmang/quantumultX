@@ -69,13 +69,6 @@
                                         "val": 1,
                                         "type": "radios",
                                         "desc": "默认开启通知"
-"settings": [
-				{
-					"id": "notifyInterval",
-                                        "name": "提示通知",
-                                        "val": 1,
-                                        "type": "radios",
-                                        "desc": "默认开启通知"
 					"items": [
                                 {
                                         "key": "1",
@@ -90,7 +83,6 @@
                                         "label": "宝箱每18次通知一次"
                                  }
 				]
-				
 				},
 				{
 					"id": "jbidhj",
