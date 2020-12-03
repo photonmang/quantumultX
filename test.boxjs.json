@@ -65,11 +65,30 @@
 			"settings": [
 				{
 					"id": "notifyInterval",
-                                        "name": "提示通知",
-                                        "val": 1,
-                                        "type": "radios",
-                                        "desc": "默认开启通知"
-					},
+					"name": "默认开启所有通知",
+					"val": "1",
+					"type": "radios",
+					"desc": "请根据实际使用情况选择",
+                                        "items": [
+            {
+              "key": "0",
+              "label": "关闭通知"
+            },
+            {
+              "key": "1",
+              "label": "开启通知"
+            },
+            {
+              "key": "2",
+              "label": "宝箱领取成功通知"
+            },
+            {
+              "key": "3",
+              "label": "宝箱每18次通知一次"
+            }
+            
+          ]
+				},
 				{
 					"id": "jbidhj",
 					"name": "多账号管理",
