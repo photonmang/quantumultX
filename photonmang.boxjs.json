@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhd10","qqreadtimehd10"],
+			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhd10","qqreadtimehd10","qqreadhd11","qqreadtimehd11"],
 			"settings": [
 				{
 					"id": "jbidhj",
@@ -129,6 +129,10 @@
             {
               "key": "19",
               "label": "10个账号"
+            },
+            {
+              "key": "21",
+              "label": "11个账号"
             }
           ]
 				}
