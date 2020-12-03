@@ -67,22 +67,22 @@
 					"id": "notifyInterval",
                                         "name": "提示通知",
                                         "val": 1,
-                                        "type": "boolean",
+                                        "type": "radios",
                                         "desc": "默认开启通知"
-				},				
+					"items": [
+                                {
+                                        "key": "1",
+                                        "label": "提示通知"
+                                 }, 
 				{
-					"id": "notifyInterval",
-                                        "name": "宝箱领取通知",
-                                        "val": 2,
-                                        "type": "boolean",
-                                        "desc": "宝箱领取成功通知"
-				},
-				{
-					"id": "notifyInterval",
-                                        "name": "宝箱通知次数",
-                                        "val": 3,
-                                        "type": "boolean",
-                                        "desc": "宝箱每18次通知一次"
+                                        "key": "2",
+                                        "label": "宝箱领取通知"
+                                 },
+				 {
+                                        "key": "3",
+                                        "label": "宝箱每18次通知一次"
+                                 },
+			            ]
 				},
 				{
 					"id": "jbidhj",
