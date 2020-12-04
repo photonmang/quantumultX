@@ -5,62 +5,9 @@
   "icon": "https://avatars3.githubusercontent.com/u/42340256?s=460&v=4",
   "repo": "https://github.com/photonmang/quantumultX",
   "apps": [
-    {
-      "id": "xxysrw",
-      "name": "小小影视",
-      "keys": ["py_signheader_xxys"],
-      "settings": [ {
-      "id": "xxys_stop",
-      "name": "签到接口禁用",
-      "val": "",
-      "type": "checkboxes",
-      "desc": "",
-      "items": [{
-        "key": "sign",
-        "label": "签到"
-      }, {
-        "key": "pl",
-        "label": "评论"
-      }, {
-        "key": "ad",
-        "label": "广告"
-      }, {
-        "key": "fx",
-        "label": "分享"
-      }, {
-        "key": "box",
-        "label": "每日开箱"
-      }, {
-        "key": "box6",
-        "label": "每周六开箱"
-      }, {
-        "key": "sc",
-        "label": "5次收藏"
-      }, {
-        "key": "ten",
-        "label": "10次播放"
-      }, {
-        "key": "play",
-        "label": "30分钟观影"
-      }]
-    }],
-      "author": "@photonmang",
-      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js",
-      "script": "https://github.com/photonmang/quantumultX",
-      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/xxys.png", "https://raw.githubusercontent.com/Orz-3/task/master/xxys.png"]
-    },
-    {
-      "id": "Tuhu",
-      "name": "途虎养车",
-      "keys": ["photonmang_signheader_tuhu"],
-      "author": "@photonmang",
-      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/tuhu/tuhu.js",
-      "script": "https://github.com/photonmang/quantumultX",
-      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/tuhu.png", "https://raw.githubusercontent.com/Orz-3/task/master/tuhu.png"]
-    },
 		{
 			"id": "qqreads",
-			"name": "QQ阅读多账号管理",
+			"name": "QQ阅读多账号自定义版",
 			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda","qqreadhdb","qqreadtimehdb"],
 			"settings": [
 				{
@@ -68,7 +15,7 @@
       "name": "详细响应日志",
       "val": false,
       "type": "boolean",
-      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭.(此功能还未添加，此开关无效)"
     },
 				{
 					"id": "notifyInterval",
@@ -91,7 +38,7 @@
             },
             {
               "key": "3",
-              "label": "宝箱每18次通知一次"
+              "label": "宝箱每15次通知一次"
             }
             
           ]
