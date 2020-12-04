@@ -1,12 +1,12 @@
 {
   "id": "photonmang.app.sub",
-  "name": "photonmang应用订阅",
+  "name": "photonmang测试版订阅",
   "author": "@photonmang",
   "icon": "https://avatars3.githubusercontent.com/u/42340256?s=460&v=4",
   "repo": "https://github.com/photonmang/quantumultX",
   "apps": [
 		{
-			"id": "qqreads",
+			"id": "qqreads1",
 			"name": "QQ阅读多账号自定义版",
 			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda","qqreadhdb","qqreadtimehdb"],
 			"settings": [
