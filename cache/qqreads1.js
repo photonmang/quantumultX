@@ -30,7 +30,7 @@
 const jsname='企鹅读书'
 const $ = Env(jsname)
 
-const logs = false;   
+const QQlogs = $.getdata('QQlogs');   
 
 const notifyInterval=$.getdata('notifyInterval'); 
 
@@ -185,7 +185,7 @@ return new Promise((resolve, reject) => {
    headers: JSON.parse(qqreadheaderVal),    
  timeout:60000};
    $.get(toqqreadtaskurl,(error, response, data) =>{
-     if(logs=="true")  $.log(`${jsname}, 任务列表: ${data}`)
+     if(QQlogs=="true")  $.log(`${jsname}, 任务列表: ${data}`)
 			
      task =JSON.parse(data)
 tz+=
@@ -260,7 +260,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),    
  timeout:60000};
    $.get(toqqreadinfourl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 用户名: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 用户名: ${data}`)
      info =JSON.parse(data)
 tz+=
 '【用户信息】:'+info.data.user.nickName+'\n'
@@ -278,7 +278,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.post(toqqreadtakeurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 阅豆签到: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 阅豆签到: ${data}`)
      take =JSON.parse(data)
 if (take.data.takeTicket>0)
  {
@@ -300,7 +300,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
     };
    $.get(toqqreadconfigurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 阅读时长查询: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 阅读时长查询: ${data}`)
      config =JSON.parse(data)
    if (config.code==0)
 tz+='【时长查询】:今日阅读'+(config.data.pageParams.todayReadSeconds/60).toFixed(0)+'分钟\n'
@@ -322,7 +322,7 @@ return new Promise((resolve, reject) => {
     };
 	
    $.get(toqqreadtimeurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 阅读时长: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 阅读时长: ${data}`)
      time =JSON.parse(data)
      if (time.code==0)
 tz+='【阅读时长】:上传'+TIME/6+'分钟\n'
@@ -343,7 +343,7 @@ return new Promise((resolve, reject) => {
 if (config.data.pageParams.todayReadSeconds/60>=1){
 
    $.get(toqqreadssr1url,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 金币奖励1: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 金币奖励1: ${data}`)
      ssr1 =JSON.parse(data)
 	if (ssr1.data.amount>0)   
 tz+='【阅读金币1】获得'+ssr1.data.amount+'金币\n'
@@ -365,7 +365,7 @@ return new Promise((resolve, reject) => {
 if (config.data.pageParams.todayReadSeconds/60>=5){
 
    $.get(toqqreadssr2url,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 金币奖励2: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 金币奖励2: ${data}`)
      ssr2 =JSON.parse(data)
 	if (ssr2.data.amount>0)   
 tz+='【阅读金币2】获得'+ssr2.data.amount+'金币\n'
@@ -387,7 +387,7 @@ return new Promise((resolve, reject) => {
 if (config.data.pageParams.todayReadSeconds/60>=30){
 
    $.get(toqqreadssr3url,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 金币奖励3: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 金币奖励3: ${data}`)
      ssr3 =JSON.parse(data)
 	if (ssr3.data.amount>0)   
 tz+='【阅读金币3】获得'+ssr3.data.amount+'金币\n'
@@ -407,7 +407,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadsignurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 金币签到: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 金币签到: ${data}`)
      sign =JSON.parse(data)
 
 if (sign.data.videoDoneFlag)
@@ -430,7 +430,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadsign2url,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 金币签到翻倍: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 金币签到翻倍: ${data}`)
      sign2 =JSON.parse(data)
 
 if (sign2.code==0)
@@ -452,7 +452,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreaddayreadurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 每日阅读: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 每日阅读: ${data}`)
      dayread =JSON.parse(data)
 if (dayread.code==0)
  {
@@ -474,7 +474,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadvideourl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 视频奖励: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 视频奖励: ${data}`)
      video =JSON.parse(data)
 
 if (video.code==0)
@@ -499,7 +499,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadboxurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 宝箱奖励: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 宝箱奖励: ${data}`)
      box =JSON.parse(data)
 
 if (box.data.count>=0)
@@ -523,7 +523,7 @@ return new Promise((resolve, reject) => {
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadbox2url,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 宝箱奖励翻倍: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 宝箱奖励翻倍: ${data}`)
      box2 =JSON.parse(data)
 
 if (box2.code==0)
@@ -550,7 +550,7 @@ return new Promise((resolve, reject) => {
     };
 
    $.get(toqqreadwktimeurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 阅读时长: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 阅读时长: ${data}`)
      wktime =JSON.parse(data)
      if (wktime.code==0)
 tz+='【本周阅读时长】:'+wktime.data.readTime+'分钟\n'
@@ -571,7 +571,7 @@ return new Promise((resolve, reject) => {
 
 if (wktime.data.readTime>=wktimess){
     $.get(toqqreadpickurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname},周阅读时长奖励任务: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname},周阅读时长奖励任务: ${data}`)
      pick =JSON.parse(data)
      if (pick.data[7].isPick==true)
 tz+='【周时长奖励】:已全部领取\n'
@@ -585,7 +585,7 @@ const toqqreadPackageurl = {
     headers: JSON.parse(qqreadheaderVal),   
  timeout:60000};
     $.get(toqqreadPackageurl,(error, response, data) =>{
-     if(logs=="true") $.log(`${jsname}, 领周阅读时长: ${data}`)
+     if(QQlogs=="true") $.log(`${jsname}, 领周阅读时长: ${data}`)
      Package =JSON.parse(data)
      if (Package.code==0)
 tz+='【周时长奖励'+(i+1)+'】:领取'+Packageid[i]+'阅豆\n'    
