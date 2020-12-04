@@ -8,7 +8,7 @@
 		{
 			"id": "qqreads1",
 			"name": "QQ阅读多账号自定义版",
-			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda","qqreadhdb","qqreadtimehdb"],
+			"keys": [],
 			"settings": [
 				{
       "id": "QQlogs",
@@ -24,10 +24,6 @@
 					"type": "radios",
 					"desc": "请根据实际使用情况选择",
                                         "items": [
-            {
-              "key": "0",
-              "label": "关闭通知"
-            },
             {
               "key": "1",
               "label": "开启通知"
