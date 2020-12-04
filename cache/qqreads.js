@@ -1,8 +1,7 @@
 
-/*ziye
+/*
 
-本人github地址     https://github.com/ziye12/JavaScript 
-转载请备注个名字，谢谢
+本脚本改版至@ziye大佬的脚本，原版本github地址：https://github.com/ziye12/JavaScript 
 
 
 
@@ -109,11 +108,9 @@ tz+='👤'+'\n'
 function all()
 
  {
-
-   for(var i=0;i<16;i++)
+   for(var i=0;i<18;i++)
  { (function(i) {
             setTimeout(function() {
-
      if (i==0)
 qqreadinfo();//用户名
 
@@ -123,91 +120,121 @@ qqreadconfig();//时长查询
 else if (i==2)
 qqreadtask();//任务列表
 
-else if (i==3)
+else if (i==3&&task.data.taskList[2].doneFlag==0)
 qqreadsign();//金币签到
 
 else if (i==4&&task.data.treasureBox.doneFlag==0)
 qqreadbox();//宝箱
 
-else if (i==5&&task.data.taskList[2].doneFlag==0)
+else if (i==5&&task.data.taskList[1].doneFlag==0)
 qqreadssr1();//阅读金币1
 
-else if (i==6)
+else if (i==6&&config.data.pageParams.todayReadSeconds/3600<=maxtime)
 qqreadtime();//上传时长
 
-else if (i==7&&task.data.taskList[0].doneFlag==0)
+else if (i==7&&task.data.taskList[2].doneFlag==0)
 qqreadtake();//阅豆签到
 
-else if (i==8&&task.data.taskList[1].doneFlag==0)
+else if (i==8&&task.data.taskList[0].doneFlag==0)
 qqreaddayread();//阅读任务
 
-else if (i==9&&task.data.taskList[2].doneFlag==0)
+else if (i==9&&task.data.taskList[1].doneFlag==0)
 qqreadssr2();//阅读金币2
 
 else if (i==10&&task.data.taskList[3].doneFlag==0)
 qqreadvideo();//视频任务
 
-else if(i==11&&sign.data.videoDoneFlag==0)
+else if(i==11&&task.data.taskList[2].doneFlag==0)
 qqreadsign2();//签到翻倍
 
 else if (i==12&&task.data.treasureBox.videoDoneFlag==0)
 qqreadbox2();//宝箱翻倍
 
-else if (i==13&&task.data.taskList[2].doneFlag==0)
+else if (i==13&&task.data.taskList[1].doneFlag==0)
 qqreadssr3();//阅读金币3
 
 else if (i==14)
 qqreadwktime();//周时长查询
 
-
 else if (i==15)
 qqreadpick();//领周时长奖励
 
+else if (i==16)
+showmsg();//通知
 
+else if (i==17)
+$.done();//结束
 
- }
-
-
+    }
 , (i + 1) *dd*1000);
                 })(i)
-
-
-
+  }
 }
-
-
-}
-
-
-
-
-
-
-
 
 //任务列表
 function qqreadtask() {
 return new Promise((resolve, reject) => {
-
   const toqqreadtaskurl ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/page?fromGuid=',
-   headers: JSON.parse(qqreadheaderVal),
-    
+   headers: JSON.parse(qqreadheaderVal),    
  timeout:60000};
    $.get(toqqreadtaskurl,(error, response, data) =>{
      if(logs) $.log(`${jsname}, 任务列表: ${data}`)
      task =JSON.parse(data)
 tz+=
-'【任务列表】:余额'+task.data.user.amount+'金币\n'+
-'【第'+task.data.invite.issue+'期】:时间'+task.data.invite.dayRange+'\n'
-+'已邀请'+task.data.invite.inviteCount+'人，再邀请'+task.data.invite.nextInviteConfig.count+'人获得'+task.data.invite.nextInviteConfig.amount+'金币\n'+
-'【'+task.data.taskList[0].title+'】:'+task.data.taskList[0].amount+'金币,'+task.data.taskList[0].actionText+'\n'+
-'【'+task.data.taskList[1].title+'】:'+task.data.taskList[1].amount+'金币,'+task.data.taskList[1].actionText+'\n'+
-'【'+task.data.taskList[2].title+'】:'+task.data.taskList[2].amount+'金币,'+task.data.taskList[2].actionText+'\n'+
-'【'+task.data.taskList[3].title+'】:'+task.data.taskList[3].amount+'金币,'+task.data.taskList[3].actionText+'\n'+
-'【宝箱任务'+(task.data.treasureBox.count+1)+'】:'+task.data.treasureBox.tipText+'\n'+
-'【'+task.data.fans.title+'】:'+task.data.fans.fansCount+'个好友,'+task.data.fans.todayAmount+'金币\n'
-
-
+'【现金余额】:'+
+    (task.data.user.amount/10000).toFixed(2)+
+	'元\n'+
+    '【第'+
+	task.data.invite.issue+
+	'期】:时间'+
+    task.data.invite.dayRange+
+	'\n'+
+    ' 已邀请'+
+	task.data.invite.inviteCount+
+    '人，再邀请'+
+	task.data.invite.nextInviteConfig.count+
+    '人获得'+
+	task.data.invite.nextInviteConfig.amount+
+	'金币\n'+
+    '【'+
+	task.data.taskList[0].title+
+	'】:'+
+    task.data.taskList[0].amount+
+	'金币,'+
+    task.data.taskList[0].actionText+
+	'\n'+
+    '【'+
+	task.data.taskList[1].title+
+	'】:'+
+    task.data.taskList[1].amount+
+	'金币,'+
+    task.data.taskList[1].actionText+
+	'\n'+
+    '【'+
+	task.data.taskList[2].title+
+	'】:'+
+    task.data.taskList[2].amount+
+    '金币,'+
+    task.data.taskList[2].actionText+
+    '\n'+
+    '【'+
+	task.data.taskList[3].title+
+    '】:'+
+    task.data.taskList[3].amount+
+    '金币,'+
+    task.data.taskList[3].actionText+
+    '\n'+
+    '【宝箱任务'+
+    (task.data.treasureBox.count+1)+
+    '】:'+
+    task.data.treasureBox.tipText+
+    '\n'+
+    '【'+task.data.fans.title+
+	'】:'+
+    task.data.fans.fansCount+
+    '个好友,'+
+    task.data.fans.todayAmount+
+    '金币\n'
 
 resolve()
 
@@ -216,23 +243,12 @@ resolve()
    })
   }  
 
-
-
-
-
-
-
-
 //用户名
 function qqreadinfo() {
 return new Promise((resolve, reject) => {
-
   const toqqreadinfourl = {
-
     url: qqreadurlVal,
-
-    headers: JSON.parse(qqreadheaderVal),
-    
+    headers: JSON.parse(qqreadheaderVal),    
  timeout:60000};
    $.get(toqqreadinfourl,(error, response, data) =>{
      if(logs) $.log(`${jsname}, 用户名: ${data}`)
@@ -240,45 +256,26 @@ return new Promise((resolve, reject) => {
 tz+=
 '【用户信息】:'+info.data.user.nickName+'\n'
 
-
-
-    
-
-
 resolve()
     })
    })
   }  
 
 
-
-
-
-
-
-
-
 //阅豆签到
 function qqreadtake() {
 return new Promise((resolve, reject) => {
-
   const toqqreadtakeurl ={url: 'https://mqqapi.reader.qq.com/mqq/sign_in/user',
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.post(toqqreadtakeurl,(error, response, data) =>{
      if(logs) $.log(`${jsname}, 阅豆签到: ${data}`)
      take =JSON.parse(data)
-
 if (take.data.takeTicket>0)
  {
 tz+=
 '【阅豆签到】:获得'+take.data.takeTicket+'豆\n'
 }
-
-
-    
-
 
 resolve()
     })
@@ -290,15 +287,11 @@ resolve()
 //阅读时长任务
 function qqreadconfig() {
 return new Promise((resolve, reject) => {
-
   const toqqreadconfigurl = {
-
     url: 'https://mqqapi.reader.qq.com/mqq/page/config?router=%2Fpages%2Fbook-read%2Findex&options=',
     headers: JSON.parse(qqreadheaderVal),
     };
-
    $.get(toqqreadconfigurl,(error, response, data) =>{
-
      if(logs) $.log(`${jsname}, 阅读时长查询: ${data}`)
      config =JSON.parse(data)
    if (config.code==0)
@@ -311,27 +304,15 @@ resolve()
   } 
 
 
-
-
-
-
-
-
-
 //阅读时长
 function qqreadtime() {
 return new Promise((resolve, reject) => {
-
   const toqqreadtimeurl = {
-
     url: qqreadtimeurlVal.replace(/readTime=/g, `readTime=${TIME}`),
-
     headers: JSON.parse(qqreadtimeheaderVal),
      
     };
-
-if (config.data.pageParams.todayReadSeconds/3600<=maxtime){
-
+	
    $.get(toqqreadtimeurl,(error, response, data) =>{
      if(logs) $.log(`${jsname}, 阅读时长: ${data}`)
      time =JSON.parse(data)
@@ -339,33 +320,18 @@ if (config.data.pageParams.todayReadSeconds/3600<=maxtime){
 tz+='【阅读时长】:上传'+TIME/6+'分钟\n'
 
 
-
 resolve()
     })
-
-}
    })
   }  
-
-
-
-
-
-
-
-
-
 
 
 //阅读金币1
 function qqreadssr1() {
 return new Promise((resolve, reject) => {
-
   const toqqreadssr1url = {url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/read_time?seconds=30`,
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
-
 if (config.data.pageParams.todayReadSeconds/60>=1){
 
    $.get(toqqreadssr1url,(error, response, data) =>{
@@ -382,17 +348,12 @@ resolve()
   }  
 
 
-
-
 //阅读金币2
 function qqreadssr2() {
 return new Promise((resolve, reject) => {
-
   const toqqreadssr2url = {url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/read_time?seconds=300`,
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
-
 if (config.data.pageParams.todayReadSeconds/60>=5){
 
    $.get(toqqreadssr2url,(error, response, data) =>{
@@ -401,7 +362,6 @@ if (config.data.pageParams.todayReadSeconds/60>=5){
 	if (ssr2.data.amount>0)   
 tz+='【阅读金币2】获得'+ssr2.data.amount+'金币\n'
 
-
 resolve()
     })
 }
@@ -409,16 +369,10 @@ resolve()
   }  
 
 
-
-
-
-
 //阅读金币3
 function qqreadssr3() {
 return new Promise((resolve, reject) => {
-
   const toqqreadssr3url = {url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/read_time?seconds=1800`,
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
 
@@ -435,24 +389,13 @@ resolve()
     })
 }
    })
-  }  
-
-
-
-
-
-
-
-
-
+  }
 
 
 //金币签到
 function qqreadsign() {
 return new Promise((resolve, reject) => {
-
   const toqqreadsignurl ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/clock_in/page',
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadsignurl,(error, response, data) =>{
@@ -472,14 +415,10 @@ resolve()
   }  
 
 
-
-
 //金币签到翻倍
 function qqreadsign2() {
 return new Promise((resolve, reject) => {
-
   const toqqreadsign2url ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/clock_in_video',
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadsign2url,(error, response, data) =>{
@@ -492,31 +431,21 @@ tz+=
 '【签到翻倍】:获得'+sign2.data.amount+'金币\n'
 }
 
-
-
-
 resolve()
     })
    })
   }  
 
 
-
-
-
-
 //每日阅读
 function qqreaddayread() {
 return new Promise((resolve, reject) => {
-
   const toqqreaddayreadurl ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/read_book',
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreaddayreadurl,(error, response, data) =>{
      if(logs) $.log(`${jsname}, 每日阅读: ${data}`)
      dayread =JSON.parse(data)
-
 if (dayread.code==0)
  {
 tz+=
@@ -524,24 +453,16 @@ tz+=
 
 }
 
-
 resolve()
     })
    })
   }  
 
 
-
-
-
-
-
 //视频奖励
 function qqreadvideo() {
 return new Promise((resolve, reject) => {
-
   const toqqreadvideourl ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/watch_video',
-
     headers: JSON.parse(qqreadheaderVal),
    timeout:60000};
    $.get(toqqreadvideourl,(error, response, data) =>{
@@ -555,16 +476,10 @@ tz+=
 
 }
 
-
 resolve()
     })
    })
-  }  
-
-
-
-
-
+  } 
 
 
 //宝箱奖励
@@ -586,15 +501,10 @@ tz+=
 
  } 
     
-
-
 resolve()
     })
    })
   }  
-
-
-
 
 //宝箱奖励翻倍
 function qqreadbox2() {
@@ -614,16 +524,10 @@ tz+=
 '【宝箱翻倍】:获得'+box2.data.amount+'金币\n'
 }
 
-
-
-
 resolve()
     })
    })
   }  
-
-
-
 
 
 
@@ -645,104 +549,61 @@ return new Promise((resolve, reject) => {
      if (wktime.code==0)
 tz+='【本周阅读时长】:'+wktime.data.readTime+'分钟\n'
 
-
-
 resolve()
     })
-
-
    })
   }  
-
-
-
-
-
-
 
 
 //本周阅读时长奖励任务
 function qqreadpick() {
 return new Promise((resolve, reject) => {
-
   const toqqreadpickurl = {
-
     url:`https://mqqapi.reader.qq.com/mqq/pickPackageInit`,
-
-    headers: JSON.parse(qqreadheaderVal),
-     
+    headers: JSON.parse(qqreadheaderVal),     
     };
 
 if (wktime.data.readTime>=wktimess){
-
     $.get(toqqreadpickurl,(error, response, data) =>{
      if(logs) $.log(`${jsname},周阅读时长奖励任务: ${data}`)
      pick =JSON.parse(data)
      if (pick.data[7].isPick==true)
 tz+='【周时长奖励】:已全部领取\n'
-
-
 for(let i=0;i<pick.data.length;i++)
  {
 	setTimeout(()=>{	 
-
-
 var pickid=pick.data[i].readTime
-
-var Packageid=['10','10','20','30','50','80','100','120']
-
- 
+var Packageid=['10','10','20','30','50','80','100','120'] 
 const toqqreadPackageurl = {
-
     url:`https://mqqapi.reader.qq.com/mqq/pickPackage?readTime=${pickid}`,
-
-    headers: JSON.parse(qqreadheaderVal),
-    
+    headers: JSON.parse(qqreadheaderVal),   
  timeout:60000};
     $.get(toqqreadPackageurl,(error, response, data) =>{
      if(logs) $.log(`${jsname}, 领周阅读时长: ${data}`)
      Package =JSON.parse(data)
      if (Package.code==0)
-tz+='【周时长奖励'+(i+1)+'】:领取'+Packageid[i]+'阅豆\n'
-
-     
+tz+='【周时长奖励'+(i+1)+'】:领取'+Packageid[i]+'阅豆\n'    
 })			
     
-
-
  },i*100)}
 
-
-
 })
-
     resolve()
-
  }
-
 })
  }
 
-
-
-
-
-
-    
-
-function showmsg() {
-
+function showmsg() {	
+console.log(tz)
+	
 if (notifyInterval==1)
 $.msg(jsname,'',tz)//显示所有通知
 
-else if (notifyInterval==2&&box.data.amount>=0)
+else if (notifyInterval==2&&task.data.treasureBox.doneFlag==0)
 $.msg(jsname,'',tz)//宝箱领取成功通知
 
-
-else if (notifyInterval==3&&box.data.count==0||box.data.count==18||box.data.count==36||box.data.count==54||box.data.count==72)
-$.msg(jsname,'',tz)//宝箱每18次通知一次
-
-
+else if (notifyInterval==3&&task.data.treasureBox.count==0||task.data.treasureBox.count==15||task.data.treasureBox.count==30||task.data.treasureBox.count==45||task.data.treasureBox.count==60)
+$.msg(jsname,'',tz)//宝箱每15次通知一次
 
 }
 
