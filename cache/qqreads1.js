@@ -47,9 +47,10 @@ const jbidhj=$.getdata('jbidhj');
 const zhs=$.getdata('zhs'); 
 
 var tz=''
-var zhs1=zhs*2-1
-var index=zhs1+2;
-var index1=zhs1+1;
+var zhs1=zhs*2
+var zhs2=zhs1-1
+var index=zhs2+2;
+var index1=zhs2+1;
 
  function xxx()
 
@@ -83,7 +84,7 @@ all();
 
 if (i%2== 0) fgx()
 
-if (i== zhs1) showmsg()
+if (i== zhs2) showmsg()
 
 if (i== index1) $.done()
 
