@@ -18,7 +18,7 @@
 const jsname='企鹅读书'
 const $ = Env(jsname)
 
-const logs = 0;   //0为关闭日志，1为开启
+const logs = false;   
 
 const notifyInterval=$.getdata('notifyInterval'); 
 
