@@ -68,7 +68,7 @@
       "name": "详细响应日志",
       "val": false,
       "type": "boolean",
-      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+      "desc": "打印原始执行结果, 用于调试脚本, 一般用户建议关闭."
     },
 				{
 					"id": "notifyInterval",
