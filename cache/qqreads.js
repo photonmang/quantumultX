@@ -42,11 +42,11 @@ const wktimess=1200//周奖励领取标准，默认1200分钟
 
 const jbidhj=$.getdata('jbidhj'); 
 
-const zhs=$.getdata('zhs1'); 
+const zhs=$.getdata('zhs'); 
 
 var tz=''
-var index=zhs1+2;
-var index1=zhs1+1;
+var index=zhs+2;
+var index1=zhs+1;
  function qqreadzhs()
 
  {
@@ -72,7 +72,7 @@ all();
 
 if (i%2== 0) fgx()
 
-if (i== zhs1) showmsg()
+if (i== zhs) showmsg()
 
 if (i== index1) $.done()
 
