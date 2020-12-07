@@ -64,7 +64,7 @@
 			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda"],
 			"descs_html": [
         "脚本使用说明：",
-        "1.请先配置好本仓库的Cookie获取脚本的qqread.js及task脚本qqreads.js(超10个账号请配置qqreads1.js)",
+        "1.请先配置好本仓库的Cookie获取脚本的【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">qqread.js</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js\">qqreads.js</a>】(超10个账号请配置qqreads1.js)",
 	"2.请在以下获取账号Cookie中填写您要获取的账号，请使用1-9依次获取9个账号，超过10个请使用字母a-z来表示",			
         "3.Cookie获取方式【<a href=\"http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14\">点我打开</a>】",
 	"4.进一本书 看 10秒以下 然后退出，获取阅读时长cookie和更新body，看书一定不能超过10秒",
