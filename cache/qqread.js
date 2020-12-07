@@ -24,7 +24,7 @@ hostname=mqqapi.reader.qq.com
 ############## 圈x
 
 #企鹅读书获取cookie
-https:\/\/mqqapi\.reader\.qq\.com\/mqq\/user\/init url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js
+https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track url script-request-body https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js
 
 #企鹅读书获取时长cookie
 https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js
@@ -33,7 +33,7 @@ https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-h
 ############## loon
 
 //企鹅读书获取cookie
-http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/user\/init script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js,requires-header=true, tag=企鹅读书获取cookie 
+http-request https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js,requires-body=true, tag=企鹅读书获取cookie 
 
 //企鹅读书获取时长cookie
 http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js, requires-header=true, tag=企鹅读书获取时长cookie
@@ -42,10 +42,10 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 ############## surge
 
 //企鹅读书获取cookie
-企鹅读书 = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/user\/init,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js, requires-header=true
+企鹅读书 = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com \/log\/v4\/mqq\/track,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js
 
 //企鹅读书获取时长cookie
-企鹅读书 = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid?,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js, requires-header=true
+企鹅读书 = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid?,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js
 
 
 */
