@@ -177,6 +177,86 @@
 			"author": "@photonmang",
 			"repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js",
 			"icons": [
+				"https://raw.githubusercontent.com/Orz-3/mini/master/QQ.png",
+				"https://raw.githubusercontent.com/Orz-3/task/master/QQ.png"
+			]
+		},
+	  {
+			"id": "qqreads1",
+			"name": "QQ阅读多账号自定义版",
+			"keys": [],
+			"descs_html": [
+        "脚本使用说明：",
+        "1.请先配置好本仓库的Cookie获取脚本的【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">qqread.js</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】(超10个账号请配置qqreads1.js)",
+	"2.请在以下获取账号Cookie中填写您要获取的账号，请使用1-9依次获取9个账号，超过10个请使用字母a-z来表示",			
+        "3.Cookie获取方式【<a href=\"http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14\">点我打开</a>】",
+	"4.进一本书 看 10秒以下 然后退出，获取阅读时长cookie和更新body，看书一定不能超过10秒",
+	"5.循环2-4步骤重新获取下个账号【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">使用说明</a>】"		
+      ],
+			"settings": [
+				{
+      "id": "QQlogs",
+      "name": "详细响应日志",
+      "val": false,
+      "type": "boolean",
+      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+    },
+				{
+					"id": "notifyInterval",
+					"name": "默认开启所有通知",
+					"val": "1",
+					"type": "radios",
+					"desc": "请根据实际使用情况选择",
+                                        "items": [
+            {
+              "key": "1",
+              "label": "开启通知"
+            },
+            {
+              "key": "2",
+              "label": "宝箱领取成功通知"
+            },
+            {
+              "key": "3",
+              "label": "宝箱每15次通知一次"
+            }
+            
+          ]
+				},
+				{
+					"id": "jbidhj",
+					"name": "多账号管理",
+					"val": "",
+					"type": "textarea",
+					"placeholder": "默认是空值(点击以展开说明)",
+					"autoGrow": true,
+					"rows": 1,
+					"desc": "填写格式示例：1,2 以英文逗号分隔多个账号数，如2个账号就是1,2"
+				},
+                                 {
+					"id": "jbid",
+					"name": "获取账号Cookie",
+					"val": "",
+					"type": "textarea",
+					"placeholder": "默认是空值(点击以展开说明)",
+					"autoGrow": true,
+					"rows": 1,
+					"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推"
+				},
+				{
+					"id": "zhs",
+					"name": "输出账号总数",
+					"val": "",
+					"type": "textarea",
+                                        "placeholder": "默认是空值(点击以展开说明)",
+                                        "autoGrow": true,
+                                        "rows": 1,
+					"desc": "请输入需要执行的账号总数量"
+				}
+			],
+			"author": "@photonmang",
+			"repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js",
+			"icons": [
 				"https://raw.githubusercontent.com/Orz-3/mini/master/qqvip.png",
 				"https://raw.githubusercontent.com/Orz-3/task/master/qqvip.png"
 			]
