@@ -67,7 +67,7 @@
         "1.请先配置好本仓库的Cookie获取脚本的qqread.js及task脚本qqreads.js(超10个账号请配置qqreads1.js)",
 	"2.请在以下获取账号Cookie中填写您要获取的账号，请使用1-9依次获取9个账号，超过10个请使用字母a-z来表示",			
         "3.Cookie获取方式【<a href=\"http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14\">点我打开</a>】",
-	"4.进一本书 看 10秒以下 然后退出，获取阅读时长cookie和更新body，看书一定不能超过10秒"
+	"4.进一本书 看 10秒以下 然后退出，获取阅读时长cookie和更新body，看书一定不能超过10秒",
 	"5.循环2-4步骤重新获取下个账号【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">使用说明</a>】"		
       ],
 			"settings": [
