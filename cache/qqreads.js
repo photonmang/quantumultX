@@ -3,7 +3,8 @@
 
 本脚本改版至@ziye的脚本，原版本github地址：https://github.com/ziye12/JavaScript 
 
-多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
+本脚本为10账号版本，请先用boxjs订阅获取每个账号的cookie及账号运行数量。
+如超过10个账号，请改用qqreads1.js脚本并在boxjs中使用QQ阅读自定义版本来操作。
 
 ⚠️cookie获取方法：
 进 http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14  点我的   获取cookie
