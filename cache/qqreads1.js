@@ -224,7 +224,7 @@ function qqreadtrack() {
     $.post(toqqreadtrackurl, (error, response, data) => {
       if(QQlogs=="true") $.log(`${jsname}, 更新: ${data}`);
       track = JSON.parse(data);
-	 tz += `【数据更新】:更新OK\n`;
+	 tz += `【数据更新】:更新${track.msg}\n`;
       resolve();
     });
   });
