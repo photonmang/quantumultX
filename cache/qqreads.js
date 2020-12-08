@@ -1,9 +1,7 @@
 
 /*
 
-本脚本改版至@ziye大佬的脚本，原版本github地址：https://github.com/ziye12/JavaScript 
-
-
+本脚本改版至@ziye的脚本，原版本github地址：https://github.com/ziye12/JavaScript 
 
 多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
