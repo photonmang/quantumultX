@@ -61,7 +61,7 @@
 		{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-			"keys": ["qqreadhd1","qqreadtimehd1","qqreadhd2","qqreadtimehd2","qqreadhd3","qqreadtimehd3","qqreadhd4","qqreadtimehd4","qqreadhd5","qqreadtimehd5","qqreadhd6","qqreadtimehd6","qqreadhd7","qqreadtimehd7","qqreadhd8","qqreadtimehd8","qqreadhd9","qqreadtimehd9","qqreadhda","qqreadtimehda"],
+			"keys": ["qqreadbd1","qqreadtimehd1","qqreadbd2","qqreadtimehd2","qqreadbd3","qqreadtimehd3","qqreadbd4","qqreadtimehd4","qqreadbd5","qqreadtimehd5","qqreadbd6","qqreadtimehd6","qqreadbd7","qqreadtimehd7","qqreadbd8","qqreadtimehd8","qqreadbd9","qqreadtimehd9","qqreadbda","qqreadtimehda"],
 			"descs_html": [
         "脚本使用说明：",
         "1.请先配置好本仓库的Cookie获取脚本的【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">qqread.js</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js\">qqreads.js</a>】(超10个账号请使用【QQ阅读多账号自定义版】，并修改task配置为【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
