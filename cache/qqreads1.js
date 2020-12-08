@@ -35,6 +35,7 @@ const jbidhj=$.getdata('jbidhj');
 const zhs=$.getdata('zhs'); 
 
 var tz=''
+var zhs1=zhs*2-1
 var index=zhs+2;
 var index1=zhs+1;
 
@@ -61,7 +62,7 @@ qqreadtimeheaderVal=$.getdata('qqreadtimehd'+jbid)
 all();
 
 if (i%2== 0) fgx()
-if (i== zhs) showmsg()
+if (i== zhs1) showmsg()
 if (i== index1) $.done()
 
  }
