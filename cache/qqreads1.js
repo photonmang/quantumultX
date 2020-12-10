@@ -48,13 +48,8 @@ var index1=zhs+1;
 
 jbid=jbidhj[i];
 
-qqreadurlVal = $.getdata('qqreadurl'+jbid)
-qqreadheaderVal= $.getdata('qqreadhd'+jbid)
-
-qqreadbodyKey = $.getdata('qqreadbd'+jbid)
-qqreadbodyVal= $.getdata(qqreadbodyKey)
-
-qqreadtimeurlVal =$.getdata('qqreadtimeurl'+jbid)
+qqreadbodyVal= $.getdata('qqreadbd'+jbid)
+qqreadtimeurlVal = $.getdata('qqreadtimeurl'+jbid)
 qqreadtimeheaderVal=$.getdata('qqreadtimehd'+jbid)
 
 all();
@@ -145,7 +140,7 @@ task.data.user.amount >= 100000&&d.getHours() == 23)
 function qqreadtask() {
 return new Promise((resolve, reject) => {
   const toqqreadtaskurl ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/page?fromGuid=',
-   headers: JSON.parse(qqreadheaderVal),    
+   headers: JSON.parse(qqreadtimeheaderVal),    
  timeout:60000};
    $.get(toqqreadtaskurl,(error, response, data) =>{
      if(QQlogs=="true")  $.log(`${jsname}, 任务列表: ${data}`)
