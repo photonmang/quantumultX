@@ -3,11 +3,11 @@
 
 本脚本改版至@ziye的脚本，原版本github地址：https://github.com/ziye12/JavaScript 
 
-本脚本为10账号版本，请先用boxjs订阅获取每个账号的cookie及账号运行数量。
-如超过10个账号，请改用qqreads1.js脚本并在boxjs中使用QQ阅读自定义版本来操作。
+多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
 ⚠️cookie获取方法：
 进 http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14  点我的   获取cookie
+
 进书库，点发现。选择一本书,看10秒以下,然后退出，获取时长url和时长header以及更新body，看书一定不能超过10秒
 
 */
@@ -20,7 +20,7 @@ const QQlogs = $.getdata('QQlogs');
 
 const notifyInterval=$.getdata('notifyInterval'); 
 
-const dd=2//单次任务延迟,默认1秒
+const dd=1//单次任务延迟,默认1秒
 
 const TIME=30//单次时长上传限制，默认5分钟
 
@@ -47,13 +47,8 @@ var index1=zhs+1;
 
 jbid=jbidhj[i];
 
-qqreadurlVal = $.getdata('qqreadurl'+jbid)
-qqreadheaderVal= $.getdata('qqreadhd'+jbid)
-
-qqreadbodyKey = $.getdata('qqreadbd'+jbid)
-qqreadbodyVal= $.getdata(qqreadbodyKey)
-
-qqreadtimeurlVal =$.getdata('qqreadtimeurl'+jbid)
+qqreadbodyVal= $.getdata('qqreadbd'+jbid)
+qqreadtimeurlVal = $.getdata('qqreadtimeurl'+jbid)
 qqreadtimeheaderVal=$.getdata('qqreadtimehd'+jbid)
 
 all();
@@ -130,10 +125,9 @@ for(var i=0;i<16;i++)
           else if (i == 14 && task.data && task.data.taskList[1].doneFlag == 0)
             qqreadssr3();
           // 阅读金币3
-	 else if (i == 15 && task.data && 
+	else if (i ==15 && task.data && 
 task.data.user.amount >= 100000&&d.getHours() == 23)
               qqreadwithdraw();//现金提现
-}
  }
 , (i + 1) *dd*1000);
         })(i)
@@ -145,7 +139,7 @@ task.data.user.amount >= 100000&&d.getHours() == 23)
 function qqreadtask() {
 return new Promise((resolve, reject) => {
   const toqqreadtaskurl ={url: 'https://mqqapi.reader.qq.com/mqq/red_packet/user/page?fromGuid=',
-   headers: JSON.parse(qqreadheaderVal),    
+   headers: JSON.parse(qqreadtimeheaderVal),    
  timeout:60000};
    $.get(toqqreadtaskurl,(error, response, data) =>{
      if(QQlogs=="true")  $.log(`${jsname}, 任务列表: ${data}`)
