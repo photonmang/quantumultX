@@ -78,7 +78,7 @@ tz+='👤'+'\n'
 
 function all() {
 
-for(var i=0;i<15;i++)
+for(var i=0;i<16;i++)
  { (function(i) {
             setTimeout(function() {
 
