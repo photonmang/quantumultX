@@ -118,11 +118,11 @@
 					"id": "jbid",
 					"name": "获取账号Cookie",
 					"val": "",
-					"type": "number",
+					"type": "textarea",
 					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推。"
+					"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推。第10个请用a字母代替"
 				},
 				{
 					"id": "zhs",
@@ -237,7 +237,7 @@
 					"id": "jbid",
 					"name": "获取账号Cookie",
 					"val": "",
-					"type": "number",
+					"type": "textarea",
 					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
