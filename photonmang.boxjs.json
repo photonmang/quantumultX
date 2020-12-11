@@ -112,7 +112,7 @@
 					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "填写格式示例：1,2 以英文逗号分隔多个账号数，如2个账号就是1,2。另外注意：从第10个账号开始请改为a-z字母表达，否则后面的账号会一直运行1号账号！"
+					"desc": "填写格式示例：1,2 以英文逗号分隔多个账号数，如2个账号就是1,2依次类推..."
 				},
                                  {
 					"id": "jbid",
@@ -122,7 +122,7 @@
 					"placeholder": "默认是空值(点击以展开说明)",
 					"autoGrow": true,
 					"rows": 1,
-					"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推。另外注意：从第10个账号开始请改为a-z字母表达，否则后面的账号会一直运行1号账号！"
+					"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推。"
 				},
 				{
 					"id": "zhs",
@@ -188,7 +188,7 @@
 			"descs_html": [
         "脚本使用说明：",
         "1.请先配置好本仓库的Cookie获取脚本的【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">qqread.js</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
-	"2.请在以下获取账号Cookie中填写您要获取的账号，请使用1-9依次获取9个账号，超过10个请使用字母a-z来表示",			
+	"2.请在以下获取账号Cookie中填写您要获取的账号数字",			
         "3.Cookie获取方式【<a href=\"http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14\">点我打开</a>】",
 	"4.进书库(发现) 看 10秒以下 然后退出，获取阅读时长cookie和更新body，看书一定不能超过10秒",
 	"5.循环2-4步骤重新获取下个账号【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">使用说明</a>】"		
@@ -199,7 +199,7 @@
       "name": "详细响应日志",
       "val": false,
       "type": "boolean",
-      "desc": "打印原始签到结果, 用于调试脚本, 一般用户建议关闭."
+      "desc": "打印原始执行结果, 用于调试脚本, 一般用户建议关闭."
     },
 				{
 					"id": "notifyInterval",
@@ -278,11 +278,11 @@
             },
             {
               "key": "500000",
-              "label": "50"
+              "label": "50元"
             },
             {
               "key": "1000000",
-              "label": "100"
+              "label": "100元"
             }
           ]
 				}
