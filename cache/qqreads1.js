@@ -210,15 +210,15 @@ resolve()
 // 更新
 function qqreadtrack() {
   return new Promise((resolve, reject) => {
-    const toqqreadtrackurl = {
-      url: "https://mqqapi.reader.qq.com/log/v4/mqq/track",
-
-      headers: JSON.parse(qqreadtimeheaderVal),
-	  body: qqreadbodyVal,      
-      timeout: 60000,
+    const body = qqreadbodyVal.replace(new RegExp(/"dis":[0-9]{13}/),`"dis":${new Date().getTime()}`) 
+    const toqqreadtrackurl = { 
+      url: "https://mqqapi.reader.qq.com/log/v4/mqq/track", 
+      headers: JSON.parse(qqreadtimeheaderVal), 
+   body: body,       
+      timeout: 60000, 
     };
     $.post(toqqreadtrackurl, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${jsname}, 更新: ${data}`);
+      if (logs) $.log(`${jsname}, 更新: ${data}`);
       track = JSON.parse(data);
 	 tz += `【数据更新】:更新${track.msg}\n`;
       resolve();
