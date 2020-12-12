@@ -14,25 +14,25 @@
 const $ = new Env("互助码");
 const shareCodes = [
   {
-    zd: $.getdata("zd_shareCode1") || "i7vxcl45duampxjcerv56jscum3h7wlwy7o5jii", //种豆得豆
-    nc: $.getdata("nc_shareCode1") || "6df3a4484dc541b7aac4fe25b8aa1252",//京东农场
-    mc: $.getdata("mc_shareCode1") || "MTAxODc2NTEzMzAwMDAwMDAzMzM0MDE1OQ==",//京东萌宠
-    ddgc: $.getdata("dd_shareCode1") || "P04z54XCjVWnYaS5jQLAWXw1X1Lle9cs0U",//东东工厂
-    jxgc: $.getdata("jx_shareCode1") || "CjKxCh3tPSeOyItIdwn3zg==",//京喜工厂
+    zd: $.getdata("zd_shareCode1") , //种豆得豆
+    nc: $.getdata("nc_shareCode1") ,//京东农场
+    mc: $.getdata("mc_shareCode1") ,//京东萌宠
+    ddgc: $.getdata("dd_shareCode1") ,//东东工厂
+    jxgc: $.getdata("jx_shareCode1") ,//京喜工厂
   },
   {
-    zd: $.getdata("zd_shareCode2") || "i7vxcl45duampxjcerv56jscum3h7wlwy7o5jii",
-    nc: $.getdata("nc_shareCode2") || "6df3a4484dc541b7aac4fe25b8aa1252",
-    mc: $.getdata("mc_shareCode2") || "MTAxODc2NTEzMzAwMDAwMDAzMzM0MDE1OQ==",
-    ddgc: $.getdata("dd_shareCode2") || "P04z54XCjVWnYaS5mRVVzOgiCJClAc",
-    jxgc: $.getdata("jx_shareCode2") || "qqkoOKAgh18EAGYdQUqGTQ==",
+    zd: $.getdata("zd_shareCode2") ,
+    nc: $.getdata("nc_shareCode2") ,
+    mc: $.getdata("mc_shareCode2") ,
+    ddgc: $.getdata("dd_shareCode2") ,
+    jxgc: $.getdata("jx_shareCode2") ,
   },
   {
-    zd: $.getdata("zd_shareCode3") || "",
-    nc: $.getdata("nc_shareCode3") || "",
-    mc: $.getdata("mc_shareCode3") || "",
-    ddgc: $.getdata("dd_shareCode3") || "",
-    jxgc: $.getdata("jx_shareCode3") || "",
+    zd: $.getdata("zd_shareCode3") ,
+    nc: $.getdata("nc_shareCode3") ,
+    mc: $.getdata("mc_shareCode3") ,
+    ddgc: $.getdata("dd_shareCode3"),
+    jxgc: $.getdata("jx_shareCode3"),
   },
 ];
 $.result = [];
