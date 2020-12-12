@@ -14,26 +14,27 @@
 const $ = new Env("互助码");
 const shareCodes = [
   {
-    zd: $.getdata("zd_shareCode1") , //种豆得豆
-    nc: $.getdata("nc_shareCode1") ,//京东农场
-    mc: $.getdata("mc_shareCode1") ,//京东萌宠
-    ddgc: $.getdata("dd_shareCode1") ,//东东工厂
-    jxgc: $.getdata("jx_shareCode1") ,//京喜工厂
+    zd: $.getdata("zd_shareCode1") || "", 
+    nc: $.getdata("nc_shareCode1") || "",
+    mc: $.getdata("mc_shareCode1") || "",
+    ddgc: $.getdata("dd_shareCode1") || "",
+    jxgc: $.getdata("jx_shareCode1") || "",
   },
   {
-    zd: $.getdata("zd_shareCode2") ,
-    nc: $.getdata("nc_shareCode2") ,
-    mc: $.getdata("mc_shareCode2") ,
-    ddgc: $.getdata("dd_shareCode2") ,
-    jxgc: $.getdata("jx_shareCode2") ,
-  },
-  {
-    zd: $.getdata("zd_shareCode3") ,
-    nc: $.getdata("nc_shareCode3") ,
-    mc: $.getdata("mc_shareCode3") ,
-    ddgc: $.getdata("dd_shareCode3"),
-    jxgc: $.getdata("jx_shareCode3"),
-  },
+    zd: $.getdata("zd_shareCode2") || "",
+    nc: $.getdata("nc_shareCode2") || "",
+    mc: $.getdata("mc_shareCode2") || "",
+    ddgc: $.getdata("dd_shareCode2") || "",
+    jxgc: $.getdata("jx_shareCode2") || "",
+   },
+
+{
+    zd: $.getdata("zd_shareCode3") || "",
+    nc: $.getdata("nc_shareCode3") || "",
+    mc: $.getdata("mc_shareCode3") || "",
+    ddgc: $.getdata("dd_shareCode3") || "",
+    jxgc: $.getdata("jx_shareCode3") || "",
+   }
 ];
 $.result = [];
 $.random = Math.floor(Math.random() * 60);
