@@ -13,27 +13,27 @@
 
 const $ = new Env("互助码");
 const shareCodes = [
-  {
-    zd: $.getdata("zd_shareCode1") || "", 
-    nc: $.getdata("nc_shareCode1") || "",
-    mc: $.getdata("mc_shareCode1") || "",
-    ddgc: $.getdata("dd_shareCode1") || "",
-    jxgc: $.getdata("jx_shareCode1") || "",
+    {
+    zd: $.getdata("zd_shareCode1") || "zd_shareCode1", 
+    nc: $.getdata("nc_shareCode1") || "nc_shareCode1",
+    mc: $.getdata("mc_shareCode1") || "mc_shareCode1",
+    ddgc: $.getdata("dd_shareCode1") || "dd_shareCode1",
+    jxgc: $.getdata("jx_shareCode1") || "jx_shareCode1",
   },
   {
-    zd: $.getdata("zd_shareCode2") || "",
-    nc: $.getdata("nc_shareCode2") || "",
-    mc: $.getdata("mc_shareCode2") || "",
-    ddgc: $.getdata("dd_shareCode2") || "",
-    jxgc: $.getdata("jx_shareCode2") || "",
+    zd: $.getdata("zd_shareCode2") || "zd_shareCode2",
+    nc: $.getdata("nc_shareCode2") || "nc_shareCode2",
+    mc: $.getdata("mc_shareCode2") || "mc_shareCode2",
+    ddgc: $.getdata("dd_shareCode2") || "dd_shareCode2",
+    jxgc: $.getdata("jx_shareCode2") || "jx_shareCode2",
    },
 
 {
-    zd: $.getdata("zd_shareCode3") || "",
-    nc: $.getdata("nc_shareCode3") || "",
-    mc: $.getdata("mc_shareCode3") || "",
-    ddgc: $.getdata("dd_shareCode3") || "",
-    jxgc: $.getdata("jx_shareCode3") || "",
+    zd: $.getdata("zd_shareCode3") || "zd_shareCode3",
+    nc: $.getdata("nc_shareCode3") || "nc_shareCode3",
+    mc: $.getdata("mc_shareCode3") || "mc_shareCode3",
+    ddgc: $.getdata("dd_shareCode3") || "dd_shareCode3",
+    jxgc: $.getdata("jx_shareCode3") || "jx_shareCode3",
    }
 ];
 $.result = [];
