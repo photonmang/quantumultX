@@ -297,7 +297,7 @@
     {
       "id": "shareCode",
       "name": "京东云互助码",
-      "keys": ["
+      "keys": [
 	       "zd_shareCode1",
 	       "nc_shareCode1",
 	       "mc_shareCode1",
