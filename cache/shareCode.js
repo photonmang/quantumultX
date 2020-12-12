@@ -1,7 +1,11 @@
 /*
-脚本改版至@whyour大佬，感谢付出。
+本脚本改版至@whyour
 
 12.12 添加3账号，可配合boxjs订阅来写入助力码
+
+圈X：
+0 2 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js=京东云助力码, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true 
+
 */
 
 const $ = new Env("互助码");
