@@ -312,7 +312,8 @@
 	       "nc_shareCode3",
 	       "mc_shareCode3",
 	       "dd_shareCode3",
-	       "jx_shareCode3"],
+	       "jx_shareCode3"
+      ],
       "settings": [
         {
           "id": "zd_shareCode1",
