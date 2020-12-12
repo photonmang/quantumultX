@@ -6,6 +6,9 @@
 圈X：
 0 2 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js=京东云助力码, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true 
 
+说明：
+1.本地版请自行修改助力码
+2.远程版请配合本库boxjs订阅来使用，boxjs订阅地址：https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
 */
 
 const $ = new Env("互助码");
