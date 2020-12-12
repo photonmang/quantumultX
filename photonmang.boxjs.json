@@ -403,7 +403,7 @@
           "val": "",
           "type": "text",
           "desc": "此处请填写你的京喜工厂码"
-        },
+        }
       ],
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js",
