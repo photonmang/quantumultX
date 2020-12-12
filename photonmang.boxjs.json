@@ -297,7 +297,22 @@
     {
       "id": "shareCode",
       "name": "京东云互助码",
-      "keys": [""],
+      "keys": ["
+	       "zd_shareCode1",
+	       "nc_shareCode1",
+	       "mc_shareCode1",
+	       "dd_shareCode1",
+	       "jx_shareCode1",
+	       "zd_shareCode2",
+	       "nc_shareCode2",
+	       "mc_shareCode2",
+	       "dd_shareCode2",
+	       "jx_shareCode2",
+	       "zd_shareCode3",
+	       "nc_shareCode3",
+	       "mc_shareCode3",
+	       "dd_shareCode3",
+	       "jx_shareCode3"],
       "settings": [
         {
           "id": "zd_shareCode1",
