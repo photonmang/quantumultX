@@ -208,12 +208,12 @@ resolve()
 
 // 更新
 function qqreadtrack() {
-  return new Promise((resolve, reject) => {
+    const body = qqreadbodyVal.replace(new RegExp(/"dis":[0-9]{13}/),`"dis":${new Date().getTime()}`) 
     const toqqreadtrackurl = {
       url: "https://mqqapi.reader.qq.com/log/v4/mqq/track",
 
       headers: JSON.parse(qqreadtimeheaderVal),
-	  body: qqreadbodyVal,      
+	  body: body,      
       timeout: 60000,
     };
     $.post(toqqreadtrackurl, (error, response, data) => {
@@ -224,6 +224,7 @@ function qqreadtrack() {
     });
   });
 }
+
 
 //用户名
 function qqreadinfo() {
