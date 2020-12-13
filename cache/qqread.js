@@ -89,7 +89,7 @@ if ($request && $request.url.indexOf("addReadTimeWithBid?") >= 0) {
     );
     $.msg(qqreadtimeheaderKey, `获取时长header: 成功🎉`, ``);
   }
-  else if ($request &&$request.body.indexOf("bookDetail_bottomBar_read_C")>=0&&$request.body.indexOf("topBar_left_back_C")<0&&$request.body.indexOf("bookRead_dropOut_shelfYes_C")<0){
+  else if ($request &&$request.body.indexOf("bookDetail_bottomBar_read_C")>=0&&$request.body.indexOf("bookRead_show_I")>=0&&$request.body.indexOf("topBar_left_back_C")<0&&$request.body.indexOf("bookRead_dropOut_shelfYes_C")<0){
     const qqreadbodyVal = $request.body;
     if (qqreadbodyVal) $.setdata(qqreadbodyVal, qqreadbodyKey);
     $.log(
