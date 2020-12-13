@@ -63,7 +63,7 @@ if (i== zhs1) showmsg()
 if (i== index1) $.done()
 
  }
-, (i + 1) *17000);
+, (i + 1) *1000);
                 })(i)
 }
 }
