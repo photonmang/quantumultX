@@ -84,14 +84,15 @@ for(var i=0;i<12;i++)
       if (i == 0) 
               qqreadinfo(); // 用户名
           if (i == 1) {
-              qqreadwktime(); // 周时长查询
-              qqreadconfig(); // 时长查询
               qqreadtrack();//更新
    } else if (i == 2){
+	qqreadwktime(); // 周时长查询
+        qqreadconfig(); // 时长查询
+   } else if (i ==3) {
         qqreadtask();// 任务列表
           if (config.data &&config.data.pageParams.todayReadSeconds / 3600 <= maxtime)qqreadtime();   // 上传时长
 }     
-     else if (i == 3 ){
+     else if (i == 7 ){
               qqreadpick();// 领周时长奖励
     if (task.data && task.data.taskList[0].doneFlag == 0)
         qqreaddayread();// 阅读任务
@@ -104,7 +105,7 @@ for(var i=0;i<12;i++)
           if (task.data && task.data.taskList[3].doneFlag == 0)
               qqreadvideo();// 视频任务 
 }
-     else if (i == 7 ){
+     else if (i == 8 ){
        if (task.data && task.data.treasureBox.doneFlag == 0)
               qqreadbox();// 宝箱
           if (task.data && task.data.taskList[1].doneFlag == 0)
@@ -112,12 +113,12 @@ for(var i=0;i<12;i++)
           if (task.data && task.data.taskList[2].doneFlag == 0)
               qqreadsign2();// 签到翻倍
 }    
-     else if (i == 8){
+     else if (i == 9){
           if (task.data && 
 task.data.user.amount >= 100000)
               qqreadwithdraw();//现金提现
 }
-     else if (i == 9){
+     else if (i == 10){
           if (d.getHours() == 23 && d.getMinutes() >= 40)
               qqreadtrans();//今日收益累计
 }
