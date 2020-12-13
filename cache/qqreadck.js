@@ -15,11 +15,10 @@ const qqreadtimeheaderVal= $.getdata(qqreadtimeheaderKey)
 
 
 
-let isGetCookie = typeof $request !== 'undefined'
-if (isGetCookie) {
-   GetCookie()
-   $.done();
-} 
+if ((isGetCookie = typeof $request !== "undefined")) {
+  GetCookie();
+$.done();
+}
 
 
 function GetCookie() {
