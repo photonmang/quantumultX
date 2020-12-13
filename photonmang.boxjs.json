@@ -184,7 +184,7 @@
 	  {
 			"id": "qqreads1",
 			"name": "QQ阅读多账号自定义版",
-			"keys": [],
+                        "keys": ["qqreadbd", "qqreadtimeurl", "qqreadtimehd", "qqreadbd2", "qqreadtimeurl2", "qqreadtimehd2", "qqreadbd3", "qqreadtimeurl3", "qqreadtimehd3", "qqreadbd4", "qqreadtimeurl4", "qqreadtimehd4", "qqreadbd5", "qqreadtimeurl5","qqreadtimehd5", "qqreadbd6", "qqreadtimeurl6", "qqreadtimehd6", "qqreadbd7", "qqreadtimeurl7", "qqreadtimehd7", "qqreadbd8", "qqreadtimeurl8", "qqreadtimehd8","qqreadbd9", "qqreadtimeurl9", "qqreadtimehd9","qqreadbd10", "qqreadtimeurl10", "qqreadtimehd10","qqreadbd11", "qqreadtimeurl11", "qqreadtimehd11","qqreadbd12", "qqreadtimeurl12", "qqreadtimehd12","qqreadbd13", "qqreadtimeurl13", "qqreadtimehd13","qqreadbd14", "qqreadtimeurl14", "qqreadtimehd14","qqreadbd15", "qqreadtimeurl15", "qqreadtimehd15","qqreadbd16", "qqreadtimeurl16", "qqreadtimehd16","qqreadbd17", "qqreadtimeurl17", "qqreadtimehd17","qqreadbd18", "qqreadtimeurl18", "qqreadtimehd18","qqreadbd19", "qqreadtimeurl19", "qqreadtimehd19","qqreadbd20", "qqreadtimeurl20", "qqreadtimehd20"],
 			"descs_html": [
         "脚本使用说明：",
         "1.请先配置好本仓库的Cookie获取脚本的【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.js\">qqread.js</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
