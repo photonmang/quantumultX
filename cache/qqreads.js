@@ -10,8 +10,26 @@
 
 进书库，点发现。选择一本书,看10秒以下,然后退出，获取时长url和时长header以及更新body，看书一定不能超过10秒
 
+hostname=mqqapi.reader.qq.com
+############## 圈x
+#企鹅读书获取更新body
+https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track url script-request-body https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js
+https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js
+############## loon
+//企鹅读书获取更新body
+http-request https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track script-path= https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js,requires-body=true, tag=企鹅读书获取更新body
+//企鹅读书获取时长cookie
+http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-path= https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js, requires-header=true, tag=企鹅读书获取时长cookie
+############## surge
+//企鹅读书获取更新body
+企鹅读书获取更新body = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track,script-path= https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js, 
+//企鹅读书获取时长cookie
+企鹅读书获取时长cookie = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid?,script-path= https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js, 
+
+
 12.10 新增提现，同步作者更新。同时修复body数据更新异常导致凌晨后1金币问题。
 12.11 新增提现变量，配合boxjs可选择提现额度。
+12.14 发现每日凌晨部分账号异常原因，是cookie获取出现同时获取多个body导致一些错误body的数据写入，已重新改写ck的写入。请重新为每个账号获取一次。
 */
 
 
