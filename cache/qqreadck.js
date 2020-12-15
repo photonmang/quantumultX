@@ -3,21 +3,17 @@ const $ = Env(jsname)
 
 console.log(`\n========= 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} =========\n`)
 
-const jbid=$.getdata('jbid');
-const qqreadbodyKey = 'qqreadbd'+jbid
-const qqreadbodyVal= $.getdata(qqreadbodyKey)
 
-const qqreadtimeurlKey = 'qqreadtimeurl'+jbid
-const qqreadtimeurlVal = $.getdata(qqreadtimeurlKey)
-
-const qqreadtimeheaderKey = 'qqreadtimehd'+jbid
-const qqreadtimeheaderVal= $.getdata(qqreadtimeheaderKey)
+let qqreadbodyVal = "";
+let qqreadtimeurlVal = "";
+let qqreadtimeheaderVal = "";
 
 
 
 if ((isGetCookie = typeof $request !== "undefined")) {
   GetCookie();
-$.done();
+  $.done();
+  return
 }
 
 
@@ -25,25 +21,25 @@ function GetCookie() {
 
 if ($request && $request.url.indexOf("addReadTimeWithBid?") >= 0) {
     const qqreadtimeurlVal = $request.url;
-    if (qqreadtimeurlVal) $.setdata(qqreadtimeurlVal, qqreadtimeheaderKey);
+    if (qqreadtimeurlVal) $.setdata(qqreadtimeurlVal, "qqreadtimeurl"+jbid);
     $.log(
-      `[${jsname + jbid}] 获取时长url: 成功,qqreadtimeurlVal: ${qqreadtimeurlVal}`
+      `[${jsname}] 获取时长url: 成功,qqreadtimeurlVal: ${qqreadtimeurlVal}`
     );
- $.msg(jsname + jbid, `获取时长url: 成功🎉`, ``);
+ $.msg(jsname, `qqreadtimeurl${jbid}: 获取时长url: 成功🎉`, ``);
     const qqreadtimeheaderVal = JSON.stringify($request.headers);
-    if (qqreadtimeheaderVal) $.setdata(qqreadtimeheaderVal, qqreadtimeheaderKey);
+    if (qqreadtimeheaderVal) $.setdata(qqreadtimeheaderVal, "qqreadtimehd"+jbid);
     $.log(
-      `[${jsname + jbid}] 获取时长header: 成功,qqreadtimeheaderVal: ${qqreadtimeheaderVal}`
+      `[${jsname}] 获取时长header: 成功,qqreadtimeheaderVal: ${qqreadtimeheaderVal}`
     );
-    $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
+    $.msg(jsname, `qqreadtimehd${jbid}: 获取时长header: 成功🎉`, ``);
   }
   else if ($request &&$request.body.indexOf("bookDetail_bottomBar_read_C")>=0&&$request.body.indexOf("bookRead_show_I")>=0&&$request.body.indexOf("topBar_left_back_C")<0&&$request.body.indexOf("bookRead_dropOut_shelfYes_C")<0){
     const qqreadbodyVal = $request.body;
-    if (qqreadbodyVal) $.setdata(qqreadbodyVal, qqreadbodyKey);
+    if (qqreadbodyVal) $.setdata(qqreadbodyVal, "qqreadbd"+jbid);
     $.log(
-      `[${jsname + jbid}] 获取更新body: 成功,qqreadbodyVal: ${qqreadbodyVal}`
+      `[${jsname}] 获取更新body: 成功,qqreadbodyVal: ${qqreadbodyVal}`
     );
-    $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
+    $.msg(jsname, `qqreadbd${jbid}: 获取更新body: 成功🎉`, ``);
 
     } 
 
