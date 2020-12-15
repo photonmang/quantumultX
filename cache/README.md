@@ -33,6 +33,8 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1. 圈X用户可直接添加重写配置来获取cookie
   - 点击右下角风车-找到重写-点击引用-点击右上角+号-粘贴如下链接
   - https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf
+    -  如果出现获取的cookie跑阅读的时候没有时长增加，可能是因为挂V速度较慢导致获取问题，可以替换成如下重写
+    -  https://gitee.com/photonmang/quantumult-x/raw/master/qqreadck.conf
   
 2. 在构建请求中添加执行脚本，可直接使用本库订阅（请先更新到最新版本圈X）
    - 点击右下角风车-找到构建请求-进去后点击左上角最左边的多文件夹重叠的图标-进入后点击右边的+号-粘贴如下链接
