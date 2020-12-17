@@ -37,7 +37,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 const jsname='QQ阅读'
 const $ = Env(jsname)
 
-const QQlogs = $.getdata('QQlogs');   
+const QQlogs = $.getdata('QQlogs') || false   //调试日志，默认关闭
 
 const notifyInterval=$.getdata('notifyInterval'); 
 
@@ -51,9 +51,9 @@ const wktimess=1200//周奖励领取标准，默认1200分钟
 
 const d = new Date(new Date().getTime() + 8 * 60 * 60 * 1000);
 
-const txje= $.getdata('txje');
-const jbidhj=$.getdata('jbidhj'); 
-const zhs=$.getdata('zhs'); 
+const txje= $.getdata('txje') || 100000 //默认10元提现额度
+const jbid=$.getdata('jbid') || 1 //默认获取1账号
+const zhs=$.getdata('zhs') || 1 //默认输出1个账号
 const qqreadbdArr = [];
 let qqreadbodyVal = "";
 const qqreadtimeurlArr = [];
