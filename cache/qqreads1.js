@@ -256,7 +256,31 @@ resolve()
    })
   }  
 
-// 更新
+// 金币统计
+function qqreadtrans() {
+  return new Promise((resolve, reject) => {  
+for(var y=1;y<9;y++){
+     let day=0;
+    const toqqreadtransurl = { 
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/trans/list?pn="+y, 
+      headers: JSON.parse(qqreadtimeheaderVal), 
+      timeout: 60000, 
+    };
+    $.get(toqqreadtransurl, (error, response, data) => {
+      if (logs) $.log(`${jsname}, 今日收益: ${data}`);
+      trans = JSON.parse(data);
+    for(var i=0;i<20;i++){
+if(trans.data.list[i].createTime>=daytime)
+  day+=trans.data.list[i].amount;
+}
+tz+="【今日收益】:获得"+day+'\n'	    
+resolve();
+      });
+     }
+  });
+}
+
+// body跟踪
 function qqreadtrack() {
     return new Promise((resolve, reject) => {
     const body = qqreadbodyVal.replace(new RegExp(/"dis":[0-9]{13}/),`"dis":${new Date().getTime()}`) 
