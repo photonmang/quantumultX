@@ -64,7 +64,7 @@
                         "keys": ["qqreadbd1", "qqreadtimeurl1", "qqreadtimehd1", "qqreadbd2", "qqreadtimeurl2", "qqreadtimehd2", "qqreadbd3", "qqreadtimeurl3", "qqreadtimehd3", "qqreadbd4", "qqreadtimeurl4", "qqreadtimehd4", "qqreadbd5", "qqreadtimeurl5","qqreadtimehd5", "qqreadbd6", "qqreadtimeurl6", "qqreadtimehd6", "qqreadbd7", "qqreadtimeurl7", "qqreadtimehd7", "qqreadbd8", "qqreadtimeurl8", "qqreadtimehd8","qqreadbd9", "qqreadtimeurl9", "qqreadtimehd9","qqreadbd10", "qqreadtimeurl10", "qqreadtimehd10","qqreadbd11", "qqreadtimeurl11", "qqreadtimehd11","qqreadbd12", "qqreadtimeurl12", "qqreadtimehd12","qqreadbd13", "qqreadtimeurl13", "qqreadtimehd13","qqreadbd14", "qqreadtimeurl14", "qqreadtimehd14","qqreadbd15", "qqreadtimeurl15", "qqreadtimehd15","qqreadbd16", "qqreadtimeurl16", "qqreadtimehd16","qqreadbd17", "qqreadtimeurl17", "qqreadtimehd17","qqreadbd18", "qqreadtimeurl18", "qqreadtimehd18","qqreadbd19", "qqreadtimeurl19", "qqreadtimehd19","qqreadbd20", "qqreadtimeurl20", "qqreadtimehd20"],
 			"descs_html": [
         "脚本使用说明：",
-        "1.请先配置好本仓库的Cookie获取脚本的【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqread.js</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
+        "1.请先配置好本仓库的Cookie重写脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf\">Cookie.conf</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
 	"2.请在以下获取账号Cookie中填写您要获取的账号,请填写阿拉伯数字来表示！",			
         "3.进入QQ阅读获取Cookie【<a href=\"http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14\">点我打开</a>】",
 	"4.进书库 看10秒以下 然后退出，看书一定不能超过10秒.获取url,time,body三个更新提醒.",
@@ -157,8 +157,7 @@
 			"author": "@photonmang",
 			"repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js",
 			"icons": [
-				"https://raw.githubusercontent.com/Orz-3/mini/master/qqvip.png",
-				"https://raw.githubusercontent.com/Orz-3/task/master/qqvip.png"
+				"https://gitee.com/photonmang/quantumult-x/raw/master/qqread.jpg"
 			]
 		},
     {
