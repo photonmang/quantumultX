@@ -60,9 +60,6 @@ const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
-let qqreadBD = [];
-let qqreadtimeURL = [];
-let qqreadtimeHD = [];
 let tz='';
 let K = 0;
 if ((isGetCookie = typeof $request !== "undefined")) {
