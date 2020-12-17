@@ -3,7 +3,7 @@
     "description": "这是收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
     "task": [
 "0 2 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js,tag=京东云助力码, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
-"*/11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=QQ阅读自定义账号, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
+"*/11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=QQ阅读自定义账号, img-url=https://raw.githubusercontent.com/photonmang/quantumultX/master/qqread.jpg, enabled=false",
 "0 9 * * * https://raw.githubusercontent.com/whyour/hundun/master/quanx/jdzz.js, tag=京东赚赚, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdzz.png, enabled=false",
 "*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js, tag=中青阅读, img-url=book.circle.fill.system, enabled=false",
 "*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ2.js, tag=中青阅读2, img-url=book.circle.fill.system, enabled=false",
