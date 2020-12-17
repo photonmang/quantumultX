@@ -156,9 +156,7 @@
 			],
 			"author": "@photonmang",
 			"repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads.js",
-			"icons": [
-				"https://gitee.com/photonmang/quantumult-x/raw/master/qqread.jpg"
-			]
+			"icons": ["https://gitee.com/photonmang/quantumult-x/raw/master/qqread.jpg","https://gitee.com/photonmang/quantumult-x/raw/master/qqread.jpg"]
 		},
     {
       "id": "shareCode",
