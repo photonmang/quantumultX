@@ -286,7 +286,7 @@ return new Promise((resolve, reject) => {
    $.get(toqqreadinfourl,(error, response, data) =>{
      if(QQlogs=="true") $.log(`${jsname}, 用户名: ${data}`)
      info =JSON.parse(data)
-kz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
+tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
 
 resolve()
     })
