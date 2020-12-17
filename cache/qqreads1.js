@@ -114,7 +114,7 @@ function all() {
   qqreadbodyVal = qqreadbdArr[K];
   qqreadtimeurlVal = qqreadtimeurlArr[K];
   qqreadtimeheaderVal = qqreadtimehdArr[K];
-  for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < 9; i++) {
     (function (i) {
       setTimeout(
         function () {
@@ -141,7 +141,7 @@ function all() {
           if (task.data && task.data.taskList[3].doneFlag == 0)
               qqreadvideo();// 视频任务 
 }
-     else if (i == 7 ){
+     else if (i == 4 ){
        if (task.data && task.data.treasureBox.doneFlag == 0)
               qqreadbox();// 宝箱
           if (task.data && task.data.taskList[1].doneFlag == 0)
@@ -149,23 +149,23 @@ function all() {
           if (task.data && task.data.taskList[2].doneFlag == 0)
               qqreadsign2();// 签到翻倍
 }    
-     else if (i == 8&&task.data && 
+     else if (i == 5&&task.data && 
 task.data.user.amount >= txje){
           if (d.getHours() == 23)
               qqreadwithdraw();//现金提现
 }
 
-     else if (i == 9){
+     else if (i == 6){
           if (d.getHours() == 23 && d.getMinutes() >= 40)
               qqreadtrans();//今日收益累计
 }
-     else if (i == 11 ){   
+     else if (i == 7 ){   
           if (task.data && task.data.treasureBox.videoDoneFlag == 0)
               qqreadbox2();// 宝箱翻倍
     if (task.data && task.data.taskList[1].doneFlag == 0)
               qqreadssr3();// 阅读金币3
 }    
-     else if (i == 12){  
+     else if (i == 8){  
        if ( K < qqreadbdArr.length - 1) {
               K += 1;
               all();
