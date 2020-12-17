@@ -185,10 +185,6 @@ function qqreadtask() {
     $.get(toqqreadtaskurl, (error, response, data) => {
       if(QQlogs=="true")  $.log(`${jsname}, 任务列表: ${data}`);
       task = JSON.parse(data);
-      kz +=
-        `【现金余额】:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
-        `【已开宝箱】:${task.data.treasureBox.count}个\n`;
-
       tz +=
         `【现金余额】:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
         `【第${task.data.invite.issue}期】:时间${task.data.invite.dayRange}\n` +
