@@ -53,64 +53,81 @@ const d = new Date(new Date().getTime() + 8 * 60 * 60 * 1000);
 const txje= $.getdata('txje');
 const jbidhj=$.getdata('jbidhj'); 
 const zhs=$.getdata('zhs'); 
+const qqreadbdArr = [];
+let qqreadbodyVal = "";
+const qqreadtimeurlArr = [];
+let qqreadtimeurlVal = "";
+const qqreadtimehdArr = [];
+let qqreadtimeheaderVal = "";
+let qqreadBD = [];
+let qqreadtimeURL = [];
+let qqreadtimeHD = [];
+let tz='';
+let K = 0;
+if ((isGetCookie = typeof $request !== "undefined")) {
+  GetCookie();
+  $.done();
+} 
 
-var tz=''
-var zhs1=zhs*2-1
-var index=zhs+2;
-var index1=zhs+1;
+function GetCookie() {
 
- function xxx()
+if ($request && $request.url.indexOf("addReadTimeWithBid?") >= 0) {
+    const qqreadtimeurlVal = $request.url;
+    if (qqreadtimeurlVal) $.setdata(qqreadtimeurlVal, "qqreadtimeurl" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取时长url: 成功,qqreadtimeurlVal: ${qqreadtimeurlVal}`
+    );
+ $.msg(jsname + jbid, `获取时长url: 成功🎉`, ``);
+    const qqreadtimeheaderVal = JSON.stringify($request.headers);
+    if (qqreadtimeheaderVal) $.setdata(qqreadtimeheaderVal, "qqreadtimehd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取时长header: 成功,qqreadtimeheaderVal: ${qqreadtimeheaderVal}`
+    );
+    $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
+  }
+  else if ($request &&$request.body.indexOf("bookDetail_bottomBar_read_C")>=0&&$request.body.indexOf("bookRead_show_I")>=0&&$request.body.indexOf("topBar_left_back_C")<0&&$request.body.indexOf("bookRead_dropOut_shelfYes_C")<0){
+    const qqreadbodyVal = $request.body;
+    if (qqreadbodyVal) $.setdata(qqreadbodyVal, "qqreadbd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取更新body: 成功,qqreadbodyVal: ${qqreadbodyVal}`
+    );
+    $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
 
- {
-   
-   for(var i=0;i<index;i++)
- { (function(i) {
-            setTimeout(function() {
+    } 
+
+}
 
 
-jbid=jbidhj[i];
-
-qqreadbodyVal= $.getdata('qqreadbd'+jbid)
-qqreadtimeurlVal = $.getdata('qqreadtimeurl'+jbid)
-qqreadtimeheaderVal=$.getdata('qqreadtimehd'+jbid)
-
+for (let index = 1; index <= zhs; index++) {
+    if ($.getdata('qqreadbd'+index) === undefined || $.getdata('qqreadbd'+index) === '') {
+      break
+    }
+    qqreadbdArr.push($.getdata("qqreadbd"+index));
+    qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
+    qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
+  }
+  console.log(`============ 共${qqreadtimehdArr.length}个QQ阅读账号  =============\n`)
+  console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
 all();
-
-if (i%2== 0) fgx()
-if (i== zhs1) showmsg()
-if (i== index1) $.done()
-
- }
-, (i + 1) *17000);
-                })(i)
-}
-}
-
-xxx()
-
-function fgx() {     
-tz+='👤'+'\n'
-  }  
-
-
 function all() {
-
-for(var i=0;i<9;i++)
- { (function(i) {
-            setTimeout(function() {
-
-      if (i == 0) 
+  qqreadbodyVal = qqreadbdArr[K];
+  qqreadtimeurlVal = qqreadtimeurlArr[K];
+  qqreadtimeheaderVal = qqreadtimehdArr[K];
+  for (let i = 0; i < 13; i++) {
+    (function (i) {
+      setTimeout(
+        function () {
+          if (i == 0) 
               qqreadinfo(); // 用户名
           if (i == 1) {
+              qqreadwktime(); // 周时长查询
+              qqreadconfig(); // 时长查询
               qqreadtrack();//更新
    } else if (i == 2){
-	qqreadwktime(); // 周时长查询
-        qqreadconfig(); // 时长查询
-   } else if (i ==3) {
         qqreadtask();// 任务列表
           if (config.data &&config.data.pageParams.todayReadSeconds / 3600 <= maxtime)qqreadtime();   // 上传时长
 }     
-     else if (i == 4 ){
+     else if (i == 3 ){
               qqreadpick();// 领周时长奖励
     if (task.data && task.data.taskList[0].doneFlag == 0)
         qqreaddayread();// 阅读任务
@@ -123,7 +140,7 @@ for(var i=0;i<9;i++)
           if (task.data && task.data.taskList[3].doneFlag == 0)
               qqreadvideo();// 视频任务 
 }
-     else if (i == 5 ){
+     else if (i == 7 ){
        if (task.data && task.data.treasureBox.doneFlag == 0)
               qqreadbox();// 宝箱
           if (task.data && task.data.taskList[1].doneFlag == 0)
@@ -131,25 +148,37 @@ for(var i=0;i<9;i++)
           if (task.data && task.data.taskList[2].doneFlag == 0)
               qqreadsign2();// 签到翻倍
 }    
-     else if (i == 6){
-          if (task.data && 
-task.data.user.amount >= 100000)
+     else if (i == 8&&task.data && 
+task.data.user.amount >= txje){
+          if (d.getHours() == 23)
               qqreadwithdraw();//现金提现
 }
-     else if (i == 7){
+
+     else if (i == 9){
           if (d.getHours() == 23 && d.getMinutes() >= 40)
               qqreadtrans();//今日收益累计
 }
-     else if (i == 8 ){        
+     else if (i == 11 ){   
           if (task.data && task.data.treasureBox.videoDoneFlag == 0)
               qqreadbox2();// 宝箱翻倍
     if (task.data && task.data.taskList[1].doneFlag == 0)
               qqreadssr3();// 阅读金币3
-}
+}    
+     else if (i == 12){  
+       if ( K < qqreadbdArr.length - 1) {
+              K += 1;
+              all();
+}    else if (K == qqreadbdArr.length - 1) {
+              showmsg(); // 通知
+              $.done();
+  }
  }
-, (i + 1) *dd*1000);
-        })(i)
-     }
+},
+
+        (i + 1) * dd * 1000
+      );
+    })(i);
+  }
 }
 
 
@@ -256,8 +285,7 @@ return new Promise((resolve, reject) => {
    $.get(toqqreadinfourl,(error, response, data) =>{
      if(QQlogs=="true") $.log(`${jsname}, 用户名: ${data}`)
      info =JSON.parse(data)
-tz+=
-'【用户信息】:'+info.data.user.nickName+'\n'
+kz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
 
 resolve()
     })
