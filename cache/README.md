@@ -1,5 +1,3 @@
-https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
-
 # QQ阅读多账号版
 
 > 代码已同时兼容 QuantumultX,Surge,Loon, 使用同一份签到脚本即可
@@ -40,16 +38,17 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
    - 点击右下角风车-找到构建请求-进去后点击左上角最左边的多文件夹重叠的图标-进入后点击右边的+号-粘贴如下链接
    - 点击右下角风车-找到重写-点击引用-点击右上角+号-粘贴如下链接。并添加QQ阅读自定义账号版的task任务
    https://raw.githubusercontent.com/photonmang/quantumultX/master/config/taskall.json
-   
+    - 如暂时无订阅版本圈X并无法进行订阅，可手工在圈X配置页[task]下添加以下执行脚本
+    -  */11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=QQ阅读自定义账号, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=true
+
 3. 在boxjs订阅本库订阅地址
   - 打开boxjs.net(商店版本boxjs.com），点击订阅-右上角+号-输入如下订阅地址
   - https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
 
 4. 在boxjs中点击应用，找到已添加的本库订阅，点击[QQ阅读多账号自定义版]右边的星星。（会自动收藏到首页）
    - 在点击首页，找到QQ阅读订阅进入，并进行相关配置
-   - 第一行请填写需要执行的账号数量，如3个账号请填写1,2,3 后面用英文逗号隔开
-   - 第二行请填写需要获取的cookie号数字，如获取第一个账号，填写1
-   - 第三行请填写您需要运行的账号数，如3个账号，请填写3
+   - 第一行请填写需要获取的cookie号数字，如获取第一个账号，填写1
+   - 第二行请填写您需要运行的账号数，如3个账号，请填写3
    - 全部设置好后记得一定要点击保存！否则配置不会生效
    
 5. QQ阅读的CK获取方法
@@ -59,8 +58,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
       - body更新，url更新，time更新。记得一定要获取三个更新，否则可能执行过程中出现无法获取奖励的问题
     - 特别注意：在boxjs中设置要获取的第一个COOKIE，请记得一定要输入完后点击保存。设置完第一个后再设置第二个，依次类推。
 
-6. 超过10个账号后请暂用英文字母a-z代替，如第10个请用字母a代替,第11个请用b代替。
-   - 关于1金币问题，一般都是cookie获取的body不完整导致的，如果出现1金币问题，请重新到书库进行更新cookie，哪个账号问题的，请输入对应账号数字进行保存设置后再去获取，以免覆盖掉正常账号。
+6. 关于1金币问题，一般都是cookie获取的body不完整导致的，如果出现1金币问题，请重新到书库进行更新cookie，哪个账号问题的，请输入对应账号数字进行保存设置后再去获取，以免覆盖掉正常账号。
 
 
 
