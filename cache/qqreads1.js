@@ -29,6 +29,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 12.10 新增提现，同步作者更新。同时修复body数据更新异常导致凌晨后1金币问题。
 12.11 新增提现变量，配合boxjs可选择提现额度。
 12.14 发现每日凌晨部分账号异常原因，是cookie获取出现同时获取多个body导致一些错误body的数据写入，已重新改写ck的写入。请重新为每个账号获取一次。
+12.17 修改运行逻辑，请同时到JSBOX中更新订阅
 
 */
 
