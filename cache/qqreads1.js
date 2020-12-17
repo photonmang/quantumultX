@@ -39,7 +39,7 @@ const $ = Env(jsname)
 
 const QQlogs = $.getdata('QQlogs') || false   //调试日志，默认关闭
 
-const notifyInterval=$.getdata('notifyInterval'); 
+const notifyInterval=$.getdata('notifyInterval') || 3 //默认宝箱每15次通知一次
 
 const dd=1//单次任务延迟,默认1秒
 
