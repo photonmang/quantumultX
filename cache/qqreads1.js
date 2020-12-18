@@ -29,7 +29,8 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 12.10 新增提现，同步作者更新。同时修复body数据更新异常导致凌晨后1金币问题。
 12.11 新增提现变量，配合boxjs可选择提现额度。
 12.14 发现每日凌晨部分账号异常原因，是cookie获取出现同时获取多个body导致一些错误body的数据写入，已重新改写ck的写入。请重新为每个账号获取一次。
-12.17 修改运行逻辑，请同时到JSBOX中更新订阅
+12.17 修改运行逻辑，请同时到BOXJS中更新订阅
+12.18 添加自定义提现时间并增加一个显示通知方案。请再次更新BOXJS订阅，以适配新的通知方案
 
 */
 
@@ -44,6 +45,7 @@ const maxtime=12//每日上传时长限制，默认20小时
 const wktimess=1200//周奖励领取标准，默认1200分钟
 const d = new Date(new Date().getTime() + 8 * 60 * 60 * 1000);
 const txje= $.getdata('txje') || 100000 //默认10元提现额度
+const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
 const zhs=$.getdata('zhs') || 1 //默认输出1个账号
 const qqreadbdArr = [];
@@ -140,7 +142,7 @@ function all() {
 }    
      else if (i == 5 &&task.data && 
 task.data.user.amount >= txje){
-          if (d.getHours() == 23)
+          if (d.getHours() == txsj)
               qqreadwithdraw();//现金提现
 }
 
@@ -581,7 +583,7 @@ function showmsg() {
 	
 tz += `\n\n========= 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime()).toLocaleString()} \n\n`;
 
-if (notifyInterval != 1) console.log(tz); // 无通知时，打印通知
+if (notifyInterval != 0) console.log(tz); // 无通知时，打印通知
 
 if (notifyInterval == 1) $.msg(jsname, "", tz); // 显示所有通知
   else if (notifyInterval == 2 &&task.data &&task.data.treasureBox.doneFlag == 0)
@@ -594,6 +596,8 @@ if (notifyInterval == 1) $.msg(jsname, "", tz); // 显示所有通知
     task.data.treasureBox.count == 60
   )
     $.msg(jsname, "", tz); // 宝箱每15次通知一次
+  else if (notifyInterval == 4 && d.getHours() == 23 && d.getMinutes() >= 40)
+    $.msg(jsname, "", tz); // 每晚23点40后显示通知
 }
 
 
