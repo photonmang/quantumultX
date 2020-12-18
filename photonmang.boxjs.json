@@ -96,6 +96,10 @@
             {
               "key": "3",
               "label": "宝箱每15次通知一次"
+            },
+            {
+              "key": "4",
+              "label": "每晚23点40后显示通知"
             }
             
           ]
@@ -152,6 +156,16 @@
               "label": "100元"
             }
           ]
+				},
+				{
+					"id": "txsj",
+					"name": "自定义提现时间",
+					"val": "23",
+					"type": "number",
+                                        "placeholder": "默认23点提现时间",
+                                        "autoGrow": true,
+                                        "rows": 1,
+					"desc": "请输入自定义时间，时间格式为0-23点"
 				}
 			],
 			"author": "@photonmang",
