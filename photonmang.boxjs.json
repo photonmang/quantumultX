@@ -132,6 +132,10 @@
 					"desc": "",
                                         "items": [
             {
+              "key": "6000",
+              "label": "0.6元(仅适用新号第一次提现)"
+            },
+	     {
               "key": "10000",
               "label": "1元"
             },
@@ -303,6 +307,15 @@
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js",
       "script": "https://github.com/photonmang/quantumultX",
       "icons": [ "https://raw.githubusercontent.com/Orz-3/mini/master/jd.png","https://raw.githubusercontent.com/Orz-3/task/master/jd.png"]
+    },
+    {
+      "id": "JDcookies",
+      "name": "京东多CK管理",
+      "keys": ["CookieJD,CookieJD2,CookieJD3,CookieJD4,CookieJD5,CookieJD6,CookieJD7,CookieJD8,CookieJD9,CookieJD10"],
+      "author": "@photonmang",
+      "repo": "",
+      "script": "https://github.com/photonmang/quantumultX",
+      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/jd.png","https://raw.githubusercontent.com/Orz-3/task/master/jd.png"]
     }
   ]
 }
