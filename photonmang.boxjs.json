@@ -311,7 +311,7 @@
     {
       "id": "JDcookies",
       "name": "京东多CK管理",
-      "keys": ["CookieJD,CookieJD2,CookieJD3,CookieJD4,CookieJD5,CookieJD6,CookieJD7,CookieJD8,CookieJD9,CookieJD10"],
+      "keys": ["CookieJD","CookieJD2","CookieJD3","CookieJD4","CookieJD5","CookieJD6","CookieJD7","CookieJD8","CookieJD9","CookieJD10"],
       "author": "@photonmang",
       "repo": "",
       "script": "https://github.com/photonmang/quantumultX",
