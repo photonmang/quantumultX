@@ -19,7 +19,12 @@ cron "15,20 10 1,10,20 * *" script-path=https://raw.githubusercontent.com/photon
 ====================================小火箭=============================
 互助码提交 = type=cron,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js, cronexpr="15,20 10 1,10,20 * *", timeout=500, enable=true
 
+
+
+12.28  新增京东crazyjoy助力，请及时更新boxjs订阅进行添加joy助力码
 */
+
+
 const jsname='互助码提交'
 const $ = Env(jsname)
 const dd_shareCode1 = $.getdata('dd_shareCode1') ;
@@ -27,29 +32,34 @@ const jx_shareCode1 = $.getdata('jx_shareCode1') ;
 const zd_shareCode1 = $.getdata('zd_shareCode1') ;
 const nc_shareCode1 = $.getdata('nc_shareCode1') ;
 const mc_shareCode1 = $.getdata('mc_shareCode1') ;
+const joy_shareCode1 = $.getdata('joy_shareCode1') ;
 
 const dd_shareCode2 = $.getdata('dd_shareCode2') ;
 const jx_shareCode2 = $.getdata('jx_shareCode2') ;
 const zd_shareCode2 = $.getdata('zd_shareCode2') ;
 const nc_shareCode2 = $.getdata('nc_shareCode2') ;
 const mc_shareCode2 = $.getdata('mc_shareCode2') ;
+const joy_shareCode2 = $.getdata('joy_shareCode2') ;
 
 const dd_shareCode3 = $.getdata('dd_shareCode3') ;
 const jx_shareCode3 = $.getdata('jx_shareCode3') ;
 const zd_shareCode3 = $.getdata('zd_shareCode3') ;
 const nc_shareCode3 = $.getdata('nc_shareCode3') ;
 const mc_shareCode3 = $.getdata('mc_shareCode3') ;
+const joy_shareCode3 = $.getdata('joy_shareCode3') ;
 
 let dd_shareCodeVal = "";
 let jx_shareCodeVal = "";
 let zd_shareCodeVal = "";
 let nc_shareCodeVal = "";
 let mc_shareCodeVal = "";
+let joy_shareCodeVal = "";
 const  dd_shareCodeArr = [];
 const  jx_shareCodeArr = [];
 const  zd_shareCodeArr = [];
 const  nc_shareCodeArr = [];
 const  mc_shareCodeArr = [];
+const  joy_shareCodeArr = [];
 let K = 0;
 let tz='';
 const dd=3//单次任务延迟,默认3秒
@@ -63,6 +73,7 @@ for (let index = 1; index <= 3; index++) {
     zd_shareCodeArr.push($.getdata("zd_shareCode"+index));    
     nc_shareCodeArr.push($.getdata("nc_shareCode"+index));
     mc_shareCodeArr.push($.getdata("mc_shareCode"+index));
+    joy_shareCodeArr.push($.getdata("joy_shareCode"+index));
   }
     console.log(`============ 共${dd_shareCodeArr.length}个京东账号  =============\n`)
 
@@ -73,6 +84,7 @@ function all() {
   zd_shareCodeVal = zd_shareCodeArr[K];
   nc_shareCodeVal = nc_shareCodeArr[K];
   mc_shareCodeVal = mc_shareCodeArr[K];
+  joy_shareCodeVal = joy_shareCodeArr[K];
   for (let i = 0; i < 8; i++) {
     (function (i) {
       setTimeout(
@@ -90,8 +102,10 @@ function all() {
           execnc_shareCode();//京东农场
           if (i == 5 )
           execmc_shareCode();//京东萌宠  
-        else  if (i == 6 ) {
-     console.log('东东工厂Body:');
+	  if (i == 6 )
+          execjoy_shareCode();//京东CrazyJoy任务  
+        else  if (i == 7 ) {
+        console.log('东东工厂Body:');
   	console.log( $.dd_shareCodeBody);
   	console.log('\r\n京喜工厂Body:');
   	console.log( $.jx_shareCodeBody);
@@ -101,7 +115,9 @@ function all() {
   	console.log( $.nc_shareCodeBody);
   	console.log('\r\n京东萌宠Body:');
 	console.log( $.mc_shareCodeBody);
-     }else if (i == 7){  
+	console.log('\r\nj京东CrazyJoyBody:');
+	console.log( $.joy_shareCodeBody);
+     }else if (i == 8){  
        if ( K < dd_shareCodeArr.length - 1) {
               K += 1;
               all();
@@ -223,6 +239,24 @@ function execmc_shareCode() {
   })
 }
 
+function execjoy_shareCode() {
+  return new Promise((resolve) => {
+    const url = { 
+       url: 'https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/'+joy_shareCodeVal,
+       headers: {'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'},
+	}
+    $.get(url,(err, resp, data)=> {  
+      try {
+        $.joy_shareCodeBody = data
+        tz += `京东CrazyJoy:`+ resp.statusCode+`\n`
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve()
+      }
+    })
+  })
+}
 
 function showmsg() {
   return new Promise((resolve) => {
