@@ -9,6 +9,9 @@ const jsname = '企鹅读书'
 const $ = Env(jsname)
 let task = '';
 let tz = '';
+
+const zhs=$.getdata('zhs') || 1 //默认输出1个账号
+
 const qqreadbdArr = [];
 let qqreadbodyVal = "";
 const qqreadtimeurlArr = [];
