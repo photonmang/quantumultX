@@ -262,7 +262,7 @@ function qqreadwithdraw() {
       if(QQlogs=="true")  $.log(`${jsname}, 提现: ${data}`);
       withdraw = JSON.parse(data);
 if(withdraw.data.code==0)
-      tz += `【现金提现】:成功提现10元\n`;
+      tz += `【现金提现】:成功提现`+txje+`元\n`;
       resolve();
     });
   });
@@ -277,9 +277,14 @@ function qqreadinfo() {
       timeout: 60000,
     };
     $.get(toqqreadinfourl, (error, response, data) => {
-      if(QQlogs=="true")  $.log(`${jsname}, 用户名: ${data}`);
+       if(QQlogs=="true")  $.log(`${jsname}, 用户名: ${data}`);
       info = JSON.parse(data);
+       if (!info.data.user)
+      $.msg(`❌❌❌【${jsname+(K+1)}】COOKE失效，请重新获取`);
       tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
+	if (info.data.user.nickName){
+      tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
+      }
       resolve();
     });
   });
