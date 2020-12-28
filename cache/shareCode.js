@@ -62,7 +62,7 @@ const  mc_shareCodeArr = [];
 const  joy_shareCodeArr = [];
 let K = 0;
 let tz='';
-const dd=3//单次任务延迟,默认3秒
+const dd=1//单次任务延迟,默认1秒
 
 for (let index = 1; index <= 3; index++) {
     if ($.getdata('dd_shareCode'+index) === undefined || $.getdata('dd_shareCode'+index) === '') {
@@ -85,7 +85,7 @@ function all() {
   nc_shareCodeVal = nc_shareCodeArr[K];
   mc_shareCodeVal = mc_shareCodeArr[K];
   joy_shareCodeVal = joy_shareCodeArr[K];
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 9; i++) {
     (function (i) {
       setTimeout(
         function () {
