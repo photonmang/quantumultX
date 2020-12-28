@@ -233,6 +233,13 @@
           "desc": "此处请填写你的京喜工厂码"
         },
 	{
+          "id": "joy_shareCode1",
+          "name": "账号一的京东CrazyJoy",
+          "val": "",
+          "type": "text",
+          "desc": "此处请填写你的京东CrazyJoy码"
+        },	
+	{
           "id": "zd_shareCode2",
           "name": "账号二的种豆得豆",
           "val": "",
@@ -266,7 +273,14 @@
           "val": "",
           "type": "text",
           "desc": "此处请填写你的京喜工厂码"
-        },
+        },        
+	{
+          "id": "joy_shareCode2",
+          "name": "账号二的京东CrazyJoy",
+          "val": "",
+          "type": "text",
+          "desc": "此处请填写你的京东CrazyJoy码"
+        },	
 	{
           "id": "zd_shareCode3",
           "name": "账号三的种豆得豆",
@@ -301,7 +315,14 @@
           "val": "",
           "type": "text",
           "desc": "此处请填写你的京喜工厂码"
-        }
+        },
+        {
+          "id": "joy_shareCode3",
+          "name": "账号三的京东CrazyJoy",
+          "val": "",
+          "type": "text",
+          "desc": "此处请填写你的京东CrazyJoy码"
+        }	      
       ],
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js",
