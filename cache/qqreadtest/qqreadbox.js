@@ -87,7 +87,7 @@ function qqreadwithdraw() {
       let withdraw = JSON.parse(data);
       if (withdraw.data.code == 0)
         tz += `【现金提现】:成功提现10元\n`;
-      kz += `【现金提现】:成功提现10元\n`;
+     
       resolve();
     });
   });
@@ -147,9 +147,7 @@ function qqreadinfo() {
     $.get(toqqreadinfourl, (error, response, data) => {
       if (logs) $.log(`${jsname}, 用户名: ${data}`);
       let info = JSON.parse(data);
-      kz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
       tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
-
       resolve();
     });
   });
