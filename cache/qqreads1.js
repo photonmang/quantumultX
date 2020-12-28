@@ -1,7 +1,7 @@
 
 /*
 
-本脚本改版至@ziye的脚本，原版本github地址：https://github.com/ziye12/JavaScript 
+本脚本改版至ziye
 
 多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
@@ -279,9 +279,10 @@ function qqreadinfo() {
     $.get(toqqreadinfourl, (error, response, data) => {
        if(QQlogs=="true")  $.log(`${jsname}, 用户名: ${data}`);
       info = JSON.parse(data);
-       if (!info.data.user)
+       if (!info.data.user){
       $.msg(`❌❌❌【${jsname+(K+1)}】COOKE失效，请重新获取`);
       tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
+      }
 	if (info.data.user.nickName){
       tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
       }
