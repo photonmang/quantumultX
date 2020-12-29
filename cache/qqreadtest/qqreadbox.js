@@ -2,10 +2,6 @@
 
 12.28 宝箱单开版
 12.29 修改输出方式为日志打印，提升了执行完成速度！执行预估可开箱68-72个箱子
-============================================
-圈X：
-[task_loca]
-*/5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读Box单开, enabled=true
 
 */
 
