@@ -17,7 +17,7 @@ const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
-console.log(`\n========= 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} =========\n`)
+console.log(`\n==== 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} ====\n`)
 //const notify = require('./sendNotify');
 const logs = 0;   //0为关闭日志，1为开启
 
