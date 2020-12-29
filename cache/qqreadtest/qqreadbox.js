@@ -10,6 +10,7 @@ const $ = Env(jsname)
 let task = '';
 let tz = '';
 const zhs=$.getdata('zhs') || 1 //默认输出1个账号
+const txje= $.getdata('txje') || 100000 //默认10元提现额度
 const qqreadbdArr = [];
 let qqreadbodyVal = "";
 const qqreadtimeurlArr = [];
@@ -52,7 +53,7 @@ async function all() {
     tz = '';    
     qqreadbodyVal = qqreadbdArr[i];
     qqreadtimeheaderVal = qqreadtimehdArr[i];    
-    O=(`${jsname+(i + 1)}`);     
+    boxs=(`============ ${jsname+(i + 1)} =============\n`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
 	{await qqreadtrack()};//更新   
     await qqreadtask();//任务列表  
@@ -69,7 +70,7 @@ async function all() {
 function showmsg() {
   return new Promise(async resolve => {
     let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);   
-    $.msg(O, "", tz);
+    $.log(boxs, "", tz);
     resolve()
   })
 }
@@ -134,25 +135,6 @@ function qqreadtrack() {
     });
   });
 }
-
-
-// 用户名
-function qqreadinfo() {
-  return new Promise((resolve, reject) => {
-    const toqqreadinfourl = {
-      url: "https://mqqapi.reader.qq.com/mqq/user/init",
-      headers: JSON.parse(qqreadtimeheaderVal),
-      timeout: 60000,
-    };
-    $.get(toqqreadinfourl, (error, response, data) => {
-      if (logs) $.log(`${jsname}, 用户名: ${data}`);
-      let info = JSON.parse(data);
-      tz += `\n========== 【${info.data.user.nickName}】 ==========\n`;
-      resolve();
-    });
-  });
-}
-
 
 // 宝箱奖励
 function qqreadbox() {
