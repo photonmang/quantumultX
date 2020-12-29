@@ -1,7 +1,11 @@
 /*
-******************************************************************************
 
 12.28 宝箱单开版
+12.29 修改输出方式为日志打印，提升了执行完成速度！执行预估可开箱68-72个箱子
+============================================
+圈X：
+[task_loca]
+*/5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读Box单开, enabled=true
 
 */
 
@@ -9,7 +13,7 @@ const jsname = 'QQ阅读'
 const $ = Env(jsname)
 let task = '';
 let tz = '';
-const zhs=$.getdata('zhs') || 1 //默认输出1个账号
+const zhs=$.getdata('zhs') || 1 
 const qqreadbdArr = [];
 let qqreadbodyVal = "";
 const qqreadtimeurlArr = [];
@@ -17,7 +21,6 @@ let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
 console.log(`\n==== 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} ====\n`)
-//const notify = require('./sendNotify');
 const logs = 0;   //0为关闭日志，1为开启
 
 
