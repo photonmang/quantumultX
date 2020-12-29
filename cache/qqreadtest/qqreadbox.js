@@ -79,7 +79,7 @@ function showmsg() {
 function qqreadwithdraw() {
   return new Promise((resolve, reject) => {
     const toqqreadwithdrawurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/withdraw?amount=100000",
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/withdraw?amount="+txje,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -87,8 +87,7 @@ function qqreadwithdraw() {
       if (logs) $.log(`${jsname}, 提现: ${data}`);
       let withdraw = JSON.parse(data);
       if (withdraw.data.code == 0)
-        tz += `【现金提现】:成功提现10元\n`;
-     
+        tz += `【现金提现】:成功提现`+txje`元\n`;    
       resolve();
     });
   });
