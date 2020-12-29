@@ -52,7 +52,7 @@ async function all() {
     tz = '';    
     qqreadbodyVal = qqreadbdArr[i];
     qqreadtimeheaderVal = qqreadtimehdArr[i];    
-    boxs=(`============ ${jsname+(i + 1)} =============\n`);     
+    boxs=(`============ ${jsname+(i + 1)} =============`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
 	{await qqreadtrack()};//更新   
     await qqreadtask();//任务列表  
