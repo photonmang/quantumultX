@@ -1,7 +1,8 @@
 {
     "name": "quantumultX all Task",
-    "description": "这是收集各个圈x脚本作者的task库，感谢各位大佬的辛勤付出",
+    "description": "这是收集各个圈x脚本作者的Task库，感谢各位大佬的辛勤付出",
     "task": [
+"10-20/10 9 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_watch.js, tag=京东看一看, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png,enabled=false",
 "*/5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
 "0 2 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js,tag=京东云助力码, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "*/11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=QQ阅读自定义账号, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
