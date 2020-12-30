@@ -31,9 +31,10 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1. 圈X用户可直接添加重写配置来获取cookie
   - 点击右下角风车-找到重写-点击引用-点击右上角+号-粘贴如下链接
   - https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf
-    -  如果出现获取的cookie跑阅读的时候没有时长增加，可能是因为挂V速度较慢导致获取问题，可以替换成如下重写
-    -  https://gitee.com/photonmang/quantumult-x/raw/master/qqreadck.conf
-  
+    -  如果出现获取的cookie跑阅读的时候没有时长增加，可能是因为挂V速度较慢导致获取问题，可以下载qqreads1.js脚本到本地Quantumult X-Scripts
+    -  打开圈X，点击风车-配置文件-编辑-在[rewrite_local]下以下两段添加 
+    -  https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track url script-request-body qqreads1.js
+    -  https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-header qqreads1.js
 2. 在构建请求中添加执行脚本，可直接使用本库订阅（请先更新到最新版本圈X）
    - 点击右下角风车-找到构建请求-进去后点击左上角最左边的多文件夹重叠的图标-进入后点击右边的+号-粘贴如下链接
    - 点击右下角风车-找到重写-点击引用-点击右上角+号-粘贴如下链接。并添加QQ阅读自定义账号版的task任务
@@ -60,5 +61,5 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 
 6. 关于1金币问题，一般都是cookie获取的body不完整导致的，如果出现1金币问题，请重新到书库进行更新cookie，哪个账号问题的，请输入对应账号数字进行保存设置后再去获取，以免覆盖掉正常账号。
 
-
-
+7. 新增一个开箱单独版本，经过几天测试实测可以开满72个宝箱。（请在task中添加，如无订阅入口可手工添加以下代码到[task_local]下）
+  - */5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=true
