@@ -62,4 +62,4 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 6. 关于1金币问题，一般都是cookie获取的body不完整导致的，如果出现1金币问题，请重新到书库进行更新cookie，哪个账号问题的，请输入对应账号数字进行保存设置后再去获取，以免覆盖掉正常账号。
 
 7. 新增一个开箱单独版本，经过几天测试实测可以开满72个宝箱。（请在task中添加，如无订阅入口可手工添加以下代码到[task_local]下）
-  - */5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=true
+    - */5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=true
