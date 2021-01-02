@@ -108,11 +108,21 @@ for (let index = 1; index <= zhs; index++) {
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
 all();
 function all() {
+  if (!qqreadbdArr[0]) {
+    $.msg(
+      jsname,
+      "⚠️提示：您还未获取cookie,请点击前往获取cookie\n",
+      "http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14",
+      { "open-url": "http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14" }
+    );
+    $.done();
+  }
+
   qqreadbodyVal = qqreadbdArr[K];
   qqreadtimeurlVal = qqreadtimeurlArr[K];
   qqreadtimeheaderVal = qqreadtimehdArr[K];
   O = `${jsname + (K + 1)}🔔`;
-   for (let i = 0; i < 13; i++) {
+  for (let i = 0; i < 13; i++) {
     (function (i) {
       setTimeout(
         function () {
@@ -182,9 +192,9 @@ function all() {
             } else if (K == qqreadbdArr.length - 1) {
               showmsg(); // 通知
               $.done();
-  }
- }
-},
+            }
+          }
+        },
 
         (i + 1) * dd * 1000
       );
