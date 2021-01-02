@@ -217,7 +217,7 @@ function qqreadtask() {
       timeout: 60000,
     };
     $.get(toqqreadtaskurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 任务列表: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 任务列表: ${data}`);
       task = JSON.parse(data);
       dk = task.data.taskList.find((item) => item.type === 200);
       ljyd = task.data.taskList.find((item) => item.type === 210);
@@ -256,7 +256,7 @@ function qqreadtrans() {
         timeout: 60000,
       };
       $.get(toqqreadtransurl, (error, response, data) => {
-        if (logs) $.log(`${O}, 今日收益: ${data}`);
+        if(QQlogs=="true")  $.log(`${O}, 今日收益: ${data}`);
         trans = JSON.parse(data);
         for (let i = 0; i < 20; i++) {
           if (trans.data.list[i].createTime >= daytime)
@@ -282,7 +282,7 @@ function qqreadtrack() {
       timeout: 60000,
     };
     $.post(toqqreadtrackurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 更新: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 更新: ${data}`);
       track = JSON.parse(data);
       tz += `【数据更新】:更新${track.msg}\n`;
       resolve();
@@ -298,7 +298,7 @@ function qqreadwithdraw() {
       timeout: 60000,
     };
     $.post(toqqreadwithdrawurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 提现: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 提现: ${data}`);
       const withdraw = JSON.parse(data);
       if (withdraw.data.code == 0) {
         tz += `【现金提现】:成功提现`+txje+`元\n`;
@@ -316,7 +316,7 @@ function qqreadinfo() {
       timeout: 60000,
     };
     $.get(toqqreadinfourl, (error, response, data) => {
-      if (logs) $.log(`${O}, 用户名: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 用户名: ${data}`);
       info = JSON.parse(data);
       if (!info.data.user)
         $.msg(
@@ -344,7 +344,7 @@ function qqreadtake() {
       timeout: 60000,
     };
     $.post(toqqreadtakeurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 阅豆签到: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 阅豆签到: ${data}`);
       take = JSON.parse(data);
       if (take.data.takeTicket > 0) {
         tz += `【阅豆签到】:获得${take.data.takeTicket}豆\n`;
@@ -362,7 +362,7 @@ function qqreadconfig() {
       headers: JSON.parse(qqreadtimeheaderVal),
     };
     $.get(toqqreadconfigurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 阅读时长查询: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 阅读时长查询: ${data}`);
       config = JSON.parse(data);
       if (config.code == 0) {
         tz += `【时长查询】:今日阅读${(
@@ -383,7 +383,7 @@ function qqreadtime() {
       headers: JSON.parse(qqreadtimeheaderVal),
     };
     $.get(toqqreadtimeurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 阅读时长: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 阅读时长: ${data}`);
       const time = JSON.parse(data);
       if (time.code == 0) {
         tz += `【阅读时长】:上传${(TIME / 6).toFixed(1)}分钟\n`;
@@ -401,7 +401,7 @@ function qqreadssr1() {
       timeout: 60000,
     };
     $.get(toqqreadssr1url, (error, response, data) => {
-      if (logs) $.log(`${O}, 金币奖励1: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 金币奖励1: ${data}`);
       ssr1 = JSON.parse(data);
       if (ssr1.data.amount > 0) {
         tz += `【阅读金币1】获得${ssr1.data.amount}金币\n`;
@@ -419,7 +419,7 @@ function qqreadssr2() {
       timeout: 60000,
     };
     $.get(toqqreadssr2url, (error, response, data) => {
-      if (logs) $.log(`${O}, 金币奖励2: ${data}`);
+      if(QQlogs=="true")  $.log(`${O}, 金币奖励2: ${data}`);
       ssr2 = JSON.parse(data);
       if (ssr2.data.amount > 0) {
         tz += `【阅读金币2】获得${ssr2.data.amount}金币\n`;
@@ -437,7 +437,7 @@ function qqreadssr3() {
       timeout: 60000,
     };
     $.get(toqqreadssr3url, (error, response, data) => {
-      if (logs) $.log(`${O}, 金币奖励3: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 金币奖励3: ${data}`);
       ssr3 = JSON.parse(data);
       if (ssr3.data.amount > 0) {
         tz += `【阅读金币3】获得${ssr3.data.amount}金币\n`;
@@ -455,7 +455,7 @@ function qqreadsign() {
       timeout: 60000,
     };
     $.get(toqqreadsignurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 金币签到: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 金币签到: ${data}`);
       sign = JSON.parse(data);
       if (sign.code == 0) {
         tz += `【金币签到】:获得${sign.data.amount}金币\n`;
@@ -473,7 +473,7 @@ function qqreadsign2() {
       timeout: 60000,
     };
     $.get(toqqreadsign2url, (error, response, data) => {
-      if (logs) $.log(`${O}, 金币签到翻倍: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 金币签到翻倍: ${data}`);
       sign2 = JSON.parse(data);
       if (sign2.code == 0) {
         tz += `【签到翻倍】:获得${sign2.data.amount}金币\n`;
@@ -491,7 +491,7 @@ function qqreaddayread() {
       timeout: 60000,
     };
     $.get(toqqreaddayreadurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 每日阅读: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 每日阅读: ${data}`);
       dayread = JSON.parse(data);
       if (dayread.code == 0) {
         tz += `【每日阅读】:获得${dayread.data.amount}金币\n`;
@@ -509,7 +509,7 @@ function qqreadvideo() {
       timeout: 60000,
     };
     $.get(toqqreadvideourl, (error, response, data) => {
-      if (logs) $.log(`${O}, 视频奖励: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 视频奖励: ${data}`);
       video = JSON.parse(data);
       if (video.code == 0) {
         tz += `【视频奖励】:获得${video.data.amount}金币\n`;
@@ -527,7 +527,7 @@ function qqreadbox() {
       timeout: 60000,
     };
     $.get(toqqreadboxurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 宝箱奖励: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 宝箱奖励: ${data}`);
       box = JSON.parse(data);
       if (box.code == 0) {
         tz += `【宝箱奖励${box.data.count}】:获得${box.data.amount}金币\n`;
@@ -546,7 +546,7 @@ function qqreadbox2() {
       timeout: 60000,
     };
     $.get(toqqreadbox2url, (error, response, data) => {
-      if (logs) $.log(`${O}, 宝箱奖励翻倍: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 宝箱奖励翻倍: ${data}`);
       box2 = JSON.parse(data);
       if (box2.code == 0) {
         tz += `【宝箱翻倍】:获得${box2.data.amount}金币\n`;
@@ -563,7 +563,7 @@ function qqreadwktime() {
       headers: JSON.parse(qqreadtimeheaderVal),
     };
     $.get(toqqreadwktimeurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 阅读时长: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 阅读时长: ${data}`);
       wktime = JSON.parse(data);
       if (wktime.code == 0) {
         tz += `【本周阅读时长】:${wktime.data.readTime}分钟\n`;
@@ -580,7 +580,7 @@ function qqreadpick() {
       headers: JSON.parse(qqreadtimeheaderVal),
     };
     $.get(toqqreadpickurl, (error, response, data) => {
-      if (logs) $.log(`${O},周阅读时长奖励任务: ${data}`);
+      if(QQlogs=="true") $.log(`${O},周阅读时长奖励任务: ${data}`);
       pick = JSON.parse(data);
       if (pick.data[7].isPick == true) tz += "【周时长奖励】:已全部领取\n";
       for (let i = 0; i < pick.data.length; i++) {
