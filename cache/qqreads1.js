@@ -32,6 +32,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 12.17 修改运行逻辑，请同时到BOXJS中更新订阅
 12.18 添加自定义提现时间并增加一个显示通知方案。请再次更新BOXJS订阅，以适配新的通知方案
 
+1.2 修复新版本频繁cookie失效问题
 */
 
 
