@@ -50,7 +50,7 @@ const nowTimes = new Date(
     8 * 60 * 60 * 1000
 );
 let wktime;
-
+let ydrw;
 const txje= $.getdata('txje') || 100000 //默认10元提现额度
 const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
@@ -154,6 +154,7 @@ function all() {
             }
             if (task.data && ljyd.doneFlag == 0) qqreaddayread(); // 阅读任务
             if (
+	      ydrw &&
               ydrw.doneFlag == 0 &&
               config.data &&
               config.data.pageParams.todayReadSeconds / 60 >= 1
@@ -167,6 +168,7 @@ function all() {
           } else if (i == 7) {
             if (task.data && task.data.treasureBox.doneFlag == 0) qqreadbox(); // 宝箱
             if (
+	      ydrw &&
               ydrw.doneFlag == 0 &&
               config.data &&
               config.data.pageParams.todayReadSeconds / 60 >= 30
@@ -185,6 +187,7 @@ function all() {
             if (task.data && task.data.treasureBox.videoDoneFlag == 0)
               qqreadbox2(); // 宝箱翻倍
             if (
+	      ydrw &&
               ydrw.doneFlag == 0 &&
               config.data &&
               config.data.pageParams.todayReadSeconds / 60 >= 30
