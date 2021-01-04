@@ -291,7 +291,6 @@ m = date.getMinutes() + ':';
 s = date.getSeconds();
 time=Y+M+D+h+m+s;
       tz += `【数据更新】:更新${track.msg},\n【cookie获取时间】${time}\n`;
-      kz += `【数据更新】:更新${track.msg},\n【cookie获取时间】${time}\n`;
       resolve();
     });
   });
