@@ -110,8 +110,8 @@ for (let index = 1; index <= zhs; index++) {
   }
   console.log(`============ 共${qqreadtimehdArr.length}个QQ阅读账号  =============\n`)
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
-  console.log(`============ 共 ${qqreadbdArr.length} 个${jsname}账号：预计运行 ${qqreadbdArr.length * 13 } 秒 =============\n`);
-  console.log(`============ 提现额度：${txje},提现时间${txsj} =============\n`);
+  console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号：预计运行 ${qqreadbdArr.length * 13 } 秒 ======\n`);
+  console.log(`========== 提现额度：${txje/10000}元,提现时间${txsj}点 ==========\n`);
 
 all();
 function all() {
