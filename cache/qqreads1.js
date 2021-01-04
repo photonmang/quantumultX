@@ -108,10 +108,9 @@ for (let index = 1; index <= zhs; index++) {
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
   }
-console.log(
-  `== 脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()} ==\n`);
+  console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
   console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号：预计运行 ${qqreadbdArr.length * 13 } 秒 ======\n`);
-  console.log(`========== 提现额度：${txje/10000}元,提现时间${txsj}点 ==========\n`);
+  console.log(`======== 提现额度：${txje/10000}元,提现时间${txsj}点 ========\n`);
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
 
 all();
