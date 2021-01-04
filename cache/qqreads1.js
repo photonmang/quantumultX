@@ -154,7 +154,7 @@ function all() {
             }
             if (task.data && ljyd.doneFlag == 0) qqreaddayread(); // 阅读任务
             if (
-	      ydrw &&
+              ydrw &&
               ydrw.doneFlag == 0 &&
               config.data &&
               config.data.pageParams.todayReadSeconds / 60 >= 1
@@ -168,7 +168,7 @@ function all() {
           } else if (i == 7) {
             if (task.data && task.data.treasureBox.doneFlag == 0) qqreadbox(); // 宝箱
             if (
-	      ydrw &&
+              ydrw &&
               ydrw.doneFlag == 0 &&
               config.data &&
               config.data.pageParams.todayReadSeconds / 60 >= 30
@@ -189,7 +189,7 @@ function all() {
             if (task.data && task.data.treasureBox.videoDoneFlag == 0)
               qqreadbox2(); // 宝箱翻倍
             if (
-	      ydrw &&
+              ydrw &&
               ydrw.doneFlag == 0 &&
               config.data &&
               config.data.pageParams.todayReadSeconds / 60 >= 30
@@ -211,7 +211,6 @@ function all() {
     })(i);
   }
 }
-
 
 
 // 任务列表
@@ -594,25 +593,36 @@ function qqreadpick() {
 }
 
 function showmsg() {
-	
-tz += `\n\n========= 脚本执行-北京时间(UTC+8)：${new Date(new Date().getTime()).toLocaleString()} \n\n`;
-
-if (notifyInterval != 0) console.log(tz); // 无通知时，打印通知
-
-if (notifyInterval == 1) $.msg(jsname, "", tz); // 显示所有通知
-  else if (notifyInterval == 2 &&task.data &&task.data.treasureBox.doneFlag == 0)
-    $.msg(jsname, "", tz);// 宝箱领取成功通知	
+  console.log(
+    `================== 脚本执行 - 北京时间(UTC+8)：${new Date(
+      new Date().getTime() +
+        new Date().getTimezoneOffset() * 60 * 1000 +
+        8 * 60 * 60 * 1000
+    ).toLocaleString()} =====================\n`
+  );
+  
+  if (notifyInterval != 1) console.log(tz); // 无通知时，打印通知
+  if (notifyInterval == 1) $.msg(jsname, "", tz);
+  // 显示所有通知
   else if (
- (notifyInterval == 3 && task.data && task.data.treasureBox.count == 0) ||
+    notifyInterval == 2 &&
+    task.data &&
+    task.data.treasureBox.doneFlag == 0
+  )
+    $.msg(jsname, "", tz);
+  // 宝箱领取成功通知
+  else if (
+    (notifyInterval == 3 && task.data && task.data.treasureBox.count == 0) ||
     task.data.treasureBox.count == 15 ||
     task.data.treasureBox.count == 30 ||
     task.data.treasureBox.count == 45 ||
     task.data.treasureBox.count == 60
   )
     $.msg(jsname, "", tz); // 宝箱每15次通知一次
-  else if (notifyInterval == 4 && d.getHours() == 23 && d.getMinutes() >= 40)
+  else if (notifyInterval == 4 && nowTimes.getHours() == 23 && nowTimes.getMinutes() >= 40)
     $.msg(jsname, "", tz); // 每晚23点40后显示通知
 }
+
 
 
 // prettier-ignore
