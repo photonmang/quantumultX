@@ -265,30 +265,10 @@ async function getAmounts() {
       await $.wait(200)
     }
   }
-  if (logs) $.log(`${O}, 今日收益: ${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.`);
+  if(QQlogs=="true") $.log(`${O}, 今日收益: ${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.`);
   tz += `【今日收益】:获得${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.\n`
 }
-// 更新
-function qqreadtrack() {
-  return new Promise((resolve, reject) => {
-    const body = qqreadbodyVal.replace(
-      new RegExp(/"dis":[0-9]{13}/),
-      `"dis":${new Date().getTime()}`
-    );
-    const toqqreadtrackurl = {
-      url: "https://mqqapi.reader.qq.com/log/v4/mqq/track",
-      headers: JSON.parse(qqreadtimeheaderVal),
-      body,
-      timeout: 60000,
-    };
-    $.post(toqqreadtrackurl, (error, response, data) => {
-      if(QQlogs=="true")  $.log(`${O}, 更新: ${data}`);
-      track = JSON.parse(data);
-      tz += `【数据更新】:更新${track.msg}\n`;
-      resolve();
-    });
-  });
-}
+
 // 更新
 function qqreadtrack() {
   return new Promise((resolve, reject) => {
@@ -300,7 +280,7 @@ function qqreadtrack() {
       timeout: 60000,
     };
     $.post(toqqreadtrackurl, (error, response, data) => {
-      if (logs) $.log(`${O}, 更新: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 更新: ${data}`);
       let track = JSON.parse(data);
 var date = new Date(JSON.parse(qqreadbodyVal).dataList[0].dis);
 Y = date.getFullYear() + '-';
