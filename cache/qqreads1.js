@@ -264,8 +264,32 @@ async function getAmounts() {
       await $.wait(200)
     }
   }
-  if(QQlogs=="true") $.log(`${O}, 今日收益: ${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.`);
+  if (logs) $.log(`${O}, 今日收益: ${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.`);
   tz += `【今日收益】:获得${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.\n`
+}
+
+function getTodayAmount(page = 1) {
+  return new Promise((r, j) => {
+    const options = {
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/trans/list?pn=" + page,
+      headers: JSON.parse(qqreadtimeheaderVal),
+      timeout: 60000,
+    }
+    $.get(options, (error, response, data) => {
+      const obj = JSON.parse(data)
+      let isEnd = obj.data.list.length == 0
+      let total = 0
+      for (let index = 0; index < obj.data.list.length; index++) {
+        const element = obj.data.list[index];
+        if (element.createTime < daytime){
+          isEnd = true
+          break
+        }
+        total += element.amount
+      }
+      r({ total, isEnd })
+    })
+  })
 }
 
 // 更新
