@@ -181,8 +181,10 @@ function all() {
             nowTimes.getHours() == txsj
           ) {
             qqreadwithdraw(); // 现金提现
-          } else if (i == 9 && nowTimes.getHours() == 23) {
-            qqreadtrans(); // 今日收益累计
+          } else if (i == 9 &&
+            nowTimes.getHours() >= 6
+          ) {
+            getAmounts(); // 今日收益累计
           } else if (i == 11) {
             if (task.data && task.data.treasureBox.videoDoneFlag == 0)
               qqreadbox2(); // 宝箱翻倍
@@ -249,28 +251,22 @@ function qqreadtask() {
     });
   });
 }
-// 金币统计
-function qqreadtrans() {
-  return new Promise((resolve, reject) => {
-    for (let y = 1; y < 9; y++) {
-      let day = 0;
-      const toqqreadtransurl = {
-        url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/trans/list?pn=${y}`,
-        headers: JSON.parse(qqreadtimeheaderVal),
-        timeout: 60000,
-      };
-      $.get(toqqreadtransurl, (error, response, data) => {
-        if(QQlogs=="true")  $.log(`${O}, 今日收益: ${data}`);
-        trans = JSON.parse(data);
-        for (let i = 0; i < 20; i++) {
-          if (trans.data.list[i].createTime >= daytime)
-            day += trans.data.list[i].amount;
-        }
-        tz += `【今日收益】:获得${day}\n`;
-        resolve();
-      });
+// 统计金币
+async function getAmounts() {
+  let page = 1
+  let amounts = 0
+  while (true) {
+    const { total, isEnd } = await getTodayAmount(page)
+    amounts += total
+    if (isEnd) {
+      break
+    } else {
+      page++
+      await $.wait(200)
     }
-  });
+  }
+  if (logs) $.log(`${O}, 今日收益: ${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.`);
+  tz += `【今日收益】:获得${amounts}金币,约${(amounts / 10000.0).toFixed(2)}元.\n`
 }
 // 更新
 function qqreadtrack() {
@@ -293,20 +289,29 @@ function qqreadtrack() {
     });
   });
 }
-// 提现
-function qqreadwithdraw() {
+// 更新
+function qqreadtrack() {
   return new Promise((resolve, reject) => {
-    const toqqreadwithdrawurl = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/withdraw?amount=`+txje,
+    const body = qqreadbodyVal.replace(new RegExp(/"dis":[0-9]{13}/), `"dis":${new Date().getTime()}`)
+    const toqqreadtrackurl = {
+      url: "https://mqqapi.reader.qq.com/log/v4/mqq/track",
       headers: JSON.parse(qqreadtimeheaderVal),
+      body: body,
       timeout: 60000,
     };
-    $.post(toqqreadwithdrawurl, (error, response, data) => {
-      if(QQlogs=="true")  $.log(`${O}, 提现: ${data}`);
-      const withdraw = JSON.parse(data);
-      if (withdraw.data.code == 0) {
-        tz += `【现金提现】:成功提现`+txje+`元\n`;
-      }
+    $.post(toqqreadtrackurl, (error, response, data) => {
+      if (logs) $.log(`${O}, 更新: ${data}`);
+      let track = JSON.parse(data);
+var date = new Date(JSON.parse(qqreadbodyVal).dataList[0].dis);
+Y = date.getFullYear() + '-';
+M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+D = date.getDate() + ' ';
+h = date.getHours() + ':';
+m = date.getMinutes() + ':';
+s = date.getSeconds();
+time=Y+M+D+h+m+s;
+      tz += `【数据更新】:更新${track.msg},\n【cookie获取时间】${time}\n`;
+      kz += `【数据更新】:更新${track.msg},\n【cookie获取时间】${time}\n`;
       resolve();
     });
   });
