@@ -31,8 +31,8 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 12.14 发现每日凌晨部分账号异常原因，是cookie获取出现同时获取多个body导致一些错误body的数据写入，已重新改写ck的写入。请重新为每个账号获取一次。
 12.17 修改运行逻辑，请同时到BOXJS中更新订阅
 12.18 添加自定义提现时间并增加一个显示通知方案。请再次更新BOXJS订阅，以适配新的通知方案
-
 1.2 修复新版本频繁cookie失效问题
+1.4 新增今日收益6点后显示
 */
 
 
@@ -328,7 +328,7 @@ function qqreadwithdraw() {
       if(QQlogs=="true") $.log(`${O}, 提现: ${data}`);
       const withdraw = JSON.parse(data);
       if (withdraw.data.code == 0) {
-        tz += `【现金提现】:成功提现`+txje+`元\n`;
+        tz += `【现金提现】:成功提现`+${txje/10000}+`元\n`;
       }
       resolve();
     });
