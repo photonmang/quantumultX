@@ -328,7 +328,7 @@ function qqreadwithdraw() {
       if(QQlogs=="true") $.log(`${O}, 提现: ${data}`);
       const withdraw = JSON.parse(data);
       if (withdraw.data.code == 0) {
-        tz += `【现金提现】:成功提现`+${txje/10000}+`元\n`;
+        tz += `【现金提现】:成功提现`+txje/10000+`元\n`;
       }
       resolve();
     });
