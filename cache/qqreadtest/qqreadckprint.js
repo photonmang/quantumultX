@@ -8,9 +8,7 @@
 */
 
 
-const body=1
-const timeurl=0
-const timeheader=0
+
 const GG=''//默认为换行，也可以将需要隔开的符号填写在''内
 
 const jsname = "QQ阅读";
@@ -18,7 +16,9 @@ const $ = Env(jsname);
 const notify = $.isNode() ? require("./sendNotify") : "";
 let qqStart=$.getdata("qqStart")|| 1; //账号起始值
 let qqEnd=$.getdata("qqEnd")|| 1; //账号结束值
-
+const qqreadbody=$.getdata("qqreadbody")|| 1; //打印body,默认打印.当打印该项需设置其他两项的值为0
+const qqreadtimeurl=$.getdata("qqreadtimeurl")|| 0; //打印timeurl，默认不打印.当打印该项需设置其他两项的值为0
+const qqreadtimeheader=$.getdata("qqreadtimeheader")|| 0; //打印timeheader,默认不打印.当打印该项需设置其他两项的值为0
 let K = qqStart
 let Z = qqEnd
 let R=K
@@ -74,11 +74,11 @@ if (Z==R)
   qqreadtimeurlVal = qqreadtimeurlArr[K-1];
   qqreadtimeheaderVal = qqreadtimehdArr[K-1];
 
-if(body==1)console.log(qqreadbodyVal+GG)
+if(qqreadbody==1)console.log(qqreadbodyVal+GG)
 
-if(timeurl==1)console.log(qqreadtimeurlVal+GG)
+if(qqreadtimeurl==1)console.log(qqreadtimeurlVal+GG)
 
-if(timeheader==1)console.log(qqreadtimeheaderVal+GG)
+if(qqreadtimeheader==1)console.log(qqreadtimeheaderVal+GG)
 
 
 
