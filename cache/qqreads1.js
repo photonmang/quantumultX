@@ -72,13 +72,7 @@ if ((isGetCookie = typeof $request !== "undefined")) {
   $.done();
 } 
 
-
- if ($request && $request.url.indexOf("addReadTimeWithBid?") >= 0) {
-
-
-
 function GetCookie() {
-
    if (
        $request && $request.url.indexOf("addReadTimeWithBid?") >= 0 && 
        $request.url.indexOf("book-category") >= 0
@@ -108,9 +102,7 @@ function GetCookie() {
       `[${jsname + jbid}] 获取更新body: 成功,qqreadbodyVal: ${qqreadbodyVal}`
     );
     $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
-
     } 
-
 }
 
 for (let index = 1; index <= zhs; index++) {
