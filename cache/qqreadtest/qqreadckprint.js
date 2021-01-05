@@ -16,9 +16,9 @@ const $ = Env(jsname);
 const notify = $.isNode() ? require("./sendNotify") : "";
 let qqStart=$.getdata("qqStart")|| 1; //账号起始值
 let qqEnd=$.getdata("qqEnd")|| 1; //账号结束值
-const qqreadbody=$.getdata("qqreadbody")|| 1; //打印body,默认打印.当打印该项需设置其他两项的值为0
-const qqreadtimeurl=$.getdata("qqreadtimeurl")|| 0; //打印timeurl，默认不打印.当打印该项需设置其他两项的值为0
-const qqreadtimeheader=$.getdata("qqreadtimeheader")|| 0; //打印timeheader,默认不打印.当打印该项需设置其他两项的值为0
+const getbody=$.getdata("getbody")|| 1; //打印body,默认打印.当打印该项需设置其他两项的值为0
+const gettimeurl=$.getdata("gettimeurl")|| 0; //打印timeurl，默认不打印.当打印该项需设置其他两项的值为0
+const gettimeheader=$.getdata("gettimeheader")|| 0; //打印timeheader,默认不打印.当打印该项需设置其他两项的值为0
 let K = qqStart
 let Z = qqEnd
 let R=K
@@ -74,11 +74,12 @@ if (Z==R)
   qqreadtimeurlVal = qqreadtimeurlArr[K-1];
   qqreadtimeheaderVal = qqreadtimehdArr[K-1];
 
-if(qqreadbody==1)console.log(qqreadbodyVal+GG)
 
-if(qqreadtimeurl==1)console.log(qqreadtimeurlVal+GG)
+if(getbody==1)console.log(qqreadbodyVal+GG)
 
-if(qqreadtimeheader==1)console.log(qqreadtimeheaderVal+GG)
+if(gettimeurl==1)console.log(qqreadtimeurlVal+GG)
+
+if(gettimeheader==1)console.log(qqreadtimeheaderVal+GG)
 
 
 
@@ -94,9 +95,30 @@ if(qqreadtimeheader==1)console.log(qqreadtimeheaderVal+GG)
               all();
 }    else if (K == Z ) {
           let F=Z-R+1
-              $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个Cookie',)
+if(getbody==1){
+ let name = "body";
+
+              $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个'+name,)
 
               $.done();
+
+}
+if(gettimeurl==1){
+ let name = "timeurl";
+
+              $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个'+name,)
+
+              $.done();
+
+}
+if(gettimeheader==1){
+ let name = "timeheader";
+
+              $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个'+name,)
+
+              $.done();
+
+}
 
 
   }
