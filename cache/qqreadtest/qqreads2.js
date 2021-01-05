@@ -11,7 +11,7 @@ Secrets对应关系如下，多账号默认换行
 qqreadbodyVal         👉   QQREAD_BODY
 qqreadtimeurlVal      👉   QQREAD_TIMEURL
 qqreadtimeheaderVal   👉   QQREAD_TIMEHD
-txje                  👉   QQREAD_txje  提现标准 可设置0 1 2 10 30 50 100 设置0关闭
+GOTXJE                  👉   QQREAD_GOTXJE  提现标准 可设置0 1 2 10 30 50 100 设置0关闭
 
 
 ⚠️宝箱奖励为20分钟一次，自己根据情况设置定时，建议设置11分钟一次
@@ -53,7 +53,7 @@ const wktimess = 1200//周奖励领取标准，默认1200分钟
 const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
 const zhs=$.getdata('zhs') || 1  //默认输出1个账号
-let task, tz, kz, config = '', txje = '', COOKIES_SPLIT = '' ;
+let task, tz, kz, config = '', GOTXJE = '', COOKIES_SPLIT = '' ;
 let dk,ljyd,sp,ydrw,wktime;
 
 let qqreadbodyVal = ``;
@@ -75,8 +75,8 @@ const nowTimes = new Date(
 if ($.isNode()) {
   daytime =
     new Date(new Date().toLocaleDateString()).getTime() - 8 * 60 * 60 * 1000;
-// 没有设置 QQREAD_txje 则默认为 0 不提现
- txje = process.env.QQREAD_txje || 0;
+// 没有设置 QQREAD_GOTXJE 则默认为 0 不提现
+ GOTXJE = process.env.QQREAD_GOTXJE || 0;
 } else {
   daytime = new Date(new Date().toLocaleDateString()).getTime();
 }
@@ -147,6 +147,9 @@ if (!COOKIE.qqreadbodyVal) {
       }
     });
   } 
+  if ("txje") {
+   GOTXJE = $.getval("txje");
+    }
     for (let i = 1; i <= zhs; i++) {
       if ($.getdata(`qqreadbd${i}`)) {
         qqreadbdArr.push($.getdata(`qqreadbd${i}`));
@@ -197,18 +200,11 @@ function GetCookie() {
 }
 
 console.log(
-  `================== 脚本执行 - 北京时间(UTC+8)：${new Date(
-    new Date().getTime() +
-    new Date().getTimezoneOffset() * 60 * 1000 +
-    8 * 60 * 60 * 1000
-  ).toLocaleString()} =====================\n`
-);
+  `脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
 
-console.log(
-  `============ 共 ${Length} 个${jsname}账号=============\n`
-);
+console.log(`============ 共 ${Length} 个${jsname}账号=============\n`);
 
-console.log(`============ 提现标准为：${txje} =============\n`);
+console.log(`============ 提现标准为：${GOTXJE/10000} =============\n`);
 
 
 !(async () => {
@@ -235,7 +231,7 @@ async function all() {
     $.done();
   }
 
-  for (let i = 1; i < Length; i++) {
+  for (let i = 0; i < Length; i++) {
     if (COOKIE.qqreadbodyVal) {
       qqreadbodyVal = QQ_READ_COOKIES.qqreadbodyVal[i];
       qqreadtimeurlVal = QQ_READ_COOKIES.qqreadtimeurlVal[i];
@@ -247,10 +243,10 @@ async function all() {
       qqreadtimeheaderVal = qqreadtimehdArr[i];
 
     }
-    O = (`${jsname + (i)}🔔`);
+    O = (`${jsname + (i+1)}🔔`);
     tz = '';
     kz = '';
-    let cookie_is_live = await qqreadinfo(i);//用户名
+    let cookie_is_live = await qqreadinfo(i+1);//用户名
     if (!cookie_is_live) {
       continue;
     }
@@ -282,7 +278,7 @@ async function all() {
         await qqreadssr3();//阅读金币3
       }
       if (nowTimes.getHours() >= 23 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59)) {
-        if (txje >= 1 && task.data && task.data.user.amount >= txje * 10000) {
+        if (GOTXJE/10000 >= 1 && task.data && task.data.user.amount >= GOTXJE) {
           await qqreadwithdraw();//提现
         }
       }
@@ -351,7 +347,7 @@ async function all() {
         await qqreadssr3();//阅读金币3
       }
       if (nowTimes.getHours() >= 23 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59)) {
-        if (txje >= 1 && task.data && task.data.user.amount >= txje * 10000) {
+        if (GOTXJE/10000 >= 1 && task.data && task.data.user.amount >= GOTXJE) {
           await qqreadwithdraw();//提现
         }
       }
@@ -831,7 +827,7 @@ function qqreadpick() {
 function qqreadwithdraw() {
   return new Promise((resolve, reject) => {
     const toqqreadwithdrawurl = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/withdraw?amount=${txje * 10000}`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/withdraw?amount=${GOTXJE}`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -839,8 +835,8 @@ function qqreadwithdraw() {
       if (logs) $.log(`${O}, 提现: ${data}`);
       let withdraw = JSON.parse(data);
       if (withdraw.data.code == 0) {
-        tz += `【现金提现】:成功提现${txje}元\n`;
-        kz += `【现金提现】:成功提现${txje}元\n`;
+        tz += `【现金提现】:成功提现${GOTXJE}元\n`;
+        kz += `【现金提现】:成功提现${GOTXJE}元\n`;
       }
       resolve();
     });
