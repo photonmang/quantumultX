@@ -39,8 +39,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 
 */
 
-const BOX = 2;//设置0 日常任务;设置1 单开宝箱;设置2 完整功能版
-
+const GOOFF = $.getdata('GOOFF') || 1;//0为日常任务，1为单开宝箱，2为完整功能版
 const jsname = '企鹅读书'
 const $ = Env(jsname)
 const COOKIE = $.isNode() ? require("./qqreadCOOKIE") : "";
@@ -246,7 +245,7 @@ async function all() {
     if (!cookie_is_live) {
       continue;
     }
-    if (BOX == 0) {
+    if (GOOFF == 0) {
       await qqreadtrack();//更新
       await qqreadconfig();//时长查询
       await qqreadwktime();//周时长查询
@@ -291,7 +290,7 @@ async function all() {
     }
 
 
-    if (BOX == 1) {
+    if (GOOFF == 1) {
 
       if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59)) {
         await qqreadtrack();//更新
@@ -310,7 +309,7 @@ async function all() {
       }
     }
 
-    if (BOX == 2) {
+    if (GOOFF == 2) {
       await qqreadtrack();//更新
       await qqreadconfig();//时长查询
       await qqreadwktime();//周时长查询
@@ -367,7 +366,7 @@ async function all() {
 
 function showmsg() {
   return new Promise(async resolve => {
-    if (BOX != 1) {
+    if (GOOFF != 1) {
       if (notifyInterval != 1) {
         console.log(O + '\n' + tz);
       }
@@ -386,7 +385,7 @@ function showmsg() {
         await notify.sendNotify(O, tz);
 
     }
-    if (BOX == 1) {
+    if (GOOFF == 1) {
       if (notifyInterval != 1) {
         console.log(O + '\n' + kz);
       }
@@ -454,7 +453,7 @@ let cookie_not_live_message = new Date(
     new Date().getTimezoneOffset() * 60 * 1000 +
     8 * 60 * 60 * 1000
   ).toLocaleString()  + "❌❌❌COOKIE失效";
-	  if(BOX!=1){         
+	  if(GOOFF!=1){         
         $.msg(O, cookie_not_live_message);
 if($.isNode()){      
         notify.sendNotify(O, cookie_not_live_message);
