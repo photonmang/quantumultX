@@ -39,7 +39,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 
 */
 
-const jsname = '企鹅读书'
+const jsname = 'QQ阅读'
 const $ = Env(jsname)
 const COOKIE = $.isNode() ? require("./qqreadCOOKIE") : "";
 const notify = $.isNode() ? require("./sendNotify") : "";
