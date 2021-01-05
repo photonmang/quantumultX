@@ -78,7 +78,7 @@ if ($.isNode()) {
 // 没有设置 QQREAD_txje 则默认为 0 不提现
  txje = process.env.QQREAD_txje || 0;
 } else {
-  daytime = new Date(new Date().toLocaleDat                                       eString()).getTime();
+  daytime = new Date(new Date().toLocaleDateString()).getTime();
 }
 
 if ($.isNode() &&process.env.QQREAD_BODY) {
@@ -147,9 +147,6 @@ if (!COOKIE.qqreadbodyVal) {
       }
     });
   } 
-      if ("zhs") {
-      txje = $.getval("zhs");
-    }
     for (let i = 1; i <= zhs; i++) {
       if ($.getdata(`qqreadbd${i}`)) {
         qqreadbdArr.push($.getdata(`qqreadbd${i}`));
@@ -238,7 +235,7 @@ async function all() {
     $.done();
   }
 
-  for (let i = 0; i < Length; i++) {
+  for (let i = 1; i < Length; i++) {
     if (COOKIE.qqreadbodyVal) {
       qqreadbodyVal = QQ_READ_COOKIES.qqreadbodyVal[i];
       qqreadtimeurlVal = QQ_READ_COOKIES.qqreadtimeurlVal[i];
@@ -250,10 +247,10 @@ async function all() {
       qqreadtimeheaderVal = qqreadtimehdArr[i];
 
     }
-    O = (`${jsname + (i+1)}🔔`);
+    O = (`${jsname + (i)}🔔`);
     tz = '';
     kz = '';
-    let cookie_is_live = await qqreadinfo(i+1);//用户名
+    let cookie_is_live = await qqreadinfo(i);//用户名
     if (!cookie_is_live) {
       continue;
     }
