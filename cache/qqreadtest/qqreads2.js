@@ -52,7 +52,7 @@ const maxtime = 10//每日上传时长限制，默认20小时
 const wktimess = 1200//周奖励领取标准，默认1200分钟
 const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
-
+const zhs=$.getdata('zhs') || 1  //默认输出1个账号
 let task, tz, kz, config = '', txje = '', COOKIES_SPLIT = '' ;
 let dk,ljyd,sp,ydrw,wktime;
 
@@ -154,14 +154,14 @@ if (!COOKIE.qqreadbodyVal) {
     if ("zhs") {
       txje = $.getval("zhs");
     }
-    const zhs=$.getdata('zhs') || 1
-    for (let i = 1; i <= zhs; i++) {
-      if ($.getdata(`qqreadbd${i}`)) {
-        qqreadbdArr.push($.getdata(`qqreadbd${i}`));
-        qqreadtimeurlArr.push($.getdata(`qqreadtimeurl${i}`));
-        qqreadtimehdArr.push($.getdata(`qqreadtimehd${i}`));
-      }
+for (let index = 1; index <= zhs; index++) {
+    if ($.getdata('qqreadbd'+index) === undefined || $.getdata('qqreadbd'+index) === '') {
+      break
     }
+    qqreadbdArr.push($.getdata("qqreadbd"+index));
+    qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
+    qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
+  }
   }
   Length = qqreadbdArr.length
 }
@@ -204,20 +204,11 @@ function GetCookie() {
     } 
 }
 
-console.log(
-  `================== 脚本执行 - 北京时间(UTC+8)：${new Date(
-    new Date().getTime() +
-    new Date().getTimezoneOffset() * 60 * 1000 +
-    8 * 60 * 60 * 1000
-  ).toLocaleString()} =====================\n`
-);
 
-console.log(
-  `============ 共 ${Length} 个${jsname}账号=============\n`
-);
-
-console.log(`============ 提现标准为：${txje} =============\n`);
-
+console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
+console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号：预计运行 ${qqreadbdArr.length * 13 } 秒 ======\n`);
+console.log(`======== 提现额度：${txje/10000}元,提现时间${txsj}点 ========\n`);
+console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
 
 !(async () => {
 
