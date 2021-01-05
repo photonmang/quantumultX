@@ -199,13 +199,9 @@ function GetCookie() {
     } 
 }
 
-console.log(
-  `脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
-
+console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
 console.log(`============ 共 ${Length} 个${jsname}账号=============\n`);
-
-console.log(`============ 提现标准为：${GOTXJE/10000} =============\n`);
-
+console.log(`======== 提现额度：${GOTXJE/10000}元,提现时间${txsj}点 ========\n`);
 
 !(async () => {
 
@@ -835,8 +831,8 @@ function qqreadwithdraw() {
       if (logs) $.log(`${O}, 提现: ${data}`);
       let withdraw = JSON.parse(data);
       if (withdraw.data.code == 0) {
-        tz += `【现金提现】:成功提现${GOTXJE}元\n`;
-        kz += `【现金提现】:成功提现${GOTXJE}元\n`;
+        tz += `【现金提现】:成功提现${GOTXJE/10000}元\n`;
+        kz += `【现金提现】:成功提现${GOTXJE/10000}元\n`;
       }
       resolve();
     });
