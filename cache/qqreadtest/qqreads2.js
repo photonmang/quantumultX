@@ -39,7 +39,6 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 
 */
 
-const GOOFF = $.getdata('GOOFF') || 1;//0为日常任务，1为单开宝箱，2为完整功能版
 const jsname = '企鹅读书'
 const $ = Env(jsname)
 const COOKIE = $.isNode() ? require("./qqreadCOOKIE") : "";
@@ -49,6 +48,7 @@ const notifyInterval = 2;// 0为关闭通知，1为所有通知，2为12 23 点�
 const logs = 0;   //0为关闭日志，1为开启
 const maxtime = 10//每日上传时长限制，默认20小时
 const wktimess = 1200//周奖励领取标准，默认1200分钟
+const GOOFF = $.getdata('GOOFF') || 1;//0为日常任务，1为单开宝箱，2为完整功能版
 const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
 const zhs=$.getdata('zhs') || 1  //默认输出1个账号
