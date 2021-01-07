@@ -94,31 +94,21 @@ if(getput==3)console.log(qqreadtimeheaderVal+GG)
               all();
 }    else if (K == Z ) {
           let F=Z-R+1
-if(getput==1){
- let name = "body";
-
+if(getput==1)
+{
+  name = "body";
+}
+if(getput==2)
+{
+  name = "timeurl";
+}
+if(getput==3)
+{
+  name = "timeheader";
+}
               $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个'+name,)
 
               $.done();
-
-}
-if(getput==2){
- let name = "timeurl";
-
-              $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个'+name,)
-
-              $.done();
-
-}
-if(getput==3){
- let name = "timeheader";
-
-              $.msg(jsname+R+'到'+Z+',Cookie打印成功','✅已打印'+F+'个'+name,)
-
-              $.done();
-
-}
-
 
   }
  }
