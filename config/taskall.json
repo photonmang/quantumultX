@@ -2,6 +2,7 @@
     "name": "quantumultX all Task",
     "description": "这是收集各个圈x脚本作者的Task库，感谢各位大佬的辛勤付出",
     "task": [
+"0 0 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_car_exchange.js, tag=京东汽车兑换, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=false",
 "10-40/10 9 * * * https://raw.githubusercontent.com/lxk0301/jd_scripts/master/jd_watch.js, tag=京东看一看, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png,enabled=false",
 "*/5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
 "0 2 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js,tag=京东云助力码, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
