@@ -62,6 +62,7 @@ const  mc_shareCodeArr = [];
 const  joy_shareCodeArr = [];
 let K = 0;
 let tz='';
+let gg;
 const dd=1//单次任务延迟,默认1秒
 
 for (let index = 1; index <= 3; index++) {
@@ -75,7 +76,23 @@ for (let index = 1; index <= 3; index++) {
     mc_shareCodeArr.push($.getdata("mc_shareCode"+index));
     joy_shareCodeArr.push($.getdata("joy_shareCode"+index));
   }
-    console.log(`============ 共${dd_shareCodeArr.length}个京东账号  =============\n`)
+      if 
+	(dd_shareCodeArr.length &&
+	 jx_shareCodeArr.length &&
+	 zd_shareCodeArr.length &&
+	 nc_shareCodeArr.length &&
+	 mc_shareCodeArr.length &&
+	 joy_shareCodeArr.length >=1)
+      {
+	 gg=dd_shareCodeArr.length &&
+	 jx_shareCodeArr.length &&
+	 zd_shareCodeArr.length &&
+	 nc_shareCodeArr.length &&
+	 mc_shareCodeArr.length &&
+	 joy_shareCodeArr.length
+	}
+
+    console.log(`============ 共${gg}个京东账号  =============\n`)
 
 all();
 function all() {
