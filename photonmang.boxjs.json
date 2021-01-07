@@ -68,7 +68,8 @@
 	"2.请在以下获取账号Cookie中填写您要获取的账号,请填写阿拉伯数字来表示！",			
         "3.进入QQ阅读获取Cookie【<a href=\"http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14\">点我打开</a>】",
 	"4.进书库 看10秒以下 然后退出，看书一定不能超过10秒.获取url,time,body三个更新提醒.",
-	"5.循环2-4步骤重新获取下个账号【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/README.md\">点我查看详细使用说明</a>】"		
+	"5.循环2-4步骤重新获取下个账号【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/README.md\">点我查看详细使用说明</a>】"	
+	"6.新增ck打印，仅方便上传云函数使用，不会用无需设置，请配合Cookie打印脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadckprint.js\">qqreadckprint.js</a>】"
       ],
 			"settings": [
 				{
@@ -170,6 +171,36 @@
                                         "autoGrow": true,
                                         "rows": 1,
 					"desc": "请输入自定义时间，时间格式为0-23点"
+				},
+				{
+					"id": "qqStart",
+					"name": "开始打印起始值",
+					"val": "1",
+					"type": "number",
+                                        "placeholder": "默认起始打印第一个账号",
+                                        "autoGrow": true,
+                                        "rows": 1,
+					"desc": "此处填写需要打印CK的起始值.如打印从第一个账号开始填写1,从第二个账号开始填写2,以此类推..."
+				},
+				{
+					"id": "qqEnd",
+					"name": "开始打印结束值",
+					"val": "1",
+					"type": "number",
+                                        "placeholder": "默认第一个账号为结束打印值",
+                                        "autoGrow": true,
+                                        "rows": 1,
+					"desc": "此处填写需要打印CK的结束值.如账号有5个,需要全部输出,填写5.只需要打印3个账号请输入3."
+				},
+				{
+					"id": "getput",
+					"name": "打印body,timeurl,timeheader",
+					"val": "1",
+					"type": "number",
+                                        "placeholder": "默认打印body",
+                                        "autoGrow": true,
+                                        "rows": 1,
+					"desc": "输入1打印body的CK;输入2打印timeurl的CK,输入3打印timeheader的CK."
 				}
 			],
 			"author": "@photonmang",
