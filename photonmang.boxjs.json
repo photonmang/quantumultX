@@ -175,7 +175,7 @@
 				{
 					"id": "qqStart1",
 					"name": "开始打印起始值",
-					"val": "1",
+					"val": "",
 					"type": "number",
                                         "placeholder": "默认起始打印第一个账号",
                                         "autoGrow": true,
@@ -185,7 +185,7 @@
 				{
 					"id": "qqEnd1",
 					"name": "开始打印结束值",
-					"val": "1",
+					"val": "",
 					"type": "number",
                                         "placeholder": "默认第一个账号为结束打印值",
                                         "autoGrow": true,
