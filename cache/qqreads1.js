@@ -6,7 +6,7 @@
 多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
 ⚠️cookie获取方法：
-进 http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14  点我的   获取cookie
+进 http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d  点我的   获取cookie
 
 进书库，点发现。选择一本书,看10秒以下,然后退出，获取时长url和时长header以及更新body，看书一定不能超过10秒
 
@@ -33,6 +33,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 12.18 添加自定义提现时间并增加一个显示通知方案。请再次更新BOXJS订阅，以适配新的通知方案
 1.2 修复新版本频繁cookie失效问题
 1.4 新增今日收益6点后显示
+1.8 由于TX开始封杀账号，请修改执行脚本的时间，避免频繁运行导致账号被封杀。单开宝箱版本的脚本请先暂停使用！
 */
 
 
@@ -124,8 +125,8 @@ function all() {
     $.msg(
       jsname,
       "⚠️提示：您还未获取cookie,请点击前往获取cookie\n",
-      "http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14",
-      { "open-url": "http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14" }
+      "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d",
+      { "open-url": "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d" }
     );
     $.done();
   }
@@ -354,10 +355,10 @@ function qqreadinfo() {
         $.msg(
           `【${O}】`,
           "COOKE失效：❌❌❌请点击前往获取cookie\n",
-          "http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14",
+          "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d",
           {
             "open-url":
-              "http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14",
+              "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d",
           }
         );
       if (info.data.user.nickName) {
