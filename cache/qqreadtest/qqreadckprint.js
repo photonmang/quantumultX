@@ -10,16 +10,13 @@
 
 
 const GG=''//默认为换行，也可以将需要隔开的符号填写在''内
-
 const jsname = "QQ阅读";
 const $ = Env(jsname);
 const notify = $.isNode() ? require("./sendNotify") : "";
-let qqStart=$.getdata("qqStart1")|| 1; //账号起始值
-let qqEnd=$.getdata("qqEnd1")|| 1; //账号结束值
-const getput=$.getdata("getput")|| 1; //1打印body,2打印timeurl,3打印timeheader.默认1打印body.
 
-let K = qqStart
-let Z = qqEnd
+const getput=$.getdata("getput")|| 1; //1打印body,2打印timeurl,3打印timeheader.默认1打印body.
+let K=($.getdata("qqStart")|| 1) - 0; //账号起始值
+let Z=$.getdata("qqEnd")|| 1; //账号结束值
 let R=K
 
 const qqreadbdArr = [];
