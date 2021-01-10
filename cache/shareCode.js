@@ -22,6 +22,7 @@ cron "15,20 10 1,10,20 * *" script-path=https://raw.githubusercontent.com/photon
 
 
 12.28  新增京东crazyjoy助力，请及时更新boxjs订阅进行添加joy助力码
+1.10   调整执行返回代码，改为状态码判断
 */
 
 
