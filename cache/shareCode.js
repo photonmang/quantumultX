@@ -167,7 +167,7 @@ function execdd_shareCode() {
       try {
         $.dd_shareCodeBody = data
 	const obj = JSON.parse(data)
-                $.zd_shareCodeBody = data
+                
                 if (obj.code == 200) {
                     ddmsg = `提交成功`
                 } else if (obj.code == 400) {
@@ -196,7 +196,7 @@ function execjx_shareCode() {
       try {
         $.jx_shareCodeBody = data
 	const obj = JSON.parse(data)
-                $.zd_shareCodeBody = data
+                
                 if (obj.code == 200) {
                     jxmsg = `提交成功`
                 } else if (obj.code == 400) {
@@ -225,7 +225,7 @@ function execzd_shareCode() {
       try {
         $.zd_shareCodeBody = data
 	const obj = JSON.parse(data)
-                $.zd_shareCodeBody = data
+                
                 if (obj.code == 200) {
                     zdmsg = `提交成功`
                 } else if (obj.code == 400) {
@@ -254,7 +254,7 @@ function execnc_shareCode() {
       try {
         $.nc_shareCodeBody = data
 	const obj = JSON.parse(data)
-                $.zd_shareCodeBody = data
+                
                 if (obj.code == 200) {
                     ncmsg = `提交成功`
                 } else if (obj.code == 400) {
@@ -284,7 +284,7 @@ function execmc_shareCode() {
       try {
         $.mc_shareCodeBody = data
 	const obj = JSON.parse(data)
-                $.zd_shareCodeBody = data
+                
                 if (obj.code == 200) {
                     mcmsg = `提交成功`
                 } else if (obj.code == 400) {
@@ -312,7 +312,7 @@ function execjoy_shareCode() {
       try {
         $.joy_shareCodeBody = data
 	const obj = JSON.parse(data)
-                $.zd_shareCodeBody = data
+                
                 if (obj.code == 200) {
                     joymsg = `提交成功`
                 } else if (obj.code == 400) {
