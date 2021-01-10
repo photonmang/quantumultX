@@ -1,8 +1,6 @@
 
 /*
 
-本脚本改版至ziye
-
 多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
 ⚠️cookie获取方法：
@@ -34,6 +32,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1.2 修复新版本频繁cookie失效问题
 1.4 新增今日收益6点后显示
 1.8 由于TX开始封杀账号，请修改执行脚本的时间，避免频繁运行导致账号被封杀。单开宝箱版本的脚本请先暂停使用！
+1.10 去除提现时间，满提现金额就提现！
 */
 
 
@@ -53,7 +52,7 @@ const nowTimes = new Date(
 let wktime;
 let ydrw;
 const txje= $.getdata('txje') || 100000 //默认10元提现额度
-const txsj=$.getdata('txsj') || 23 //默认提现时间23点
+//const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
 const zhs=$.getdata('zhs') || 1 //默认输出1个账号
 const qqreadbdArr = [];
@@ -115,8 +114,8 @@ for (let index = 1; index <= zhs; index++) {
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
   }
   console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
-  console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号：预计运行 ${qqreadbdArr.length * 13 } 秒 ======\n`);
-  console.log(`======== 提现额度：${txje/10000}元,提现时间${txsj}点 ========\n`);
+  console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号 ======\n`);
+  console.log(`======== 提现额度：${txje/10000}元 ========\n`);
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
 
 all();
@@ -185,8 +184,8 @@ function all() {
             if (task.data && dk.doneFlag == 0) qqreadsign2(); // 签到翻倍
           } else if (
             i == 8 &&
-            task.data.user.amount >= txje &&
-            nowTimes.getHours() == txsj
+            task.data.user.amount >= txje 
+            //nowTimes.getHours() == txsj
           ) {
             qqreadwithdraw(); // 现金提现
           } else if (i == 9 &&
