@@ -169,13 +169,13 @@ function execdd_shareCode() {
 	const obj = JSON.parse(data)
                 $.zd_shareCodeBody = data
                 if (obj.code == 200) {
-                    msg = `提交成功`
+                    ddmsg = `提交成功`
                 } else if (obj.code == 400) {
-                    msg = `代码已存在`
+                    ddmsg = `代码已存在`
                 } else {
-                    msg = '发生未知错误'
+                    ddmsg = '发生未知错误'
                 }
-        tz += `东东工厂:`+ msg +`\n`
+        tz += `东东工厂:`+ ddmsg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -198,13 +198,13 @@ function execjx_shareCode() {
 	const obj = JSON.parse(data)
                 $.zd_shareCodeBody = data
                 if (obj.code == 200) {
-                    msg = `提交成功`
+                    jxmsg = `提交成功`
                 } else if (obj.code == 400) {
-                    msg = `代码已存在`
+                    jxmsg = `代码已存在`
                 } else {
-                    msg = '发生未知错误'
+                    jxmsg = '发生未知错误'
                 }
-        tz += `京喜工厂:`+ msg +`\n`
+        tz += `京喜工厂:`+ jxmsg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -227,13 +227,13 @@ function execzd_shareCode() {
 	const obj = JSON.parse(data)
                 $.zd_shareCodeBody = data
                 if (obj.code == 200) {
-                    msg = `提交成功`
+                    zdmsg = `提交成功`
                 } else if (obj.code == 400) {
-                    msg = `代码已存在`
+                    zdmsg = `代码已存在`
                 } else {
-                    msg = '发生未知错误'
+                    zdmsg = '发生未知错误'
                 }
-        tz += `种豆得豆:`+ msg +`\n`
+        tz += `种豆得豆:`+ zdmsg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -256,13 +256,13 @@ function execnc_shareCode() {
 	const obj = JSON.parse(data)
                 $.zd_shareCodeBody = data
                 if (obj.code == 200) {
-                    msg = `提交成功`
+                    ncmsg = `提交成功`
                 } else if (obj.code == 400) {
-                    msg = `代码已存在`
+                    ncmsg = `代码已存在`
                 } else {
-                    msg = '发生未知错误'
+                    ncmsg = '发生未知错误'
                 }
-        tz += `京东农场:`+ msg +`\n`
+        tz += `京东农场:`+ ncmsg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -286,13 +286,13 @@ function execmc_shareCode() {
 	const obj = JSON.parse(data)
                 $.zd_shareCodeBody = data
                 if (obj.code == 200) {
-                    msg = `提交成功`
+                    mcmsg = `提交成功`
                 } else if (obj.code == 400) {
-                    msg = `代码已存在`
+                    mcmsg = `代码已存在`
                 } else {
-                    msg = '发生未知错误'
+                    mcmsg = '发生未知错误'
                 }
-        tz += `京东萌宠:`+ msg +`\n`
+        tz += `京东萌宠:`+ mcmsg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -314,13 +314,13 @@ function execjoy_shareCode() {
 	const obj = JSON.parse(data)
                 $.zd_shareCodeBody = data
                 if (obj.code == 200) {
-                    msg = `提交成功`
+                    joymsg = `提交成功`
                 } else if (obj.code == 400) {
-                    msg = `代码已存在`
+                    joymsg = `代码已存在`
                 } else {
-                    msg = '发生未知错误'
+                    joymsg = '发生未知错误'
                 }
-        tz += `京东CrazyJoy:`+ msg +`\n`
+        tz += `京东CrazyJoy:`+ joymsg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
