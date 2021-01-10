@@ -165,7 +165,16 @@ function execdd_shareCode() {
     $.get(url,(err, resp, data)=> {  
       try {
         $.dd_shareCodeBody = data
-        tz += `东东工厂:`+resp.statusCode+`\n`
+	const obj = JSON.parse(data)
+                $.zd_shareCodeBody = data
+                if (obj.code == 200) {
+                    msg = `提交成功`
+                } else if (obj.code == 400) {
+                    msg = `代码已存在`
+                } else {
+                    msg = '发生未知错误'
+                }
+        tz += `东东工厂:`+ msg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -185,7 +194,16 @@ function execjx_shareCode() {
     $.get(url,(err, resp, data)=> {  
       try {
         $.jx_shareCodeBody = data
-        tz += `京喜工厂:`+resp.statusCode+`\n`
+	const obj = JSON.parse(data)
+                $.zd_shareCodeBody = data
+                if (obj.code == 200) {
+                    msg = `提交成功`
+                } else if (obj.code == 400) {
+                    msg = `代码已存在`
+                } else {
+                    msg = '发生未知错误'
+                }
+        tz += `京喜工厂:`+ msg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -205,7 +223,16 @@ function execzd_shareCode() {
     $.get(url,(err, resp, data)=> {  
       try {
         $.zd_shareCodeBody = data
-        tz += `种豆得豆:`+resp.statusCode+`\n`
+	const obj = JSON.parse(data)
+                $.zd_shareCodeBody = data
+                if (obj.code == 200) {
+                    msg = `提交成功`
+                } else if (obj.code == 400) {
+                    msg = `代码已存在`
+                } else {
+                    msg = '发生未知错误'
+                }
+        tz += `种豆得豆:`+ msg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -225,7 +252,16 @@ function execnc_shareCode() {
     $.get(url,(err, resp, data)=> {  
       try {
         $.nc_shareCodeBody = data
-        tz += `京东农场:`+ resp.statusCode+`\n`
+	const obj = JSON.parse(data)
+                $.zd_shareCodeBody = data
+                if (obj.code == 200) {
+                    msg = `提交成功`
+                } else if (obj.code == 400) {
+                    msg = `代码已存在`
+                } else {
+                    msg = '发生未知错误'
+                }
+        tz += `京东农场:`+ msg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -246,7 +282,16 @@ function execmc_shareCode() {
     $.get(url,(err, resp, data)=> {  
       try {
         $.mc_shareCodeBody = data
-        tz += `京东萌宠:`+ resp.statusCode+`\n`
+	const obj = JSON.parse(data)
+                $.zd_shareCodeBody = data
+                if (obj.code == 200) {
+                    msg = `提交成功`
+                } else if (obj.code == 400) {
+                    msg = `代码已存在`
+                } else {
+                    msg = '发生未知错误'
+                }
+        tz += `京东萌宠:`+ msg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
@@ -265,7 +310,16 @@ function execjoy_shareCode() {
     $.get(url,(err, resp, data)=> {  
       try {
         $.joy_shareCodeBody = data
-        tz += `京东CrazyJoy:`+ resp.statusCode+`\n`
+	const obj = JSON.parse(data)
+                $.zd_shareCodeBody = data
+                if (obj.code == 200) {
+                    msg = `提交成功`
+                } else if (obj.code == 400) {
+                    msg = `代码已存在`
+                } else {
+                    msg = '发生未知错误'
+                }
+        tz += `京东CrazyJoy:`+ msg +`\n`
       } catch (e) {
         $.logErr(e, resp)
       } finally {
