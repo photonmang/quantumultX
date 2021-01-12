@@ -55,7 +55,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 5. QQ阅读的CK获取方法
     - 在boxjs中中间部分填写1，点击保存设置，我们来获取第一个账号。
     - ⚠️cookie获取方法：
-      - 进 http://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14  点书库，然后随便找一本书进入阅读，阅读10秒以内请马上返回，这时候会提醒获取到3个更新
+      - 进 http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d  点书库，然后随便找一本书进入阅读，阅读10秒以内请马上返回，这时候会提醒获取到3个更新
       - body更新，url更新，time更新。记得一定要获取三个更新，否则可能执行过程中出现无法获取奖励的问题
     - 特别注意：在boxjs中设置要获取的第一个COOKIE，请记得一定要输入完后点击保存。设置完第一个后再设置第二个，依次类推。
 
