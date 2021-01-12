@@ -6,7 +6,8 @@
 ⚠️cookie获取方法：
 进 http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d  点我的   获取cookie
 
-进书库，点发现。选择一本书,看10秒以下,然后退出，获取时长url和时长header以及更新body，看书一定不能超过10秒
+进书库，点发现。选择一本书打开，自动获取时长url和时长header以及更新body。
+如无反应请返回书库再次进入打开一本书获取。
 
 hostname=mqqapi.reader.qq.com
 ############## 圈x
@@ -33,6 +34,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1.4 新增今日收益6点后显示
 1.8 由于TX开始封杀账号，请修改执行脚本的时间，避免频繁运行导致账号被封杀。单开宝箱版本的脚本请先暂停使用！
 1.10 去除提现时间，满提现金额就提现！
+1.12 更新Cookie获取，支持新版本body更新
 */
 
 
@@ -74,8 +76,7 @@ if ((isGetCookie = typeof $request !== "undefined")) {
 
 function GetCookie() {
    if (
-       $request && $request.url.indexOf("addReadTimeWithBid?") >= 0 && 
-       $request.url.indexOf("book-category") >= 0
+       $request && $request.url.indexOf("addReadTimeWithBid?") >= 0
      ) {
     const qqreadtimeurlVal = $request.url;
     if (qqreadtimeurlVal) $.setdata(qqreadtimeurlVal, "qqreadtimeurl" + jbid);
@@ -91,11 +92,9 @@ function GetCookie() {
     $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
   }
   else if ($request &&
-           $request.body.indexOf("bookDetail_bottomBar_read_C")>=0&&
+           $request.body.indexOf("bookLib_category_click_C") >= 0&&
            $request.body.indexOf("bookLib2_bookList_bookClick_C") >= 0 &&
-           $request.body.indexOf("bookRead_show_I")>=0&&
-           $request.body.indexOf("topBar_left_back_C")<0&&
-           $request.body.indexOf("bookRead_dropOut_shelfYes_C")<0){
+           $request.body.indexOf("bookRead_show_I") >= 0){
     const qqreadbodyVal = $request.body;
     if (qqreadbodyVal) $.setdata(qqreadbodyVal, "qqreadbd" + jbid);
     $.log(
