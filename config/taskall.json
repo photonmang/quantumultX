@@ -24,7 +24,6 @@
 "20 13 * * 6 https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_get_share_code.js, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, tag=获取互助码, enabled=false",
 "1 8,12,18 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_bookshop.js, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, tag=口袋书店, enabled=false",
 "0 0 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_car_exchange.js, tag=京东汽车兑换, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=false",
-"10-40/10 9 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_watch.js, tag=京东看一看, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png,enabled=false",
 "*/5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
 "0 2 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js,tag=京东云助力码, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "*/11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=QQ阅读自定义账号, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
