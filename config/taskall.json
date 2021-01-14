@@ -17,7 +17,7 @@
 "10 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_crazy_joy.js, tag=crazyJoy任务,img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png,enabled=false",
 "10 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_crazy_joy_coin.js, tag=crazyJoy挂机,img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png,enabled=false",
 "10 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_car.js, tag=京东汽车, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_redPacket.png, enabled=false",
-"0 0 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/JD_DailyBonus.js, tag=京东多合一签到, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
+"0 0 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_bean_sign.js, tag=京东多合一签到, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "10 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_bean_home.js, tag=领京豆额外奖励&抢京豆, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "0 0 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_cash.js, tag=签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
 "1 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_nh.js, tag=京东年货节, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=false",
