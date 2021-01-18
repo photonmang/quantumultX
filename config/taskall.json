@@ -2,6 +2,8 @@
     "name": "quantumultX all Task",
     "description": "这是收集各个圈x脚本作者的Task库，感谢各位大佬的辛勤付出",
     "task": [
+"10 7 * * * https://raw.githubusercontent.com/shylocks/Loon/main/jd_ms.js, tag=京东秒秒币, img-url=https://raw.githubusercontent.com/yogayyy/Scripts/main/Icon/shylocks/jd_ms.jpg, enabled=false",
+"0 8 * * * https://raw.githubusercontent.com/LXK9301/jd_scripts/master/jd_nian.js, tag=京东炸年兽🧨, enabled=false",
 "*/5 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadbox.js,tag=QQ阅读宝箱单开, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
 "*/11 * * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js, tag=QQ阅读多账号, img-url=https://raw.githubusercontent.com/Orz-3/task/master/QQ.png, enabled=false",
 "*/15 * * * * https://raw.githubusercontent.com/songyangzz/QuantumultX/master/YOUTH_READ.js, tag=中青阅读, img-url=book.circle.fill.system, enabled=false",
