@@ -4,7 +4,7 @@
 多账号版，请先用boxjs订阅获取每个账号的cookie及账号运行数量
 
 ⚠️cookie获取方法：
-进 http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d  点我的   获取cookie
+进 http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e  点我的   获取cookie
 
 进书库，点发现。选择一本书打开，自动获取时长url和时长header以及更新body。
 如无反应请返回书库再次进入打开一本书获取。
@@ -123,8 +123,8 @@ function all() {
     $.msg(
       jsname,
       "⚠️提示：您还未获取cookie,请点击前往获取cookie\n",
-      "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d",
-      { "open-url": "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d" }
+      "http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e",
+      { "open-url": "http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e" }
     );
     $.done();
   }
@@ -353,10 +353,10 @@ function qqreadinfo() {
         $.msg(
           `【${O}】`,
           "COOKE失效：❌❌❌请点击前往获取cookie\n",
-          "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d",
+          "http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e",
           {
             "open-url":
-              "http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d",
+              "http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e",
           }
         );
       if (info.data.user.nickName) {
