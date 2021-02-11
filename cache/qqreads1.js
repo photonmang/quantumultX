@@ -35,6 +35,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1.8 由于TX开始封杀账号，请修改执行脚本的时间，避免频繁运行导致账号被封杀。单开宝箱版本的脚本请先暂停使用！
 1.10 去除提现时间，满提现金额就提现！
 1.12 更新Cookie获取，支持新版本body更新
+2.11 去除今日阅读时长，调整为每日阅读平均时长
 */
 
 
@@ -140,7 +141,7 @@ function all() {
           if (i == 0) qqreadinfo(); // 用户名
           if (i == 1) {
             qqreadwktime(); // 周时长查询
-            qqreadconfig(); // 时长查询
+            //qqreadconfig(); // 时长查询
             qqreadtrack(); // 更新
           } else if (i == 2) {
             qqreadtask(); // 任务列表
@@ -598,6 +599,7 @@ function qqreadwktime() {
       wktime = JSON.parse(data);
       if (wktime.code == 0) {
         tz += `【本周阅读时长】:${wktime.data.readTime}分钟\n`;
+        tz += `【每日平均阅读时长】:${Math.round(wktime.data.readTime/7)}分钟\n`;
       }
       resolve();
     });
