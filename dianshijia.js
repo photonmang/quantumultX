@@ -1,9 +1,11 @@
 
 /*
-更新时间:2020-10-13
 
-由于作者停更，因本人一直有在用所以进行日常维护，只要我一直在用，也会一直维护下去。
+10.13由于作者停更，因本人一直有在用所以进行日常维护，只要我一直在用，也会一直维护下去。
 去掉奖励信息随机的BUG奖励，改为固定显示每日0.2元额度。
+2.12 彻底修复因每日奖励额度接口变动导致奖励额度失效问题！
+
+
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -147,23 +149,31 @@ function signinfo() {
           {detail += ` 连续签到${d}天\n`
        var j = result.data.recentDays[i].rewards.length
        if (j > 1){
-                //detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}  `
-                  detail += `【奖励信息】今日:0.4元额度`
+aa=result.data.recentDays[i].rewards[1].rewardsType
+bb=result.data.recentDays[i].rewards[2].rewardsType
+cc=result.data.recentDays[i].rewards[3].rewardsType
+
+if (aa==4){
+money=result.data.recentDays[i].rewards[1].id
+detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}\n`
+
+} else 
+if (bb==4){
+money=result.data.recentDays[i].rewards[2].id
+detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[2].name}\n`
+
+} else
+if (cc==4){
+money=result.data.recentDays[i].rewards[3].id
+detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[3].name}\n`
+}
 
                  } 
           else   if (j == 1) 
                  { 
                 detail += `【奖励信息】今日: 无 ` 
                  }
-        var k = result.data.recentDays[i+1].rewards.length
-        if ( k > 1 ) {
-          //detail += ` 明日: `+ result.data.recentDays[i+1].rewards[1].name+`\n`
-            detail += ` 明日:0.4元额度`+`\n`
-                 }  
-           else  { 
-              detail += `明日: 无\n`
         
-                 }
                }               
            }  
      resolve()
@@ -171,6 +181,7 @@ function signinfo() {
     })
   })
 }             
+
 
 function total() {
  return new Promise((resolve, reject) => {
@@ -440,7 +451,7 @@ resolve()
 function getReward() {
   return new Promise((resolve, reject) => {
     let url = { 
-     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=48`, 
+     url: `${dianshijia_API}/sign/chooseAdditionalReward?rewardId=`+money, 
      headers: JSON.parse(signheaderVal),
    }
     $.get(url, (error, response, data) => {
