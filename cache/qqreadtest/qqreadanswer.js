@@ -49,7 +49,7 @@ async function all() {
     tz = '';    
     qqreadbodyVal = qqreadbdArr[i];
     qqreadtimeheaderVal = qqreadtimehdArr[i];    
-    =(`============ ${jsname+(i + 1)} =============`);     
+    O=(`============ ${jsname+(i + 1)} =============`);     
     
     await qqreaddati1();  
     await $.wait(1000);
@@ -67,7 +67,7 @@ async function all() {
 function showmsg() {
   return new Promise(async resolve => {
     let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);   
-    $.log(boxs, "", tz);
+    $.log(O, "", tz);
     resolve()
   })
 }
