@@ -61,7 +61,16 @@ async function all() {
     await $.wait(3000);
     await qqreaddati5();
     await $.wait(3000);
+    await showmsg();//通知
   }
+}
+
+function showmsg() {
+  return new Promise(async resolve => {
+    let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);   
+    $.log(O, "", tz);
+    resolve()
+  })
 }
 
 // 答题1
@@ -75,6 +84,10 @@ function qqreaddati1() {
     $.get(toqqreaddatiurl1, (error, response, data) => {
       
       $.log(`答题1: ${data}`);
+      const dati = JSON.parse(data);
+      if (dati.data.code) {
+      tz += `【答题1】:${dati.data.msg}\n`;
+      }
       resolve();
     });
   });
@@ -89,9 +102,12 @@ function qqreaddati2() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
-      const dati = JSON.parse(data);
+      
       $.log(`答题2: ${data}`);
+      const dati = JSON.parse(data);
+      if (dati.data.code) {
+      tz += `【答题2】:${dati.data.msg}\n`;
+      }
       resolve();
     });
   });
@@ -106,9 +122,13 @@ function qqreaddati3() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
-      const dati = JSON.parse(data);
+
+      
       $.log(`答题3: ${data}`);
+      const dati = JSON.parse(data);
+      if (dati.data.code) {
+      tz += `【答题3】:${dati.data.msg}\n`;
+      }
       resolve();
     });
   });
@@ -123,9 +143,12 @@ function qqreaddati4() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
-      const dati = JSON.parse(data);
+      
       $.log(`答题4: ${data}`);
+      const dati = JSON.parse(data);
+      if (dati.data.code) {
+      tz += `【答题4】:${dati.data.msg}\n`;
+      }
       resolve();
     });
   });
@@ -140,9 +163,12 @@ function qqreaddati5() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
-      const dati = JSON.parse(data);
+      
       $.log(`答题5: ${data}`);
+      const dati = JSON.parse(data);
+      if (dati.data.code) {
+      tz += `【答题5】:${dati.data.msg}\n`;
+      }
       resolve();
     });
   });
