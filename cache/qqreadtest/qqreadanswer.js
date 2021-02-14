@@ -52,15 +52,15 @@ async function all() {
     O=(`============ ${jsname+(i + 1)} =============`);     
     $.log(`${O}`);
     await qqreaddati1();  
-    await $.wait(2000);
+    await $.wait(3000);
     await qqreaddati2();  
-    await $.wait(2000);
+    await $.wait(3000);
     await qqreaddati3();  
-    await $.wait(2000);
+    await $.wait(3000);
     await qqreaddati4();  
-    await $.wait(2000);
+    await $.wait(3000);
     await qqreaddati5();
-    await $.wait(2000);
+    await $.wait(3000);
   }
 }
 
@@ -68,7 +68,7 @@ async function all() {
 function qqreaddati1() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=60&optionNo=2`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=65&optionNo=2`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -84,7 +84,7 @@ function qqreaddati1() {
 function qqreaddati2() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=61&optionNo=1`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=66&optionNo=1`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -101,7 +101,7 @@ function qqreaddati2() {
 function qqreaddati3() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=62&optionNo=2`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=67&optionNo=1`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -118,7 +118,7 @@ function qqreaddati3() {
 function qqreaddati4() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=63&optionNo=2`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=68&optionNo=2`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -135,7 +135,7 @@ function qqreaddati4() {
 function qqreaddati5() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=64&optionNo=2`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=69&optionNo=1`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
