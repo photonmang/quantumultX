@@ -50,26 +50,18 @@ async function all() {
     qqreadbodyVal = qqreadbdArr[i];
     qqreadtimeheaderVal = qqreadtimehdArr[i];    
     O=(`============ ${jsname+(i + 1)} =============`);     
-    
+    $.log(`${O}`);
     await qqreaddati1();  
-    await $.wait(1000);
+    await $.wait(2000);
     await qqreaddati2();  
-    await $.wait(1000);
+    await $.wait(2000);
     await qqreaddati3();  
-    await $.wait(1000);
+    await $.wait(2000);
     await qqreaddati4();  
-    await $.wait(1000);
-    await qqreaddati5();  
-    await $.wait(1000);
-    await showmsg();//通知	
+    await $.wait(2000);
+    await qqreaddati5();
+    await $.wait(2000);
   }
-}
-function showmsg() {
-  return new Promise(async resolve => {
-    let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);   
-    $.log(O, "", tz);
-    resolve()
-  })
 }
 
 // 答题1
@@ -81,11 +73,8 @@ function qqreaddati1() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="false") $.log(`${O}, 答题: ${data}`);
-      const dati = JSON.parse(data);
-      if (dati.data.code) {
-        tz += `【答题1结果】:${dati.data.msg}\n`;
-      }
+      
+      $.log(`答题1: ${data}`);
       resolve();
     });
   });
@@ -100,11 +89,9 @@ function qqreaddati2() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="false") $.log(`${O}, 答题: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
       const dati = JSON.parse(data);
-      if (dati.data.code) {
-        tz += `【答题2结果】:${dati.data.msg}\n`;
-      }
+      $.log(`答题2: ${data}`);
       resolve();
     });
   });
@@ -119,11 +106,9 @@ function qqreaddati3() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="false") $.log(`${O}, 答题: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
       const dati = JSON.parse(data);
-      if (dati.data.code) {
-        tz += `【答题3结果】:${dati.data.msg}\n`;
-      }
+      $.log(`答题3: ${data}`);
       resolve();
     });
   });
@@ -138,11 +123,9 @@ function qqreaddati4() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="false") $.log(`${O}, 答题: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
       const dati = JSON.parse(data);
-      if (dati.data.code) {
-        tz += `【答题4结果】:${dati.data.msg}\n`;
-      }
+      $.log(`答题4: ${data}`);
       resolve();
     });
   });
@@ -157,11 +140,9 @@ function qqreaddati5() {
       timeout: 60000,
     };
     $.get(toqqreaddatiurl1, (error, response, data) => {
-      if(QQlogs=="false") $.log(`${O}, 答题: ${data}`);
+      if(QQlogs=="true") $.log(`${O}, 答题: ${data}`);
       const dati = JSON.parse(data);
-      if (dati.data.code) {
-        tz += `【答题5结果】:${dati.data.msg}\n`;
-      }
+      $.log(`答题5: ${data}`);
       resolve();
     });
   });
