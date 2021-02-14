@@ -1,6 +1,6 @@
 /*
 
-2.14 尝试答题，次日答题失效问题。
+2.14 增加5次答题和2次抽奖，暂时无法解决每日不同答题！每日人工更新，方便批量运行，后续再想办法解决
 
 */
 
@@ -61,6 +61,10 @@ async function all() {
     await $.wait(3000);
     await qqreaddati5();
     await $.wait(3000);
+    for(c=0;c<2;c++){
+    await qqreaddraw();
+    await $.wait(3000);
+    }
     await showmsg();//通知
   }
 }
@@ -72,6 +76,30 @@ function showmsg() {
     resolve()
   })
 }
+
+// 抽奖
+function qqreaddraw() {
+  return new Promise((resolve, reject) => {
+    const toqqreaddatiurl1 = {
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/lottery`,
+      headers: JSON.parse(qqreadtimeheaderVal),
+      timeout: 60000,
+    };
+    $.get(toqqreaddatiurl1, (error, response, data) => {
+      
+      $.log(`抽奖: ${data}`);
+      const cj = JSON.parse(data);
+      if (cj.code == 0) {
+      tz += `【抽奖】:${cj.data.rewardText}\n`;
+      }
+else if (cj.code !=0){
+tz += `【抽奖】:${cj.msg}\n`;
+}
+      resolve();
+    });
+  });
+}
+
 
 // 答题1
 function qqreaddati1() {
