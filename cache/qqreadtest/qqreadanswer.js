@@ -105,7 +105,7 @@ tz += `【抽奖】:${cj.msg}\n`;
 function qqreaddati1() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=65&optionNo=2`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=70&optionNo=2`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -125,7 +125,7 @@ function qqreaddati1() {
 function qqreaddati2() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=66&optionNo=1`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=71&optionNo=2`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -145,7 +145,7 @@ function qqreaddati2() {
 function qqreaddati3() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=67&optionNo=1`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=72&optionNo=1`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -166,7 +166,7 @@ function qqreaddati3() {
 function qqreaddati4() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=68&optionNo=2`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=73&optionNo=2`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -186,7 +186,7 @@ function qqreaddati4() {
 function qqreaddati5() {
   return new Promise((resolve, reject) => {
     const toqqreaddatiurl1 = {
-      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=69&optionNo=1`,
+      url: `https://mqqapi.reader.qq.com/mqq/red_packet/user/question/answer?qid=74&optionNo=1`,
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
