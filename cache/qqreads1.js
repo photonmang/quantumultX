@@ -36,6 +36,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1.10 去除提现时间，满提现金额就提现！
 1.12 更新Cookie获取，支持新版本body更新
 2.11 去除今日阅读时长，调整为每日阅读平均时长
+2.15 修复因今日阅读API失效，导致的上传阅读失效
 */
 
 
@@ -145,10 +146,10 @@ function all() {
             qqreadtrack(); // 更新
           } else if (i == 2) {
             qqreadtask(); // 任务列表
-            if (
-              config.data &&
-              config.data.pageParams.todayReadSeconds / 3600 <= maxtime
-            )
+            //if (
+              //config.data &&
+              //config.data.pageParams.todayReadSeconds / 3600 <= maxtime
+            //)
               qqreadtime(); // 上传时长
           } else if (i == 3) {
             if (
