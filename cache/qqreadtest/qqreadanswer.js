@@ -116,10 +116,14 @@ function qqreaddati1() {
       if (dati.data.code) {
       tz += `【答题1】:${dati.data.msg}\n`;
       }
+      else if (!dati.data.code) {
+      tz += `【答题1】:${dati.data.flag},获得${dati.data.amount}金币\n`;
+      }
       resolve();
     });
   });
 }
+
 
 // 答题2
 function qqreaddati2() {
@@ -135,6 +139,9 @@ function qqreaddati2() {
       const dati = JSON.parse(data);
       if (dati.data.code) {
       tz += `【答题2】:${dati.data.msg}\n`;
+      }
+      else if (!dati.data.code) {
+      tz += `【答题2】:${dati.data.flag},获得${dati.data.amount}金币\n`;
       }
       resolve();
     });
@@ -157,6 +164,9 @@ function qqreaddati3() {
       if (dati.data.code) {
       tz += `【答题3】:${dati.data.msg}\n`;
       }
+      else if (!dati.data.code) {
+      tz += `【答题3】:${dati.data.flag},获得${dati.data.amount}金币\n`;
+      }
       resolve();
     });
   });
@@ -177,6 +187,9 @@ function qqreaddati4() {
       if (dati.data.code) {
       tz += `【答题4】:${dati.data.msg}\n`;
       }
+      else if (!dati.data.code) {
+      tz += `【答题4】:${dati.data.flag},获得${dati.data.amount}金币\n`;
+      }
       resolve();
     });
   });
@@ -196,6 +209,9 @@ function qqreaddati5() {
       const dati = JSON.parse(data);
       if (dati.data.code) {
       tz += `【答题5】:${dati.data.msg}\n`;
+      }
+      else if (!dati.data.code) {
+      tz += `【答题5】:${dati.data.flag},获得${dati.data.amount}金币\n`;
       }
       resolve();
     });
