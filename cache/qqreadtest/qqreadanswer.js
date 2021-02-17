@@ -2,6 +2,8 @@
 
 2.14 增加5次答题和2次抽奖，暂时无法解决每日不同答题！每日人工更新，方便批量运行，后续再想办法解决
 2.16 修复自动答题功能
+2.17 修复多账号自动答题过程中出现卡滞现象
+
 */
 
 const jsname = 'QQ阅读'
@@ -61,6 +63,8 @@ async function all() {
        break
      } else if (z2 == true){
        break
+     } else if (z2 == false){
+       await $.wait(5000);
             }
     }
     
@@ -68,9 +72,11 @@ async function all() {
     await qqreaddati2();  
     await $.wait(3000);
     if (z1== -4){
-        break
+       break
      } else if (z2 == true){
        break
+     } else if (z2 == false){
+       await $.wait(5000);
             }
     }
     
@@ -81,18 +87,21 @@ async function all() {
        break
      } else if (z2 == true){
        break
+     } else if (z2 == false){
+       await $.wait(5000);
             }
     }
     
     for (z=0;z<2;z++){
     await qqreaddati4();  
     await $.wait(3000);
-    if (z1 == -4){
+    if (z1== -4){
        break
-      }
-    else if (z2 == true){
+     } else if (z2 == true){
        break
-      }
+     } else if (z2 == false){
+       await $.wait(5000);
+            }
     }
     
     for (z=0;z<2;z++){
@@ -102,6 +111,8 @@ async function all() {
        break
      } else if (z2 == true){
        break
+     } else if (z2 == false){
+       await $.wait(5000);
             }
     }
     for(c=0;c<2;c++){
