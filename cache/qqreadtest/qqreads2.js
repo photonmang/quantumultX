@@ -35,7 +35,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 #企鹅读书获取时长cookie
 企鹅读书获取时长cookie = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid?,script-path=https://raw.githubusercontent.com/ziye12/JavaScript/master/Task/qqreads.js, 
 
-2.17  修复Cookie获取，剔除每日阅读时长获取，剔除提现时间
+2.17  修复Cookie获取，剔除每日阅读时长获取，剔除提现时间,修复阅读金币领取失效问题
 
 */
 
@@ -254,7 +254,9 @@ async function all() {
       if (task.data && ljyd.doneFlag == 0) {
         await qqreaddayread();//阅读任务
       }
-      if (ydrw.doneFlag == 0 && config.data && config.data.pageParams.todayReadSeconds / 60 >= 1) {
+      if (ydrw.doneFlag == 0 
+       //&& config.data && config.data.pageParams.todayReadSeconds / 60 >= 1
+          ) {
         await qqreadssr1();//阅读金币1	  
       }
       if (task.data && dk.doneFlag == 0) {
@@ -262,7 +264,9 @@ async function all() {
         await qqreadtake();//阅豆签到
       }
       await $.wait(4000)
-      if (ydrw.doneFlag == 0 && config.data && config.data.pageParams.todayReadSeconds / 60 >= 30) {
+      if (ydrw.doneFlag == 0 
+         //&& config.data && config.data.pageParams.todayReadSeconds / 60 >= 30
+         ) {
         await qqreadssr2();//阅读金币2
         await $.wait(4000);
         await qqreadssr3();//阅读金币3
@@ -314,7 +318,9 @@ async function all() {
       if (task.data && ljyd.doneFlag == 0) {
         await qqreaddayread();//阅读任务
       }
-      if (ydrw.doneFlag == 0 && config.data && config.data.pageParams.todayReadSeconds / 60 >= 1) {
+      if (ydrw.doneFlag == 0 
+        //&& config.data && config.data.pageParams.todayReadSeconds / 60 >= 1
+         ) {
         await qqreadssr1();//阅读金币1	  
       }
       if (task.data && dk.doneFlag == 0) {
@@ -327,7 +333,9 @@ async function all() {
         await $.wait(4000)
         await qqreadbox2();//宝箱翻倍
       }
-      if (ydrw.doneFlag == 0 && config.data && config.data.pageParams.todayReadSeconds / 60 >= 30) {
+      if (ydrw.doneFlag == 0 
+        //&& config.data && config.data.pageParams.todayReadSeconds / 60 >= 30
+          ) {
         await qqreadssr2();//阅读金币2
         await $.wait(4000);
         await qqreadssr3();//阅读金币3
