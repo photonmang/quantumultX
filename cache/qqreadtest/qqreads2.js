@@ -1,9 +1,9 @@
 /*
-本脚本改版ziye
+
 ⚠️请到boxjs中设置需要开启的任务参数，设置0 日常任务，设置为1 单开宝箱，设置为2 完整功能  
 ⚠️云函数固定ck则在 qqreadCOOKIE 文件里面填写ck，多账号换行
 ⚠️cookie获取方法：
-进 https://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14  点我的   获取cookie
+进 http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e  点我的   获取cookie
 进一本书 看 10秒以下 然后退出，获取阅读时长cookie，看书一定不能超过10秒
 
 Secrets对应关系如下，多账号默认换行
@@ -11,7 +11,7 @@ Secrets对应关系如下，多账号默认换行
 qqreadbodyVal         👉   QQREAD_BODY
 qqreadtimeurlVal      👉   QQREAD_TIMEURL
 qqreadtimeheaderVal   👉   QQREAD_TIMEHD
-GOTXJE                  👉   QQREAD_GOTXJE  提现标准 可设置0 1 2 10 30 50 100 设置0关闭
+GOTXJE                👉   QQREAD_GOTXJE  提现标准 可设置0 1 2 10 30 50 100 设置0关闭
 
 
 ⚠️宝箱奖励为20分钟一次，自己根据情况设置定时，建议设置11分钟一次
@@ -35,7 +35,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 #企鹅读书获取时长cookie
 企鹅读书获取时长cookie = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid?,script-path=https://raw.githubusercontent.com/ziye12/JavaScript/master/Task/qqreads.js, 
 
-
+2.17  修复Cookie获取，剔除每日阅读时长获取，剔除提现时间
 
 */
 
@@ -49,7 +49,6 @@ const logs = 0;   //0为关闭日志，1为开启
 const maxtime = 10//每日上传时长限制，默认20小时
 const wktimess = 1200//周奖励领取标准，默认1200分钟
 const GOOFF = $.getdata('GOOFF') || 1;//0为日常任务，1为单开宝箱，2为完整功能版
-const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
 const zhs=$.getdata('zhs') || 1  //默认输出1个账号
 let task, tz, kz, config = '', GOTXJE = '', COOKIES_SPLIT = '' ;
@@ -184,11 +183,9 @@ function GetCookie() {
     $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
   }
   else if ($request &&
-           $request.body.indexOf("bookDetail_bottomBar_read_C")>=0&&
+           $request.body.indexOf("bookLib_category_click_C") >= 0&&
            $request.body.indexOf("bookLib2_bookList_bookClick_C") >= 0 &&
-           $request.body.indexOf("bookRead_show_I")>=0&&
-           $request.body.indexOf("topBar_left_back_C")<0&&
-           $request.body.indexOf("bookRead_dropOut_shelfYes_C")<0){
+           $request.body.indexOf("bookRead_show_I") >= 0){
     const qqreadbodyVal = $request.body;
     if (qqreadbodyVal) $.setdata(qqreadbodyVal, "qqreadbd" + jbid);
     $.log(
@@ -200,7 +197,7 @@ function GetCookie() {
 
 console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
 console.log(`============ 共 ${Length} 个${jsname}账号=============\n`);
-console.log(`======== 提现额度：${GOTXJE/10000}元,提现时间${txsj}点 ========\n`);
+console.log(`======== 提现额度：${GOTXJE/10000}元 ========\n`);
 
 !(async () => {
 
@@ -220,8 +217,8 @@ async function all() {
     $.msg(
       jsname,
       "⚠️提示：您还未获取cookie,请点击前往获取cookie\n",
-      "https://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14",
-      { "open-url": "https://m.q.qq.com/a/s/1f8dd6728bc6193e1fc52478bd73df14" }
+      "http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e",
+      { "open-url": "http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e" }
     );
     $.done();
   }
@@ -247,11 +244,9 @@ async function all() {
     }
     if (GOOFF == 0) {
       await qqreadtrack();//更新
-      await qqreadconfig();//时长查询
+      //await qqreadconfig();//时长查询
       await qqreadwktime();//周时长查询
-      if (config.data && config.data.pageParams.todayReadSeconds / 3600 <= maxtime) {
-        await qqreadtime();// 上传时长
-      }
+      await qqreadtime();// 上传时长
       if (wktime.data && wktime.data.readTime >= wktimess && wktime.data.readTime <= 1250) {
         await qqreadpick();//领周时长奖励
       }
@@ -272,11 +267,9 @@ async function all() {
         await $.wait(4000);
         await qqreadssr3();//阅读金币3
       }
-      if (nowTimes.getHours() >= 23 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59)) {
         if (GOTXJE/10000 >= 1 && task.data && task.data.user.amount >= GOTXJE) {
           await qqreadwithdraw();//提现
         }
-      }
       if (nowTimes.getHours() >= 6) {    
       await getAmounts();//今日收益累计
 	  }  
@@ -311,11 +304,9 @@ async function all() {
 
     if (GOOFF == 2) {
       await qqreadtrack();//更新
-      await qqreadconfig();//时长查询
+      //await qqreadconfig();//时长查询
       await qqreadwktime();//周时长查询
-      if (config.data && config.data.pageParams.todayReadSeconds / 3600 <= maxtime) {
-        await qqreadtime();// 上传时长
-      }
+      await qqreadtime();// 上传时长
       if (wktime.data && wktime.data.readTime >= wktimess && wktime.data.readTime <= 1250) {
         await qqreadpick();//领周时长奖励
       }
@@ -341,11 +332,9 @@ async function all() {
         await $.wait(4000);
         await qqreadssr3();//阅读金币3
       }
-      if (nowTimes.getHours() >= 23 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 59)) {
         if (GOTXJE/10000 >= 1 && task.data && task.data.user.amount >= GOTXJE) {
           await qqreadwithdraw();//提现
         }
-      }
       if (nowTimes.getHours() >= 6) {    
       await getAmounts();//今日收益累计
 	  }    
