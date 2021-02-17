@@ -37,6 +37,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1.12 更新Cookie获取，支持新版本body更新
 2.11 去除今日阅读时长，调整为每日阅读平均时长
 2.15 修复因今日阅读API失效，导致的上传阅读失效
+2.17 新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
 */
 
 
@@ -193,7 +194,7 @@ function all() {
             nowTimes.getHours() >= 6
           ) {
             getAmounts(); // 今日收益累计
-          } else if (i == 11) {
+          } else if (i == 10) {
             if (task.data && task.data.treasureBox.videoDoneFlag == 0)
               qqreadbox2(); // 宝箱翻倍
             if (
@@ -203,7 +204,10 @@ function all() {
               config.data.pageParams.todayReadSeconds / 60 >= 30
             )
               qqreadssr3(); // 阅读金币3
-          } else if (i == 12) {
+          } else if (i == 11) {
+            qqreadredtask();  
+           }
+            else if (i == 12) {
             if (K < qqreadbdArr.length - 1) {
               K += 1;
               all();
@@ -219,7 +223,28 @@ function all() {
     })(i);
   }
 }
-
+// 领红包
+function qqreadredtask() {
+  return new Promise((resolve, reject) => {
+    for (let i = 0; i < 4; i++) {
+      setTimeout(() => {
+    const body = [`{"type":100}`,`{"type":210}`,`{"type":220}`,`{"type":230}`]
+    const toqqreadredtaskurl = {
+      url: "https://mqqapi.reader.qq.com/mqq/qq_red_packet/user/task",
+      headers: JSON.parse(qqreadtimeheaderVal),
+      body: body[i],
+      timeout: 60000,
+    };
+    $.post(toqqreadredtaskurl, (error, response, data) => {
+      if(QQlogs=="true") $.log(`${O}, 红包领取: ${data}`);
+      let redtask = JSON.parse(data);
+      tz += `【红包领取】:${redtask.data.msg}\n`;
+      resolve();
+    });
+      }, i * 3000);  
+      }
+  });
+}
 
 // 任务列表
 function qqreadtask() {
