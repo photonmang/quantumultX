@@ -76,7 +76,7 @@ async function all() {
      } else if (z2 == true){
        break
      } else if (z2 == false){
-       await $.wait(10000);
+       await $.wait(15000);
             }
     }
     
@@ -88,7 +88,7 @@ async function all() {
      } else if (z2 == true){
        break
      } else if (z2 == false){
-       await $.wait(10000);
+       await $.wait(15000);
             }
     }
     
@@ -100,7 +100,7 @@ async function all() {
      } else if (z2 == true){
        break
      } else if (z2 == false){
-       await $.wait(10000);
+       await $.wait(15000);
             }
     }
     
@@ -112,7 +112,7 @@ async function all() {
      } else if (z2 == true){
        break
      } else if (z2 == false){
-       await $.wait(10000);
+       await $.wait(15000);
             }
     }
     for(c=0;c<2;c++){
