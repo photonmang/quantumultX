@@ -37,7 +37,8 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 1.12 更新Cookie获取，支持新版本body更新
 2.11 去除今日阅读时长，调整为每日阅读平均时长
 2.15 修复因今日阅读API失效，导致的上传阅读失效
-2.17 新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
+2.17 *新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
+     *修复阅读金币领取失效
 */
 
 
@@ -167,9 +168,9 @@ function all() {
             if (task.data && ljyd.doneFlag == 0) qqreaddayread(); // 阅读任务
             if (
               ydrw &&
-              ydrw.doneFlag == 0 &&
-              config.data &&
-              config.data.pageParams.todayReadSeconds / 60 >= 1
+              ydrw.doneFlag == 0 //&&
+              //config.data &&
+              //config.data.pageParams.todayReadSeconds / 60 >= 1
             )
               qqreadssr1(); // 阅读金币1
             if (task.data && dk.doneFlag == 0) {
@@ -181,9 +182,9 @@ function all() {
             if (task.data && task.data.treasureBox.doneFlag == 0) qqreadbox(); // 宝箱
             if (
               ydrw &&
-              ydrw.doneFlag == 0 &&
-              config.data &&
-              config.data.pageParams.todayReadSeconds / 60 >= 30
+              ydrw.doneFlag == 0 //&&
+              //config.data &&
+              //config.data.pageParams.todayReadSeconds / 60 >= 30
             )
               qqreadssr2(); // 阅读金币2
             if (task.data && dk.doneFlag == 0) qqreadsign2(); // 签到翻倍
@@ -202,9 +203,9 @@ function all() {
               qqreadbox2(); // 宝箱翻倍
             if (
               ydrw &&
-              ydrw.doneFlag == 0 &&
-              config.data &&
-              config.data.pageParams.todayReadSeconds / 60 >= 30
+              ydrw.doneFlag == 0 //&&
+              //config.data &&
+              //config.data.pageParams.todayReadSeconds / 60 >= 30
             )
               qqreadssr3(); // 阅读金币3
           }
