@@ -140,7 +140,10 @@ function all() {
     (function (i) {
       setTimeout(
         function () {
-          if (i == 0) qqreadinfo(); // 用户名
+          if (i == 0) {
+           qqreadinfo(); // 用户名
+           qqreadredtask();
+           }
           if (i == 1) {
             qqreadwktime(); // 周时长查询
             //qqreadconfig(); // 时长查询
@@ -204,9 +207,7 @@ function all() {
               config.data.pageParams.todayReadSeconds / 60 >= 30
             )
               qqreadssr3(); // 阅读金币3
-          } else if (i == 11) {
-            qqreadredtask();  
-           }
+          }
             else if (i == 12) {
             if (K < qqreadbdArr.length - 1) {
               K += 1;
