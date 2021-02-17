@@ -63,9 +63,7 @@ async function all() {
        break
      } else if (z2 == true){
        break
-     } else if (z2 == false){
-       await $.wait(30000);
-            }
+     } 
     }
     
     for (z=0;z<2;z++){
@@ -75,9 +73,7 @@ async function all() {
        break
      } else if (z2 == true){
        break
-     } else if (z2 == false){
-       await $.wait(30000);
-            }
+     } 
     }
     
     for (z=0;z<2;z++){
@@ -87,9 +83,7 @@ async function all() {
        break
      } else if (z2 == true){
        break
-     } else if (z2 == false){
-       await $.wait(30000);
-            }
+     } 
     }
     
     for (z=0;z<2;z++){
@@ -99,9 +93,7 @@ async function all() {
        break
      } else if (z2 == true){
        break
-     } else if (z2 == false){
-       await $.wait(30000);
-            }
+     } 
     }
     
     for (z=0;z<2;z++){
@@ -111,9 +103,7 @@ async function all() {
        break
      } else if (z2 == true){
        break
-     } else if (z2 == false){
-       await $.wait(30000);
-            }
+     } 
     }
     for(c=0;c<2;c++){
     await qqreaddraw();
