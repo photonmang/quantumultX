@@ -65,7 +65,7 @@ async function all() {
        break
      } 
     }
-    
+    n=1
     for (z=0;z<2;z++){
     await qqreaddati2();  
     await $.wait(3000);
@@ -75,7 +75,7 @@ async function all() {
        break
      } 
     }
-    
+    n=1
     for (z=0;z<2;z++){
     await qqreaddati3();  
     await $.wait(3000);
@@ -85,7 +85,7 @@ async function all() {
        break
      } 
     }
-    
+    n=1
     for (z=0;z<2;z++){
     await qqreaddati4();  
     await $.wait(3000);
@@ -95,7 +95,7 @@ async function all() {
        break
      } 
     }
-    
+    n=1
     for (z=0;z<2;z++){
     await qqreaddati5();  
     await $.wait(3000);
