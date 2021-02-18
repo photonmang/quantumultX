@@ -39,6 +39,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 2.15 修复因今日阅读API失效，导致的上传阅读失效
 2.17 *新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
      *修复阅读金币领取失效
+
 */
 
 
@@ -143,7 +144,6 @@ function all() {
         function () {
           if (i == 0) {
            qqreadinfo(); // 用户名
-           qqreadredtask();
            }
           if (i == 1) {
             qqreadwktime(); // 周时长查询
