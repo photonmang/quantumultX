@@ -3,7 +3,7 @@
 2.14 增加5次答题和2次抽奖，暂时无法解决每日不同答题！每日人工更新，方便批量运行，后续再想办法解决
 2.16 修复自动答题功能
 2.17 修复多账号自动答题过程中出现卡滞现象
-
+2.18 调整通知方式
 */
 
 const jsname = 'QQ阅读'
@@ -17,12 +17,10 @@ const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
-let qit,z1,z2;
-let n=1
+let qit,z1,z2,O,n=1,dd='';
+
 console.log(`\n==== 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} ====\n`)
 const QQlogs = $.getdata('QQlogs') || false   //调试日志，默认关闭
-
-
 
 for (let index = 1; index <= zhs; index++) {
     if ($.getdata('qqreadbd'+index) === undefined || $.getdata('qqreadbd'+index) === '') {
@@ -53,7 +51,7 @@ async function all() {
     tz = '';    
     qqreadbodyVal = qqreadbdArr[i];
     qqreadtimeheaderVal = qqreadtimehdArr[i];    
-    O=(`============ ${jsname+(i + 1)} =============`);     
+    O =(`============ ${jsname+(i + 1)} =============`);     
     $.log(`${O}`);
     await qqreadkey();
     for (z=0;z<2;z++){
@@ -109,14 +107,15 @@ async function all() {
     await qqreaddraw();
     await $.wait(3000);
     }
-    await showmsg();
+    dd +=O+'\n'+tz
   }
+await showmsg();
 }
 
 function showmsg() {
   return new Promise(async resolve => {
     let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);   
-    $.log(O, "", tz);
+    $.msg("QQ阅读-答题", "", dd);
     resolve()
   })
 }
