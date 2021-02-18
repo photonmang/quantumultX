@@ -54,6 +54,7 @@ async function all() {
     O =(`============ ${jsname+(i + 1)} =============`);     
     $.log(`${O}`);
     await qqreadkey();
+    n=1
     for (z=0;z<2;z++){
     await qqreaddati1();  
     await $.wait(3000);
