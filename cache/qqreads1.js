@@ -39,7 +39,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 2.15 修复因今日阅读API失效，导致的上传阅读失效
 2.17 *新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
      *修复阅读金币领取失效
-
+2.23 修复宝箱及宝箱翻倍显示
 */
 
 
@@ -264,19 +264,19 @@ function qqreadtask() {
       ydrw = task.data.taskList.find((item) => item.type === 220);
       sp = task.data.taskList.find((item) => item.type === 230);
 
-      if (task.data.invite.nextInviteConfig) {
+      if (task.data) { //.invite.nextInviteConfig) {
         tz +=
           `【现金余额】:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
-          `【第${task.data.invite.issue}期】:时间${task.data.invite.dayRange}\n` +
-          ` 已邀请${task.data.invite.inviteCount}人，再邀请${task.data.invite.nextInviteConfig.count}人获得${task.data.invite.nextInviteConfig.amount}金币\n` +
+         // `【第${task.data.invite.issue}期】:时间${task.data.invite.dayRange}\n` +
+         // ` 已邀请${task.data.invite.inviteCount}人，再邀请${task.data.invite.nextInviteConfig.count}人获得${task.data.invite.nextInviteConfig.amount}金币\n` +
           `【${dk.title}】:${dk.amount}金币,${dk.actionText}\n` +
           `【${ljyd.title}】:${ljyd.amount}金币,${ljyd.actionText}\n` +
           `【${ydrw.title}】:${ydrw.amount}金币,${ydrw.actionText}\n` +
           `【${sp.title}】:${sp.amount}金币,${sp.actionText}\n` +
           `【宝箱任务${task.data.treasureBox.count + 1}】:${
             task.data.treasureBox.tipText
-          }\n` +
-          `【${task.data.fans.title}】:${task.data.fans.fansCount}个好友,${task.data.fans.todayAmount}金币\n`;
+          }\n`// +
+          //`【${task.data.fans.title}】:${task.data.fans.fansCount}个好友,${task.data.fans.todayAmount}金币\n`;
       }
       resolve();
     });
