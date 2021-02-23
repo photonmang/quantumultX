@@ -66,7 +66,7 @@
         "脚本使用说明：",
         "1.请先配置好本仓库的Cookie重写脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf\">Cookie.conf</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
 	"2.请在以下获取账号Cookie中填写您要获取的账号,请填写阿拉伯数字来表示！",			
-        "3.进入QQ阅读获取Cookie【<a href=\"http://m.q.qq.com/a/s/52ef8451d09ebc5d76da94b5254fa13d\">点我打开</a>】",
+        "3.进入QQ阅读获取Cookie【<a href=\"http://m.q.qq.com/a/s/a48c89449ec4992000f9ecef1153538e\">点我打开</a>】",
 	"4.进书库 看10秒以下 然后退出，看书一定不能超过10秒.获取url,time,body三个更新提醒.",
 	"5.循环2-4步骤重新获取下个账号【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/README.md\">点我查看详细使用说明</a>】",
 	"6.新增ck打印，仅方便上传云函数使用，不会用无需设置，请配合Cookie打印脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadckprint.js\">qqreadckprint.js</a>】"
