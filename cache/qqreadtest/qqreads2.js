@@ -36,7 +36,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 企鹅读书获取时长cookie = type=http-request,pattern=https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid?,script-path=https://raw.githubusercontent.com/ziye12/JavaScript/master/Task/qqreads.js, 
 
 2.17  修复Cookie获取，剔除每日阅读时长获取，剔除提现时间,修复阅读金币领取失效问题
-
+2.23  修复宝箱及宝箱翻倍显示
 */
 
 const jsname = 'QQ阅读'
@@ -481,18 +481,18 @@ function qqreadtask() {
       ydrw = task.data.taskList.find(item => item.type === 220);
       sp = task.data.taskList.find(item => item.type === 230);
 
-      if (task.data.invite.nextInviteConfig) {
+      if (task.data){ //.invite.nextInviteConfig) {
         tz +=
           `【现金余额】:${(task.data.user.amount / 10000).toFixed(2)}元\n` +
-          `【第${task.data.invite.issue}期】:时间${task.data.invite.dayRange}\n` +
-          ` 已邀请${task.data.invite.inviteCount}人，再邀请${task.data.invite.nextInviteConfig.count}人获得${task.data.invite.nextInviteConfig.amount}金币\n` +
+          //`【第${task.data.invite.issue}期】:时间${task.data.invite.dayRange}\n` +
+          //` 已邀请${task.data.invite.inviteCount}人，再邀请${task.data.invite.nextInviteConfig.count}人获得${task.data.invite.nextInviteConfig.amount}金币\n` +
           `【${dk.title}】:${dk.amount}金币,${dk.actionText}\n` +
           `【${ljyd.title}】:${ljyd.amount}金币,${ljyd.actionText}\n` +
           `【${ydrw.title}】:${ydrw.amount}金币,${ydrw.actionText}\n` +
           `【${sp.title}】:${sp.amount}金币,${sp.actionText}\n` +
           `【宝箱任务${task.data.treasureBox.count + 1}】:${task.data.treasureBox.timeInterval / 1000
-          }秒后领取\n` +
-          `【${task.data.fans.title}】:${task.data.fans.fansCount}个好友,${task.data.fans.todayAmount}金币\n`;
+          }秒后领取\n` //+
+          //`【${task.data.fans.title}】:${task.data.fans.fansCount}个好友,${task.data.fans.todayAmount}金币\n`;
       }
 
       kz +=
