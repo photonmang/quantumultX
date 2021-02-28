@@ -2,7 +2,7 @@
   "name": "photonmang elecV2P的订阅集", 
   "author": "photonmang",
   "date": "2021-02-28",    
-  "surl": "https://raw.githubusercontent.com/photonmang/quantumultX/master/elecV2P/tasksub.json",
+  "surl": "https://raw.githubusercontent.com/photonmang/quantumultX/master/elecV2P/elecv2ptask.json",
   "desc": "本订阅仅可用于 elecV2P, 与其他软件并不兼容。",
   "list": [
 {"name": "京东极速版", "type": "cron", "time": "0 7 * * *","running": false,"job": {"type": "runjs","target": "https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed_sign.js"}},
