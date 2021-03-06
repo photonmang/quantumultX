@@ -2,7 +2,7 @@
 转载ziye备用更新
 
 ⚠️全民悦动
-
+http://qmyd.yichengw.cn/?id=116988
 3.3 制作
 3.4 优化提现，优化刮刮卡，优化抽手机
 3.5 增加了点延迟，优化提现
@@ -245,9 +245,9 @@ async function all() {
     if (!Length) {
         $.msg(
             $.name,
-            '提示：⚠️请点击前往获取 http://qmyd.yichengw.cn/?id=115796\n',
-            ' http://qmyd.yichengw.cn/?id=115796', {
-                "open-url": " http://qmyd.yichengw.cn/?id=115796"
+            '提示：⚠️请点击前往获取 http://qmyd.yichengw.cn/?id=116988\n',
+            ' http://qmyd.yichengw.cn/?id=116988', {
+                "open-url": " http://qmyd.yichengw.cn/?id=116988"
             }
         );
         return;
