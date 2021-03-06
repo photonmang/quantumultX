@@ -86,15 +86,15 @@ hostname=veishop.iboxpay.com
 ############## 圈x
 
 #笑谱获取更新TOKEN
-https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* url script-response-body https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.js
+https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js
 
 ############## loon
-http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.js, requires-body=1,max-size=0, tag=笑普token
+http-response https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/* script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js, requires-body=1,max-size=0, tag=笑普token
 
 ############## surge
 
 #笑谱获取更新TOKEN
-笑谱获取更新TOKEN = type=http-response,pattern=https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/iboxpay.js
+笑谱获取更新TOKEN = type=http-response,pattern=https:\/\/veishop\.iboxpay\.com\/nf_gateway\/nf-user-auth-web\/ignore_tk\/veishop\/v1\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js
 
 
 
