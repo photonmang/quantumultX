@@ -400,7 +400,38 @@
             ],
             "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js",
             "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.png"],
-            "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js"
+            "script": "https://raw.githubusercontent.com/photonmang/quantumultX"
+        },
+        {
+            "id": "qmyd",
+            "name": "全民悦动APP",
+            "keys": ["qmydtoken", "qmydtoken2", "qmydtoken3", "qmydtoken4", "qmydtoken5", "qmydtoken6", "qmydtoken7", "qmydtoken8", "qmydtoken9", "qmydtoken10", "qmydtoken11", "qmydtoken12", "qmydtoken13", "qmydtoken14", "qmydtoken15", "qmydtoken16", "qmydtoken17", "qmydtoken18", "qmydtoken19", "qmydtoken20"],
+            "author": "@ziye",
+            "settings": [{
+                    "id": "qmydSuffix",
+                    "name": "当前账号",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+                },
+                {
+                    "id": "qmydCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                },
+                {
+                    "id": "qmydCASH",
+                    "name": "提现标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "0不提现，可设置 0 0.3 1 10 20 30 100 200 300 888  设置888由上至下循环提现 "
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.js",
+            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qmyd.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qmyd.png"],
+            "script": "https://raw.githubusercontent.com/photonmang/quantumultX"
         }
   ]
 }
