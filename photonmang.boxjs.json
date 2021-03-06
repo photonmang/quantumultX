@@ -430,7 +430,7 @@
                 }
             ],
             "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.js",
-            "icons": ["https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qmyd.png", "https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/qmyd.png"],
+            "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.png"],
             "script": "https://raw.githubusercontent.com/photonmang/quantumultX"
         }
   ]
