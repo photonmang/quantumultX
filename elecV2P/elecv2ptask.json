@@ -5,6 +5,7 @@
   "surl": "https://raw.githubusercontent.com/photonmang/quantumultX/master/elecV2P/elecv2ptask.json",
   "desc": "本订阅仅可用于 elecV2P, 与其他软件并不兼容。",
   "list": [   
+{"name": "全民悦动", "type": "cron", "time": "0,30 0-23 * * *","running": false,"job": {"type": "runjs","target": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.js"}},
 {"name": "笑谱", "type": "cron", "time": "*/30 * * * *","running": false,"job": {"type": "runjs","target": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js"}},
 {"name": "她的节享京豆", "type": "cron", "time": "0 8,21 1-8/1 3 *","running": false,"job": {"type": "runjs","target": "https://jdsharedresourcescdn.azureedge.net/jdresource/jd_firecrackers.js"}},
 {"name": "京东极速版", "type": "cron", "time": "0 7 * * *","running": false,"job": {"type": "runjs","target": "https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed_sign.js"}},
