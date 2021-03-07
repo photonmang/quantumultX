@@ -193,7 +193,7 @@ function qqreaddati1() {
       tz += `【答题1】:回答❌,重新尝试答题！\n`;
       }
       else if (dati.data.flag ==true) {
-      tz += `【答题1】:回答✅,获得${dati.data.amount}金币\n`;
+      tz += `【答题1】:回答✅\n`;
       }
       resolve();
     });
@@ -223,7 +223,7 @@ function qqreaddati2() {
       tz += `【答题2】:回答❌,重新尝试答题！\n`;
       }
       else if (dati.data.flag ==true) {
-      tz += `【答题2】:回答✅,获得${dati.data.amount}金币\n`;
+      tz += `【答题2】:回答✅\n`;
       }
       resolve();
     });
@@ -252,7 +252,7 @@ function qqreaddati3() {
       tz += `【答题3】:回答❌,重新尝试答题！\n`;
       }
       else if (dati.data.flag ==true) {
-      tz += `【答题3】:回答✅,获得${dati.data.amount}金币\n`;
+      tz += `【答题3】:回答✅\n`;
       }
       resolve();
     });
@@ -280,7 +280,7 @@ function qqreaddati4() {
       tz += `【答题4】:回答❌,重新尝试答题！\n`;
       }
       else if (dati.data.flag ==true) {
-      tz += `【答题4】:回答✅,获得${dati.data.amount}金币\n`;
+      tz += `【答题4】:回答✅\n`;
       }
       resolve();
     });
@@ -309,7 +309,7 @@ function qqreaddati5() {
       tz += `【答题5】:回答❌,重新尝试答题！\n`;
       }
       else if (dati.data.flag ==true) {
-      tz += `【答题5】:回答✅,获得${dati.data.amount}金币\n`;
+      tz += `【答题5】:回答✅\n`;
       }
       resolve();
     });
