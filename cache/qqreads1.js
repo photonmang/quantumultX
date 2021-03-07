@@ -693,7 +693,7 @@ function showmsg() {
     task.data.treasureBox.count == 60
   )
     $.msg(jsname, "", tz); // 宝箱每15次通知一次
-  else if (notifyInterval == 4 && nowTimes.getHours() == 23 && nowTimes.getMinutes() >= 40)
+  else if (notifyInterval == 4 && nowTimes.getHours() == 23 && nowTimes.getMinutes() >= 40 && nowTimes.getMinutes() <= 59)
     $.msg(jsname, "", tz); // 每晚23点40后显示通知
 }
 
