@@ -400,7 +400,7 @@
             ],
             "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js",
             "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.png"],
-            "script": "https://raw.githubusercontent.com/photonmang/quantumultX"
+            "script": "https://github.com/photonmang/quantumultX"
         },
         {
             "id": "qmyd",
@@ -431,7 +431,45 @@
             ],
             "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.js",
             "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.png"],
-            "script": "https://raw.githubusercontent.com/photonmang/quantumultX"
+            "script": "https://github.com/photonmang/quantumultX"
+        },
+        {
+            "id": "flw",
+            "name": "返利网",
+            "keys": ["flwurl", "flwheader", "flwspbody", "flwqwbody", "flwydbody", "flwurl2", "flwheader2", "flwspbody2", "flwqwbody2", "flwydbody2", "flwurl3", "flwheader3", "flwspbody3", "flwqwbody3", "flwydbody3", "flwurl4", "flwheader4", "flwspbody4", "flwqwbody4", "flwydbody4", "flwurl5", "flwheader5", "flwspbody5", "flwqwbody5", "flwydbody5", "flwurl6", "flwheader6", "flwspbody6", "flwqwbody6", "flwydbody6", "flwurl7", "flwheader7", "flwspbody7", "flwqwbody7", "flwydbody7", "flwurl8", "flwheader8", "flwspbody8", "flwqwbody8", "flwydbody8", "flwurl9", "flwheader9", "flwspbody9", "flwqwbody9", "flwydbody9", "flwurl10", "flwheader10", "flwspbody10", "flwqwbody10", "flwydbody10", "flwurl11", "flwheader11", "flwspbody11", "flwqwbody11", "flwydbody11", "flwurl12", "flwheader12", "flwspbody12", "flwqwbody12", "flwydbody12", "flwurl13", "flwheader13", "flwspbody13", "flwqwbody13", "flwydbody13", "flwurl14", "flwheader14", "flwspbody14", "flwqwbody14", "flwydbody14", "flwurl15", "flwheader15", "flwspbody15", "flwqwbody15", "flwydbody15", "flwurl16", "flwheader16", "flwspbody16", "flwqwbody16", "flwydbody16", "flwurl17", "flwheader17", "flwspbody17", "flwqwbody17", "flwydbody17", "flwurl18", "flwheader18", "flwspbody18", "flwqwbody18", "flwydbody18", "flwurl19", "flwheader19", "flwspbody19", "flwqwbody19", "flwydbody19", "flwurl20", "flwheader20", "flwspbody20", "flwqwbody20", "flwydbody20"],
+            "author": "@ziye",
+            "settings": [{
+                    "id": "flwSuffix",
+                    "name": "当前账号",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+                },
+                {
+                    "id": "flwCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                },
+                {
+                    "id": "flwCASH",
+                    "name": "天天领现金提现标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "默认0，设置0.3及以上时启动天天领现金模块，且大于等于此值时自动提现"
+                },
+                {
+                    "id": "flwDHCASH",
+                    "name": "兑换标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "默认0，可设置设置 0 5 50 100"
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.js",
+            "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.png"],
+            "script": "https://github.com/photonmang/quantumultX"
         }
   ]
 }
