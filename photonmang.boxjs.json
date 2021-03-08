@@ -470,6 +470,37 @@
             "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.js",
             "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.png"],
             "script": "https://github.com/photonmang/quantumultX"
+        },
+        {
+            "id": "yuedongzu",
+            "name": "悦动族APP",
+            "keys": ["yuedongzutoken", "yuedongzutoken2", "yuedongzutoken3", "yuedongzutoken4", "yuedongzutoken5", "yuedongzutoken6", "yuedongzutoken7", "yuedongzutoken8", "yuedongzutoken9", "yuedongzutoken10", "yuedongzutoken11", "yuedongzutoken12", "yuedongzutoken13", "yuedongzutoken14", "yuedongzutoken15", "yuedongzutoken16", "yuedongzutoken17", "yuedongzutoken18", "yuedongzutoken19", "yuedongzutoken20"],
+            "author": "@ziye",
+            "settings": [{
+                    "id": "yuedongzuSuffix",
+                    "name": "当前账号",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+                },
+                {
+                    "id": "yuedongzuCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                },
+                {
+                    "id": "yuedongzuCASH",
+                    "name": "提现标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "0不提现，可设置 0 0.3 1 5 50 100 200 888  设置888由上至下循环提现 "
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/yuedongzu/yuedongzu.js",
+            "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/yuedongzu/yuedongzu.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/yuedongzu/yuedongzu.png"],
+            "script": "https://github.com/photonmang/quantumultX"
         }
   ]
 }
