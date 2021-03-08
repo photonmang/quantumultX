@@ -21,7 +21,7 @@
 ⚠️一共1个位置 1个ck  👉 2条 Secrets 
 
 多账号换行
-第一步 添加  hostname=yuedongzu.yichengw.cn,
+第一步 添加Cookie重写脚本：https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf
 
 第二步 ⚠️添加悦动族获取TOKEN重写  
 
