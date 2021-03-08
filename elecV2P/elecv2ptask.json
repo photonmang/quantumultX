@@ -1,10 +1,11 @@
 {
   "name": "photonmang elecV2P的订阅集", 
   "author": "photonmang",
-  "date": "2021-03-07",    
+  "date": "2021-03-08",    
   "surl": "https://raw.githubusercontent.com/photonmang/quantumultX/master/elecV2P/elecv2ptask.json",
   "desc": "本订阅仅可用于 elecV2P, 与其他软件并不兼容。",
-  "list": [   
+  "list": [  
+{"name": "返利网", "type": "cron", "time": "0 10,16,22 * * *","running": false,"job": {"type": "runjs","target": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/flw/flw.js"}},
 {"name": "电信营业厅整点开宝箱", "type": "cron", "time": "36 1 8,12,13,14,18,19,20,21,22,23 * * *","running": false,"job": {"type": "runjs","target": "https://raw.githubusercontent.com/elecV2/QuantumultX-Tools/master/dianx/dxbox.js"}},
 {"name": "全民悦动", "type": "cron", "time": "0,30 0-23 * * *","running": false,"job": {"type": "runjs","target": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qmyd/qmyd.js"}},
 {"name": "笑谱", "type": "cron", "time": "*/30 * * * *","running": false,"job": {"type": "runjs","target": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/iboxpay/iboxpay.js"}},
