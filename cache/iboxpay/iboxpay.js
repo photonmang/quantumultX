@@ -1,6 +1,7 @@
-/*
-本脚本转载ziye，后续如原作者不更新将会有本人持续更新！
+/*ziye
+
 ⚠️笑谱
+
 脚本运行一次   
 则运行6次视频 1次金蛋 1次直播（直播默认关闭，且在8点到23点有效）
 
@@ -56,7 +57,7 @@
 
 ⚠️方法二
 
-第一步 添加  hostname=veishop.iboxpay.com,
+第一步 添加Cookie重写：https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf
 
 第二步 ⚠️添加笑谱获取更新TOKEN重写  
 
