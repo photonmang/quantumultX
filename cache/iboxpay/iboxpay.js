@@ -63,8 +63,6 @@
 
 登录笑谱(在登录状态就退出，重新登录)  获取更新TOKEN
 
-
-
 refreshtokenVal 👉XP_refreshTOKEN
 
 设置任务 可设置 0 1 2    0开视频关直播 1开视频开直播 2关视频开直播
@@ -82,8 +80,6 @@ sms  👉  XP_sms
 ⚠️主机名以及重写👇
 
 （手机可以获取refreshTOKEN     其他开启抓包，然后登录笑谱，找到 https://veishop.iboxpay.com/nf_gateway/nf-user-auth-web/ignore_tk/veishop/v1/ 里的响应体 refreshTOKEN）
-
-hostname=veishop.iboxpay.com
 
 ############## 圈x
 
