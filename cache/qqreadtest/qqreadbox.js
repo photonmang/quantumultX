@@ -3,6 +3,9 @@
 12.28 宝箱单开版
 12.29 修改输出方式为日志打印，提升了执行完成速度！执行预估可开箱68-72个箱子
 
+3.9 由于qq阅读升级导致开箱失效，请手工开启抓包找关键词box，提取链接中box和box_video尾部
+    s=后面的所有字符请复制过来。并到boxjs中填写进去，每个账号以逗号隔开！
+    
 */
 
 const jsname = 'QQ阅读'
@@ -16,8 +19,16 @@ const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
+
+let qqreadboxVal = "";
+const qqreadboxArr = $.getdata('qqboxset') ||["1","2","7dcd22c66139e287c12e84e8541dbb00"];
+let qqreadboxvideoVal = "";
+const qqreadboxvideoArr = $.getdata('qqboxvideoset') ||["1","2","66c0d5ee7cfdc0348dff17520ff3995b"];
+
+
+
 console.log(`\n==== 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} ====\n`)
-const logs = 0;   //0为关闭日志，1为开启
+const logs = 1;   //0为关闭日志，1为开启
 
 
 
@@ -28,6 +39,10 @@ for (let index = 1; index <= zhs; index++) {
     qqreadbdArr.push($.getdata("qqreadbd"+index));
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
+
+qqreadboxArr.push($.getdata("qqreadbox"+index));
+
+qqreadboxvideoArr.push($.getdata("qqreadboxvideo"+index));
   }
   console.log(`============ 共${qqreadtimehdArr.length}个QQ阅读账号  =============\n`)
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
@@ -50,7 +65,9 @@ async function all() {
 	  let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
     tz = '';    
     qqreadbodyVal = qqreadbdArr[i];
-    qqreadtimeheaderVal = qqreadtimehdArr[i];    
+    qqreadtimeheaderVal = qqreadtimehdArr[i];
+    qqreadboxVal = qqreadboxArr[i];    
+    qqreadboxvideoVal = qqreadboxvideoArr[i];
     boxs=(`============ ${jsname+(i + 1)} =============`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
 	{await qqreadtrack()};//更新   
@@ -120,7 +137,7 @@ function qqreadtrack() {
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box",
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615297745996&s=${qqreadboxVal}",
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -141,7 +158,7 @@ function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
       url:
-          "https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box_video",
+          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615297766359&s=${qqreadboxvideoVal}",
 
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
