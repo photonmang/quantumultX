@@ -21,9 +21,8 @@ const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
 
 let qqreadboxVal = "";
-const qqreadboxArr = $.getdata('qqboxset') ||["1","2","7dcd22c66139e287c12e84e8541dbb00"];
-let qqreadboxvideoVal = "";
-const qqreadboxvideoArr = $.getdata('qqboxvideoset') ||["1","2","66c0d5ee7cfdc0348dff17520ff3995b"];
+const qqreadboxArr = $.getdata('qqboxset');
+const qqreadboxvideoArr = $.getdata('qqboxvideoset');
 
 
 
