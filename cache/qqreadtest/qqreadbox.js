@@ -4,7 +4,7 @@
 12.29 修改输出方式为日志打印，提升了执行完成速度！执行预估可开箱68-72个箱子
 
 3.9 由于qq阅读升级导致开箱失效，请手工开启抓包找关键词box，提取链接中box和box_video尾部
-    s=后面的所有字符请复制过来。并到boxjs中填写进去，每个账号以逗号隔开！
+    st=后面的所有字符请复制过来。并到boxjs中填写进去，每个账号以逗号隔开！
     
 */
 
@@ -133,7 +133,7 @@ function qqreadtrack() {
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615304699391&s=${qqreadboxVal}",
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=${qqreadboxVal}",
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -154,7 +154,7 @@ function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
       url:
-          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615304720013&s=${qqreadboxvideoVal}",
+          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=${qqreadboxvideoVal}",
 
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
