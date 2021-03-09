@@ -133,7 +133,7 @@ function qqreadtrack() {
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615297745996&s=${qqreadboxVal}",
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615304699391&s=${qqreadboxVal}",
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
     };
@@ -154,7 +154,7 @@ function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
       url:
-          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615297766359&s=${qqreadboxvideoVal}",
+          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615304720013&s=${qqreadboxvideoVal}",
 
       headers: JSON.parse(qqreadtimeheaderVal),
       timeout: 60000,
