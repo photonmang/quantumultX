@@ -2,9 +2,8 @@
 
 12.28 宝箱单开版
 12.29 修改输出方式为日志打印，提升了执行完成速度！执行预估可开箱68-72个箱子
-
-3.10 由于qq阅读升级导致开箱失效，增加了一个宝箱CK获取，请先获取一次宝箱CK，同时请手工开启抓包找关键词box，提取链接中box和box_video尾部
-    s=后面的所有字符请复制过来。并到boxjs中填写进去，每个账号以逗号隔开！
+3.10 修复宝箱失效问题，新增宝箱获取CK，请使用本库cookie重写配置写入
+     CK重写：https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf
     
 */
 
@@ -19,13 +18,14 @@ const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
-const qqreadboxhdArr = [];
+const qqreadboxurlArr = [];
+let qqreadboxurlVal = "";
+const qqreadboxheaderArr = [];
 let qqreadboxheaderVal = "";
-
-
-let qqreadboxVal = "";
-const qqreadboxArr = $.getdata('qqboxset');
-const qqreadboxvideoArr = $.getdata('qqboxvideoset');
+const qqreadboxvdurlArr = [];
+let qqreadboxvdurlVal = "";
+const qqreadboxvdheaderArr = [];
+let qqreadboxvdheaderVal = "";
 
 
 
@@ -41,7 +41,10 @@ for (let index = 1; index <= zhs; index++) {
     qqreadbdArr.push($.getdata("qqreadbd"+index));
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
-    qqreadboxhdArr.push($.getdata("qqreadboxhd"+index));
+    qqreadboxurlArr.push($.getdata("qqreadboxurlVal"+index));
+    qqreadboxheaderArr.push($.getdata("qqreadboxheaderVal"+index));
+    qqreadboxvdurlArr.push($.getdata("qqreadboxvdurlVal"+index));
+    qqreadboxvdheaderArr.push($.getdata("qqreadboxvdheaderVal"+index));
   }
   console.log(`============ 共${qqreadtimehdArr.length}个QQ阅读账号  =============\n`)
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
@@ -63,11 +66,13 @@ async function all() {
   for (let i = 0; i < qqreadbdArr.length; i++) {	  
 	  let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
     tz = '';    
-    qqreadbodyVal = qqreadbdArr[i];
-    qqreadtimeheaderVal = qqreadtimehdArr[i];
-    qqreadboxheaderVal = qqreadboxhdArr[i];
-    qqreadboxVal = qqreadboxArr[i];    
-    qqreadboxvideoVal = qqreadboxvideoArr[i];
+  qqreadbodyVal = qqreadbdArr[K];
+  qqreadtimeurlVal = qqreadtimeurlArr[K];
+  qqreadtimeheaderVal = qqreadtimehdArr[K];
+  qqreadboxurlVal = qqreadboxurlArr[K];
+  qqreadboxheaderVal = qqreadboxvdurlArr[K];
+  qqreadboxvdurlVal = qqreadtimehdArr[K];
+  qqreadboxvdheaderVal = qqreadboxvdheaderArr[K];
 
     boxs=(`============ ${jsname+(i + 1)} =============`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
@@ -138,7 +143,7 @@ function qqreadtrack() {
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615304550417&s=${qqreadboxVal}",
+      url: qqreadboxurlVal,
       headers: JSON.parse(qqreadboxheaderVal),
       timeout: 60000,
     };
@@ -153,15 +158,12 @@ function qqreadbox() {
     });
   });
 }
-
 // 宝箱奖励翻倍
 function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
-      url:
-          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615304570348&s=${qqreadboxvideoVal}",
-
-      headers: JSON.parse(qqreadboxheaderVal),
+      url:qqreadboxvdurlVal,
+      headers: JSON.parse(qqreadboxvdheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadbox2url, (error, response, data) => {
