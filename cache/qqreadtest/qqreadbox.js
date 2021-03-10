@@ -26,12 +26,8 @@ const qqreadboxvdurlArr = [];
 let qqreadboxvdurlVal = "";
 const qqreadboxvdheaderArr = [];
 let qqreadboxvdheaderVal = "";
-
-
-
-
 console.log(`\n==== 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} ====\n`)
-const logs = 1;   //0为关闭日志，1为开启
+const logs = 0;   //0为关闭日志，1为开启
 
 
 
@@ -67,14 +63,12 @@ async function all() {
   for (let i = 0; i < qqreadbdArr.length; i++) {	  
 	  let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
     tz = '';    
-  qqreadbodyVal = qqreadbdArr[i];
-  qqreadtimeurlVal = qqreadtimeurlArr[i];
-  qqreadtimeheaderVal = qqreadtimehdArr[i];
-  qqreadboxurlVal = qqreadboxurlArr[i];
-  qqreadboxheaderVal = qqreadboxvdurlArr[i];
-  qqreadboxvdurlVal = qqreadtimehdArr[i];
-  qqreadboxvdheaderVal = qqreadboxvdheaderArr[i];
-
+    qqreadbodyVal = qqreadbdArr[i];
+    qqreadtimeheaderVal = qqreadtimehdArr[i];  
+    qqreadboxurlVal = qqreadboxurlArr[i];
+    qqreadboxheaderVal = qqreadboxvdurlArr[i];
+    qqreadboxvdurlVal = qqreadboxhdArr[i];
+    qqreadboxvdheaderVal = qqreadboxvdheaderArr[i];
     boxs=(`============ ${jsname+(i + 1)} =============`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
 	{await qqreadtrack()};//更新   
@@ -159,11 +153,13 @@ function qqreadbox() {
     });
   });
 }
+
 // 宝箱奖励翻倍
 function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
-      url:qqreadboxvdurlVal,
+      url: qqreadboxvdurlVal,
+
       headers: JSON.parse(qqreadboxvdheaderVal),
       timeout: 60000,
     };
