@@ -66,8 +66,8 @@ async function all() {
     qqreadbodyVal = qqreadbdArr[i];
     qqreadtimeheaderVal = qqreadtimehdArr[i];  
     qqreadboxurlVal = qqreadboxurlArr[i];
-    qqreadboxheaderVal = qqreadboxvdurlArr[i];
-    qqreadboxvdurlVal = qqreadboxhdArr[i];
+    qqreadboxheaderVal = qqreadboxheaderArr[i];
+    qqreadboxvdurlVal = qqreadboxvdurlArr[i];
     qqreadboxvdheaderVal = qqreadboxvdheaderArr[i];
     boxs=(`============ ${jsname+(i + 1)} =============`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
