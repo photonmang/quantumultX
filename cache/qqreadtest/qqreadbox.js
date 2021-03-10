@@ -18,9 +18,10 @@ let qqreadbodyVal = "";
 const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
-let qqreadboxheaderVal = "";
-const qqreadboxhdArr = [];
 let qqreadtimeheaderVal = "";
+const qqreadboxhdArr = [];
+let qqreadboxheaderVal = "";
+
 
 let qqreadboxVal = "";
 const qqreadboxArr = $.getdata('qqboxset');
