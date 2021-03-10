@@ -14,8 +14,8 @@ hostname=mqqapi.reader.qq.com
 #企鹅读书获取更新body
 https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track url script-request-body https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
 https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
-https:\/\/mqqapi\.reader\.qq\.com\/mqq\/red_packet\/v2\/user\/treasure_box? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
-https:\/\/mqqapi\.reader\.qq\.com\/mqq\/red_packet\/v2\/user\/treasure_box_video? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
+https:\/\/mqqapi\.reader\.qq\.com\/mqq\/red_packet\/v2\/user\/treasure_box? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js
+https:\/\/mqqapi\.reader\.qq\.com\/mqq\/red_packet\/v2\/user\/treasure_box_video? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js
 
 ############## loon
 //企鹅读书获取更新body
@@ -122,7 +122,8 @@ function GetCookie() {
     );
     $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
     } 
-else if (
+else {
+    if (
        $request && $request.url.indexOf("treasure_box?") >= 0
      ) {
     const qqreadboxurlVal = $request.url;
@@ -154,6 +155,7 @@ else if (
     );
     $.msg(jsname + jbid, `获取翻倍开箱header: 成功🎉`, ``);
   }
+    }
 }
 
 for (let index = 1; index <= zhs; index++) {
@@ -622,7 +624,7 @@ function qqreadvideo() {
   return new Promise((resolve, reject) => {
     const toqqreadvideourl = {
       url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/watch_video",
-      headers: JSON.parse(qqreadtimeheaderVal),
+      headers: JSON.parse(qqreadboxheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadvideourl, (error, response, data) => {
