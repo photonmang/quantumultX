@@ -66,13 +66,13 @@ async function all() {
   for (let i = 0; i < qqreadbdArr.length; i++) {	  
 	  let nowTimes = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000);  
     tz = '';    
-  qqreadbodyVal = qqreadbdArr[K];
-  qqreadtimeurlVal = qqreadtimeurlArr[K];
-  qqreadtimeheaderVal = qqreadtimehdArr[K];
-  qqreadboxurlVal = qqreadboxurlArr[K];
-  qqreadboxheaderVal = qqreadboxvdurlArr[K];
-  qqreadboxvdurlVal = qqreadtimehdArr[K];
-  qqreadboxvdheaderVal = qqreadboxvdheaderArr[K];
+  qqreadbodyVal = qqreadbdArr[i];
+  qqreadtimeurlVal = qqreadtimeurlArr[i];
+  qqreadtimeheaderVal = qqreadtimehdArr[i];
+  qqreadboxurlVal = qqreadboxurlArr[i];
+  qqreadboxheaderVal = qqreadboxvdurlArr[i];
+  qqreadboxvdurlVal = qqreadtimehdArr[i];
+  qqreadboxvdheaderVal = qqreadboxvdheaderArr[i];
 
     boxs=(`============ ${jsname+(i + 1)} =============`);     
     if (nowTimes.getHours() === 0 && (nowTimes.getMinutes() >= 0 && nowTimes.getMinutes() <= 40)) 
