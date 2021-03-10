@@ -40,6 +40,8 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 2.17 *新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
      *修复阅读金币领取失效
 2.23 修复宝箱及宝箱翻倍显示
+3.10 由于qq阅读升级导致开箱失效，增加了一个宝箱CK获取，请先获取一次宝箱CK，同时请手工开启抓包找关键词box，提取链接中box和box_video尾部
+     s=后面的所有字符请复制过来。并到boxjs中填写进去，每个账号以逗号隔开！
 */
 
 
@@ -68,6 +70,11 @@ const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
+const qqreadboxhdArr = [];
+let qqreadboxheaderVal = "";
+let qqreadboxVal = "";
+const qqreadboxArr = $.getdata('qqboxset');
+const qqreadboxvideoArr = $.getdata('qqboxvideoset');
 let tz='';
 let task = "";
 let config = "";
@@ -95,6 +102,11 @@ function GetCookie() {
       `[${jsname + jbid}] 获取时长header: 成功,qqreadtimeheaderVal: ${qqreadtimeheaderVal}`
     );
     $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
+    if (qqreadboxheaderVal) $.setdata(qqreadboxheaderVal, "qqreadboxhd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱header: 成功,qqreadboxheaderVal: ${qqreadboxheaderVal}`
+    );
+    $.msg(jsname + jbid, `获取开箱header: 成功🎉`, ``);
   }
   else if ($request &&
            $request.body.indexOf("bookLib_category_click_C") >= 0&&
@@ -116,6 +128,7 @@ for (let index = 1; index <= zhs; index++) {
     qqreadbdArr.push($.getdata("qqreadbd"+index));
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
+    qqreadboxhdArr.push($.getdata("qqreadboxhd"+index));
   }
   console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
   console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号 ======\n`);
@@ -137,6 +150,7 @@ function all() {
   qqreadbodyVal = qqreadbdArr[K];
   qqreadtimeurlVal = qqreadtimeurlArr[K];
   qqreadtimeheaderVal = qqreadtimehdArr[K];
+  qqreadboxheaderVal = qqreadboxhdArr[K];
   O = `${jsname + (K + 1)}🔔`;
   for (let i = 0; i < 13; i++) {
     (function (i) {
@@ -578,20 +592,20 @@ function qqreadvideo() {
     });
   });
 }
-// 宝箱奖励
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box",
-      headers: JSON.parse(qqreadtimeheaderVal),
+      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615304550417&s=${qqreadboxVal}",
+      headers: JSON.parse(qqreadboxheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadboxurl, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${O}, 宝箱奖励: ${data}`);
-      box = JSON.parse(data);
-      if (box.code == 0) {
+      if (logs) $.log(`${jsname}, 宝箱奖励: ${data}`);
+      let box = JSON.parse(data);
+      if (box.data.count >= 0) {
         tz += `【宝箱奖励${box.data.count}】:获得${box.data.amount}金币\n`;
       }
+
       resolve();
     });
   });
@@ -601,16 +615,18 @@ function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
       url:
-        "https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box_video",
-      headers: JSON.parse(qqreadtimeheaderVal),
+          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615304570348&s=${qqreadboxvideoVal}",
+
+      headers: JSON.parse(qqreadboxheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadbox2url, (error, response, data) => {
-      if(QQlogs=="true") $.log(`${O}, 宝箱奖励翻倍: ${data}`);
-      box2 = JSON.parse(data);
+      if (logs) $.log(`${jsname}, 宝箱奖励翻倍: ${data}`);
+      let box2 = JSON.parse(data);
       if (box2.code == 0) {
         tz += `【宝箱翻倍】:获得${box2.data.amount}金币\n`;
       }
+
       resolve();
     });
   });
