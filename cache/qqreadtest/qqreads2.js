@@ -18,10 +18,10 @@ GOTXJE                👉   QQREAD_GOTXJE  提现标准 可设置0 1 2 10 30 50
 
 hostname=mqqapi.reader.qq.com
 ############## 圈x
-#企鹅读书获取更新body
-https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track url script-request-body https://raw.githubusercontent.com/ziye12/JavaScript/master/Task/qqreads.js
-#企鹅读书获取时长cookie
-https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-header https://raw.githubusercontent.com/ziye12/JavaScript/master/Task/qqreads.js
+https:\/\/mqqapi\.reader\.qq\.com\/log\/v4\/mqq\/track url script-request-body https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
+https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js
+https:\/\/mqqapi\.reader\.qq\.com\/mqq\/red_packet\/v2\/user\/treasure_box? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js
+https:\/\/mqqapi\.reader\.qq\.com\/mqq\/red_packet\/v2\/user\/treasure_box_video? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadck.js
 
 ############## loon
 #企鹅读书获取更新body
@@ -37,6 +37,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 
 2.17  修复Cookie获取，剔除每日阅读时长获取，剔除提现时间,修复阅读金币领取失效问题
 2.23  修复宝箱及宝箱翻倍显示
+3.10  修复qq阅读升级导致开箱失效。新增加了4个宝箱CK获取，请先看翻倍视频15秒关闭后会提示获取2个CK,再继续获取翻倍开箱15秒，再次获取2个CK。
 */
 
 const jsname = 'QQ阅读'
@@ -63,7 +64,14 @@ const qqreadtimehdArr = [];
 let qqreadBD = [];
 let qqreadtimeURL = [];
 let qqreadtimeHD = [];
-
+const qqreadboxurlArr = [];
+let qqreadboxurlVal = "";
+const qqreadboxheaderArr = [];
+let qqreadboxheaderVal = "";
+const qqreadboxvdurlArr = [];
+let qqreadboxvdurlVal = "";
+const qqreadboxvdheaderArr = [];
+let qqreadboxvdheaderVal = "";
 const nowTimes = new Date(
   new Date().getTime() +
   new Date().getTimezoneOffset() * 60 * 1000 +
@@ -120,6 +128,10 @@ if (COOKIE.qqreadbodyVal) {
     "qqreadbodyVal": COOKIE.qqreadbodyVal.split('\n'),
     "qqreadtimeurlVal": COOKIE.qqreadtimeurlVal.split('\n'),
     "qqreadtimeheaderVal": COOKIE.qqreadtimeheaderVal.split('\n')
+    "qqreadboxurlVal": COOKIE.qqreadboxurlVal.split('\n'),
+    "qqreadboxheaderVal": COOKIE.qqreadboxheaderVal.split('\n'),
+    "qqreadboxvdurlVal": COOKIE.qqreadboxvdurlVal.split('\n')
+    "qqreadboxvdheaderVal": COOKIE.qqreadboxvdheaderVal.split('\n')
   }
 
   Length = QQ_READ_COOKIES.qqreadbodyVal.length;
@@ -153,6 +165,10 @@ if (!COOKIE.qqreadbodyVal) {
         qqreadbdArr.push($.getdata(`qqreadbd${i}`));
         qqreadtimeurlArr.push($.getdata(`qqreadtimeurl${i}`));
         qqreadtimehdArr.push($.getdata(`qqreadtimehd${i}`));
+        qqreadboxurlArr.push($.getdata(`qqreadboxurl${i}`));
+        qqreadboxheaderArr.push($.getdata(`qqreadboxhd${i}`));
+        qqreadboxvdurlArr.push($.getdata(`qqreadboxvdurl${i}`));
+        qqreadboxvdheaderArr.push($.getdata(`qqreadboxvdhd${i}`));
       }
     }
   
@@ -166,8 +182,7 @@ if ((isGetCookie = typeof $request !== "undefined")) {
 
 function GetCookie() {
    if (
-       $request && $request.url.indexOf("addReadTimeWithBid?") >= 0 && 
-       $request.url.indexOf("book-category") >= 0
+       $request && $request.url.indexOf("addReadTimeWithBid?") >= 0
      ) {
     const qqreadtimeurlVal = $request.url;
     if (qqreadtimeurlVal) $.setdata(qqreadtimeurlVal, "qqreadtimeurl" + jbid);
@@ -193,6 +208,40 @@ function GetCookie() {
     );
     $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
     } 
+else {
+    if (
+       $request && $request.url.indexOf("treasure_box?") >= 0
+     ) {
+    const qqreadboxurlVal = $request.url;
+    if (qqreadboxurlVal) $.setdata(qqreadboxurlVal, "qqreadboxurl" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxurlVal: ${qqreadboxurlVal}`
+    );
+ $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
+    const qqreadboxheaderVal = JSON.stringify($request.headers);
+    if (qqreadboxheaderVal) $.setdata(qqreadboxheaderVal, "qqreadboxhd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱header: 成功,qqreadboxheaderVal: ${qqreadboxheaderVal}`
+    );
+    $.msg(jsname + jbid, `获取开箱header: 成功🎉`, ``);
+  }
+else if (
+       $request && $request.url.indexOf("treasure_box_video?") >= 0
+     ) {
+    const qqreadboxvdurlVal = $request.url;
+    if (qqreadboxvdurlVal) $.setdata(qqreadboxvdurlVal, "qqreadboxvdurl" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxvdurlVal: ${qqreadboxvdurlVal}`
+    );
+ $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
+    const qqreadboxvdheaderVal = JSON.stringify($request.headers);
+    if (qqreadboxvdheaderVal) $.setdata(qqreadboxvdheaderVal, "qqreadboxvdhd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取翻倍开箱header: 成功,qqreadboxvdheaderVal: ${qqreadboxvdheaderVal}`
+    );
+    $.msg(jsname + jbid, `获取翻倍开箱header: 成功🎉`, ``);
+  }
+    }
 }
 
 console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
@@ -228,12 +277,19 @@ async function all() {
       qqreadbodyVal = QQ_READ_COOKIES.qqreadbodyVal[i];
       qqreadtimeurlVal = QQ_READ_COOKIES.qqreadtimeurlVal[i];
       qqreadtimeheaderVal = QQ_READ_COOKIES.qqreadtimeheaderVal[i];
+      qqreadboxurlVal = QQ_READ_COOKIES.qqreadboxurlVal[i];
+      qqreadboxheaderVal = QQ_READ_COOKIES.qqreadboxheaderVal[i];
+      qqreadboxvdurlVal = QQ_READ_COOKIES.qqreadboxvdurlVal[i];
+      qqreadboxvdheaderVal = QQ_READ_COOKIES.qqreadboxvdheaderVal[i];
     }
     if (!COOKIE.qqreadbodyVal) {
       qqreadbodyVal = qqreadbdArr[i];
       qqreadtimeurlVal = qqreadtimeurlArr[i];
       qqreadtimeheaderVal = qqreadtimehdArr[i];
-
+      qqreadboxurlVal = qqreadboxurlArr[i];
+      qqreadboxheaderVal = qqreadboxheaderArr[i];
+      qqreadboxvdurlVal = qqreadboxvdurlArr[i];
+      qqreadboxvdheaderVal = qqreadboxvdheaderArr[i];
     }
     O = (`${jsname + (i+1)}🔔`);
     tz = '';
@@ -711,8 +767,8 @@ function qqreadtime() {
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box",
-      headers: JSON.parse(qqreadtimeheaderVal),
+      url: qqreadboxurlVal,
+      headers: JSON.parse(qqreadboxheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadboxurl, (error, response, data) => {
@@ -731,9 +787,8 @@ function qqreadbox() {
 function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
-      url:
-        "https://mqqapi.reader.qq.com/mqq/red_packet/user/treasure_box_video",
-      headers: JSON.parse(qqreadtimeheaderVal),
+    url:qqreadboxvdurlVal,
+      headers: JSON.parse(qqreadboxvdheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadbox2url, (error, response, data) => {
