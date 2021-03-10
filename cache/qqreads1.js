@@ -189,8 +189,8 @@ function all() {
   qqreadtimeurlVal = qqreadtimeurlArr[K];
   qqreadtimeheaderVal = qqreadtimehdArr[K];
   qqreadboxurlVal = qqreadboxurlArr[K];
-  qqreadboxheaderVal = qqreadboxvdurlArr[K];
-  qqreadboxvdurlVal = qqreadtimehdArr[K];
+  qqreadboxheaderVal = qqreadboxheaderArr[K];
+  qqreadboxvdurlVal = qqreadboxvdurlArr[K];
   qqreadboxvdheaderVal = qqreadboxvdheaderArr[K];
 
 
@@ -635,6 +635,7 @@ function qqreadvideo() {
     });
   });
 }
+// 宝箱奖励
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
