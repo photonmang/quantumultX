@@ -44,8 +44,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
 2.17 *新增红包领取(由于我不太关注，也没人给我线报，临时加的模块，该活动时间截止2.17日结束)
      *修复阅读金币领取失效
 2.23 修复宝箱及宝箱翻倍显示
-3.10 由于qq阅读升级导致开箱失效，增加了一个宝箱CK获取，请先获取一次宝箱CK，同时请手工开启抓包找关键词box，提取链接中box和box_video尾部
-     s=后面的所有字符请复制过来。并到boxjs中填写进去，每个账号以逗号隔开！
+3.10 由于qq阅读升级导致开箱失效，增加了一个宝箱CK获取，请先获取一次宝箱CK,再继续获取翻倍开箱CK。一共获取4个CK
 */
 
 
@@ -164,10 +163,10 @@ for (let index = 1; index <= zhs; index++) {
     qqreadbdArr.push($.getdata("qqreadbd"+index));
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
-    qqreadboxurlArr.push($.getdata("qqreadboxurlVal"+index));
-    qqreadboxheaderArr.push($.getdata("qqreadboxheaderVal"+index));
-    qqreadboxvdurlArr.push($.getdata("qqreadboxvdurlVal"+index));
-    qqreadboxvdheaderArr.push($.getdata("qqreadboxvdheaderVal"+index));
+    qqreadboxurlArr.push($.getdata("qqreadboxurl"+index));
+    qqreadboxheaderArr.push($.getdata("qqreadboxhd"+index));
+    qqreadboxvdurlArr.push($.getdata("qqreadboxvdurl"+index));
+    qqreadboxvdheaderArr.push($.getdata("qqreadboxvdhd"+index));
   }
   console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
   console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号 ======\n`);
