@@ -29,6 +29,7 @@ let qqreadboxvdheaderVal = "";
 
 
 
+
 console.log(`\n==== 脚本执行时间(TM)：${new Date(new Date().getTime() + 0 * 60 * 60 * 1000).toLocaleString('zh', {hour12: false})} ====\n`)
 const logs = 1;   //0为关闭日志，1为开启
 
@@ -41,10 +42,10 @@ for (let index = 1; index <= zhs; index++) {
     qqreadbdArr.push($.getdata("qqreadbd"+index));
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
-    qqreadboxurlArr.push($.getdata("qqreadboxurlVal"+index));
-    qqreadboxheaderArr.push($.getdata("qqreadboxheaderVal"+index));
-    qqreadboxvdurlArr.push($.getdata("qqreadboxvdurlVal"+index));
-    qqreadboxvdheaderArr.push($.getdata("qqreadboxvdheaderVal"+index));
+    qqreadboxurlArr.push($.getdata("qqreadboxurl"+index));
+    qqreadboxheaderArr.push($.getdata("qqreadboxhd"+index));
+    qqreadboxvdurlArr.push($.getdata("qqreadboxvdurl"+index));
+    qqreadboxvdheaderArr.push($.getdata("qqreadboxvdhd"+index));
   }
   console.log(`============ 共${qqreadtimehdArr.length}个QQ阅读账号  =============\n`)
   console.log(`注意：由于脚本更新，此处显示账号总数如出现少于原QQ阅读账号总数，请到JSBOX更新下订阅并重新从第10个账号开始获取并按数字10，11，12开始类推获取新账号Cookie\n`)
