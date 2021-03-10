@@ -67,17 +67,22 @@ const txje= $.getdata('txje') || 100000 //默认10元提现额度
 //const txsj=$.getdata('txsj') || 23 //默认提现时间23点
 const jbid=$.getdata('jbid') || 1 //默认获取1账号
 const zhs=$.getdata('zhs') || 1 //默认输出1个账号
-const qqreadbdArr = [];
+const qqreadbdArr = [];   
 let qqreadbodyVal = "";
 const qqreadtimeurlArr = [];
 let qqreadtimeurlVal = "";
 const qqreadtimehdArr = [];
 let qqreadtimeheaderVal = "";
-const qqreadboxhdArr = [];
+
+const qqreadboxurlArr = [];
+let qqreadboxurlVal = "";
+const qqreadboxheaderArr = [];
 let qqreadboxheaderVal = "";
-let qqreadboxVal = "";
-const qqreadboxArr = $.getdata('qqboxset');
-const qqreadboxvideoArr = $.getdata('qqboxvideoset');
+const qqreadboxvdurlArr = [];
+let qqreadboxvdurlVal = "";
+const qqreadboxvdheaderArr = [];
+let qqreadboxvdheaderVal = "";
+
 let tz='';
 let task = "";
 let config = "";
@@ -105,12 +110,6 @@ function GetCookie() {
       `[${jsname + jbid}] 获取时长header: 成功,qqreadtimeheaderVal: ${qqreadtimeheaderVal}`
     );
     $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
-    const qqreadboxheaderVal = JSON.stringify($request.headers);
-    if (qqreadboxheaderVal) $.setdata(qqreadboxheaderVal, "qqreadboxhd" + jbid);
-    $.log(
-      `[${jsname + jbid}] 获取开箱header: 成功,qqreadboxheaderVal: ${qqreadboxheaderVal}`
-    );
-    $.msg(jsname + jbid, `获取开箱header: 成功🎉`, ``);
   }
   else if ($request &&
            $request.body.indexOf("bookLib_category_click_C") >= 0&&
@@ -123,6 +122,38 @@ function GetCookie() {
     );
     $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
     } 
+else if (
+       $request && $request.url.indexOf("treasure_box?") >= 0
+     ) {
+    const qqreadboxurlVal = $request.url;
+    if (qqreadboxurlVal) $.setdata(qqreadboxurlVal, "qqreadboxurl" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxurlVal: ${qqreadboxurlVal}`
+    );
+ $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
+    const qqreadboxheaderVal = JSON.stringify($request.headers);
+    if (qqreadboxheaderVal) $.setdata(qqreadboxheaderVal, "qqreadboxhd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱header: 成功,qqreadboxheaderVal: ${qqreadboxheaderVal}`
+    );
+    $.msg(jsname + jbid, `获取开箱header: 成功🎉`, ``);
+  }
+else if (
+       $request && $request.url.indexOf("treasure_box_video?") >= 0
+     ) {
+    const qqreadboxvdurlVal = $request.url;
+    if (qqreadboxvdurlVal) $.setdata(qqreadboxvdurlVal, "qqreadboxvdurl" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxvdurlVal: ${qqreadboxvdurlVal}`
+    );
+ $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
+    const qqreadboxvdheaderVal = JSON.stringify($request.headers);
+    if (qqreadboxvdheaderVal) $.setdata(qqreadboxvdheaderVal, "qqreadboxvdhd" + jbid);
+    $.log(
+      `[${jsname + jbid}] 获取翻倍开箱header: 成功,qqreadboxvdheaderVal: ${qqreadboxvdheaderVal}`
+    );
+    $.msg(jsname + jbid, `获取翻倍开箱header: 成功🎉`, ``);
+  }
 }
 
 for (let index = 1; index <= zhs; index++) {
@@ -132,7 +163,10 @@ for (let index = 1; index <= zhs; index++) {
     qqreadbdArr.push($.getdata("qqreadbd"+index));
     qqreadtimeurlArr.push($.getdata("qqreadtimeurl"+index));
     qqreadtimehdArr.push($.getdata("qqreadtimehd"+index));
-    qqreadboxhdArr.push($.getdata("qqreadboxhd"+index));
+    qqreadboxurlArr.push($.getdata("qqreadboxurlVal"+index));
+    qqreadboxheaderArr.push($.getdata("qqreadboxheaderVal"+index));
+    qqreadboxvdurlArr.push($.getdata("qqreadboxvdurlVal"+index));
+    qqreadboxvdheaderArr.push($.getdata("qqreadboxvdheaderVal"+index));
   }
   console.log(`脚本执行 - 北京时间(UTC+8)：${new Date(new Date().getTime() +new Date().getTimezoneOffset() * 60 * 1000 +8 * 60 * 60 * 1000).toLocaleString()}\n`);
   console.log(`====== 共 ${qqreadbdArr.length} 个${jsname}账号 ======\n`);
@@ -154,7 +188,12 @@ function all() {
   qqreadbodyVal = qqreadbdArr[K];
   qqreadtimeurlVal = qqreadtimeurlArr[K];
   qqreadtimeheaderVal = qqreadtimehdArr[K];
-  qqreadboxheaderVal = qqreadboxhdArr[K];
+  qqreadboxurlVal = qqreadboxurlArr[K];
+  qqreadboxheaderVal = qqreadboxvdurlArr[K];
+  qqreadboxvdurlVal = qqreadtimehdArr[K];
+  qqreadboxvdheaderVal = qqreadboxvdheaderArr[K];
+
+
   O = `${jsname + (K + 1)}🔔`;
   for (let i = 0; i < 13; i++) {
     (function (i) {
@@ -599,7 +638,7 @@ function qqreadvideo() {
 function qqreadbox() {
   return new Promise((resolve, reject) => {
     const toqqreadboxurl = {
-      url: "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box?ts=1615304550417&s=${qqreadboxVal}",
+      url: qqreadboxurlVal,
       headers: JSON.parse(qqreadboxheaderVal),
       timeout: 60000,
     };
@@ -618,10 +657,8 @@ function qqreadbox() {
 function qqreadbox2() {
   return new Promise((resolve, reject) => {
     const toqqreadbox2url = {
-      url:
-          "https://mqqapi.reader.qq.com/mqq/red_packet/v2/user/treasure_box_video?ts=1615304570348&s=${qqreadboxvideoVal}",
-
-      headers: JSON.parse(qqreadboxheaderVal),
+      url:qqreadboxvdurlVal,
+      headers: JSON.parse(qqreadboxvdheaderVal),
       timeout: 60000,
     };
     $.get(toqqreadbox2url, (error, response, data) => {
