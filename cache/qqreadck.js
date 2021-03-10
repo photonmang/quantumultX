@@ -40,9 +40,9 @@ else if (
     const qqreadboxvdurlVal = $request.url;
     if (qqreadboxvdurlVal) $.setdata(qqreadboxvdurlVal, "qqreadboxvdurl" + jbid);
     $.log(
-      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxvdurlVal: ${qqreadboxvdurlVal}`
+      `[${jsname + jbid}] 获取翻倍开箱url: 成功,qqreadboxvdurlVal: ${qqreadboxvdurlVal}`
     );
- $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
+ $.msg(jsname + jbid, `获取翻倍开箱url: 成功🎉`, ``);
     const qqreadboxvdheaderVal = JSON.stringify($request.headers);
     if (qqreadboxvdheaderVal) $.setdata(qqreadboxvdheaderVal, "qqreadboxvdhd" + jbid);
     $.log(
