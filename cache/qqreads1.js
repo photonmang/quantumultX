@@ -105,6 +105,7 @@ function GetCookie() {
       `[${jsname + jbid}] 获取时长header: 成功,qqreadtimeheaderVal: ${qqreadtimeheaderVal}`
     );
     $.msg(jsname + jbid, `获取时长header: 成功🎉`, ``);
+    const qqreadboxheaderVal = JSON.stringify($request.headers);
     if (qqreadboxheaderVal) $.setdata(qqreadboxheaderVal, "qqreadboxhd" + jbid);
     $.log(
       `[${jsname + jbid}] 获取开箱header: 成功,qqreadboxheaderVal: ${qqreadboxheaderVal}`
