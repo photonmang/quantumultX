@@ -61,7 +61,7 @@
 	{
 			"id": "qqreads",
 			"name": "QQ阅读多账号管理",
-                        "keys": ["qqreadbd1", "qqreadtimeurl1", "qqreadtimehd1", "qqreadbd2", "qqreadtimeurl2", "qqreadtimehd2", "qqreadbd3", "qqreadtimeurl3", "qqreadtimehd3", "qqreadbd4", "qqreadtimeurl4", "qqreadtimehd4", "qqreadbd5", "qqreadtimeurl5","qqreadtimehd5", "qqreadbd6", "qqreadtimeurl6", "qqreadtimehd6", "qqreadbd7", "qqreadtimeurl7", "qqreadtimehd7", "qqreadbd8", "qqreadtimeurl8", "qqreadtimehd8","qqreadbd9", "qqreadtimeurl9", "qqreadtimehd9","qqreadbd10", "qqreadtimeurl10", "qqreadtimehd10","qqreadbd11", "qqreadtimeurl11", "qqreadtimehd11","qqreadbd12", "qqreadtimeurl12", "qqreadtimehd12","qqreadbd13", "qqreadtimeurl13", "qqreadtimehd13","qqreadbd14", "qqreadtimeurl14", "qqreadtimehd14","qqreadbd15", "qqreadtimeurl15", "qqreadtimehd15","qqreadbd16", "qqreadtimeurl16", "qqreadtimehd16","qqreadbd17", "qqreadtimeurl17", "qqreadtimehd17","qqreadbd18", "qqreadtimeurl18", "qqreadtimehd18","qqreadbd19", "qqreadtimeurl19", "qqreadtimehd19","qqreadbd20", "qqreadtimeurl20", "qqreadtimehd20"],
+                        "keys": ["qqreadbd1", "qqreadtimeurl1", "qqreadtimehd1","qqreadboxhd1", "qqreadboxurl1","qqreadboxvdurl1", "qqreadboxvdhd1", "qqreadbd2", "qqreadtimeurl2", "qqreadtimehd2", "qqreadbd3", "qqreadtimeurl3", "qqreadtimehd3", "qqreadbd4", "qqreadtimeurl4", "qqreadtimehd4", "qqreadbd5", "qqreadtimeurl5","qqreadtimehd5", "qqreadbd6", "qqreadtimeurl6", "qqreadtimehd6", "qqreadbd7", "qqreadtimeurl7", "qqreadtimehd7", "qqreadbd8", "qqreadtimeurl8", "qqreadtimehd8","qqreadbd9", "qqreadtimeurl9", "qqreadtimehd9","qqreadbd10", "qqreadtimeurl10", "qqreadtimehd10","qqreadbd11", "qqreadtimeurl11", "qqreadtimehd11","qqreadbd12", "qqreadtimeurl12", "qqreadtimehd12","qqreadbd13", "qqreadtimeurl13", "qqreadtimehd13","qqreadbd14", "qqreadtimeurl14", "qqreadtimehd14","qqreadbd15", "qqreadtimeurl15", "qqreadtimehd15","qqreadbd16", "qqreadtimeurl16", "qqreadtimehd16","qqreadbd17", "qqreadtimeurl17", "qqreadtimehd17","qqreadbd18", "qqreadtimeurl18", "qqreadtimehd18","qqreadbd19", "qqreadtimeurl19", "qqreadtimehd19","qqreadbd20", "qqreadtimeurl20", "qqreadtimehd20"],
 			"descs_html": [
         "脚本使用说明：",
         "1.请先配置好本仓库的Cookie重写脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/config/Cookie.conf\">Cookie.conf</a>】及task脚本【<a href=\"https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreads1.js\">qqreads1.js</a>】",
@@ -126,26 +126,6 @@
 					"desc": "请输入需要执行的账号总数量"
 				} ,
 				{
-					"id": "qqboxset",
-					"name": "开箱识别符",
-					"val": "",
-					"type": "textarea",
-                                        "placeholder": "默认是空值(点击以展开说明)",
-                                        "autoGrow": true,
-                                        "rows": 1,
-					"desc": "请在此处输入开箱识别符，以逗号隔开"
-				} ,
-				{
-					"id": "qqboxvideoset",
-					"name": "开箱翻倍",
-					"val": "",
-					"type": "textarea",
-                                        "placeholder": "默认是空值(点击以展开说明)",
-                                        "autoGrow": true,
-                                        "rows": 1,
-					"desc": "请在此处按顺序粘帖识别符，以逗号隔开"
-				},
-				{
 					"id": "txje",
 					"name": "请选择您的提现金额（默认10元）",
 					"val": "100000",
@@ -184,7 +164,7 @@
 				},
 				{
 					"id": "qqStart",
-					"name": "开始打印起始值",
+					"name": "打印起始值",
 					"val": "",
 					"type": "number",
                                         "placeholder": "默认起始打印第一个账号",
@@ -194,7 +174,7 @@
 				},
 				{
 					"id": "qqEnd",
-					"name": "开始打印结束值",
+					"name": "打印结束值",
 					"val": "",
 					"type": "number",
                                         "placeholder": "默认第一个账号为结束打印值",
