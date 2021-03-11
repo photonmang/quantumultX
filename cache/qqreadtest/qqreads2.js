@@ -127,10 +127,10 @@ if (COOKIE.qqreadbodyVal) {
   QQ_READ_COOKIES = {
     "qqreadbodyVal": COOKIE.qqreadbodyVal.split('\n'),
     "qqreadtimeurlVal": COOKIE.qqreadtimeurlVal.split('\n'),
-    "qqreadtimeheaderVal": COOKIE.qqreadtimeheaderVal.split('\n')
+    "qqreadtimeheaderVal": COOKIE.qqreadtimeheaderVal.split('\n'),
     "qqreadboxurlVal": COOKIE.qqreadboxurlVal.split('\n'),
     "qqreadboxheaderVal": COOKIE.qqreadboxheaderVal.split('\n'),
-    "qqreadboxvdurlVal": COOKIE.qqreadboxvdurlVal.split('\n')
+    "qqreadboxvdurlVal": COOKIE.qqreadboxvdurlVal.split('\n'),
     "qqreadboxvdheaderVal": COOKIE.qqreadboxvdheaderVal.split('\n')
   }
 
