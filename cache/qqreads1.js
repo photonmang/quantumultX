@@ -122,40 +122,6 @@ function GetCookie() {
     );
     $.msg(jsname + jbid, `获取更新body: 成功🎉`, ``);
     } 
-else {
-    if (
-       $request && $request.url.indexOf("treasure_box?") >= 0
-     ) {
-    const qqreadboxurlVal = $request.url;
-    if (qqreadboxurlVal) $.setdata(qqreadboxurlVal, "qqreadboxurl" + jbid);
-    $.log(
-      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxurlVal: ${qqreadboxurlVal}`
-    );
- $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
-    const qqreadboxheaderVal = JSON.stringify($request.headers);
-    if (qqreadboxheaderVal) $.setdata(qqreadboxheaderVal, "qqreadboxhd" + jbid);
-    $.log(
-      `[${jsname + jbid}] 获取开箱header: 成功,qqreadboxheaderVal: ${qqreadboxheaderVal}`
-    );
-    $.msg(jsname + jbid, `获取开箱header: 成功🎉`, ``);
-  }
-else if (
-       $request && $request.url.indexOf("treasure_box_video?") >= 0
-     ) {
-    const qqreadboxvdurlVal = $request.url;
-    if (qqreadboxvdurlVal) $.setdata(qqreadboxvdurlVal, "qqreadboxvdurl" + jbid);
-    $.log(
-      `[${jsname + jbid}] 获取开箱url: 成功,qqreadboxvdurlVal: ${qqreadboxvdurlVal}`
-    );
- $.msg(jsname + jbid, `获取开箱url: 成功🎉`, ``);
-    const qqreadboxvdheaderVal = JSON.stringify($request.headers);
-    if (qqreadboxvdheaderVal) $.setdata(qqreadboxvdheaderVal, "qqreadboxvdhd" + jbid);
-    $.log(
-      `[${jsname + jbid}] 获取翻倍开箱header: 成功,qqreadboxvdheaderVal: ${qqreadboxvdheaderVal}`
-    );
-    $.msg(jsname + jbid, `获取翻倍开箱header: 成功🎉`, ``);
-  }
-    }
 }
 
 for (let index = 1; index <= zhs; index++) {
