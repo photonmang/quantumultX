@@ -45,6 +45,7 @@ http-request https:\/\/mqqapi\.reader\.qq\.com\/mqq\/addReadTimeWithBid? script-
      *修复阅读金币领取失效
 2.23 修复宝箱及宝箱翻倍显示
 3.10 由于qq阅读升级导致开箱失效，增加了一个宝箱CK获取，请先获取一次宝箱CK,再继续获取翻倍开箱CK。一共获取4个CK
+3.15 更新修复提现异常。同时今天QQ阅读将可能会下线提现功能；后续如QQ阅读再次上线提现功能，Issuse提醒我。并后续会修复视频红包版本更新导致无法领取红包的问题。
 */
 
 
@@ -214,8 +215,7 @@ function all() {
               qqreadssr2(); // 阅读金币2
             if (task.data && dk.doneFlag == 0) qqreadsign2(); // 签到翻倍
           } else if (
-            i == 8 &&
-            task.data.user.amount >= txje 
+            i == 8  
             //nowTimes.getHours() == txsj
           ) {
             qqreadwithdraw(); // 现金提现
