@@ -9,41 +9,6 @@
       "id": "xxysrw",
       "name": "小小影视",
       "keys": ["py_signheader_xxys"],
-      "settings": [ {
-      "id": "xxys_stop",
-      "name": "签到接口禁用",
-      "val": "",
-      "type": "checkboxes",
-      "desc": "",
-      "items": [{
-        "key": "sign",
-        "label": "签到"
-      }, {
-        "key": "pl",
-        "label": "评论"
-      }, {
-        "key": "ad",
-        "label": "广告"
-      }, {
-        "key": "fx",
-        "label": "分享"
-      }, {
-        "key": "box",
-        "label": "每日开箱"
-      }, {
-        "key": "box6",
-        "label": "每周六开箱"
-      }, {
-        "key": "sc",
-        "label": "5次收藏"
-      }, {
-        "key": "ten",
-        "label": "10次播放"
-      }, {
-        "key": "play",
-        "label": "30分钟观影"
-      }]
-    }],
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/xxysrw.js",
       "script": "https://github.com/photonmang/quantumultX",
