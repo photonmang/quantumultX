@@ -314,6 +314,15 @@
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/shareCode.js",
       "script": "https://github.com/photonmang/quantumultX",
       "icons": [ "https://raw.githubusercontent.com/Orz-3/mini/master/jd.png","https://raw.githubusercontent.com/Orz-3/task/master/jd.png"]
+    },
+        {
+      "id": "wbtc",
+      "name": "58同城",
+      "keys": ["wbtc","zsheader","zjheader","dzpheader"],
+      "author": "@photonmang",
+      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js",
+      "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js",
+      "icons": ["https://gitee.com/photonmang/quantumultX/raw/master/58.png", "https://gitee.com/photonmang/quantumultX/raw/master/58.png"]
     }
   ]
 }
