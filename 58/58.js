@@ -23,22 +23,22 @@ https://wxyuzltongzhen.ganji.com/magicminers/web/v/invitepagenew/bingychoric?ide
 hostname = magicisland.58.com,xzd.hswchangdu.com,ftoy-api.58.com
 #圈x
 [rewrite local]
-https://magicisland.58.com/web/share/getShareUserInfo url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js
-https://xzd.hswchangdu.com/activityTreeMoney/watering url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js
-https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js
-https://xzd.hswchangdu.com/lotteryMachine/drawGoods? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js
+https://magicisland.58.com/web/share/getShareUserInfo url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js
+https://xzd.hswchangdu.com/activityTreeMoney/watering url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js
+https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js
+https://xzd.hswchangdu.com/lotteryMachine/drawGoods? url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js
 
 #loon
-http-request https://magicisland.58.com/web/share/getShareUserInfo script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js, requires-body=true, timeout=10, tag=58同城
-http-request https://xzd.hswchangdu.com/activityTreeMoney/watering script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js, requires-body=true, timeout=10, tag=58同城
-https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js, requires-body=true, timeout=10, tag=58同城
-https://xzd.hswchangdu.com/lotteryMachine/drawGoods? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js, requires-body=true, timeout=10, tag=58同城
+http-request https://magicisland.58.com/web/share/getShareUserInfo script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城
+http-request https://xzd.hswchangdu.com/activityTreeMoney/watering script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城
+https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城
+https://xzd.hswchangdu.com/lotteryMachine/drawGoods? script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, requires-body=true, timeout=10, tag=58同城
 
 #surge
-58同城神奇矿 = type=http-request,pattern=https://magicisland.58.com/web/share/getShareUserInfo,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js,script-update-interval=0
-58同城发财树 = type=http-request,pattern=https://xzd.hswchangdu.com/activityTreeMoney/watering,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js,script-update-interval=0
-58同城租金 = type=http-request,pattern=https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js,script-update-interval=0
-58同城大转盘 = type=http-request,pattern=https://xzd.hswchangdu.com/lotteryMachine/drawGoods?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58.js,script-update-interval=0
+58同城神奇矿 = type=http-request,pattern=https://magicisland.58.com/web/share/getShareUserInfo,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js,script-update-interval=0
+58同城发财树 = type=http-request,pattern=https://xzd.hswchangdu.com/activityTreeMoney/watering,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js,script-update-interval=0
+58同城租金 = type=http-request,pattern=https://ftoy-api.58.com/wapi/zf_points_mall/api_sign_in?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js,script-update-interval=0
+58同城大转盘 = type=http-request,pattern=https://xzd.hswchangdu.com/lotteryMachine/drawGoods?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js,script-update-interval=0
 
 ---------------------------------------
 Cookie获取方式：
