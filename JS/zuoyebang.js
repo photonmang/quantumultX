@@ -5,7 +5,7 @@
 
 1.本仅解锁付费音频部分，其他部分未进行解锁处理。后续看个人使用情况解锁更多VIP功能
 
-https://mall.zuoyebang.com/mall/goods/audio/voice/list?audioId=\d+ url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/JS/master/zuoyebang.js
+https://mall.zuoyebang.com/mall/goods/audio/voice/list?audioId=\d+ url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/JS/zuoyebang.js
 MITM = mall.zuoyebang.com
 */
 
