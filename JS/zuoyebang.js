@@ -10,7 +10,7 @@ MITM = mall.zuoyebang.com
 */
 
 
-re('"freeTrail":\\d+@','"freeTrail":1@')
+re('"freeTrail":\\w+@"status":\\d@"stopTime":""@','"freeTrail":1@"status":1@"stopTime":"9999999999"@')
 
 function re() {
  var body = $response.body;
