@@ -7,14 +7,14 @@
 hostname = napi.zuoyebang.com
 #圈x
 [rewrite local]
-https://napi.zuoyebang.com/napi/signin/signinpage url script-request-body https://gitee.com/photonmang/quantumultX/raw/master/zyb.js
+https://napi.zuoyebang.com/napi/signin/signinpage url script-request-body https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js
 
 
 #loon
-http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https://gitee.com/photonmang/quantumultX/raw/master/zyb.js, requires-body=true, timeout=10, tag=58同城
+http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js, requires-body=true, timeout=10, tag=58同城
 
 #surge
-作业帮 = type=http-request,pattern=https://napi.zuoyebang.com/napi/signin/signinpage,requires-body=1,max-size=0,script-path=https://gitee.com/photonmang/quantumultX/raw/master/zyb.js,script-update-interval=0
+作业帮 = type=http-request,pattern=https://napi.zuoyebang.com/napi/signin/signinpage,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js,script-update-interval=0
 
 ---------------------------------------
 Cookie获取方式：
