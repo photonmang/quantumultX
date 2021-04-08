@@ -322,7 +322,16 @@
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js",
       "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js",
-      "icons": ["https://gitee.com/photonmang/quantumultX/raw/master/58.png", "https://gitee.com/photonmang/quantumultX/raw/master/58.png"]
+      "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.png"]
+    },
+        {
+      "id": "zyb",
+      "name": "作业帮",
+      "keys": ["zyb","zybbody"],
+      "author": "@photonmang",
+      "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js",
+      "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js",
+      "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.png"]
     }
   ]
 }
