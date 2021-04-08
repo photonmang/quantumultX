@@ -20,6 +20,9 @@ http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https
 Cookie获取方式：
 首页=>签到领学分
 
+[task_local]
+0 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js, tag=作业帮, img-url=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.png, enabled=true
+
 */
 
 const photonmang = '作业帮'
