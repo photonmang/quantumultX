@@ -135,9 +135,8 @@ async function signinpage() {
                     const result = JSON.parse(data)
                     if (logs) $.log(data)
                     if (result.data.awards_tomorrow != 0) {
-                        message = `【签到成功】: ✅${result.data.award_today_coin}学分\n`+
-						          `签到第${result.data.continue_days}天\n`+
-								  `${result.data.continue_days_content}\n`
+                        message = `【签到成功】: ✅${result.data.awards_today_coin}学分\n`+
+			          ` 签到第${result.data.continue_days}天,${result.data.continue_days_content}`
                     } else {
                         message = `【签到失败】: ❌重复签到\n`
 
