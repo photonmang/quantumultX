@@ -14,8 +14,6 @@
     "0 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_speed_sign.js, tag=京东极速版, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true",
     "0 7 19-25 2 * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_nzmh.js, tag=女装盲盒, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true",
     "0 9 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqreadtest/qqreadanswer.js, tag=qq阅读-答题, img-url=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/qqread.png, enabled=true",
-    "0 0,6,12,18 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_5g.js, tag=5G狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true",
-    "0 0-18/6 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_818.js, tag=京东手机狂欢城, enabled=true",
     "2 9 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_bean_change.js, tag=京豆变动通知, img-url=https://raw.githubusercontent.com/Orz-3/task/master/jd.png, enabled=true",
     "10 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_bean_home.js, tag=领京豆额外奖励, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jd_bean_home.png, enabled=true",
     "0 0 0 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_blueCoin.js, tag=东东超市兑换奖品, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxc.png, enabled=true",
