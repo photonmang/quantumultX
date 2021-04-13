@@ -49,7 +49,7 @@ if ($['isNode']()) {
 } else {
     cookiesArr = [$['getdata']('CookieJD'), $['getdata']('CookieJD2'), ...jsonParse($['getdata']('CookiesJD') || '[]')['map'](_0x1311d1 => _0x1311d1['cookie'])]['filter'](_0x49a899 => !!_0x49a899);
 }
-let inviteCodes = [];
+let inviteCodes = [`b251f579-82ec-4a10-a2be-4621ae4fd73f@7b0ae744-85ee-424b-a6cb-01449658225a@dc660244-92de-4e57-9a21-226a5c788143@64309a17-bdf9-48ca-bc0b-b7f970601c16@8d5764d1-1cc7-4b58-b78f-a9cc25a1cc77@2ae76835-1e7f-4dd5-a22a-8196e01848f7@0af2786e-b2a2-4d77-9b8e-70be2e446d6f@d6106c97-db08-49ef-b0bc-3a44df6b7c6f`];
 const JD_API_HOST = 'https://carnivalcity.m.jd.com';
 const activeEndTime = '2021/4/20 00:59:59+08:00';
 !(async () => {
