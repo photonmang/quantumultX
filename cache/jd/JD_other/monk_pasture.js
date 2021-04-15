@@ -27,7 +27,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 const cp = $.isNode() ? require('child_process') : '';
 let cookiesArr = [], cookie = '', message = '';
-let helpAuthor = true;//为作者助力的开关
+let helpAuthor = false;//为作者助力的开关
 const exchange_keyword = $.isNode() ? process.env.PASTURE_EXCHANGE_KEYWORD || "" : "";
 const autoLevelUp = $.isNode() ? process.env.PASTURE_AUTOLEVELUP || true : true;
 
