@@ -2,7 +2,7 @@
     "name": "quantumultX all Task",
     "description": "脚本库更新时间2021-04-15",
     "task": [ 
-    "0 01-22/2 1-31 4-7 * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/JD_other/monk_pasture.js, tag=有机牧场 img-url=https://share.r2ray.com/dust/i-chenzhe/img/icon.png enabled=true",
+    "0 01-22/2 1-31 4-7 * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/JD_other/monk_pasture.js, tag=有机牧场 img-url=https://share.r2ray.com/dust/i-chenzhe/img/icon.png, enabled=true",
     "0 0-18/6 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_carnivalcity.js, tag=京东手机狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true",
     "0 7 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js, tag=作业帮, img-url=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.png, enabled=true",
     "0 */1 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.js, tag=58同城, img-url=https://raw.githubusercontent.com/photonmang/quantumultX/master/58/58.png, enabled=true", 
