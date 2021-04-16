@@ -49,7 +49,7 @@ if ($['isNode']()) {
 } else {
     cookiesArr = [$['getdata']('CookieJD'), $['getdata']('CookieJD2'), ...jsonParse($['getdata']('CookiesJD') || '[]')['map'](_0x1311d1 => _0x1311d1['cookie'])]['filter'](_0x49a899 => !!_0x49a899);
 }
-let inviteCodes = [`b251f579-82ec-4a10-a2be-4621ae4fd73f@7b0ae744-85ee-424b-a6cb-01449658225a@dc660244-92de-4e57-9a21-226a5c788143@64309a17-bdf9-48ca-bc0b-b7f970601c16@8d5764d1-1cc7-4b58-b78f-a9cc25a1cc77@2ae76835-1e7f-4dd5-a22a-8196e01848f7@0af2786e-b2a2-4d77-9b8e-70be2e446d6f@d6106c97-db08-49ef-b0bc-3a44df6b7c6f`];
+let inviteCodes = [`6fdee6d6-427b-49fa-9da9-d28e51b3dd23@aae62f1d-1bf8-4b39-998b-c4f4c722dd80@3e184967-226d-4499-b2bb-8bb7be4b44f9@0ca63d92-1d9f-42d8-a78d-02dfdc710321@d6e7ebad-e4a9-4c7f-b41d-d9d010f9c5f3@f6af4da2-61d9-474d-9c14-a615d5ebf53b@fd5abe2c-9697-4533-ba8b-ffaccf99bb59@909d3450-28d8-466e-9a5f-eb1d13a50351`];
 const JD_API_HOST = 'https://carnivalcity.m.jd.com';
 const activeEndTime = '2021/4/20 00:59:59+08:00';
 !(async () => {
