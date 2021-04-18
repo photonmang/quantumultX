@@ -26,7 +26,7 @@ const path6 = '/athena/v4/people/my'
 const path7 = 'start|join';
 const path8 = '/kprime/v2/home/complete';
 const path9 = 'detail';
-const path10 = 'preview'
+//const path10 = 'preview'
 const path11 = '/kprime/v1/auth'
 const path13 = '/training/v3/suits/days'
 if (url.indexOf(path1) != -1) {
@@ -64,9 +64,9 @@ obj.data.memberEntrance.prime = true;
 obj.data.memberEntrance.memberStatus = 1;
 obj.data.memberInfo.memberStatus = 1;
 }
-if (url.indexOf(path10) != -1) {
-obj.data.extendInfo.sectionStyle = "after";
-}
+//  if (url.indexOf(path10) != -1) {
+//  obj.data.extendInfo.sectionStyle = "after";
+//  }
 if (url.indexOf(path11) != -1) {
 obj.data = {
   "id": 3685024,
