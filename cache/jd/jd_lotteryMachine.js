@@ -6,23 +6,21 @@
 // quantumultx
 [task_local]
 #京东抽奖机
-11 1 * * * https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js, tag=京东抽奖机, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/jdlottery.png, enabled=true
+11 1 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_lotteryMachine.js, tag=京东抽奖机, img-url=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/image/jdlottery.png, enabled=true
 // Loon
 [Script]
-cron "11 1 * * *" script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js,tag=京东抽奖机
+cron "11 1 * * *" script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_lotteryMachine.js,tag=京东抽奖机
 // Surge
-京东抽奖机 = type=cron,cronexp=11 1 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/yangtingxiao/QuantumultX/master/scripts/jd/jd_lotteryMachine.js
+京东抽奖机 = type=cron,cronexp=11 1 * * *,wake-system=1,timeout=20,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/cache/jd/jd_lotteryMachine.js
  */
 const $ = new Env('京东抽奖机');
 const STRSPLIT = "|";
 const needSum = false;            //是否需要显示汇总
 const printDetail = false;        //是否显示出参详情
 const appIdArr = ['1EFRRxA','1EFRQwA','1EFRTyg','1EFRXxg','1EFRWyg','1EFRWyw','1EFRZwA','1EFRZwQ','1EFRYwA','1EFRYxw']
-const shareCodeArr = [
-  'T018v_56RRYR9FXXKR2b1ACjVWmIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVXnIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVUloaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVQmoaT5kRrbA@T018v_56RRYR9FXXKR2b1ACjVenIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVenYaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVfnIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVfm4aW5kRrbA',
-  'T01476AsE0ZMq1zWJwCjVWmIaW5kRrbA@T01476AsE0ZMq1zWJwCjVXnIaW5kRrbA@T01476AsE0ZMq1zWJwCjVUloaW5kRrbA@T01476AsE0ZMq1zWJwCjVQmoaT5kRrbA@T01476AsE0ZMq1zWJwCjVenIaW5kRrbA@T01476AsE0ZMq1zWJwCjVenYaW5kRrbA@T01476AsE0ZMq1zWJwCjVfnIaW5kRrbA@T01476AsE0ZMq1zWJwCjVfm4aW5kRrbA',
-  'T014_qUsBEFHqAWJdwCjVWmIaW5kRrbA@T014_qUsBEFHqAWJdwCjVXnIaW5kRrbA@T014_qUsBEFHqAWJdwCjVUloaW5kRrbA@T01476AsE0ZMq1zWJwCjVQmoaT5kRrbA@T014_qUsBEFHqAWJdwCjVenIaW5kRrbA@T014_qUsBEFHqAWJdwCjVenYaW5kRrbA@T014_qUsBEFHqAWJdwCjVfnIaW5kRrbA@T014_qUsBEFHqAWJdwCjVfm4aW5kRrbA'
-                     ]
+const shareCodeArr = ['T018v_56RRYR9FXXKR2b1ACjVWmIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVXnIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVUloaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVQmoaT5kRrbA@T018v_56RRYR9FXXKR2b1ACjVenIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVenYaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVfnIaW5kRrbA@T018v_56RRYR9FXXKR2b1ACjVfm4aW5kRrbA',
+'T01476AsE0ZMq1zWJwCjVWmIaW5kRrbA@T01476AsE0ZMq1zWJwCjVXnIaW5kRrbA@T01476AsE0ZMq1zWJwCjVUloaW5kRrbA@T01476AsE0ZMq1zWJwCjVQmoaT5kRrbA@T01476AsE0ZMq1zWJwCjVenIaW5kRrbA@T01476AsE0ZMq1zWJwCjVenYaW5kRrbA@T01476AsE0ZMq1zWJwCjVfnIaW5kRrbA@T01476AsE0ZMq1zWJwCjVfm4aW5kRrbA',
+'T014_qUsBEFHqAWJdwCjVWmIaW5kRrbA@T014_qUsBEFHqAWJdwCjVXnIaW5kRrbA@T014_qUsBEFHqAWJdwCjVUloaW5kRrbA@T01476AsE0ZMq1zWJwCjVQmoaT5kRrbA@T014_qUsBEFHqAWJdwCjVenIaW5kRrbA@T014_qUsBEFHqAWJdwCjVenYaW5kRrbA@T014_qUsBEFHqAWJdwCjVfnIaW5kRrbA@T014_qUsBEFHqAWJdwCjVfm4aW5kRrbA']
 const homeDataFunPrefixArr = ['interact_template','interact_template','','','','','','','','','','','','','','','','interact_template','interact_template','']
 const collectScoreFunPrefixArr = ['','','','','','','','','','','','','','','','','','interact_template','interact_template','']
 const lotteryResultFunPrefixArr = ['','','','','','','','','','','','','','','','','','','interact_template','interact_template','interact_template']
