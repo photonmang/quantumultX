@@ -11,7 +11,7 @@ https://napi.zuoyebang.com/napi/signin/signinpage url script-request-body https:
 
 
 #loon
-http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js, requires-body=true, timeout=10, tag=58同城
+http-request https://napi.zuoyebang.com/napi/signin/signinpage script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js, requires-body=true, timeout=10, tag=作业帮
 
 #surge
 作业帮 = type=http-request,pattern=https://napi.zuoyebang.com/napi/signin/signinpage,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js,script-update-interval=0
@@ -141,7 +141,7 @@ async function signinpage() {
                         message = `【签到成功】: ✅${result.data.awards_today_coin}学分\n`+
 			          ` 签到第${result.data.continue_days}天,${result.data.continue_days_content}`
                     } else {
-                        message = `【签到失败】: ❌重复签到\n`
+                        message = `【签到失败】: 🔁重复签到\n`
 
                     }
                 }
