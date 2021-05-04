@@ -5,7 +5,7 @@
 http://api.woaoo.net/.+ url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/JS/walq.js
 */
 
-re('"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\d+@"isPaid":\\w+@"canWatchFree":\\w+@','"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@')
+re('"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@','"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@')
 
 function re() {
  var body = $response.body;
