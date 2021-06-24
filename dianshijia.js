@@ -215,52 +215,6 @@ function signinfo() {
           {detail += ` 连续签到${d}天\n`
        var j = result.data.recentDays[i].rewards.length
        if (j > 1){
-aa=result.data.recentDays[i].rewards[1].rewardsType
-bb=result.data.recentDays[i].rewards[2].rewardsType
-cc=result.data.recentDays[i].rewards[3].rewardsType
-
-if (aa==4){
-money=result.data.recentDays[i].rewards[1].id
-detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}\n`
-
-} else 
-if (bb==4){
-money=result.data.recentDays[i].rewards[2].id
-detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[2].name}\n`
-
-} else
-if (cc==4){
-money=result.data.recentDays[i].rewards[3].id
-detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[3].name}\n`
-}
-
-                 } 
-          else   if (j == 1) 
-                 { 
-                detail += `【奖励信息】今日: 无 ` 
-                 }
-        
-               }               
-           }  
-     resolve()
-        }
-    })
-  })
-}  function signinfo() {
-  return new Promise((resolve, reject) => {
-     $.get({ url: `${dianshijia_API}/v5/sign/get`, headers: JSON.parse(signheaderVal)}, (error, response, data) => 
-  {
-   if(logs)$.log(`${$.name}, 签到信息: ${data}\n`)
-     const result = JSON.parse(data)
-     if (result.errCode == 0) 
-    {
-     var d = `${result.data.currentDay}`
-     for (i=0; i < result.data.recentDays.length;i++)      
-        {
-       if (d == result.data.recentDays[i].day)
-          {detail += ` 连续签到${d}天\n`
-       var j = result.data.recentDays[i].rewards.length
-       if (j > 1){
 aa=result.data.recentDays[i+1].rewards[1].rewardsType
 bb=result.data.recentDays[i+1].rewards[2].rewardsType
 cc=result.data.recentDays[i+1].rewards[3].rewardsType
