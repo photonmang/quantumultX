@@ -261,22 +261,22 @@ detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[3].name}
           {detail += ` 连续签到${d}天\n`
        var j = result.data.recentDays[i].rewards.length
        if (j > 1){
-aa=result.data.recentDays[i].rewards[1].rewardsType
-bb=result.data.recentDays[i].rewards[2].rewardsType
-cc=result.data.recentDays[i].rewards[3].rewardsType
+aa=result.data.recentDays[i+1].rewards[1].rewardsType
+bb=result.data.recentDays[i+1].rewards[2].rewardsType
+cc=result.data.recentDays[i+1].rewards[3].rewardsType
 
 if (aa==4){
-money=result.data.recentDays[i].rewards[1].id
+money=result.data.recentDays[i+1].rewards[1].id
 detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}\n`
 
 } else 
 if (bb==4){
-money=result.data.recentDays[i].rewards[2].id
+money=result.data.recentDays[i+1].rewards[2].id
 detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[2].name}\n`
 
 } else
 if (cc==4){
-money=result.data.recentDays[i].rewards[3].id
+money=result.data.recentDays[i+1].rewards[3].id
 detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[3].name}\n`
 }
 
