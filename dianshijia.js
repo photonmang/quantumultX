@@ -222,17 +222,17 @@ cc=result.data.recentDays[i+1].rewards[3].rewardsType
 
 if (aa==4){
 money=result.data.recentDays[i+1].rewards[1].id
-detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[1].name}\n`
+detail += `【奖励信息】今日:${result.data.recentDays[i+1].rewards[1].name}\n`
 
 } else 
 if (bb==4){
 money=result.data.recentDays[i+1].rewards[2].id
-detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[2].name}\n`
+detail += `【奖励信息】今日:${result.data.recentDays[i+1].rewards[2].name}\n`
 
 } else
 if (cc==4){
 money=result.data.recentDays[i+1].rewards[3].id
-detail += `【奖励信息】今日:${result.data.recentDays[i].rewards[3].name}\n`
+detail += `【奖励信息】今日:${result.data.recentDays[i+1].rewards[3].name}\n`
 }
 
                  } 
