@@ -265,7 +265,7 @@ function total() {
                         $.get({
                             url: `http://api.gaoqingdianshi.com/api/coin/temp/exchange?id=` + coinid,
                             headers: JSON.parse(signheaderVal)
-                        }, (error, response, data))
+                        }, (error, response, data)=>{})
                     }
                 }
                 resolve()
