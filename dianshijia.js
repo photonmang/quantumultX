@@ -3,6 +3,7 @@
 去掉奖励信息随机的BUG奖励，改为固定显示每日0.2元额度。
 2.12 彻底修复因每日奖励额度接口变动导致奖励额度失效问题！
 6.24 调整额度为0.4元。由于官方的额度进行了调整，0.2元为当日奖励，0.4元为明日奖励额度，脚本调整获取方式为直接提交明日奖励进行获取。
+8.9 新增VIP兑换，每日上限6天，一次兑换+3天
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -122,6 +123,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await getGametime(); // 游戏时长
             await total(); // 总计
             await cash(); // 现金
+            await vip();
             await cashlist(); // 现金列表
             await coinlist(); // 金币列表
             if ($.isNode() && process.env.DSJ_NOTIFY_CONTROL && drawalCode == '0') {
@@ -289,6 +291,24 @@ function cash() {
                 subTitle += '现金:' + cashresult.data.amount / 100 + '元 额度:' + cashresult.data.withdrawalQuota / 100 + '元'
                 cashtotal = cashresult.data.totalWithdrawn / 100
             }
+            resolve()
+        })
+    })
+}
+
+function vip() {
+    return new Promise((resolve, reject) => {
+        $.get({
+            url: `http://pay.gaoqingdianshi.com/api/v2/product/exchange?code=mianfeiduihuan0003`,
+            headers: JSON.parse(signheaderVal)
+        }, (error, response, data) => {
+            if (logs) $.log(`vip: ${data}\n`)
+            let vipresult = JSON.parse(data)
+            if (vipresult.errCode == 0) {
+                subTitle += '\n【VIP兑换结果】：✅兑换成功+3天'} 
+                subTitle += '\n【VIP兑换结果】：'+vipresult.msg
+                
+            
             resolve()
         })
     })
