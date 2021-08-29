@@ -1,3 +1,3 @@
-#需在eleccV2P的RULES中设置boxjs域名未boxjs.cn
+#RULES=>boxjs.js
 
-DOMAIN-SUFFIX,boxjs.cn,boxjsV2P
+DOMAIN-SUFFIX,boxjs.js,boxjsV2P
