@@ -1,0 +1,3 @@
+#需在eleccV2P的RULES中设置boxjs域名未boxjs.cn
+
+HOST,boxjs.cn,elecV2P
