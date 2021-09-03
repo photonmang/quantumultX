@@ -10,7 +10,7 @@ MITM = apivip.zuoyebang.com
 */
 
 
-re('"freeTrail":\\w+@"status":\\d@"stopTime":""@','"freeTrail":1@"status":1@"stopTime":"9999999999"@')
+re('"freeTrail":\\d@"status":\\d@"stopTime":""@','"freeTrail":1@"status":1@"stopTime":"9999999999"@')
 
 function re() {
  var body = $response.body;
