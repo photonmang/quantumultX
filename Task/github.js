@@ -5,7 +5,7 @@
  * 2、监控具体的文件或目录是否有更新。
  * 3、新增：可以监控多层目录里面的某个文件
  * @author: Peng-YM， toulanboy
- * 更新地址：https://raw.githubusercontent.com/photonmang/quantumultX/Task/master/github.js
+ * 更新地址：https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/github.js
  * 配置方法：
  * 1. 填写github token, 在github > settings > developer settings > personal access token 里面生成一个新token。
  * 默认TOKEN用的是我自己的，请不要请求过于频繁，每天一两次即可。例如：cron "0 9 * * *"* 2. 配置仓库地址，格式如下：
@@ -67,7 +67,7 @@ const parser = {
     releases: new RegExp(/^https:\/\/github.com\/([\w|-]+)\/([\w|-]+)\/releases/),
 };
 const headers = {
-    Authorization: `token ${token}`,
+    //Authorization: `token ${token}`,
     "User-Agent":
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.141 Safari/537.36",
 };
