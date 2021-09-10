@@ -5,7 +5,7 @@ MITM = nmeditation.snailsleep.net
 */
 
 
-re('"free":\\w+@"vip":\\w+@"expires":\\d+@"isVip":\\w+','"free":true@"vip":ture@"expires":9999999999000@"isVip":true')
+re('"free":false@"vip":\\w+@"expires":\\d+@"isVip":\\w+','"free":true@"vip":ture@"expires":9999999999000@"isVip":true')
 
 function re() {
  var body = $response.body;
