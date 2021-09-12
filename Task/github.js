@@ -153,6 +153,12 @@ async function checkUpdate(item) {
                             "media-url": `https://raw.githubusercontent.com/58xinian/icon/master/Github2.png`,
                         };
                         if (needUpdate(url, published_at)) {
+                            console.log( `🎉🎉🎉 [${name}] 新版本发布`,
+                                `📦 版本: ${release_name}`,
+                                `⏰ 发布于: ${formatTime(
+                                    published_at
+                                )}\n👨🏻‍💻 发布者: ${author}\n📌 更新说明: \n${body}`,
+                                notificationURL);
                             $.notify(
                                 `🎉🎉🎉 [${name}] 新版本发布`,
                                 `📦 版本: ${release_name}`,
