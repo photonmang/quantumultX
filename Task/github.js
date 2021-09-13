@@ -198,6 +198,12 @@ async function checkUpdate(item) {
             //监控仓库是否有更新
             if (!item.hasOwnProperty("file_names")) {
                 if (needUpdate(url, published_at)) {
+console.log(`🎈🎈🎈 [${name}] 新提交`,
+                        "",
+                        `⏰ 提交于: ${formatTime(
+                            published_at
+                        )}\n👨🏻‍💻 发布者: ${author}\n📌 更新说明: \n${body}`,
+                        notificationURL);
                     $.notify(
                         `🎈🎈🎈 [${name}] 新提交`,
                         "",
@@ -229,6 +235,9 @@ async function checkUpdate(item) {
 
 function findFile(name, tree_url, paths, current_pos) {
     if (current_pos == paths.length) {
+console.log(`🐬 [${name}]`,
+            "",
+            `🚫 仓库中没有该文件：${paths[paths.length - 1]}`);
         $.notify(
             `🐬 [${name}]`,
             "",
@@ -258,6 +267,7 @@ function findFile(name, tree_url, paths, current_pos) {
                         let file_hash = file_list[i].sha;
                         let last_sha = $.read(hash(name + paths[current_pos]));
                         if (file_hash != last_sha) {
+
                             $.notify(`🐬 [${name}]`, "", `📌 ${paths[current_pos]}有更新`);
                             $.write(file_hash, hash(name + paths[current_pos]));
                         }
