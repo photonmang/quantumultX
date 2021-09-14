@@ -85,7 +85,7 @@ const signgiftURL = "https://gsh5act.xiaojukeji.com/dpub_data_api/activities";
 const busURL = "https://market.bus.xiaojukeji.com/api/transit";
 const stepURL = "https://sigma.xiaojukeji.com/api";
 const treeURL = "https://tree.xiaojukeji.com:9443";
-let no= $.read("noaff");
+let noaff= $.read("noaff");
 const aff = noaff == undefined ? true : ![true, "true"].includes(noaff);
 const today =
 	new Date().getFullYear() +
