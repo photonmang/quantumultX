@@ -4,7 +4,7 @@
 2.12 彻底修复因每日奖励额度接口变动导致奖励额度失效问题！
 6.24 调整额度为0.4元。由于官方的额度进行了调整，0.2元为当日奖励，0.4元为明日奖励额度，脚本调整获取方式为直接提交明日奖励进行获取。
 8.9 新增VIP兑换，每日上限6天，一次兑换+3天
-
+2022.1.10 修复脚本，去除额外额度获取
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
 2.APP登陆账号后，点击菜单栏'领现金',即可获取Cookie，进入提现页面，点击随机金额，可获取提现地址!!
@@ -220,19 +220,19 @@ function signinfo() {
        if (j > 1){
 aa=result.data.recentDays[i+1].rewards[1].rewardsType
 bb=result.data.recentDays[i+1].rewards[2].rewardsType
-cc=result.data.recentDays[i+1].rewards[3].rewardsType
+//cc=result.data.recentDays[i+1].rewards[3].rewardsType
 
-if (aa==4){
+if (aa==1){
 money=result.data.recentDays[i+1].rewards[1].id
 detail += `【奖励信息】今日:${result.data.recentDays[i+1].rewards[1].name}\n`
 
 } else 
-if (bb==4){
+if (bb==1){
 money=result.data.recentDays[i+1].rewards[2].id
 detail += `【奖励信息】今日:${result.data.recentDays[i+1].rewards[2].name}\n`
 
 } else
-if (cc==4){
+if (cc==1){
 money=result.data.recentDays[i+1].rewards[3].id
 detail += `【奖励信息】今日:${result.data.recentDays[i+1].rewards[3].name}\n`
 }
