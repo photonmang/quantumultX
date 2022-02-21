@@ -113,12 +113,14 @@ if (isGetCookie = typeof $request !== 'undefined') {
             console.log(`\n\n开始【电视家${$.index}】`)
             await signin(); // 签到
             await signinfo(); // 签到信息
-            await Addsign(); // 额外奖励，默认额度		
+            await Addsign(); // 额外奖励，默认额度
+		if (txoff == 1) {
             if (drawalVal != undefined) {
-            if (txoff == 1) await Withdrawal()
+             await Withdrawal()
             } else {
                 detail += `【金额提现】❌ 请获取提现地址 \n`
             };
+		}
             await run();
             await tasks(); // 任务状态
             await getGametime(); // 游戏时长
