@@ -31,12 +31,12 @@ http:\/\/api.mydianshijia.com\/api\/v\d\/sign\/signin url script-request-header 
 http:\/\/api.mydianshijia.com\/api\/v2\/cash\/withdrawal url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
 ~~~~~~~~~~~~~~~~~
 */
-const txoff=1 //提现开关，默认打开
 const walkstep = '20000'; //每日步数设置，可设置0-20000
 const gametimes = "1999"; //游戏时长
 const logs = 0 //响应日志开关,默认关闭
 const $ = new Env('电视家')
 const notify = $.isNode() ? require('./sendNotify') : '';
+let txoff=1 //提现开关，默认打开
 let sleeping = "",
     detail = ``,
     subTitle = ``;
@@ -113,14 +113,12 @@ if (isGetCookie = typeof $request !== 'undefined') {
             console.log(`\n\n开始【电视家${$.index}】`)
             await signin(); // 签到
             await signinfo(); // 签到信息
-            await Addsign(); // 额外奖励，默认额度
-		if (txoff = 1）{
+            await Addsign(); // 额外奖励，默认额度		
             if (drawalVal != undefined) {
-                await Withdrawal()
+            if (txoff = 1） await Withdrawal()
             } else {
                 detail += `【金额提现】❌ 请获取提现地址 \n`
             };
-		};
             await run();
             await tasks(); // 任务状态
             await getGametime(); // 游戏时长
