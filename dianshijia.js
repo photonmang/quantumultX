@@ -115,7 +115,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await signinfo(); // 签到信息
             await Addsign(); // 额外奖励，默认额度		
             if (drawalVal != undefined) {
-            if (txoff == 1） await Withdrawal()
+            if (txoff == 1) await Withdrawal()
             } else {
                 detail += `【金额提现】❌ 请获取提现地址 \n`
             };
