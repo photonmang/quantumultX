@@ -5,7 +5,7 @@
 6.24 调整额度为0.4元。由于官方的额度进行了调整，0.2元为当日奖励，0.4元为明日奖励额度，脚本调整获取方式为直接提交明日奖励进行获取。
 8.9 新增VIP兑换，每日上限6天，一次兑换+3天
 2022.1.10 修复脚本，去除额外额度获取
-2022.2.21 修复api失效
+2022.2.21 修复api失效，新增提现开关。方便没额度的只获取VIP天数
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
 2.APP登陆账号后，点击菜单栏'领现金',即可获取Cookie，进入提现页面，点击随机金额，可获取提现地址!!
@@ -114,7 +114,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await signin(); // 签到
             await signinfo(); // 签到信息
             await Addsign(); // 额外奖励，默认额度
-		if (txoff = 0）{
+		if (txoff = 1）{
             if (drawalVal != undefined) {
                 await Withdrawal()
             } else {
