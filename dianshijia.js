@@ -300,7 +300,7 @@ function cash() {
 function vip() {
     return new Promise((resolve, reject) => {
         $.get({
-            url: `http://pay.gaoqingdianshi.com/api/v2/product/exchange?code=mianfeiduihuan0003`,
+            url: `${dianshijia_API}/v2/product/exchange?code=mianfeiduihuan0003`,
             headers: JSON.parse(signheaderVal)
         }, (error, response, data) => {
             if (logs) $.log(`vip: ${data}\n`)
