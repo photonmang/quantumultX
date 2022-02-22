@@ -354,27 +354,7 @@
               "label": "关闭提现"
             }
           ],
-        },
-           {
-		"id": "dsj_id",
-		"name": "获取账号",
-		"val": "",
-		"type": "number",
-		"placeholder": "默认是空值(点击以展开说明)",
-		"autoGrow": true,
-		"rows": 1,
-		"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推."
-				},
-	  {
-		"id": "dsj_tx",
-		"name": "获取提现值",
-		"val": "",
-		"type": "number",
-		"placeholder": "默认是空值(点击以展开说明)",
-		"autoGrow": true,
-		"rows": 1,
-		"desc": "需要获取第几个账号的提现值就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推."
-				}
+        }
       ],
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js",
