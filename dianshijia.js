@@ -14,21 +14,21 @@ loon 2.10+ :
 [Script]
 cron "04 00 * * *" script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js, tag=电视家
 http-request http:\/\/api.mydianshijia.com\/api\/v\d\/sign\/signin script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js, timeout=10, tag=电视家
-http-request http:\/\/api.mydianshijia.com\/api\/v2\/cash\/withdrawal script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js, timeout=10, tag=电视家
+http-request http:\/\/api.mydianshijia.com\/api\/cash\/v1\/zz\/withdrawal script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js, timeout=10, tag=电视家
 ~~~~~~~~~~~~~~~~~~~~~
 # 获取电视家 Cookie.
 Surge 4.0
 [Script]
 电视家 = type=cron,cronexp=0 8 0 * * *,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js,script-update-interval=0
 电视家 = type=http-request,pattern=http:\/\/api.mydianshijia.com\/api\/v\d\/sign\/signin,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
-电视家 = type=http-request,pattern=http:\/\/api.mydianshijia.com\/api\/v2\/cash\/withdrawal,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
+电视家 = type=http-request,pattern=http:\/\/api.mydianshijia.com\/api\/cash\/v1\/zz\/withdrawal,script-path=https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
 ~~~~~~~~~~~~~~~~~~
 QX 1.0.6+ :
 [task_local]
 0 9 * * * https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
 [rewrite_local]
 http:\/\/api.mydianshijia.com\/api\/v\d\/sign\/signin url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
-http:\/\/api.mydianshijia.com\/api\/v2\/cash\/withdrawal url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
+http:\/\/api.mydianshijia.com\/api\/cash\/v1\/zz\/withdrawal url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js
 ~~~~~~~~~~~~~~~~~
 */
 const walkstep = '20000'; //每日步数设置，可设置0-20000
