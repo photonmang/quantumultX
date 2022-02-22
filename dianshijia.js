@@ -6,6 +6,9 @@
 8.9 新增VIP兑换，每日上限6天，一次兑换+3天
 2022.1.10 修复脚本，去除额外额度获取
 2022.2.21 修复api失效，新增提现开关。方便没额度的只获取VIP天数
+2022.2.22 增加圈X版多账号控制，需要配合本仓库JSBOX订阅:https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
+          因修改了CK获取的开始值，需要重新获取一次CK
+
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
 2.APP登陆账号后，点击菜单栏'领现金',即可获取Cookie，进入提现页面，点击随机金额，可获取提现地址!!
@@ -36,7 +39,10 @@ const gametimes = "1999"; //游戏时长
 const logs = 0 //响应日志开关,默认关闭
 const $ = new Env('电视家')
 const notify = $.isNode() ? require('./sendNotify') : '';
-let txoff=1 //提现开关，默认打开
+const dsj_id=$.getdata('dsj_id') || 1 //默认获取账号1
+const dsj_tx=$.getdata('dsj_tx') || 1 //默认获取账号1提现地址
+const dsj_zhs=$.getdata('dsj_zhs') || 1 //默认输出1个账号
+let txoff=$.getdata('txoff') || true //提现开关，默认打开
 let sleeping = "",
     detail = ``,
     subTitle = ``;
@@ -74,9 +80,11 @@ if ($.isNode()) {
             DrawalArr.push(Drawals[item])
         }
     });
-} else {
-    tokenArr.push($.getdata('sy_signheader_dsj'))
-    DrawalArr.push($.getdata('drawal_dsj'))
+} 
+   for (let sun = 0; sun <= dsj_zhs; sun++) {
+       
+    tokenArr.push($.getdata('sy_signheader_dsj'+sun))
+    DrawalArr.push($.getdata('drawal_dsj'+sun))
 }
 
 if (isGetCookie = typeof $request !== 'undefined') {
@@ -114,7 +122,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await signin(); // 签到
             await signinfo(); // 签到信息
             await Addsign(); // 额外奖励，默认额度
-		if (txoff == 1) {
+		if (txoff == "true") {
             if (drawalVal != undefined) {
              await Withdrawal()
             } else {
@@ -127,7 +135,9 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await total(); // 总计
             await cash(); // 现金
             await vip();
+			if (txoff == "true") {
             await cashlist(); // 现金列表
+			}
             await coinlist(); // 金币列表
             if ($.isNode() && process.env.DSJ_NOTIFY_CONTROL && drawalCode == '0') {
                 await notify.sendNotify($.name, subTitle + '\n' + detail)
@@ -142,13 +152,13 @@ function GetCookie() {
     if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/sign\/signin/)) {
         const signheaderVal = JSON.stringify($request.headers)
         $.log(`signheaderVal:${signheaderVal}`)
-        if (signheaderVal) $.setdata(signheaderVal, 'sy_signheader_dsj')
-        $.msg($.name, `获取Cookie: 成功`, ``)
+        if (signheaderVal) $.setdata(signheaderVal, 'sy_signheader_dsj'+dsj_id)
+        $.msg($.name+dsj_id, `获取Cookie: 成功`, ``)
     } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/cash\/withdrawal/)) {
         const drawalVal = $request.url
         $.log(`drawalVal:${drawalVal}`)
-        if (drawalVal) $.setdata(drawalVal, 'drawal_dsj')
-        $.msg($.name, `获取提现地址: 成功`, ``)
+        if (drawalVal) $.setdata(drawalVal, 'drawal_dsj'+dsj_tx)
+        $.msg($.name+dsj_tx, `获取提现地址: 成功`, ``)
     }
 }
 async function run() {
