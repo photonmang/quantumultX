@@ -333,29 +333,54 @@
       "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.js",
       "icons": ["https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.png", "https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/zyb.png"]
     },
-        {
-      "id": "dianshijia",
-      "name": "电视家",
-      "keys": ["sy_signheader_dsj","drawal_dsj","sy_signheader_dsj2","drawal_dsj2","sy_signheader_dsj3","drawal_dsj3","sy_signheader_dsj4","drawal_dsj4"],
-      "settings": [
-        {
-	  "id": "txoff", 
-          "val": "1", 
-          "name": "提现开关", 
-          "type": "radios", 
-          "desc": "",
-          "items": [
-            {
-              "key": "1", 
-              "label": "打开提现"
-            }, 
-            {
-              "key": "0", 
-              "label": "关闭提现"
-            }
-          ],
-        }
-      ],
+    {
+	"id": "dianshijia",
+	"name": "电视家",
+        "keys": [
+                 "sy_signheader_dsj","drawal_dsj",
+                 "sy_signheader_dsj2","drawal_dsj2",
+                 "sy_signheader_dsj3","drawal_dsj3",
+                 "sy_signheader_dsj4","drawal_dsj4"
+                                ],
+	"settings": [
+				{
+      "id": "txoff",
+      "name": "提现开关",
+      "val": true,
+      "type": "boolean",
+      "desc": " 默认打开."
+    },
+    {
+		"id": "dsj_id",
+		"name": "获取账号",
+		"val": "",
+		"type": "number",
+		"placeholder": "默认是空值(点击以展开说明)",
+		"autoGrow": true,
+		"rows": 1,
+		"desc": "需要获取第几个账号的Cookie就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推."
+				},
+	            {
+		"id": "dsj_tx",
+		"name": "获取提现值",
+		"val": "",
+		"type": "number",
+		"placeholder": "默认是空值(点击以展开说明)",
+		"autoGrow": true,
+		"rows": 1,
+		"desc": "需要获取第几个账号的提现值就填写对应的数字，如第1个账号填写1，第2个账号就填写2，依次类推."
+				},
+                {
+					"id": "dsj_zhs",
+					"name": "需要运行的总账号数",
+					"val": "",
+					"type": "number",
+                                        "placeholder": "默认是空值(点击以展开说明)",
+                                        "autoGrow": true,
+                                        "rows": 1,
+					"desc": "请输入需要执行的账号总数量"
+				}
+			],
       "author": "@photonmang",
       "repo": "https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js",
       "script": "https://raw.githubusercontent.com/photonmang/quantumultX/master/dianshijia.js",
