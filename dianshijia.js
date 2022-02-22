@@ -81,7 +81,7 @@ if ($.isNode()) {
         }
     });
 } 
-   for (let sun = 0; sun <= dsj_zhs; sun++) {
+   for (let sun = 1; sun <= dsj_zhs; sun++) {
        
     tokenArr.push($.getdata('sy_signheader_dsj'+sun))
     DrawalArr.push($.getdata('drawal_dsj'+sun))
