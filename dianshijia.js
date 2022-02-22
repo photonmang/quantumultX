@@ -6,8 +6,9 @@
 8.9 新增VIP兑换，每日上限6天，一次兑换+3天
 2022.1.10 修复脚本，去除额外额度获取
 2022.2.21 修复api失效，新增提现开关。方便没额度的只获取VIP天数
-2022.2.22 增加圈X版多账号控制，需要配合本仓库JSBOX订阅:https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
-          因修改了CK获取的开始值，需要重新获取一次CK
+2022.2.22 1.增加圈X版多账号控制，需要配合本仓库JSBOX订阅:https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
+          2.因修改了CK获取的开始值，需要重新获取一次CK.
+	  3.提现变量改为自动判断
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -40,9 +41,7 @@ const logs = 0 //响应日志开关,默认关闭
 const $ = new Env('电视家')
 const notify = $.isNode() ? require('./sendNotify') : '';
 const dsj_id=$.getdata('dsj_id') || 1 //默认获取账号1
-const dsj_tx=$.getdata('dsj_tx') || 1 //默认获取账号1提现地址
 const dsj_zhs=$.getdata('dsj_zhs') || 1 //默认输出1个账号
-let txoff=$.getdata('txoff')
 let sleeping = "",
     detail = ``,
     subTitle = ``;
@@ -122,20 +121,18 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await signin(); // 签到
             await signinfo(); // 签到信息
             await Addsign(); // 额外奖励，默认额度
-		if (txoff == "true") {
-            if (drawalVal != undefined) {
+            if (drawalVal != "") {
              await Withdrawal()
             } else {
                 detail += `【金额提现】❌ 请获取提现地址 \n`
             };
-		}
             await run();
             await tasks(); // 任务状态
             await getGametime(); // 游戏时长
             await total(); // 总计
             await cash(); // 现金
             await vip();
-			if (txoff == "true") {
+			if (drawalVal != "") {
             await cashlist(); // 现金列表
 			}
             await coinlist(); // 金币列表
@@ -157,8 +154,8 @@ function GetCookie() {
     } else if ($request && $request.method != 'OPTIONS' && $request.url.match(/\/cash\/withdrawal/)) {
         const drawalVal = $request.url
         $.log(`drawalVal:${drawalVal}`)
-        if (drawalVal) $.setdata(drawalVal, 'drawal_dsj'+dsj_tx)
-        $.msg($.name+dsj_tx, `获取提现地址: 成功`, ``)
+        if (drawalVal) $.setdata(drawalVal, 'drawal_dsj'+dsj_id)
+        $.msg($.name+dsj_id, `获取提现地址: 成功`, ``)
     }
 }
 async function run() {
