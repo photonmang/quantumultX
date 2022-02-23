@@ -567,7 +567,7 @@ function videoPlay() {
             if (logs) $.log(`刷短视频: ${data}`)
             const result = JSON.parse(data)
             if (result.errCode == 0) {
-                detail += `【刷短视频】已刷`+result.data.dayCompCount+`/'+result.data.dayDoCountMax+'次\n`
+                detail += `【刷短视频】已刷${result.data.dayCompCount}/${result.data.dayDoCountMax}次\n`
             } else if (result.errCode == 4000) {
 				detail += `【刷短视频】`+result.msg+`\n`
 			}
