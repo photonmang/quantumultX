@@ -315,7 +315,7 @@ function vip() {
             if (logs) $.log(`vip: ${data}\n`)
             let vipresult = JSON.parse(data)
             if (vipresult.errCode == 0) {
-                detail += '【VIP兑换】：✅兑换成功+3天\n'}  else {
+                detail += '【VIP兑换】✅兑换成功+3天\n'}  else {
 				detail += '【VIP兑换】：'+vipresult.msg+'\n'
 				}
             resolve()
@@ -567,7 +567,7 @@ function videoPlay() {
             if (logs) $.log(`刷短视频: ${data}`)
             const result = JSON.parse(data)
             if (result.errCode == 0) {
-                detail += `【刷短视频】已刷`+result.data.dayCompCount+`/'+dayDoCountMax+'次\n`
+                detail += `【刷短视频】已刷`+result.data.dayCompCount+`/'+result.data.dayDoCountMax+'次\n`
             } else if (result.errCode == 4000) {
 				detail += `【刷短视频】`+result.msg+`\n`
 			}
