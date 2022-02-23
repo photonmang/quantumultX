@@ -9,6 +9,7 @@
 2022.2.22 1.增加圈X版多账号控制，需要配合本仓库JSBOX订阅:https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
           2.因修改了CK获取的开始值，需要重新获取一次CK.
 	  3.提现变量改为自动判断
+2022.2.23 去除失效的游戏模块，新增刷短视频获取金币
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -36,7 +37,6 @@ http:\/\/api.mydianshijia.com\/api\/cash\/v1\/zz\/withdrawal url script-request-
 ~~~~~~~~~~~~~~~~~
 */
 const walkstep = '20000'; //每日步数设置，可设置0-20000
-const gametimes = "1999"; //游戏时长
 const logs = 0 //响应日志开关,默认关闭
 const $ = new Env('电视家')
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -128,7 +128,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             };
             await run();
             await tasks(); // 任务状态
-            await getGametime(); // 游戏时长
+            await videoPlay(); // 刷短视频
             await total(); // 总计
             await cash(); // 现金
             await vip();
@@ -335,7 +335,7 @@ function cashlist() {
             //console.log(`提现列表: ${data}`)
             if (result.errCode == 0) {
                 for (i = 0; i < result.data.length; i++) {
-                    if (result.data[i].type == '2' && result.data[i].ctime >= time) {
+                    if (result.data[i].type == '2' && result.data[i].from == "支付宝提现" && result.data[i].ctime <= time) {
                         cashres = `✅ 今日提现:` + result.data[i].amount / 100 + `元 `
                     }
                 }
@@ -478,9 +478,6 @@ function coinlist() {
                         if (result.data[i].from == "领取瓜分金币") {
                             detail += `【瓜分金币】✅ 获得金币` + result.data[i].amount + '\n'
                         }
-                        if (result.data[i].from == "游戏时长奖励") {
-                            gamestime += result.data[i].amount
-                        }
                         if (result.data[i].from == "激励视频") {
                             vdamount += result.data[i].amount
                         }
@@ -499,9 +496,6 @@ function coinlist() {
                     }
                     if (onlamount) {
                         detail += `【手机在线】✅ 获得金币` + onlamount + '\n'
-                    }
-                    if (gamestime) {
-                        detail += `【游戏时长】✅ 获得金币` + gamestime + '\n'
                     }
                     if (i > 0) {
                         detail += `【任务统计】共完成${i+1}次任务🌷`
@@ -563,16 +557,22 @@ function Withdrawal() {
     })
 }
 
-function getGametime() {
+function videoPlay() {
     return new Promise((resolve, reject) => {
         let url = {
-            url: `${dianshijia_API}/v4/task/complete?code=gameTime&time=${gametimes}`,
+            url: `${dianshijia_API}/v5/task/complete?code=ShortvideoPlay&comType=0`,
             headers: JSON.parse(signheaderVal),
         }
         $.get(url, (error, response, data) => {
-            if (logs) $.log(`游戏时长: ${data}\n`)
+            if (logs) $.log(`刷短视频: ${data}`)
+            const result = JSON.parse(data)
+            if (result.errCode == 0) {
+                detail += `【刷短视频】已刷`+result.data.dayCompCount+`/'+dayDoCountMax+'次\n`
+            } else if (result.errCode == 4000) {
+				detail += `【刷短视频】`+result.msg+`\n`
+			}
+            resolve()
         })
-        resolve()
     })
 }
 
