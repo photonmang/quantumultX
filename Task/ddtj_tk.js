@@ -9,10 +9,9 @@ hostname = api.gzswin.cn,api.gezs.cc
 const $ = new Env("ddtj")
 
 let hdbody = $request.body
-let token = hdbody.match(/(token=[^;]*)/)[1]
-let unionid = hdbody.match(/(unionid=[^;]*)/)[1]
+
 console.log('================')
-console.log(`${token};${unionid};`)
+console.log(`${hdbody};`)
 console.log('================')
 $.msg("${token};${unionid};获取成功！", "在运行日志中查看")
 
