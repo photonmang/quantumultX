@@ -4,18 +4,16 @@
 
 [MITM]
 hostname = api.gzswin.cn,api.gezs.cc
-
+QX:
+(index\/index|archery/index) url script-request-body https://raw.githubusercontent.com/photonmang/quantumultX/master/Task/ddtj_tk.js
 */
 const $ = new Env("ddtj")
 
-let token = $request.body.token
-let unionid = $request.body.unionid
+let headerbd = $request.body
 console.log('================')
-if (token != "") console.log(`${token};`)
-if (unionid != "") console.log(`${unionid};`)
+console.log(`${headerbd};`)
 console.log('================')
-if (token != "")  $.msg("token获取成功！", "在运行日志中查看")
-if (unionid != "")  $.msg("unionid获取成功！", "在运行日志中查看")
+$.msg("获取成功！", "在运行日志中查看")
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
 
