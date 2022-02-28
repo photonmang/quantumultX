@@ -10,7 +10,7 @@ const $ = new Env("ddtj")
 
 let hdbody = $request.body
 let token = hdbody.match(/(token=[^;]*)/)[1]
-let unionid = t.match(/(unionid=[^;]*)/)[1]
+let unionid = hdbody.match(/(unionid=[^;]*)/)[1]
 console.log('================')
 console.log(`${token};${unionid};`)
 console.log('================')
