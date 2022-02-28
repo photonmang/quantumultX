@@ -11,10 +11,11 @@ const $ = new Env("ddtj")
 let token = $request.body.token
 let unionid = $request.body.unionid
 console.log('================')
-console.log(`${token};${unionid};`)
+if (token != "") console.log(`${token};`)
+if (unionid != "") console.log(`${unionid};`)
 console.log('================')
-$.msg("${token};${unionid};获取成功！", "在运行日志中查看")
-
+if (token != "")  $.msg("token获取成功！", "在运行日志中查看")
+if (unionid != "")  $.msg("unionid获取成功！", "在运行日志中查看")
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
 
