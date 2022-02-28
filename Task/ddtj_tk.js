@@ -13,7 +13,7 @@ let hdbody = $request.body
 console.log('================')
 console.log(`${hdbody};`)
 console.log('================')
-$.msg("${token};${unionid};获取成功！", "在运行日志中查看")
+$.msg("获取成功！", "在运行日志中查看")
 
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
