@@ -10,7 +10,9 @@
           2.因修改了CK获取的开始值，需要重新获取一次CK.
 	  3.提现变量改为自动判断
 2022.2.23 去除失效的游戏模块，新增刷短视频获取金币
-2022.3.4  API变更，最新版无法抓到header请重新更新cookie.conf或者自行替换[rewrite_local]
+2022.3.4  1.API变更，最新版无法抓到header请重新更新cookie.conf或者自行替换[rewrite_local]
+          2.多账号执行新增用户名方便查验；
+	  3.修复V2P下因账户中未获取提现链接获取导致的请求超时
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -44,6 +46,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const dsj_id=$.getdata('dsj_id') || 1 //默认获取账号1
 const dsj_zhs=$.getdata('dsj_zhs') || 1 //默认输出1个账号
 let sleeping = "",
+    dsjname = "",
     detail = ``,
     subTitle = ``;
 //let RewardId = $.getdata('REWARD') || '55'; //额外签到奖励，默认55为兑换0.2元额度，44为兑换1天VIP，42为兑换1888金币
@@ -122,7 +125,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await signin(); // 签到
             await signinfo(); // 签到信息
             await Addsign(); // 额外奖励，默认额度
-            if (drawalVal != "") {
+            if (drawalVal != null) {
              await Withdrawal()
             } else {
                 detail += `【金额提现】❌ 请获取提现地址 \n`
@@ -130,10 +133,11 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await run();
             await tasks(); // 任务状态
             await videoPlay(); // 刷短视频
+            await userinfo()
             await total(); // 总计
             await cash(); // 现金
             await vip();
-			if (drawalVal != "") {
+			if (drawalVal != null) {
             await cashlist(); // 现金列表
 			}
             await coinlist(); // 金币列表
@@ -501,7 +505,7 @@ function coinlist() {
                     if (i > 0) {
                         detail += `【任务统计】共完成${i+1}次任务🌷`
                     }
-                    $.msg($.name + `  ` + sleeping, subTitle, detail)
+                    $.msg($.name+$.index+dsjname+ `  ` + sleeping, subTitle, detail)
                 } catch (e) {
                     console.log(`获取任务金币列表失败，错误代码${e}+ \n响应数据:${data}`)
                     $.msg($.name + ` 获取金币详情失败 `, subTitle, detail)
@@ -577,6 +581,22 @@ function videoPlay() {
     })
 }
 
+function userinfo() {
+    return new Promise((resolve, reject) => {
+        let url = {
+            url: `${dianshijia_API}/v3/user/info`,
+            headers: JSON.parse(signheaderVal),
+        }
+        $.get(url, (error, response, data) => {
+            if (logs) $.log(`获取用户信息: ${data}`)
+            const result = JSON.parse(data)
+            if (result.errCode == 0) {
+                dsjname = `[${result.data.nickname}]`
+            } 
+            resolve()
+        })
+    })
+}
 function Addsign() {
     return new Promise((resolve, reject) => {
         let url = {
