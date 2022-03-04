@@ -1,9 +1,9 @@
 /*
-10.13由于作者停更，因本人一直有在用所以进行日常维护，只要我一直在用，也会一直维护下去。
-去掉奖励信息随机的BUG奖励，改为固定显示每日0.2元额度。
-2.12 彻底修复因每日奖励额度接口变动导致奖励额度失效问题！
-6.24 调整额度为0.4元。由于官方的额度进行了调整，0.2元为当日奖励，0.4元为明日奖励额度，脚本调整获取方式为直接提交明日奖励进行获取。
-8.9 新增VIP兑换，每日上限6天，一次兑换+3天
+2020.10.13 由于作者停更，因本人一直有在用所以进行日常维护，只要我一直在用，也会一直维护下去。
+           去掉奖励信息随机的BUG奖励，改为固定显示每日0.2元额度。
+2021.2.12 彻底修复因每日奖励额度接口变动导致奖励额度失效问题！
+2021.6.24 调整额度为0.4元。由于官方的额度进行了调整，0.2元为当日奖励，0.4元为明日奖励额度，脚本调整获取方式为直接提交明日奖励进行获取。
+2021.8.9  新增VIP兑换，每日上限6天，一次兑换+3天
 2022.1.10 修复脚本，去除额外额度获取
 2022.2.21 修复api失效，新增提现开关。方便没额度的只获取VIP天数
 2022.2.22 1.增加圈X版多账号控制，需要配合本仓库JSBOX订阅:https://raw.githubusercontent.com/photonmang/quantumultX/master/photonmang.boxjs.json
@@ -13,6 +13,7 @@
 2022.3.4  1.API变更，最新版无法抓到header请重新更新cookie.conf或者自行替换[rewrite_local]
           2.多账号执行新增用户名方便查验；
 	  3.修复V2P下因账户中未获取提现链接获取导致的请求超时
+2022.3.5  新增会员时长查询
 
 获取Cookie方法:
 1.将下方[rewrite_local]和[Task]地址复制的相应的区域，无需添加 hostname，每日7点、12点、20点各运行一次，其他随意
@@ -49,7 +50,6 @@ let sleeping = "",
     dsjname = "",
     detail = ``,
     subTitle = ``;
-//let RewardId = $.getdata('REWARD') || '55'; //额外签到奖励，默认55为兑换0.2元额度，44为兑换1天VIP，42为兑换1888金币
 const dianshijia_API = 'http://api.mydianshijia.com/api'
 let tokenArr = [],
     DsjurlArr = [],
@@ -127,13 +127,11 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await Addsign(); // 额外奖励，默认额度
             if (drawalVal != null) {
              await Withdrawal()
-            } else {
-                detail += `【金额提现】❌ 请获取提现地址 \n`
-            };
+            } 
             await run();
             await tasks(); // 任务状态
             await videoPlay(); // 刷短视频
-            await userinfo()
+            await userinfo();
             await total(); // 总计
             await cash(); // 现金
             await vip();
@@ -590,9 +588,15 @@ function userinfo() {
         $.get(url, (error, response, data) => {
             if (logs) $.log(`获取用户信息: ${data}`)
             const result = JSON.parse(data)
-            if (result.errCode == 0) {
-                dsjname = `[${result.data.nickname}]`
-            } 
+                    var date = new Date(result.data.equityTime);
+                    Y = date.getFullYear() + '-';
+                    M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
+                    D = date.getDate() + ' ';
+                    h = date.getHours() + ':';
+                    m = date.getMinutes() + ':';
+                    s = date.getSeconds();
+                    detail  += `【会员到期】⏱`+Y + M + D + h + m + s+`\n`;
+                    dsjname = `[${result.data.nickname}]`
             resolve()
         })
     })
