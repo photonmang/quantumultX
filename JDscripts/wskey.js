@@ -1,34 +1,28 @@
 /*
-
 打开京东app获取自动获取wskey
 在脚本日志查看值
-
+pin=部分没有了，请自行手工补齐
 [MITM]
 hostname = api.m.jd.com
-
 ===========Surge=================
 [Script]
 jd_appopen = type=http-request,pattern=functionId=serverConfig, max-size=0, script-path= https://raw.githubusercontent.com/photonmang/quantumultX/master/JDscripts/wskey.js
-
 ===================Quantumult X=====================
 [rewrite_local]
 # jd_appopen
 functionId=serverConfig url script-request-header https://raw.githubusercontent.com/photonmang/quantumultX/master/JDscripts/wskey.js
-
 =====================Loon=====================
 [Script]
 http-request functionId=serverConfig script-path=jd_appopen.js, timeout=3600, tag= https://raw.githubusercontent.com/photonmang/quantumultX/master/JDscripts/wskey.js
-
 */
 const $ = new Env("wskey")
 
 let cookie = $request.headers.Cookie
-let pin = cookie.match(/(pin=[^;]*)/)[1]
 let wskey = cookie.match(/(wskey=[^;]*)/)[1]
 console.log('================')
-console.log(`${pin};${wskey};`)
+console.log(`${wskey};`)
 console.log('================')
-$.msg("wskey获取成功！", "在运行日志中查看")
+$.msg("wskey获取成功！","", wskey)
 
 function Env(t, e) {
   "undefined" != typeof process && JSON.stringify(process.env).indexOf("GITHUB") > -1 && process.exit(0);
