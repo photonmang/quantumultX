@@ -2,3 +2,25 @@
 
 # 小小影视
 DOMAIN-SUFFIX, 39d83s.com,REJECT
+# 屏蔽dns
+https://dns.jd.com/v6 url reject-dict
+# 屏蔽京东收集信息
+http://.*.jddebug.com url reject-dict
+https://wqs.jd.com/portal/wx/storageBridge2?\.shtml url reject
+https://m.jingxi.com/webmonitor/collect/biz.json url reject-dict
+https://hermes.jd.com/log.gif url reject-dict
+https://saturn.jd.com/log/sdk url reject-dict
+https://api.m.jd.com/api\?functionId=pingou_rpds_custom url reject-dict
+https://api.m.jd.com/api\?functionId=pingou_webmonitor_biz url reject-dict
+https://sgm-m.jd.com/h5/custom url reject-dict
+https://blackhole.m.jd.com/bypass url reject-dict
+https://blackhole.m.jd.com/getinfo url reject-dict
+https://api.m.jd.com/client.action\?$ url reject-dict
+https://ex.m.jd.com/exception_monitor/report url reject-dict
+https://api.m.jd.com/client.action\?functionId=xview2Config url reject-dict
+https://mars.jd.com/log/sdk url reject-dict
+https:\/\/.+\.m\.jd.com\/m2 url reject-dict
+https://lbsgw.m.jd.com/m url reject-dict
+https://hawks.jd.com/log url reject-dict
+https://perf.m.jd.com/app_monitor/v1/report url reject-dict
+https:\/\/gia\.jd\.com\/fcf.html url reject-dict
