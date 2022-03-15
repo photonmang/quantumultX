@@ -10,4 +10,7 @@ https://api.8897815.com/long_video/user/video/(watch|buy) url script-request-bod
 */
 let obj = JSON.parse($request.body);
 obj.videoPayCoin = 0;
+if ($request.url.indexOf("/long_video/notice/pop_notice") != -1) {
+delete obj.data
+}
 $done({body:JSON.stringify(obj)});
