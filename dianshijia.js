@@ -125,7 +125,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await signin(); // 签到
             await signinfo(); // 签到信息
             await Addsign(); // 额外奖励，默认额度
-            if (drawalVal != null) {
+            if (drawalVal != "") {
              await Withdrawal()
             } 
             await run();
@@ -135,7 +135,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
             await total(); // 总计
             await cash(); // 现金
             await vip();
-			if (drawalVal != null) {
+			if (drawalVal != "") {
             await cashlist(); // 现金列表
 			}
             await coinlist(); // 金币列表
