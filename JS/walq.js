@@ -2,10 +2,11 @@
 我奥篮球 解锁付费直播回放及回放下载
 制作时间：2021/05/02
 制作者：photonmang
-http://api.woaoo.net/.+ url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/JS/walq.js
+https://gatewayapi.woaolanqiu.cn url script-response-body https://raw.githubusercontent.com/photonmang/quantumultX/master/JS/walq.js
+hostname=gatewayapi.woaolanqiu.cn
 */
 
-re('"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@','"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@')
+re('"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@"isWoaoVip":\w+@"watchPlayback":\w+@"downloadPlayback":\w+@"isLeagueVip":\w+@"canDownload":true@','"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@"isWoaoVip":true@"watchPlayback":true@"downloadPlayback":true@"isLeagueVip":true@"canDownload":true@')
 
 function re() {
  var body = $response.body;
