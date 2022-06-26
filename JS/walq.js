@@ -6,7 +6,7 @@ https://gatewayapi.woaolanqiu.cn url script-response-body https://raw.githubuser
 hostname=gatewayapi.woaolanqiu.cn
 */
 
-re('"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@"isWoaoVip":\w+@"watchPlayback":\w+@"downloadPlayback":\w+@"isLeagueVip":\w+@"canDownload":true@','"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@"isWoaoVip":true@"watchPlayback":true@"downloadPlayback":true@"isLeagueVip":true@"canDownload":true@')
+re('"woaoVip":false@"hasNotExpiredLeagueVip":false@"woaoVipExpireTime":""@"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@"isWoaoVip":\w+@"watchPlayback":\w+@"downloadPlayback":\w+@"isLeagueVip":\w+@"canDownload":true@','"woaoVip":true@"hasNotExpiredLeagueVip":true@"woaoVipExpireTime":"2099-12-12"@"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@"isWoaoVip":true@"watchPlayback":true@"downloadPlayback":true@"isLeagueVip":true@"canDownload":true@')
 
 function re() {
  var body = $response.body;
