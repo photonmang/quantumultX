@@ -6,7 +6,7 @@ https://gatewayapi.woaolanqiu.cn url script-response-body https://raw.githubuser
 hostname=gatewayapi.woaolanqiu.cn
 */
 
-re('"woaoVip":false@"hasNotExpiredLeagueVip":false@"woaoVipExpireTime":""@"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@"isWoaoVip":\\w+@"watchPlayback":\w+@"downloadPlayback":\w+@"isLeagueVip":\w+@"canDownload":false@"isVip":false@"showButton":true@"status":2@','"woaoVip":true@"hasNotExpiredLeagueVip":true@"woaoVipExpireTime":"2099-12-12"@"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@"isWoaoVip":true@"watchPlayback":true@"downloadPlayback":true@"isLeagueVip":true@"canDownload":true@"isVip":true@"showButton":false@"status":0@')
+re('"woaoVip":false@"hasNotExpiredLeagueVip":false@"woaoVipExpireTime":""@"alreadyPaid":\\w+@"alreadyPaidReplay":\\w+@"alreadyPaidReplayDownload":\\w+@"isPaid":\\w+@"canWatchFree":\\w+@"isWoaoVip":\\w+@"watchPlayback":\\w+@"downloadPlayback":\\w+@"isLeagueVip":\\w+@"canDownload":false@"isVip":false@"showButton":true@"status":2@"validForever":false@','"woaoVip":true@"hasNotExpiredLeagueVip":true@"woaoVipExpireTime":"2099-12-12"@"alreadyPaid":true@"alreadyPaidReplay":true@"alreadyPaidReplayDownload":true@"isPaid":true@"canWatchFree":true@"isWoaoVip":true@"watchPlayback":true@"downloadPlayback":true@"isLeagueVip":true@"canDownload":true@"isVip":true@"showButton":false@"status":0@"validForever":true@')
 
 function re() {
  var body = $response.body;
