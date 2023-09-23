@@ -281,7 +281,7 @@ function total() {
                         $.get({
                             url: `http://api.mydianshijia.com/api/coin/temp/exchange?id=` + coinid,
                             headers: JSON.parse(signheaderVal)
-                        }, (error, response, data))
+                        }, (error, response, data)=>{})
                     }
                 }
                 resolve()
